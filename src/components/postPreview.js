@@ -2,6 +2,8 @@ import React from "react"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 
+import BackgroundImage from "gatsby-background-image"
+
 const PostPreview = ({
   frontmatter,
   title,
@@ -13,9 +15,11 @@ const PostPreview = ({
   return (
     <article className="PostPreview" key={slug}>
       <Link style={{ boxShadow: `none` }} to={slug}>
-        <div className="PostPreview__image">
-          <Image fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-        </div>
+        <BackgroundImage
+          fluid={frontmatter.featuredImage.childImageSharp.fluid}
+          className="PostPreview__image"
+        ></BackgroundImage>
+
         <div className="PostPreview__title">
           <h3>{title}</h3>
         </div>

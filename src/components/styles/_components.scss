@@ -36,7 +36,9 @@
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
   &__image {
-    // height: 17.5rem;
+    height: 17.5rem;
+    background-size: cover;
+    background-position: 50% 100%;
   }
   &__title {
     height: 8.8rem;
