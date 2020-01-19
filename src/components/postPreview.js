@@ -19,7 +19,7 @@ const PostPreview = ({
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
           className="PostPreview__image"
         ></BackgroundImage>
-
+        <div className="PostPreview__tag">javascript</div>
         <div className="PostPreview__title">
           <h3>{title}</h3>
         </div>
