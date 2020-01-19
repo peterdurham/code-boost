@@ -55,9 +55,12 @@ class Layout extends React.Component {
         <div id="nav-container">
           <Nav />
         </div>
+        <main id={location.pathname === rootPath ? "Home" : "BlogPost"}>
+          {children}
+        </main>
 
         {/* <header>{header}</header> */}
-        <main>{children}</main>
+
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
