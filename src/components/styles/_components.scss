@@ -3,26 +3,27 @@
   grid-template-columns: 120px 120px 120px 120px 120px 120px;
   grid-column-gap: 48px;
   width: 100%;
-  margin-bottom: 3.2rem;
+  margin-bottom: 5.2rem;
 }
 .Topic {
   // width: 160px;
 
-  & img {
+  &__image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin: 0.7rem auto;
+    margin: 1rem auto;
   }
-  & h3 {
+  &__name {
     text-align: center;
     font-size: 1.8rem;
     line-height: 2.07rem;
+    letter-spacing: 1.2px;
     font-family: "Montserrat", sans-serif !important;
     transition: all 0.3s;
   }
 }
-.Topic:hover h3 {
+.Topic:hover .Topic__name {
   color: orangered;
 }
 .PostPreviews {

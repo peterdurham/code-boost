@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Vanilla JS",
+    "slug": "javascript",
+    "image": "../assets/topics/javascript.jpg"
+  },
+  {
+    "name": "CSS",
+    "slug": "css",
+    "image": "../assets/topics/css.jpg"
+  },
+  {
+    "name": "React",
+    "slug": "react",
+    "image": "../assets/topics/react.jpg"
+  },
+  {
+    "name": "GraphQL",
+    "slug": "graphql",
+    "image": "../assets/topics/graphql.jpg"
+  },
+  {
+    "name": "Node",
+    "slug": "node",
+    "image": "../assets/topics/node.jpg"
+  },
+  {
+    "name": "Tools",
+    "slug": "tools",
+    "image": "../assets/topics/tools.jpg"
+  }
+]
