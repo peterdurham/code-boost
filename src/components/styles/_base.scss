@@ -24,17 +24,9 @@ body {
   color: #051323;
   font-family: "Merriwether", sans-serif;
 }
-// h1,
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   font-family: "Montserrat", sans-serif;
-// }
+
 #nav-container {
   box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.08);
-  width: 100vw;
 }
 h1,
 h2,
@@ -48,7 +40,7 @@ h6 {
 nav,
 main,
 footer {
-  width: $width-small;
+  width: $width-medium;
   margin: 0 auto;
 }
 nav {
