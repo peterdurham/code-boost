@@ -2,6 +2,7 @@ import React from "react"
 import "./styles/main.scss"
 
 import Nav from "./nav"
+import Footer from "./footer"
 
 class Layout extends React.Component {
   render() {
@@ -59,12 +60,9 @@ class Layout extends React.Component {
         </main>
 
         {/* <header>{header}</header> */}
-
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div id="footer-container">
+          <Footer />
+        </div>
       </div>
     )
   }

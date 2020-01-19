@@ -76,11 +76,17 @@
 
 #BlogPost {
   & h1 {
-    font-size: 3.024rem;
+    font-size: 3.2024rem;
     line-height: 3.9312rem;
   }
+  & h2 {
+    font-size: 2.732rem;
+    line-height: 3.1567rem;
+    margin-bottom: 1.7688rem;
+    margin-top: 3.404rem;
+  }
   & h3 {
-    font-size: 2.352rem;
+    font-size: 1.952rem;
     margin-bottom: 2.688rem;
     margin-top: 4.704rem;
   }

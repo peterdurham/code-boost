@@ -25,14 +25,6 @@ body {
   font-family: "Merriwether", sans-serif;
 }
 
-#nav-container {
-  // box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.08);
-  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  background-color: #fff;
-  z-index: 42;
-}
 h1,
 h2,
 h3,
@@ -54,6 +46,14 @@ footer,
   width: $width-small;
   margin: 0 auto;
 }
+#nav-container {
+  // box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 42;
+}
 nav {
   height: $nav-height;
   display: flex;
@@ -64,8 +64,16 @@ nav {
     font-size: 2rem;
   }
 }
+#footer-container {
+  width: 100%;
+  background-color: #1c1e2f;
+}
+footer {
+  color: #fff;
+  height: 24rem;
+}
 main {
-  padding-top: 11rem;
+  padding: 11rem 0;
 }
 a {
   color: #111111;
