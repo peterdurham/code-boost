@@ -1,7 +1,7 @@
 ---
 title: How To Use CSS Background Images
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "CSS"
 description: "setup"
 featuredImage: "./fire-landscape.jpg"
 tags: ["Bitcoin", "Configuration"]

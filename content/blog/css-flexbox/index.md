@@ -1,7 +1,7 @@
 ---
 title: CSS Flexbox Basics
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "CSS"
 description: "setup"
 featuredImage: "./sarajevo.jpg"
 tags: ["Bitcoin", "Configuration"]

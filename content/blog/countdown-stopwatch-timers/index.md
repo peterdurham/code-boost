@@ -1,7 +1,7 @@
 ---
 title: How to Build Countdown and Stopwatch Timers
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "React"
 description: "setup"
 featuredImage: "./cuckoo-clock.jpg"
 tags: ["Bitcoin", "Configuration"]

@@ -1,7 +1,7 @@
 ---
 title: Array Methods in Javascript
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "Javascript"
 description: "setup"
 featuredImage: "./tree-stump.jpg"
 tags: ["Bitcoin", "Configuration"]

@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "gatsby-image"
 import { Link } from "gatsby"
 
 import BackgroundImage from "gatsby-background-image"
@@ -19,7 +18,7 @@ const PostPreview = ({
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
           className="PostPreview__image"
         ></BackgroundImage>
-        <div className="PostPreview__tag">javascript</div>
+        <div className="PostPreview__tag">{frontmatter.category}</div>
         <div className="PostPreview__title">
           <h3>{title}</h3>
         </div>

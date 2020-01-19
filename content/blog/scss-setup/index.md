@@ -1,7 +1,7 @@
 ---
 title: How to setup SCSS
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "CSS"
 description: "setup"
 featuredImage: "./scotland.webp"
 tags: ["Bitcoin", "Configuration"]

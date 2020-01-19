@@ -1,7 +1,7 @@
 ---
 title: Build a Full-stack App with React and Node
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "Javascript"
 description: "setup"
 featuredImage: "./fog-rocks.jpg"
 tags: ["Bitcoin", "Configuration"]

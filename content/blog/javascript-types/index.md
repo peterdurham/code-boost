@@ -1,7 +1,7 @@
 ---
 title: Understanding Types in Javascript
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "Javascript"
 description: "setup"
 featuredImage: "./landscape-winter.jpg"
 tags: ["Bitcoin", "Configuration"]

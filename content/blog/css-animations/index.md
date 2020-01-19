@@ -1,7 +1,7 @@
 ---
 title: How-to Guide, CSS Animations
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "CSS"
 description: "setup"
 featuredImage: "./horse-desert.jpg"
 tags: ["Bitcoin", "Configuration"]

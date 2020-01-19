@@ -1,7 +1,7 @@
 ---
 title: How to setup the Stripe Payments API
 date: "2015-05-06T23:46:37.121Z"
-category: "Bitcoin"
+category: "Javascript"
 description: "setup"
 featuredImage: "./money.jpg"
 tags: ["Bitcoin", "Configuration"]
