@@ -6,6 +6,35 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 class BlogPostTemplate extends React.Component {
+  componentDidMount() {
+    var nav = document.querySelector("#nav-container")
+
+    var scrollPos = 0
+
+    window.addEventListener("scroll", function() {
+      var scrollTop = document.body.getBoundingClientRect().top
+
+      if (scrollTop < -210) {
+        if (scrollTop > scrollPos) {
+          nav.classList.remove("slide-out")
+          nav.classList.add("slide-in")
+
+          setTimeout(() => {
+            nav.classList.remove("translated-out")
+            nav.classList.add("translated-in")
+          }, 400)
+        } else {
+          nav.classList.remove("slide-in")
+          nav.classList.add("slide-out")
+          setTimeout(() => {
+            nav.classList.remove("translated-in")
+            nav.classList.add("translated-out")
+          }, 400)
+        }
+      }
+      scrollPos = scrollTop
+    })
+  }
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
