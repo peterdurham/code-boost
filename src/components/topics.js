@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+import JSLogo from "../../content/assets/js-logo.png"
 
 const list = [
   {
@@ -32,10 +34,12 @@ const Topics = () => {
 }
 const Topic = ({ name }) => {
   return (
-    <div className="Topic">
-      <div>Topic Image</div>
-      <div>Topic Name</div>
-    </div>
+    <Link to="/">
+      <div className="Topic">
+        <img src={JSLogo} />
+        <h3>Topic Name</h3>
+      </div>
+    </Link>
   )
 }
 export default Topics

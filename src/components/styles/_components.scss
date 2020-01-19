@@ -1,10 +1,30 @@
 .Topics {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 120px 120px 120px 120px 120px 120px;
+  grid-column-gap: 48px;
   width: 100%;
+  margin-bottom: 3.2rem;
 }
 .Topic {
-  width: 160px;
+  // width: 160px;
+
+  & img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0.7rem auto;
+  }
+  & h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 2.07rem;
+    color: #010101;
+    font-family: "Montserrat", sans-serif !important;
+    transition: all 0.3s;
+  }
+}
+.Topic:hover h3 {
+  color: orangered;
 }
 .PostPreviews {
   display: grid;
@@ -15,6 +35,7 @@
 }
 .PostPreview {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
   &__image {
     // height: 17.5rem;
   }
