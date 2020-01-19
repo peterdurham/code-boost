@@ -1,5 +1,5 @@
 ---
-title: My Turd Post!
+title: Build a React Application with Parcel
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"

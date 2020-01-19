@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import "./styles/main.scss"
 
-import { rhythm, scale } from "../utils/typography"
+import Nav from "./nav"
 
 class Layout extends React.Component {
   render() {
@@ -50,14 +51,12 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: "630px",
-        }}
-      >
-        <header>{header}</header>
+      <div>
+        <div id="nav-container">
+          <Nav />
+        </div>
+
+        {/* <header>{header}</header> */}
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

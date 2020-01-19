@@ -1,0 +1,34 @@
+.Topics {
+  display: flex;
+
+  width: 100%;
+}
+.Topic {
+  width: 120px;
+}
+.PostPreviews {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 20px;
+  // grid-template-rows: 26rem;
+  grid-row-gap: 40px;
+}
+.PostPreview {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
+  &__image {
+    // height: 17.5rem;
+  }
+  &__title {
+    height: 8.8rem;
+    padding: 1.6rem;
+    font-size: 2.16rem;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 2.8rem;
+    color: rgb(21, 19, 29);
+    & a {
+      color: $color-black;
+      font-size: 2.16rem;
+    }
+  }
+}

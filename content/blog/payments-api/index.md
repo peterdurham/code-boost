@@ -1,5 +1,5 @@
 ---
-title: My Turd Post!
+title: How to setup the Stripe Payments API
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"

@@ -1,5 +1,5 @@
 ---
-title: My Turd Post!
+title: Basics of Using Forms in React
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"

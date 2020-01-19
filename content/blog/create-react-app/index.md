@@ -1,5 +1,5 @@
 ---
-title: My Turd Post!
+title: How To Build a React App using Create React App
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
