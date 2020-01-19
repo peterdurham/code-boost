@@ -7,117 +7,80 @@ featuredImage: "./fire-landscape.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+The css `background-image` property is a handy alternative to using `<img />` tags to display images.
 
-### On deer horse aboard tritely yikes and much
+To use this property, first create a div tag in your html
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
-
-- This however showed weasel
-- Well uncritical so misled
-- this is very interesting
-- Goodness much until that fluid owl
-
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
-
-### Overlaid the jeepers uselessly much excluding
-
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-[Longe and Parole](http://google.com) and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.
-
-> Far far away, behind the word mountains, far from the countries Vokalia and
-> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-> right at the coast of the Semantics, a large language ocean.
-
-It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.
-
-### According a funnily until pre-set or arrogant well cheerful
-
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
-
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
-    impassive fruitlessly shut
-
-When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane.
-
-```javascript
-// Set a cookie
-response.cookie("nameOfCookie", "cookieValue", {
-  maxAge: 60 * 60 * 1000, // 1 hour
-  httpOnly: true,
-  secure: true,
-  sameSite: true,
-})
+```html
+<div id="bg-demo"></div>
 ```
 
-Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.
+and a css selector in your stylesheet
 
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
+```css
+#bg-demo {
+  height: 300px;
+  width: 450px;
+  background: url("https://cdn.trendhunterstatic.com/thumbs/ink-drawings.jpeg");
+}
+```
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.
+### background-image
 
-### Silent delightfully including because before one up barring chameleon
+I added a height (and width) property to this element since background images don't have a default height like image tags do. The `background` or `background-image` properties are interchangeable and accept a URL string for your image file. You can use JPG, PNG, SVG, GIF, and WEBP files for background images.
 
-Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.
+### background-size
 
-Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+Unless your image is the exact same size as your div element, you might have noticed that it is not properly fitted to the screen. The `background-size` property will adjust this for us, and takes the following arguments:
 
-### Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+- **auto** : default setting, original image size (will crop if bigger than the container)
+- **length** : accepts two arguments: width and height for the image
+- **percentage**: accepts two arguments: width % and height % of the container element
+- **cover**: will cover either 100% of the element width or height depending on which fits better
+- **contain**: will fit the entire image in the element
 
-She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.
+### background-repeat
 
-### Slapped cozy a that lightheartedly and far
+By default, background images will repeat if there is enough space in their containing element. While this is useful for creating patterns, you may turn it off using
 
-The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word "and" and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.
+```css
+#bg-demo {
+  ... 
+  background-repeat: no-repeat;
+}
+```
+
+### background-position
+
+Setting our sizing for `div` and `background-size` properties is great to get the image to be the right size, however it won't center or align our images. The `background-position` property allows us to specify this. To center an image in our div we can use the following
+
+```css
+#bg-demo {
+  ... 
+  background-size: cover;
+  background-position: 50% 50%;
+}
+```
+
+This property accepts two arguments, one for the horizontal (x) value and one for the vertical (y) value. `background-position` is flexible and we can use
+
+- **percentages** : x% y% or the percent of the parent elements size (50% 50% being center, 50% 100% being the bottom)
+- **keywords** : left, right, center, bottom, and top can be used in place of 0% X, 100% X, 50% X or Y, 100% Y, and 0% Y respectively
+- **css units** : additionally you can use specific pixel values (or other units) to choose the position exactly
+
+### Gradients
+
+In addition to image files we can use CSS gradients in our `background` property. There are numerous ways to use gradients though a basic implementation involves three arguments: the direction and two colors.
+
+```css
+#bg-demo {
+  ... 
+  background: linear-gradient(to bottom right, green, blue);
+}
+```
+
+The first (direction) argument uses the keyword `to` followed by one or two keywords such as `left` or `bottom right` to indicate how the gradient will be applied. The direction is use from the first color `to` the second color.
+
+### Uses
+  
+CSS backgrounds can seem unnecessarily involved compared to using an `<img />` tag. In many cases using a background-image is not only easier, but the only way to achieve what you are trying to implement.
