@@ -3,7 +3,7 @@ title: Build a React Application with Parcel
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./box.png"
 tags: ["Bitcoin", "Configuration"]
 ---
 

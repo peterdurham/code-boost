@@ -3,7 +3,7 @@ title: How to Build a Modal Component in React
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./goal-door.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 

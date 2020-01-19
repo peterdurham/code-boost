@@ -3,7 +3,7 @@ title: How to Setup a React Webpack Application
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./blue-buildings.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 

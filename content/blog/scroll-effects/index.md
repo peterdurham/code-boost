@@ -3,7 +3,7 @@ title: Using Scroll Effects in Javascript
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./fairyland-canyon.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: How to Build a Full-stack Application with React and Node (MERN)
+title: Build a Full-stack App with React and Node
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./fog-rocks.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 

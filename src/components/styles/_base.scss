@@ -85,21 +85,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  & a {
+    font-size: 2rem;
+  }
 }
 main {
   padding-top: $nav-height;
 }
-
+a {
+  color: #111111;
+  text-decoration: none;
+}
 pre.language-javascript {
   padding: 2.016rem;
   margin: 2.688rem 0;
   font-size: 1.6rem;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
   border-radius: 0.4rem;
-  border-left: 10px solid orangered;
-}
-p code.language-text {
-  background-color: #fff;
-  color: orangered;
-  font-weight: 700;
+  // border-left: 10px solid orangered;
 }

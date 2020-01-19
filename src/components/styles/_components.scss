@@ -41,12 +41,14 @@
   &__title {
     height: 8.8rem;
     padding: 1.6rem;
-    font-size: 2.16rem;
+
     font-family: "Montserrat", sans-serif !important;
     font-weight: 400 !important;
     line-height: 2.8rem;
     // color: rgb(21, 19, 29);
-
+    & h3 {
+      font-size: 2.16rem;
+    }
     & a {
       color: $color-black;
       font-size: 2.16rem;

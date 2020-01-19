@@ -3,7 +3,7 @@ title: Basics of Using Axios
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./network-green.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 

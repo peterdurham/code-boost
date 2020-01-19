@@ -3,7 +3,7 @@ title: How to build a Carousel with Javascript
 date: "2015-05-06T23:46:37.121Z"
 category: "Bitcoin"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./iceland-horses.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 
