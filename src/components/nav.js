@@ -5,7 +5,10 @@ const Nav = () => {
   return (
     <nav>
       <div>Menu Button</div>
-      <Link to="/">Code Boost Logo</Link>
+      <div>
+        <Link to="/">Code Boost Logo</Link>
+        <p>None of that nonsense, all of that good stuff</p>
+      </div>
       <div>Search</div>
     </nav>
   )
