@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import Trending from "../components/trending"
 import Topics from "../components/topics"
 import PostPreview from "../components/postPreview"
 
@@ -17,6 +18,7 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
+        <Trending />
         <Topics />
         <div className="PostPreviews">
           {posts.map(({ node }) => {

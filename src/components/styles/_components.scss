@@ -7,29 +7,29 @@
   & button {
     font-family: "Montserrat", sans-serif !important;
   }
-  &__menu {
-    &--button {
-      background-color: #fff;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      color: #15131d;
-      transition: all 0.3s;
+  &__menu--button {
+    width: 8.6rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #15131d;
+    transition: all 0.3s;
 
-      & svg {
-        font-size: 3.2rem;
-      }
-
-      & span {
-        font-size: 1.4rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-left: 0.8rem;
-      }
+    & svg {
+      font-size: 3.2rem;
     }
-    &--button:hover {
+
+    & span {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-left: 0.8rem;
+    }
+
+    &:hover {
       color: rgb(35, 140, 44);
     }
   }
@@ -42,24 +42,55 @@
       font-size: 1.4rem;
     }
   }
-  &__search {
-    &--button {
-      background-color: #fff;
-      border: none;
-      font-size: 3.2rem;
-      color: #15131d;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    &--button:hover {
+  &__search--button {
+    width: 8.6rem;
+
+    background-color: #fff;
+    border: none;
+    font-size: 3.2rem;
+    color: #15131d;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
       color: rgb(35, 140, 44);
     }
   }
 
   & a {
     font-size: 2rem;
+  }
+}
+
+.Trending {
+  margin: 16px 0;
+  &__header {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  &__topics {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__topic {
+    font-size: 1.8rem;
+    padding: 8px 12px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    background-color: #15131d;
+    color: #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  &__topic:hover {
+    background-color: gold;
+    color: #000;
   }
 }
 
@@ -86,6 +117,9 @@
     transition: all 0.3s;
   }
 }
+// .Topic:hover .Topic__image {
+//   transform: scale(1.5);
+// }
 .Topic:hover .Topic__name {
   color: rgb(35, 140, 44);
 }
