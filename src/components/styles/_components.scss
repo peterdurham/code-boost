@@ -77,6 +77,10 @@
   &__topics {
     display: flex;
     flex-wrap: wrap;
+    width: 48rem;
+    @include respond(phone) {
+      width: 32rem;
+    }
   }
   &__topic {
     font-size: 1.8rem;
@@ -100,13 +104,35 @@
   grid-column-gap: 48px;
   width: 100%;
   margin-bottom: 5.2rem;
+  @include respond(tab-land) {
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-column-gap: 2%;
+  }
+  @include respond(phone) {
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+  }
 }
+
 .Topic {
   &__image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin: 1rem auto;
+
+    @include respond(tab-land) {
+      width: 90px;
+      height: 90px;
+    }
+    @include respond(tab-port) {
+      width: 75px;
+      height: 75px;
+    }
+    @include respond(phone) {
+      width: 90px;
+      height: 90px;
+    }
   }
   &__name {
     text-align: center;
@@ -125,10 +151,29 @@
 }
 .PostPreviews {
   display: grid;
-  grid-template-columns: 306.67px 306.67px 306.67px;
-  grid-column-gap: 20px;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
   grid-row-gap: 40px;
+
+  @include respond(tab-port) {
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 4%;
+  }
+  @include respond(phone) {
+    grid-template-columns: 100%;
+  }
 }
+
+// @media screen and (max-width: 840px) {
+//   .PostPreviews {
+
+//   }
+// }
+// @media screen and (max-width: 600px) {
+//   .PostPreviews {
+
+//   }
+// }
 .PostPreview {
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
@@ -139,6 +184,10 @@
     height: 17.5rem;
     background-size: cover;
     background-position: 50% 100%;
+
+    @include respond(phone) {
+      height: 25rem;
+    }
   }
   &__tag {
     position: absolute;
@@ -152,6 +201,16 @@
     left: 16px;
     top: 165px;
     padding: 2px 5px;
+    @include respond(tab-land) {
+      top: 147.5px;
+    }
+    @include respond(tab-port) {
+      top: 131.25px;
+    }
+    @include respond(phone) {
+      top: 190px;
+      font-size: 1.6rem;
+    }
   }
   &__title {
     height: 9.6rem;

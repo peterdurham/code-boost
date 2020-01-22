@@ -8,6 +8,8 @@ const sampleTopics = [
   "React",
   "Fonts",
   "Icons",
+  "Mapbox",
+  "Express",
 ]
 
 const Trending = () => {

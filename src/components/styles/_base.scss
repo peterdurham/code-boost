@@ -40,8 +40,17 @@ button:focus {
 nav,
 footer,
 #Home {
-  width: $width-medium;
+  max-width: 1080px;
   margin: 0 auto;
+  padding: 0 6rem;
+}
+
+#Home {
+  padding-top: 104px;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
 }
 
 #BlogPost {
@@ -52,6 +61,7 @@ footer,
   // box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.08);
   box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.1);
   position: fixed;
+  top: 0px;
   width: 100%;
   background-color: #fff;
   z-index: 42;
