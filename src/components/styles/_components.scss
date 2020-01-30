@@ -14,7 +14,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: #15131d;
+    color: $color-lightblack;
     transition: all 0.3s;
 
     & svg {
@@ -30,7 +30,7 @@
     }
 
     &:hover {
-      color: rgb(35, 140, 44);
+      color: $color-green;
     }
   }
   &__logo {
@@ -48,7 +48,7 @@
     background-color: #fff;
     border: none;
     font-size: 3.2rem;
-    color: #15131d;
+    color: $color-lightblack;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -56,7 +56,7 @@
     cursor: pointer;
 
     &:hover {
-      color: rgb(35, 140, 44);
+      color: $color-green;
     }
   }
 
@@ -87,7 +87,7 @@
     padding: 8px 12px;
     margin-right: 8px;
     margin-bottom: 16px;
-    background-color: #15131d;
+    background-color: $color-lightblack;
     color: #fff;
     transition: all 0.3s;
     cursor: pointer;
@@ -147,7 +147,7 @@
 //   transform: scale(1.5);
 // }
 .Topic:hover .Topic__name {
-  color: rgb(35, 140, 44);
+  color: $color-green;
 }
 .PostPreviews {
   display: grid;
@@ -192,7 +192,7 @@
   }
   &__tag {
     position: absolute;
-    background-color: rgb(35, 140, 44);
+    background-color: $color-green;
     color: #fff;
     text-transform: uppercase;
     font-size: 1.4rem;
@@ -328,7 +328,7 @@
     cursor: pointer;
   }
   &__link:hover {
-    color: rgb(35, 140, 44);
+    color: $color-green;
   }
   &__copyright {
     border-top: 1px solid grey;

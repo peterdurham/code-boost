@@ -39,8 +39,8 @@ const Topics = () => {
 }
 const Topic = ({ name, slug, image }) => {
   return (
-    <Link to="/">
-      <div className="Topic">
+    <Link to="/javascript" className="Topic">
+      <div>
         <Image
           className="Topic__image"
           fluid={image.childImageSharp.fluid}

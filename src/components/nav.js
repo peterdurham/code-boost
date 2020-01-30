@@ -17,9 +17,12 @@ const Nav = () => {
           <p>None of that nonsense, all of that good stuff</p>
         </Link>
       </div>
-      <button className="Nav__search--button">
-        <IoMdSearch />
-      </button>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div>Light/Dark</div>
+        <button className="Nav__search--button">
+          <IoMdSearch />
+        </button>
+      </div>
     </nav>
   )
 }
