@@ -7,88 +7,121 @@ featuredImage: "./cra-logo.png"
 tags: ["Bitcoin", "Configuration"]
 ---
 
-Create React App is a command line tool to build and deploy single-page React applications.
+Oftentimes when building React interfaces, we will want to display different elements depending on the state of the application. There are numerous ways to do this in React, depending on the situation. In this tutorial we will walk through several of the options available.
 
-To Start:
+Each component in React has a `return` statement, which includes some JSX or markup. We can use `if` statements to decide which JSX is returned
 
-```bash
-npx create-react-app project-name
-```
+```jsx
+function App() {
+  const [bananas, setBananas] = React.useState(1);
 
-npx is an npm package runner that installs the latest version of create-react-app for us. Select a `project-name` here which will be the folder your application is stored in.
-
-To run the application change directory into your project folder then run the start script:
-
-```bash
-cd project-name
-```
-
-```bash
-npm start
-```
-
-This command will start our web application up on `http://localhost:3000/`
-
-Create React App set up a folder structure for us with the following files:
-
-```
-project-name
-  - README.md
-  - node_modules
-  - package.json
-  - .gitignore
-  - public
-    - favico.ico
-    - index.html
-    - manifest.json
-  - src
-    - App.css
-    - App.js
-    - App.test.js
-    - index.css
-    - index.js
-    - logo.svg
-    - serviceWorker.js
-```
-
-## File Breakdown
-
-1. README.md- Markdown file for project readme, displayed on github repo
-2. node_modules- Required modules for dependencies, don't modify code
-3. package.json- Project info including dependencies and scripts
-4. .gitignore- List of files for git to ignore
-5. favico.ico- Browser tab icon
-6. index.html- Entrypoint for your React application
-7. manifest.json- Browser information for Progressive Web Applications
-8. App.css- stylesheet for the app
-9. App.js- This is our React Application
-10. App.test.js- File for testing with Jest
-11. index.js- renders the React application in the div from index.html
-12. logo.svg- additional image, can delete/replace this
-13. serviceWorker.js- setup a serviceworker for offline caching
-
-Most of the files here are already configured so that we won't have to change them again. App.js is the main file and component for the application. Separate component files can be created for larger applications.
-
-Let's remove some of the excess code so we can start from scratch. Take out the logo import, and everything in the App div. Then, add a header with our project name to make sure its projects.
-
-In App.js:
-
-```javascript
-import React, { Component } from "react"
-
-import "./App.css"
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>New-Project</h1>
-      </div>
-    )
+  if (bananas === 1) {
+    return <div>{bananas} banana</div>;
+  } else {
+    return <div>{bananas} bananas</div>;
   }
 }
-
-export default App
 ```
 
-![scratch](./cra2.png)
+In this example, our component will return the number of bananas along with a label. If there is only 1 banana we would like to make it singular, otherwise we can make it plural.
+
+We can also extract the banana logic away from multiple return statements and into the javascript to simplify our markup like so
+
+```jsx
+function App() {
+  const [bananas, setBananas] = React.useState(0);
+  let label;
+
+  if (bananas === 1) {
+    label = <div>{bananas} banana</div>;
+  } else {
+    label = <div>{bananas} bananas</div>;
+  }
+
+  return <div>{label}</div>;
+}
+```
+
+## Inline Conditionals
+
+The previous examples outline how we can either return two sets of markup, or two possible variable values. For our example, there are thankfully simpler ways to achieve our goal.
+
+In React (and JavaScript) we have access to the `logical &&` and `if-else` operators. Here is their basic syntax
+
+```javascript
+// logical &&
+condition && ()
+
+// if-else
+condition ? () : ()
+```
+
+In each case, we will have a condition which simplifies down to a boolean value (true or false). This could be a number of statements such as  
+  
+- `userLoggedIn === true`
+- `!singular`
+- `newArray.indexOf('Salmon') < -1`
+
+### Logical &&
+This operator will evaluate to the second argument if the condition is true and the first argument if it is false. Unless you are a binary wiz kid this might not make much sense at first, but essentially we will use this operator when we only care to return something if our statement evalutes to true.
+
+```jsx
+function App() {
+  const [bananas, setBananas] = React.useState(1);
+  
+  return (
+    <div>
+      <h1>Banana Stand</h1>
+      {bananas === 1 && "I only have one banana"}
+    </div>
+  );
+}
+```
+
+This condition will evaluate to true, therefore the statement will evaluate to the second argument, `I only have one banana`. There are multiple valid syntaxes for inline conditionals and the following will achieve the same purpose
+```jsx
+// we can wrap our statement in a div
+<div>{bananas === 1 && "I only have one banana"}</div>
+
+// we can wrap our conditional in parenthesis
+{(bananas === 1) && "I only have one banana"}
+```
+
+It is useful to understand each valid syntax, though many code formatters or situations will call for different solutions. 
+
+### If-Else
+This is the grandaddy operator of conditional rendering in React. It will evaluate a statement, returning the first value if true, and the second value if false. Here is our first example using an inline if-else conditional.
+
+```jsx
+function App() {
+  const [bananas, setBananas] = React.useState(1);
+
+  return (
+    <div>
+      <h1>Banana Stand</h1>
+      <div>
+        {(bananas === 1) ? (
+          <div>{bananas} banana</div>
+        ) : (
+          <div>{bananas} bananas</div>
+        )}
+      </div>
+    </div>
+  );
+}
+```
+
+I find the easiest way to grasp the syntax is to contain the condition, and both of the arguments in parenthesis. These parenthesis will be evaluated away, but it helps to avoid syntax errors.
+
+Starting with `{() ? () : ()}` can be helpful at first to grasp this conditional. Oftentimes these statements will be longer than 1 line so it helps to understand the allowable spacing. Code formatters such as `prettier` will rearrange the syntax in a number of ways.
+
+Conditionals can return JSX or string values. To simplify this example further, we can replace our above conditional with returned string values.
+
+```jsx
+<div>
+  {bananas} {bananas === 1 ? "banana" : "bananas"}
+</div>
+```
+
+### Conclusion
+There are many possible ways to leverage conditional operators in React to enhance your code. Since React is so performant at re-rendering the DOM, it makes sense to utilize whatever logic we need to get the job done. I have found it most helpful to explore each possible variation, choosing whatever method or syntax is most suitable.
