@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { FiMenu } from "react-icons/fi"
 import { IoMdSearch } from "react-icons/io"
 
-const Nav = () => {
+const Nav = ({ switchTheme }) => {
   return (
     <nav className="Nav">
       <button className="Nav__menu--button">
@@ -18,7 +18,7 @@ const Nav = () => {
         </Link>
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <div>Light/Dark</div>
+        <button onClick={switchTheme}>Light/Dark</button>
         <button className="Nav__search--button">
           <IoMdSearch />
         </button>
