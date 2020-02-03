@@ -1,9 +1,9 @@
 ---
-title: My Second Post!
+title: Basics for Building React Applications
 date: "2015-05-06T23:46:37.121Z"
-category: "Javascript"
+category: "React"
 description: "setup"
-featuredImage: "./chrome-hill.jpg"
+featuredImage: "./iceland-horses.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 
