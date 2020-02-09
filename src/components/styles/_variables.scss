@@ -4,13 +4,64 @@ $width-large: 120rem;
 
 $nav-height: 7.4rem;
 
+$font-header: "Arimo", sans-serif;
+$font-header: "Fira Sans", sans-serif;
+$font-header: "Righteous", cursive;
+$font-header: "Signika", sans-serif;
+
+// BEST 2 header options so far
+$font-header: "Nunito Sans", sans-serif;
+$font-header: "Varela Round", sans-serif;
+
+$font-text: "Merriwether", sans-serif;
+
 $color-green: rgb(35, 140, 44);
+$color-yellow: rgb(255, 203, 0);
+$color-dark1: rgb(24, 24, 24);
+$color-dark2: rgb(36, 36, 36);
 
 $color-black: rgb(17, 17, 17);
-$color-lightblack: rgb(28, 30, 47);
+$color-blueish1: rgb(28, 30, 47);
+$color-blueish2: rgb(34, 36, 55);
 
+$color-lightblack: rgb(28, 30, 47);
+$color-portfolio-green: rgb(30, 57, 42);
+$color-green-nodeupdate: rgba(55, 233, 85, 0.75);
+
+$color-fit-yellow: rgb(255, 203, 0);
+//good
+$color-green02: #1d7324;
+$color-green03: #238c2c;
+$color-green08: #1f6521;
+//good
+$color-blue01: #1e88e5;
+
+$color-fit-footer: #1c1e2f;
+.logo-icon {
+  color: $color-fit-yellow;
+  font-size: 4.2rem;
+  transform: translateY(2px);
+}
+.logo-text {
+  margin-left: 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.4rem;
+  // letter-spacing: 1px;
+  // color: rgb(3, 3, 3);
+  // color: rgb(6, 5, 12);
+  // color: #111111;
+  // color: rgb(21, 19, 29);
+  // color: rgb(42, 42, 42);
+  font-family: "Righteous", cursive;
+  font-family: "Signika", sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  font-family: "Arimo", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Varela Round", sans-serif;
+  font-family: $font-header;
+}
 //
-$color-dark: rgb(24, 24, 24);
 $color-grey1: rgb(23, 22, 27);
 $color-grey2: rgb(34, 33, 38);
 $color-grey3: rgb(103, 100, 112);
@@ -20,25 +71,6 @@ $color-grey5: rgb(222, 220, 220);
 $color-grey6: rgb(245, 245, 245);
 
 $color-blue1: #0074e1;
-$color-green8: #1e392a;
-//colors
-
-//good
-$color-green01: #43a047;
-$color-green02: #1d7324;
-$color-green03: #238c2c;
-$color-green04: #29a634;
-$color-green05: #afd275;
-$color-green06: #61892f;
-$color-green07: rgba(55, 233, 85, 0.75);
-
-//good
-$color-green07: #1f6521;
-
-$color-green08: #1e392a;
-$color-green09: #373f27;
-
-//good
 $color-blue01: #1e88e5;
 $color-blue02: #123c69;
 $color-blue03: #0074e1;
@@ -50,6 +82,18 @@ $color-blue07: #5ab9ea;
 $color-blue08: #3e9cca;
 $color-blue09: #0677a1;
 $color-blue10: #1b9ce5;
+$color-green8: #1e392a;
+//colors
+$color-green01: #43a047;
+$color-green02: #1d7324;
+$color-green03: #238c2c;
+$color-green04: #29a634;
+$color-green05: #afd275;
+$color-green06: #61892f;
+$color-green07: rgba(55, 233, 85, 0.75);
+$color-green08: #1f6521;
+$color-green09: #1e392a;
+$color-green10: #373f27;
 
 $color-grey7: rgb(28, 27, 32);
 $color-grey8: rgb(34, 33, 38);

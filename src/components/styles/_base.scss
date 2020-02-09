@@ -1,5 +1,4 @@
-// @import url("https://fonts.googleapis.com/css?family=Fira+Sans:200,300,400,500,600,700,800,900|Lato:100,300,400,700,900|Montserrat:200,300,400,500,600,700,800,900|Roboto+Condensed:300,400,700&display=swap");
-// @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,700|Fira+Sans:400,700|Nunito+Sans:400,700|Righteous|Signika:400,700|Varela+Round&display=swap");
 
 *,
 *::after,
@@ -21,7 +20,7 @@ html {
   }
 }
 body {
-  font-family: "Merriwether", sans-serif;
+  font-family: $font-text;
 }
 
 h1,
@@ -32,6 +31,7 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+  font-family: $font-header;
 }
 button:focus {
   outline: 0;
@@ -47,6 +47,7 @@ footer,
 .theme-light {
   color: #111111;
   background-color: #fff;
+  color: rgb(42, 42, 42);
   & a {
     color: $color-black;
   }
@@ -61,8 +62,16 @@ footer,
 .theme-dark {
   background-color: #202020;
   color: #b3b9c5;
+
   & a {
     color: #b3b9c5;
+  }
+
+  & button {
+    color: #b3b9c5;
+  }
+  & .logo-text {
+    color: #ffffff;
   }
 }
 .nav-dark {
@@ -91,7 +100,7 @@ footer,
 
 #footer-container {
   width: 100%;
-  background-color: #1c1e2f;
+  background-color: rgb(17, 17, 17);
 }
 footer {
   color: #fff;

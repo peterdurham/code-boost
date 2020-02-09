@@ -64,7 +64,7 @@ const Layout = ({ location, children }) => {
         id="nav-container"
         className={theme === "light" ? "nav-light" : "nav-dark"}
       >
-        <Nav switchTheme={switchTheme} />
+        <Nav switchTheme={switchTheme} theme={theme} />
       </div>
       <main id={location.pathname === rootPath ? "Home" : "BlogPost"}>
         {children}

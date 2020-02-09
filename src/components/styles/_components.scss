@@ -3,18 +3,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: $font-header;
   & button {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-header;
   }
   &__menu--button {
     width: 8.6rem;
-    background-color: #fff;
+    background: none;
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: $color-lightblack;
+    // color: $color-lightblack;
     transition: all 0.3s;
 
     & svg {
@@ -30,25 +30,23 @@
     }
 
     &:hover {
-      color: $color-green;
+      color: $color-yellow;
     }
   }
   &__logo {
-    & span {
-      font-size: 2.4rem;
-      font-weight: 700;
-    }
+    // & span {
+    //   font-size: 2.4rem;
+    //   font-weight: 700;
+    // }
     & p {
       font-size: 1.4rem;
     }
   }
   &__search--button {
-    width: 8.6rem;
-
-    background-color: #fff;
+    background: none;
     border: none;
     font-size: 3.2rem;
-    color: $color-lightblack;
+    // color: $color-lightblack;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -56,19 +54,32 @@
     cursor: pointer;
 
     &:hover {
-      color: $color-green;
+      color: $color-yellow;
     }
   }
 
   & a {
     font-size: 2rem;
   }
+  &__mode {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    & svg {
+      font-size: 3.2rem;
+    }
+  }
+  &__mode:hover {
+    color: $color-yellow;
+  }
 }
 
 .Trending {
   margin: 16px 0;
   &__header {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-header;
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -87,7 +98,7 @@
     padding: 8px 12px;
     margin-right: 8px;
     margin-bottom: 16px;
-    background-color: $color-lightblack;
+    background-color: $color-black;
     color: #fff;
     transition: all 0.3s;
     cursor: pointer;
@@ -139,7 +150,7 @@
     font-size: 1.8rem;
     line-height: 2.47rem;
     letter-spacing: 1.2px;
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-header;
     transition: all 0.3s;
   }
 }
@@ -147,7 +158,7 @@
 //   transform: scale(1.5);
 // }
 .Topic:hover .Topic__name {
-  color: $color-green;
+  color: $color-yellow;
 }
 .PostPreviews {
   display: grid;
@@ -198,7 +209,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-header;
     left: 16px;
     top: 165px;
     padding: 2px 5px;
@@ -216,7 +227,7 @@
   &__title {
     height: 9.6rem;
     padding: 2.4rem 1.6rem;
-    font-family: "Montserrat", sans-serif !important;
+    font-family: $font-header;
     font-weight: 400 !important;
     line-height: 2.8rem;
 
@@ -273,7 +284,7 @@
 }
 
 .Footer {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: $font-header;
   &__logo {
     font-size: 2.4rem;
     font-weight: 700;
