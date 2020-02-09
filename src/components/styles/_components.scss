@@ -131,6 +131,7 @@
     height: 120px;
     border-radius: 50%;
     margin: 1rem auto;
+    transition: all 0.3s;
 
     @include respond(tab-land) {
       width: 90px;
@@ -159,6 +160,9 @@
 // }
 .Topic:hover .Topic__name {
   color: $color-yellow;
+}
+.Topic:hover .Topic__image {
+  transform: scale(1.07);
 }
 .PostPreviews {
   display: grid;

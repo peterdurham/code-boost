@@ -2,31 +2,31 @@
   {
     "name": "Vanilla JS",
     "slug": "javascript",
-    "image": "../assets/topics/javascript.jpg"
+    "image": "../assets/topics/jslogo2.png"
   },
   {
     "name": "CSS",
     "slug": "css",
-    "image": "../assets/topics/css.jpg"
+    "image": "../assets/topics/csslogo.png"
   },
   {
     "name": "React",
     "slug": "react",
-    "image": "../assets/topics/react.jpg"
-  },
-  {
-    "name": "GraphQL",
-    "slug": "graphql",
-    "image": "../assets/topics/graphql.jpg"
+    "image": "../assets/topics/reactlogo.png"
   },
   {
     "name": "Node",
     "slug": "node",
-    "image": "../assets/topics/node.jpg"
+    "image": "../assets/topics/nodelogo8.png"
+  },
+  {
+    "name": "GraphQL",
+    "slug": "graphql",
+    "image": "../assets/topics/graphqllogo3.png"
   },
   {
     "name": "Tools",
     "slug": "tools",
-    "image": "../assets/topics/tools.jpg"
+    "image": "../assets/topics/toolslogo3.png"
   }
 ]
