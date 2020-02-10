@@ -24,7 +24,7 @@ const Footer = () => {
   let topics = data.allTopicsJson.edges
   return (
     <footer className="Footer">
-      <div className="Footer__logo">Code Boost</div>
+      <div className="Footer__logo">Code-Boost</div>
       <div className="Footer__content">
         <div className="Footer__social">
           <div className="Footer__social--text">Follow Us</div>

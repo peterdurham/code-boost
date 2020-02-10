@@ -9,7 +9,7 @@ tags: ["Bitcoin", "Configuration"]
 
 In javascript, arrays are list-like variables which store multiple values. There are numerous built in methods we can call on arrays to modify or gather information from them. Though there are dozens of such methods, I will be outlining a few that I have found particularly useful.
 
-### Mutator Methods
+## Mutator Methods
 
 These methods modify the contents of an array:
 

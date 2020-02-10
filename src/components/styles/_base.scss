@@ -44,22 +44,23 @@ footer,
   padding: 0 6rem;
 }
 
-.theme-light {
+body {
   color: #111111;
   background-color: #fff;
   color: rgb(42, 42, 42);
   & a {
     color: $color-black;
   }
-  & .nav-container {
-    background-color: inherit;
+  & #nav-container {
+    background-color: #fff;
+    // background-color: inherit;
   }
 }
-.nav-light {
-  background-color: #fff;
-}
+// .nav-light {
+//   background-color: #fff;
+// }
 
-.theme-dark {
+.dark {
   background-color: #202020;
   color: #b3b9c5;
 
@@ -76,10 +77,16 @@ footer,
   & h3 {
     color: #ffffff;
   }
+  & .PostPreview {
+    background-color: rgb(48, 48, 48);
+  }
+  & #nav-container {
+    background-color: #202020;
+  }
 }
-.nav-dark {
-  background-color: #202020;
-}
+// .nav-dark {
+//   background-color: #202020;
+// }
 
 #Home {
   padding-top: 104px;
