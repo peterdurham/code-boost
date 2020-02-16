@@ -22,6 +22,7 @@ class Layout extends React.Component {
     }
 
     const rootPath = `${__PATH_PREFIX__}/`
+    console.log(location.pathname, "PATHNAME")
     // let header
 
     // if (location.pathname === rootPath) {
@@ -77,14 +78,15 @@ class Layout extends React.Component {
         <main id={location.pathname === rootPath ? "Home" : "BlogPost"}>
           {children}
         </main>
-
-        {/* <header>{header}</header> */}
         <div id="footer-container">
           <Footer />
         </div>
       </div>
     )
   }
+}
+Layout.defaultProps = {
+  location: {},
 }
 
 export default Layout

@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./lost-places.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["React", "Hooks"]
 ---
 
 ## Why Hooks

@@ -1,10 +1,10 @@
 ---
 title: How to Add Custom Fonts to you Websites
 date: "2015-05-06T23:46:37.121Z"
-category: "HTML"
+category: "CSS"
 description: "setup"
 featuredImage: "./away-beach.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Fonts", "Basics"]
 ---
 
 While different browsers come preloaded with various fonts, it often makes sense to include your own. Fonts can be added either using font files (TTF, OTF, WOFF, etc) or by including them using a CDN such as *Google Fonts*.

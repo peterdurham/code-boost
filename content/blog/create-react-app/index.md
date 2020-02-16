@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./apple-blossom.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["React", "Create-React-App"]
 ---
 
 Create React App is a command line tool to build and deploy single-page React applications.

@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "Javascript"
 description: "setup"
 featuredImage: "./tree-stump.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Javascript", "Arrays", "Fundamentals"]
 ---
 
 In javascript, arrays are list-like variables which store multiple values. There are numerous built in methods we can call on arrays to modify or gather information from them. Though there are dozens of such methods, I will be outlining a few that I have found particularly useful.

@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "setup"
 featuredImage: "./spruce-forest.webp"
-tags: ["Bitcoin", "Configuration"]
+tags: ["CSS", "Properties"]
 ---
 
 `Display` and `Position` are two of the most used CSS properties, each accepting a variety of arguments. Below are some of the most common applications of these properties.

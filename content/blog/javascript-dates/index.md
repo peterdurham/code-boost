@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "Javascript"
 description: "setup"
 featuredImage: "./chrome-hill.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Dates", "Javascript"]
 ---
 
 In JavaScript we have access to the `Date` object for any code relating to time. By calling a new instance of this object, we can store the current time in a variable.

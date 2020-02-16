@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./notre-dame.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["React", "Forms"]
 ---
 
 Forms are essential for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using **create-react-app** (or whichever build tool you prefer)

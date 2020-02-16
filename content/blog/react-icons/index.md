@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./leaf.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["React", "Icons"]
 ---
 
 There are plenty of occasions in web development to reach for icons. Of all the packages available (and free), `react-icons` is the best.

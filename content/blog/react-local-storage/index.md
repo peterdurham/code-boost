@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./fairyland-canyon.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["React", "Localstorage"]
 ---
 
 Full article can be found [here](https://medium.com/@peterjd42/using-local-storage-in-react-to-imitate-database-functionality-a2c339cdc1b5)
