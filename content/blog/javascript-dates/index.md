@@ -65,14 +65,14 @@ The methods available are not entirely uniform, though you can definitely find (
 
 | Date Method           | Description            | Range           |
 | --------------------- | ---------------------- | --------------- |
-| getTime()             | **Epoch Time**         | 13 digit number |
-| getDate()             | **Current Date**       | 1-31            |
-| getDay()              | **Day of Week**        | 0-6             |
-| getFullYear()         | **Current Year**       | 4 digit number  |
-| getMonth()            | **Current Month**      | 0-11            |
-| getMinutes()          | **Current Minute**     | 0-59            |
-| getSeconds()          | **Curent Second**      | 0-59            |
-| getMilliseconds()     | **Current Millsecond** | 0-999           |
+| `getTime()`           | **Epoch Time**         | 13 digit number |
+| `getDate()`           | **Current Date**       | 1-31            |
+| `getDay()`            | **Day of Week**        | 0-6             |
+| `getFullYear()`       | **Current Year**       | 4 digit number  |
+| `getMonth()`          | **Current Month**      | 0-11            |
+| `getMinutes()`        | **Current Minute**     | 0-59            |
+| `getSeconds()`        | **Curent Second**      | 0-59            |
+| `getMilliseconds()`   | **Current Millsecond** | 0-999           |
 
 Most of the methods are intuitive, with the exception of `getDay()` and `getMonth()`. These methods are zero indexed and can often be 1 off from what you would expect (0 is Sunday and 0 represents the 1st of the month).
 
@@ -90,11 +90,11 @@ console.log(date)
 ### String Conversion
 Sometimes converting the date object to a simple Date and/or Time string will suffice. The following date methods will convert your date object to a more readable version.
 
-| Date Method           | Description            | Example              |
-| --------------------- | ---------------------- | -------------------- |
-| toLocaleString()      | **Time and Date**      | 2/2/2020, 8:38:33 AM |
-| toLocaleTimeString()  | **Current Time**       | 8:38:33 AM           |
-| toLocaleDateString()  | **Current Date**       | 2/2/2020             |
+| Date Method            | Description            | Example              |
+| ---------------------- | ---------------------- | -------------------- |
+| `toLocaleString()`     | **Time and Date**      | 2/2/2020, 8:38:33 AM |
+| `toLocaleTimeString()` | **Current Time**       | 8:38:33 AM           |
+| `toLocaleDateString()` | **Current Date**       | 2/2/2020             |
 
 ### Adding and Subtracting Dates
 

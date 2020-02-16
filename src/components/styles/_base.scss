@@ -67,21 +67,29 @@ body {
   & a {
     color: #b3b9c5;
   }
-
+  & p {
+    color: #b3b9c5;
+  }
   & button {
     color: #b3b9c5;
   }
   & .logo-text {
     color: #ffffff;
   }
-  & h3 {
-    color: #ffffff;
+  & h1,
+  h2,
+  h3 {
+    color: #cecece;
   }
   & .PostPreview {
     background-color: rgb(48, 48, 48);
   }
   & #nav-container {
     background-color: #202020;
+  }
+  & .language-text {
+    color: #b3b9c5;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 // .nav-dark {
@@ -106,6 +114,9 @@ body {
   top: 0px;
   width: 100%;
   z-index: 42;
+}
+.scrolled {
+  transform: translateY(-60px);
 }
 
 #footer-container {
@@ -139,4 +150,52 @@ pre.language-javascript {
   font-size: 1.4rem;
   line-height: 2.3rem;
   padding: 0.3rem 0.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  margin: 0 0 2rem;
+  font-size: 1.3rem;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.dark th {
+  border-bottom: 2px solid #131313;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+td {
+  text-align: left;
+  padding: 0.75rem !important;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-break: break-word;
+}
+tbody tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.dark tbody tr:nth-child(2n) {
+  background-color: #2d2d2d;
 }
