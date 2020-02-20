@@ -5,6 +5,7 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
 const TopicsPage = ({
   data: {
     allMarkdownRemark: { group },
@@ -13,21 +14,21 @@ const TopicsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout>
     <Helmet title={title} />
     <div>
       <h1>Topics</h1>
       <ul>
         {group.map(topic => (
           <li key={topic.fieldValue}>
-            <Link to={`/topics/${kebabCase(topic.fieldValue)}/`}>
+            <Link to={`/${kebabCase(topic.fieldValue)}/`}>
               {topic.fieldValue} ({topic.totalCount})
             </Link>
           </li>
         ))}
       </ul>
     </div>
-  </div>
+  </Layout>
 )
 TopicsPage.propTypes = {
   data: PropTypes.shape({

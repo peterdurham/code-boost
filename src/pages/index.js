@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <PostPreview
-                key={title}
+                key={node.fields.slug}
                 title={title}
                 slug={node.fields.slug}
                 date={node.frontmatter.date}

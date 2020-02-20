@@ -45,7 +45,11 @@ const Footer = () => {
         </div>
         <div className="Footer__links">
           {topics.map(({ node: item }) => {
-            return <div className="Footer__link">{item.name}</div>
+            return (
+              <div className="Footer__link" key={item.name}>
+                {item.name}
+              </div>
+            )
           })}
         </div>
       </div>

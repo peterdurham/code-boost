@@ -40,7 +40,7 @@ const Topics = () => {
 }
 const Topic = ({ name, slug, image }) => {
   return (
-    <Link to="/javascript" className="Topic">
+    <Link to={`/${slug}`} className="Topic">
       <div>
         {/* <BackgroundImage
             fluid={image.childImageSharp.fluid}

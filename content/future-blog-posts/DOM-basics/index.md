@@ -7,11 +7,12 @@ featuredImage: "./chrome-hill.jpg"
 tags: ["Bitcoin", "Configuration"]
 ---
 
-Wow! I love blogging so much already.
+The DOM, or Document Object Model is a programming interface for HTML documents.
 
-Did you know that "despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich."?
-([Wikipedia Link](http://en.wikipedia.org/wiki/Salted_duck_egg))
+## Terminology
 
-Yeah, I didn't either.
+
+## Data Types
+
+
+## API Methods

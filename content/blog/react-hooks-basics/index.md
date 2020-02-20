@@ -126,3 +126,60 @@ function HookExample = ({data}) {
 Passing `data` into the second argument's array in `useEffect` indicates that this hook should be run on any re-render in which the `data` property changes. We can include multiple variables in this array if we wish to run the same logic when different variables change.
 
 ## useContext
+
+Context in React has been around for a while, however `useContext` simplifies its use in functional components. It allows us to pass down props that are layered deeply in the component tree, without having to declare them on each child component.
+
+To create a context, declare a new variable like this
+
+```jsx
+const DemoContext = React.createContext();
+console.log(DemoContext);
+```
+```bash
+Object {_calculateChangedBits: null, _currentValue: undefined, 
+_currentValue2: undefined, _threadCount: 0, Provider: Object…}
+_calculateChangedBits: null
+_currentValue: undefined
+_currentValue2: undefined
+_threadCount: 0
+Provider: Object
+Consumer: Object
+```
+
+Each `context` has access to a `Provider` and `Consumer` wrapper to pass along these props. By wrapping your components in the `Provider` and supplying a value property, any component inside the Provider will also be able to access the Consumer to read that value.
+
+```jsx
+const App = () => {
+  return(
+    <DemoContext.Provider value={{
+      color: 'green',
+      number: 42
+    }}>
+      <Page />
+    </DemoContext.Provider>
+  )
+}
+const Page = () => {
+  return(
+    <Item />
+  )
+}
+const Item = () => {
+  return(
+    <div>Item here</div>
+  )
+}
+```
+
+In this example, we have an `Item` component nested three levels deep which doesn't receieve any props from its parent components. If we wanted, we could pass these values down in the props for the `Page` and `Item` components. The `context` hook instead allows us to pull in those values with the `useContext` hook.
+
+```jsx
+const Item = () => {
+  const demo = useContext(DemoContext)
+  return(
+    <div style={{color: demo.color}}>Item {demo.number} here</div>
+  )
+}
+```
+
+As long as the `DemoContext` we created above is imported in the `Item` component's file, we will have access to all the properties passed down in the provider. Here the `consumer` is extracted from the `DemoContext` and wrapped around the entire component. `useContext` allows us to cleanly consume parent properties without having to wrap our child component in a consumer and use a `render props` pattern that is normal for class-based components.

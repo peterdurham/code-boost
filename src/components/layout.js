@@ -22,7 +22,7 @@ class Layout extends React.Component {
     }
 
     const rootPath = `${__PATH_PREFIX__}/`
-    console.log(location.pathname, "PATHNAME")
+
     // let header
 
     // if (location.pathname === rootPath) {

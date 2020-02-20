@@ -88,7 +88,7 @@
   &__topics {
     display: flex;
     flex-wrap: wrap;
-    width: 48rem;
+    width: 96rem;
     @include respond(phone) {
       width: 32rem;
     }
