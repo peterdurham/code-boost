@@ -22,11 +22,10 @@ const TagPageTemplate = ({ pageContext, data }) => {
       <ul>
         {edgesWithTag.map(({ node }) => {
           const { title } = node.frontmatter
+          const { slug } = node.fields
           return (
-            <li>
-              <Link key={title} to={"/"}>
-                {title}
-              </Link>
+            <li key={slug}>
+              <Link to={slug}>{title}</Link>
             </li>
           )
         })}
@@ -43,6 +42,9 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
             tags
