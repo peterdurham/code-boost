@@ -14,7 +14,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout>
+  <Layout pageType="Tags">
     <div>
       <Helmet title={title} />
       <div>

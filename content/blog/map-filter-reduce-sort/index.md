@@ -1,10 +1,10 @@
 ---
 title: Using Map, Filter, Reduce, and Sort in Javascript
 date: "2015-05-01T22:12:03.284Z"
-category: "Javascript"
+category: "JavaScript"
 description: "setup"
 featuredImage: "./solarpanels.jpg"
-tags: ["Javascript", "Arrays"]
+tags: [ "Arrays"]
 ---
 
 In Javascript, all arrays have access to numerous methods that transform them. Some of the most useful ones include:  

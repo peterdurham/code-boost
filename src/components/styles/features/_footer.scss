@@ -1,0 +1,87 @@
+#footer-container {
+  width: 100%;
+  background-color: rgb(17, 17, 17);
+}
+footer {
+  color: #fff;
+}
+.Footer {
+  font-family: $font-header;
+  &__logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 3rem 0 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid grey;
+  }
+  &__content {
+    padding: 2rem 0;
+    display: flex;
+  }
+  &__social {
+    width: 50%;
+    font-size: 1.8rem;
+    font-weight: 700;
+    &--text {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    &--icons {
+      display: flex;
+      margin-top: 10px;
+    }
+    &--icon {
+      &-container {
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        background-color: rgb(68, 66, 74);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+      }
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+    }
+  }
+  &__links {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-column-gap: 16px;
+    grid-template-rows: 20px 20px 20px;
+    grid-row-gap: 16px;
+  }
+  &__link {
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  &__link:hover {
+    color: $color-green;
+  }
+  &__copyright {
+    border-top: 1px solid grey;
+    font-size: 1.4rem;
+    padding: 2rem 0 3rem 0;
+    padding-left: 50%;
+  }
+}
+#tw-icon:hover {
+  background-color: #1da1f2;
+  transition: all 0.3s;
+}
+#fb-icon:hover {
+  background-color: #3b5999;
+  transition: all 0.3s;
+}
+#yt-icon:hover {
+  background-color: #ff0000;
+  transition: all 0.3s;
+}
+#ig-icon:hover {
+  background-color: #d62976;
+  transition: all 0.3s;
+}

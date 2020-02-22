@@ -1,10 +1,10 @@
 ---
 title: Using The Date object and methods in JavaScript
 date: "2015-05-06T23:46:37.121Z"
-category: "Javascript"
+category: "JavaScript"
 description: "setup"
 featuredImage: "./chrome-hill.jpg"
-tags: ["Dates", "Javascript"]
+tags: ["Dates"]
 ---
 
 In JavaScript we have access to the `Date` object for any code relating to time. By calling a new instance of this object, we can store the current time in a variable.

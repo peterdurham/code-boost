@@ -26,7 +26,7 @@ const Topics = () => {
   let topics = data.allTopicsJson.edges
 
   return (
-    <div className="Topics">
+    <div className="TopicPreviews">
       {topics.map(({ node: item }) => (
         <Topic
           key={item.name}
@@ -40,7 +40,7 @@ const Topics = () => {
 }
 const Topic = ({ name, slug, image }) => {
   return (
-    <Link to={`/${slug}`} className="Topic">
+    <Link to={`/${slug}`} className="TopicPreview">
       <div>
         {/* <BackgroundImage
             fluid={image.childImageSharp.fluid}
@@ -49,11 +49,11 @@ const Topic = ({ name, slug, image }) => {
           ></BackgroundImage> */}
 
         <Image
-          className="Topic__image"
+          className="TopicPreview__image"
           fluid={image.childImageSharp.fluid}
           alt={name}
         />
-        <h3 className="Topic__name">{name}</h3>
+        <h3 className="TopicPreview__name">{name}</h3>
       </div>
     </Link>
   )

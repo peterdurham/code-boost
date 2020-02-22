@@ -1,0 +1,82 @@
+.PostPreviews {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-column-gap: 2%;
+  grid-row-gap: 40px;
+  margin-bottom: 12rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 4%;
+  }
+  @include respond(phone) {
+    grid-template-columns: 100%;
+  }
+}
+
+// @media screen and (max-width: 840px) {
+//   .PostPreviews {
+
+//   }
+// }
+// @media screen and (max-width: 600px) {
+//   .PostPreviews {
+
+//   }
+// }
+.PostPreview {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+
+  &__image {
+    height: 17.5rem;
+    background-size: cover;
+    background-position: 50% 100%;
+
+    @include respond(phone) {
+      height: 25rem;
+    }
+  }
+  &__tag {
+    position: absolute;
+    background-color: $color-green;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: $font-header;
+    left: 16px;
+    top: 165px;
+    padding: 2px 5px;
+    @include respond(tab-land) {
+      top: 147.5px;
+    }
+    @include respond(tab-port) {
+      top: 131.25px;
+    }
+    @include respond(phone) {
+      top: 190px;
+      font-size: 1.6rem;
+    }
+  }
+  &__title {
+    height: 9.6rem;
+    padding: 2.4rem 1.6rem;
+    font-family: $font-header;
+    font-weight: 400 !important;
+    line-height: 2.8rem;
+
+    & h3 {
+      font-size: 1.96rem;
+    }
+    & a {
+      font-size: 1.96rem;
+    }
+  }
+}
+.PostPreview:hover {
+  transform: translate(4px, -4px);
+}

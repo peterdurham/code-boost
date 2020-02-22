@@ -1,7 +1,7 @@
 ---
 title: Full-stack React and Node Basic Setup (MERN)
 date: "2015-05-06T23:46:37.121Z"
-category: "Javascript"
+category: "Node"
 description: "setup"
 featuredImage: "./croatia.jpg"
 tags: ["React", "Node", "Full-stack"]

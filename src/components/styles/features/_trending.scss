@@ -1,0 +1,32 @@
+.Trending {
+  margin: 16px 0;
+  &__header {
+    font-family: $font-header;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  &__topics {
+    display: flex;
+    flex-wrap: wrap;
+    width: 96rem;
+    @include respond(phone) {
+      width: 32rem;
+    }
+  }
+  &__topic {
+    font-size: 1.8rem;
+    padding: 8px 12px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    background-color: $color-black;
+    color: #fff;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  &__topic:hover {
+    background-color: gold;
+    color: #000;
+  }
+}

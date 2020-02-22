@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import PropTypes from "prop-types"
 // Components
 import { Link, graphql } from "gatsby"
+import PostPreview from "../components/postPreview"
 
 const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -17,19 +18,25 @@ const TagPageTemplate = ({ pageContext, data }) => {
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   return (
-    <Layout>
-      <h1>{tagHeader}</h1>
-      <ul>
+    <Layout pageType="Tag">
+      <h1 style={{ marginBottom: "40px" }}>{tagHeader}</h1>
+
+      <div className="PostPreviews">
         {edgesWithTag.map(({ node }) => {
-          const { title } = node.frontmatter
-          const { slug } = node.fields
+          const title = node.frontmatter.title || node.fields.slug
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <PostPreview
+              key={title}
+              title={title}
+              slug={node.fields.slug}
+              date={node.frontmatter.date}
+              description={node.frontmatter.description}
+              excerpt={node.excerpt}
+              frontmatter={node.frontmatter}
+            />
           )
         })}
-      </ul>
+      </div>
 
       <Link to="/tags">All tags</Link>
     </Layout>
@@ -46,8 +53,18 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
             tags
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

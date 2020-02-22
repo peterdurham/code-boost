@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "setup"
 featuredImage: "./fire-landscape.jpg"
-tags: ["CSS", "Background", "Images"]
+tags: [ "Background", "Images"]
 ---
 
 The css `background-image` property is a handy alternative to using `<img />` tags to display images.

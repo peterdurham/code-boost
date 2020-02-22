@@ -1,5 +1,12 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 @import "./base.scss";
-@import "./components.scss";
 @import "./animations.scss";
+@import "./theme";
+
+@import "./features/blogPost";
+@import "./features/footer";
+@import "./features/nav";
+@import "./features/postPreview";
+@import "./features/topics";
+@import "./features/trending";

@@ -1,0 +1,74 @@
+.TopicPreviews {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 120px 120px 120px;
+  grid-column-gap: 48px;
+  width: 100%;
+  margin-bottom: 5.2rem;
+  @include respond(tab-land) {
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    grid-column-gap: 2%;
+  }
+  @include respond(phone) {
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+  }
+}
+.TopicPreview {
+  &__image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 1rem auto;
+    transition: all 0.3s;
+
+    @include respond(tab-land) {
+      width: 90px;
+      height: 90px;
+    }
+    @include respond(tab-port) {
+      width: 75px;
+      height: 75px;
+    }
+    @include respond(phone) {
+      width: 90px;
+      height: 90px;
+    }
+  }
+  &__name {
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 2.47rem;
+    letter-spacing: 1.2px;
+    font-family: $font-header;
+    transition: all 0.3s;
+  }
+}
+// .Topic:hover .Topic__image {
+//   transform: scale(1.5);
+// }
+.TopicPreview:hover .TopicPreview__name {
+  color: $color-yellow;
+}
+.TopicPreview:hover .TopicPreview__image {
+  transform: scale(1.07);
+}
+
+.TopicPage {
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4.2rem 0;
+    & h1 {
+      font-size: 4.2rem;
+      margin-right: 4.2rem;
+    }
+    & h3 {
+      font-size: 2.1rem;
+    }
+  }
+  &__image {
+    width: 16rem;
+    height: 16rem;
+  }
+}

@@ -14,7 +14,7 @@ const TopicsPage = ({
     },
   },
 }) => (
-  <Layout>
+  <Layout pageType="Topics">
     <Helmet title={title} />
     <div>
       <h1>Topics</h1>

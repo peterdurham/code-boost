@@ -21,50 +21,9 @@ class Layout extends React.Component {
       themeClass = "not-stored"
     }
 
-    const rootPath = `${__PATH_PREFIX__}/`
+    // const rootPath = `${__PATH_PREFIX__}/`
+    const isPost = this.props.pageType === "Post"
 
-    // let header
-
-    // if (location.pathname === rootPath) {
-    //   header = (
-    //     <h1
-    //       style={{
-    //         marginTop: 0,
-    //       }}
-    //     >
-    //       <Link
-    //         style={{
-    //           boxShadow: `none`,
-    //           textDecoration: `none`,
-    //           color: `inherit`,
-    //         }}
-    //         to={`/`}
-    //       >
-    //         {title}
-    //       </Link>
-    //     </h1>
-    //   )
-    // } else {
-    //   header = (
-    //     <h3
-    //       style={{
-    //         fontFamily: `Montserrat, sans-serif`,
-    //         marginTop: 0,
-    //       }}
-    //     >
-    //       <Link
-    //         style={{
-    //           boxShadow: `none`,
-    //           textDecoration: `none`,
-    //           color: `inherit`,
-    //         }}
-    //         to={`/`}
-    //       >
-    //         {title}
-    //       </Link>
-    //     </h3>
-    //   )
-    // }
     return (
       <div>
         <Helmet
@@ -73,13 +32,11 @@ class Layout extends React.Component {
           }}
         ></Helmet>
         <div id="nav-container">
-          <Nav />
+          <Nav isHome={isPost} />
         </div>
-        <main id={location.pathname === rootPath ? "Home" : "BlogPost"}>
-          {children}
-        </main>
+        <main id={isPost ? "BlogPost" : "Home"}>{children}</main>
         <div id="footer-container">
-          <Footer />
+          <Footer isHome={isPost} />
         </div>
       </div>
     )
