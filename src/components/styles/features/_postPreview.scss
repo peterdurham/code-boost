@@ -3,7 +3,6 @@
   grid-template-columns: 32% 32% 32%;
   grid-column-gap: 2%;
   grid-row-gap: 40px;
-  margin-bottom: 12rem;
 
   @include respond(tab-port) {
     grid-template-columns: 48% 48%;

@@ -4,10 +4,37 @@ import "./styles/main.scss"
 import ThemeContext from "../context/ThemeContext"
 import Nav from "./nav"
 import Footer from "./footer"
+import Menu from "./menu"
 
 class Layout extends React.Component {
   static contextType = ThemeContext
+  state = {
+    scrolled: false,
+    menuOpen: false,
+  }
 
+  componentDidMount() {
+    if (this.props.pageType === "Post") {
+      window.addEventListener("scroll", this.navOnScroll)
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.props.pageType === "Post") {
+      window.removeEventListener("scroll", this.navOnScroll)
+    }
+  }
+
+  navOnScroll = () => {
+    if (window.scrollY > 24) {
+      this.setState({ scrolled: true })
+    } else {
+      this.setState({ scrolled: false })
+    }
+  }
+  toggleMenu = () => {
+    this.setState({ menuOpen: !this.state.menuOpen })
+  }
   render() {
     const { location, children } = this.props
 
@@ -31,11 +58,24 @@ class Layout extends React.Component {
             class: `theme ${themeClass}`,
           }}
         ></Helmet>
-        <div id="nav-container">
-          <Nav isHome={isPost} />
+        <div
+          id="nav-container"
+          className={this.state.scrolled ? "scroll" : "no-scroll"}
+        >
+          <Nav isHome={isPost} toggleMenu={this.toggleMenu} />
         </div>
-        <main id={isPost ? "BlogPost" : "Home"}>{children}</main>
-        <div id="footer-container">
+        {this.state.menuOpen && <Menu isPost={isPost} />}
+
+        <main
+          id={isPost ? "BlogPost" : "Home"}
+          className={this.state.menuOpen ? "hidden" : undefined}
+        >
+          {children}
+        </main>
+        <div
+          id="footer-container"
+          className={this.state.menuOpen ? "bigger" : undefined}
+        >
           <Footer isHome={isPost} />
         </div>
       </div>

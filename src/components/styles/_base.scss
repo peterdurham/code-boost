@@ -22,6 +22,9 @@ html {
 body {
   font-family: $font-text;
 }
+a {
+  font-family: $font-header;
+}
 
 h1,
 h2,
@@ -46,7 +49,7 @@ footer,
 
 #Home {
   padding-top: 104px;
-
+  margin-bottom: 12rem;
   @include respond(tab-port) {
     width: 100%;
   }
@@ -58,7 +61,12 @@ main {
 a {
   text-decoration: none;
 }
-
+.hidden {
+  display: none;
+}
+.bigger {
+  height: 101vh;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;

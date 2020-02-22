@@ -19,7 +19,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
   } tagged with "${tag}"`
   return (
     <Layout pageType="Tag">
-      <h1 style={{ marginBottom: "40px" }}>{tagHeader}</h1>
+      <h2 className="TagPage__header">{tagHeader}</h2>
 
       <div className="PostPreviews">
         {edgesWithTag.map(({ node }) => {
@@ -37,8 +37,31 @@ const TagPageTemplate = ({ pageContext, data }) => {
           )
         })}
       </div>
+      <Link to="/tags" className="TagPage__button">
+        <span>See all tags</span>
+      </Link>
 
-      <Link to="/tags">All tags</Link>
+      <div>
+        <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
+        <div className="PostPreviews">
+          {edges.map(({ node }, index) => {
+            const title = node.frontmatter.title || node.fields.slug
+            if (index < 3) {
+              return (
+                <PostPreview
+                  key={title}
+                  title={title}
+                  slug={node.fields.slug}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  excerpt={node.excerpt}
+                  frontmatter={node.frontmatter}
+                />
+              )
+            }
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }

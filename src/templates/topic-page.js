@@ -11,12 +11,10 @@ const TopicPageTemplate = ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark
 
   const edgesWithTopic = edges.filter(({ node }) => {
-    console.log(node.frontmatter.category, topic, "INFO")
     return node.frontmatter.category === topic
   })
 
   const topicInfo = data.allTopicsJson.edges.filter(({ node }) => {
-    console.log(node.slug, topic.toLowerCase())
     return node.slug === topic.toLowerCase()
   })[0].node
 
@@ -28,7 +26,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
       <div className="TopicPage__header">
         <div>
           <h1>{topic}</h1>
-          <h3>{topicHeader}</h3>
+          {/* <h3>{topicHeader}</h3> */}
         </div>
         <Image
           className="TopicPage__image"
@@ -63,7 +61,28 @@ const TopicPageTemplate = ({ pageContext, data }) => {
           )
         })}
       </ul> */}
-      <Link to="/topics">All topics</Link>
+      {/* <Link to="/topics">All topics</Link> */}
+      <div style={{ marginTop: "8rem" }}>
+        <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
+        <div className="PostPreviews">
+          {edges.map(({ node }, index) => {
+            const title = node.frontmatter.title || node.fields.slug
+            if (index < 3) {
+              return (
+                <PostPreview
+                  key={title}
+                  title={title}
+                  slug={node.fields.slug}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  excerpt={node.excerpt}
+                  frontmatter={node.frontmatter}
+                />
+              )
+            }
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }

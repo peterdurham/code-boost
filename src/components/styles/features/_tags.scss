@@ -30,3 +30,28 @@
     color: #000;
   }
 }
+.TagPage {
+  &__header {
+    margin: 2rem 0;
+    font-size: 2.4rem;
+  }
+  &__button {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #15131d;
+    padding: 4px 16px;
+    margin: 8rem 0;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  &__button:hover {
+    background-color: $color-green;
+    border: 1px solid $color-green;
+  }
+  &__button:hover span {
+    color: #fff;
+  }
+}

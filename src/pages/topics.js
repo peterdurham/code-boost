@@ -6,30 +6,60 @@ import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import PostPreview from "../components/postPreview"
 const TopicsPage = ({
   data: {
-    allMarkdownRemark: { group },
+    allMarkdownRemark: { group, edges },
     site: {
       siteMetadata: { title },
     },
   },
-}) => (
-  <Layout pageType="Topics">
-    <Helmet title={title} />
-    <div>
-      <h1>Topics</h1>
-      <ul>
-        {group.map(topic => (
-          <li key={topic.fieldValue}>
-            <Link to={`/${kebabCase(topic.fieldValue)}/`}>
-              {topic.fieldValue} ({topic.totalCount})
+}) => {
+  return (
+    <Layout pageType="Topics">
+      <Helmet title={title} />
+      <div>
+        <h1 style={{ margin: "2rem 0 4rem 0", fontSize: "2.4rem" }}>Topics</h1>
+        <div className="Trending__topics">
+          {group.map(topic => (
+            <Link
+              to={`/${topic.fieldValue.toLowerCase()}/`}
+              key={topic.fieldValue}
+              className="Trending__topic"
+            >
+              <span>
+                {topic.fieldValue} ({topic.totalCount})
+              </span>
             </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </Layout>
-)
+          ))}
+        </div>
+      </div>
+      <div>
+        <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
+          Top Posts
+        </h2>
+        <div className="PostPreviews">
+          {edges.map(({ node }, index) => {
+            const title = node.frontmatter.title || node.fields.slug
+            if (index < 6) {
+              return (
+                <PostPreview
+                  key={title}
+                  title={title}
+                  slug={node.fields.slug}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  excerpt={node.excerpt}
+                  frontmatter={node.frontmatter}
+                />
+              )
+            }
+          })}
+        </div>
+      </div>
+    </Layout>
+  )
+}
 TopicsPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -59,6 +89,27 @@ export const pageQuery = graphql`
       group(field: frontmatter___category) {
         fieldValue
         totalCount
+      }
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            tags
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

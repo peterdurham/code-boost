@@ -1,0 +1,21 @@
+#menu-container {
+  width: $width-medium;
+  margin: 0 auto;
+}
+.Menu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
+  padding-top: 104px;
+  &__top {
+    display: flex;
+    height: 60vh;
+    &--left {
+      flex-basis: 50%;
+    }
+    &--right {
+      flex-basis: 50%;
+    }
+  }
+}

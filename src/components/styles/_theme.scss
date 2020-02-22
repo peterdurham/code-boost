@@ -8,8 +8,38 @@ body {
   & #nav-container {
     background-color: #fff;
   }
+  .Menu {
+    background-color: #fff;
+  }
+  .Footer__link {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
-
+// .TagPage {
+//   &__header {
+//     margin-bottom: 2rem;
+//     font-size: 2.4rem;
+//   }
+//   &__button {
+//     font-size: 1.4rem;
+//     line-height: 2.6rem;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     border: 1px solid #15131d;
+//     padding: 4px 16px;
+//     margin: 8rem 0 4rem 0;
+//     display: inline-block;
+//     transition: all 0.3s;
+//     cursor: pointer;
+//   }
+//   &__button:hover {
+//     background-color: $color-green;
+//     border: 1px solid $color-green;
+//   }
+//   &__button:hover a {
+//     color: #fff;
+//   }
+// }
 .dark {
   background-color: #202020;
   color: #b3b9c5;
@@ -40,6 +70,12 @@ body {
   & .language-text {
     color: #b3b9c5;
     background: rgba(255, 255, 255, 0.1);
+  }
+  .Menu {
+    background-color: #202020;
+  }
+  & .TagPage__button {
+    border: 1px solid #b3b9c5;
   }
 }
 .gatsby-highlight {

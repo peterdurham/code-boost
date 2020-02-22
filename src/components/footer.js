@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { AiOutlineInstagram } from "react-icons/ai"
 import {
@@ -46,9 +46,9 @@ const Footer = () => {
         <div className="Footer__links">
           {topics.map(({ node: item }) => {
             return (
-              <div className="Footer__link" key={item.name}>
-                {item.name}
-              </div>
+              <Link to={item.slug} key={item.name}>
+                <div className="Footer__link">{item.name}</div>
+              </Link>
             )
           })}
         </div>

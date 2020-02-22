@@ -39,7 +39,7 @@ class Nav extends React.Component {
 
     return (
       <nav className="Nav">
-        <button className="Nav__menu--button">
+        <button className="Nav__menu--button" onClick={this.props.toggleMenu}>
           <FiMenu />
           <span>Menu</span>
         </button>
