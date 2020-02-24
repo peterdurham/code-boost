@@ -1,123 +1,125 @@
 ---
-title: How to setup SCSS
+title: How to setup SCSS in your web projects
 date: "2015-05-06T23:46:37.121Z"
-category: "CSS"
+category: "Tools"
 description: "setup"
 featuredImage: "./scotland.webp"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Tools", "Setup", "CSS"]
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+SCSS is a preprocessor for CSS that lets you use additional features in your CSS stylesheets. It automatically compiles your .**scss** files into **.css** files for the browser to read. 
 
-### On deer horse aboard tritely yikes and much
+### Why use SCSS?
+SCSS allows for use of **variables**, **nesting selectors**, **imports**, **mixins**, and other features that are not yet available in CSS. While it takes some practice to get proficient, it is also still possible to write CSS directly in your SCSS files. 
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+## Quick Setup
 
-- This however showed weasel
-- Well uncritical so misled
-- this is very interesting
-- Goodness much until that fluid owl
+It is possible to compile SCSS yourself, however most web application bundlers easily utilize third party libraries to do this for you. In this tutorial we will setup SCSS with a Vanilla JS **Parcel** project as well as a React application using **Create-React-App**.
 
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
+## HTML / SCSS Setup (Parcel)
+Parcel is a web application bundler similar to Webpack, but with less (zero) configuration. You can find a tutorial for setting up and hosting simple Parcel applications [here](http://localhost:8000/tools-parcel-setup/) or simply follow along below. 
 
-### Overlaid the jeepers uselessly much excluding
+```bash
+mkdir parcel-project
+npm init -y
+npm install --save-dev sass
+```
+Here we are making a new project in the `parcel-project` folder and initializing a new **node** application. Next we installed the javascript module `sass` which will compile our `.scss` stylesheets for us. 
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-[Longe and Parole](http://google.com) and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.
+** Note: **Sass** was the original name and package for the more popular **SCSS**
 
-> Far far away, behind the word mountains, far from the countries Vokalia and
-> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-> right at the coast of the Semantics, a large language ocean.
+```bash
+touch index.html
+touch styles.scss
+```
+Next we will create files for our **html** and **css**. In `index.html` add the following
 
-It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parcel Setup</title>
+    <link rel="stylesheet" href="./styles.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Title goes here</h1>
+      <p class="container__text">and text here</p>
+    </div>
+  </body>
+</html>
+```
+Parcel takes care of all our assets and compiling the scss for us, so all we need to do is import `./styles.scss` like a normal stylesheet.
 
-### According a funnily until pre-set or arrogant well cheerful
+In `styles.scss` add the following
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+```CSS
+.container {
+  & h1 {
+    color: green;
+  }
+  &__text {
+    color: blue;
+  }
+}
+```
+This `.scss` file is using nested selectors to simplify css styles. The `&` symbol refers to the name of the current selector, so this code compiles down the following CSS
 
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
-    impassive fruitlessly shut
+```CSS
+.container h1 {
+  color: green;
+}
+.container__text {
+  color: blue;
+}
+```
+You can test it out yourself in the browser with the following terminal command
 
-When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane.
-
-```javascript
-// Set a cookie
-response.cookie("nameOfCookie", "cookieValue", {
-  maxAge: 60 * 60 * 1000, // 1 hour
-  httpOnly: true,
-  secure: true,
-  sameSite: true,
-})
+```bash
+parcel index.html
 ```
 
-Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.
+## React Setup (create-react-app)
+Scss can be used in a **create-react-app** project by simply 
+- 1. installing the dev-dependency `node-sass`  
+- 2. importing `.scss` files into your components
 
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
+To setup and configure a new SCSS React project enter the following in the command line
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.
+```bash
+npx create-react-app react-scss
+npm install --save-dev node-sass
+```
 
-### Silent delightfully including because before one up barring chameleon
+**create-react-app** will build a React application with a `.css` stylesheet that we can simply change to `.scss`.
 
-Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.
+Make sure to also change the `import` statement in the `app.js` file.
+```javascript
+import './app.scss'
+```
+Since we can always write css inside our scss files, start the application to begin using **SCSS**.
 
-Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+```bash
+npm start
+```
 
-### Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+You can test the application out by adding the following *SCSS* to `app.scss`
 
-She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.
+```CSS
+$color-blue: blue;
+$font-xlarge: "60px";
 
-### Slapped cozy a that lightheartedly and far
+p {
+    color: $color-blue;
+    font-size: $font-xlarge;
+}
+```
+Here we are making use of `SCSS` variables by declaring them after the `$` sign. Variables can be set once and used in multiple selectors (and files) to allow for quick large scale changes.
 
-The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word "and" and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.
+More information about how `create-react-app` works can be found [here](http://localhost:8000/create-react-app/)
+
+## SCSS Features
+To learn more about the full list of SCSS features, check out this comprehensive overview.
