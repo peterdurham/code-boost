@@ -3,7 +3,7 @@ title: Basic use of Forms in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
-featuredImage: "./notre-dame.jpg"
+featuredImage: "./passport.jpg"
 tags: ["React", "Forms"]
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: The Best Hotkeys To Learn for VS Code
 date: "2015-05-06T23:46:37.121Z"
-category: "React"
+category: "Tools"
 description: "setup"
 featuredImage: "./blue-buildings.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Hotkeys", "Shortcuts", "VS Code"]
 ---
 
 Depending on your Browser and Code Editor there are numerous hotkeys and keyboard shortcuts available. If you are using VS Code like the rest of us, here are some of the best tricks to speeding up your coding

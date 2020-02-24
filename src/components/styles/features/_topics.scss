@@ -47,10 +47,11 @@
 //   transform: scale(1.5);
 // }
 .TopicPreview:hover .TopicPreview__name {
-  color: $color-yellow;
+  // color: $color-green;
+  transform: translateY(8px) scale(1.25);
 }
 .TopicPreview:hover .TopicPreview__image {
-  transform: scale(1.07);
+  transform: scale(1.09);
 }
 
 .TopicPage {

@@ -3,7 +3,7 @@ title: How to use React Icons in Your Projects
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
-featuredImage: "./leaf.jpg"
+featuredImage: "./icons.jpg"
 tags: ["React", "Icons"]
 ---
 

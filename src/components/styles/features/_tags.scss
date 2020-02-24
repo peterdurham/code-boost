@@ -26,8 +26,8 @@
     cursor: pointer;
   }
   &__topic:hover {
-    background-color: gold;
-    color: #000;
+    background-color: $color-green;
+    color: #fff;
   }
 }
 .TagPage {
