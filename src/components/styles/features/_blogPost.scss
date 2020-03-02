@@ -4,7 +4,12 @@
 #BlogPost {
   width: $width-small;
   margin: 0 auto;
-
+  @include respond(tab-port) {
+    width: 600px;
+  }
+  @include respond(phone) {
+    width: 92%;
+  }
   & h1 {
     font-size: 3.2024rem;
     line-height: 3.9312rem;

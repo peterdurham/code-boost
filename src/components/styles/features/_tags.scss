@@ -1,5 +1,8 @@
 .Trending {
   margin: 16px 0;
+  @include respond(phone) {
+    margin: 0 4vw;
+  }
   &__header {
     font-family: $font-header;
     font-size: 1.8rem;
@@ -11,8 +14,10 @@
     display: flex;
     flex-wrap: wrap;
     width: 96rem;
+    margin: 0 auto;
+
     @include respond(phone) {
-      width: 32rem;
+      width: 92vw;
     }
   }
   &__topic {

@@ -11,13 +11,13 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 
-  @include respond(tab-land) {
-    font-size: 56.25%; //1 rem = 9px 9/16
-  }
+  // @include respond(tab-land) {
+  //   font-size: 56.25%; //1 rem = 9px 9/16
+  // }
 
-  @include respond(tab-port) {
-    font-size: 50%; //1 rem = 8px 8/16
-  }
+  // @include respond(tab-port) {
+  //   font-size: 50%; //1 rem = 8px 8/16
+  // }
 }
 body {
   font-family: $font-text;
@@ -45,6 +45,14 @@ footer,
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 6rem;
+
+  @include respond(tab-port) {
+    width: 600px;
+    padding: 0;
+  }
+  @include respond(phone) {
+    width: 92vw;
+  }
 }
 
 #Home {
