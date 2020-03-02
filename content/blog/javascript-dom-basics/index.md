@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
 description: "setup"
 featuredImage: "./chrome-hill.jpg"
-tags: ["Bitcoin", "Configuration"]
+tags: ["JavaScript", "DOM", "Configuration"]
 ---
 
 The DOM, or Document Object Model is a programming interface for HTML documents. It is used by the browser to render webpages from HTML code. Each element in a document is part of a branched tree structure that includes parent and child nodes. The browser uses JavaScript to update various properties and elements in the document.

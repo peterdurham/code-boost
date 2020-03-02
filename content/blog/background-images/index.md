@@ -2,9 +2,9 @@
 title: How To Use CSS Background Images
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "How to use CSS background images. Setup a CSS selector to use and customize background images."
 featuredImage: "./fire-landscape.jpg"
-tags: [ "Background", "Images"]
+tags: [ "Background", "Images", "CSS", "Properties"]
 ---
 
 The css `background-image` property is a handy alternative to using `<img />` tags to display images.

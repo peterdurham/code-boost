@@ -4,7 +4,7 @@ date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
 featuredImage: "./roads.jpg"
-tags: ["React", "Conditional"]
+tags: ["React", "Conditional Rendering"]
 ---
 
 Oftentimes when building React interfaces, we will want to display different elements depending on the state of the application. There are numerous ways to do this in React, depending on the situation. In this tutorial we will walk through several of the options available.

@@ -4,7 +4,7 @@ date: "2015-05-01T22:12:03.284Z"
 category: "JavaScript"
 description: "setup"
 featuredImage: "./solarpanels.jpg"
-tags: [ "Arrays"]
+tags: [ "Arrays", "JavaScript", "Vanilla JS"]
 ---
 
 In Javascript, all arrays have access to numerous methods that transform them. Some of the most useful ones include:  

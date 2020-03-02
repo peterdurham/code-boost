@@ -2,9 +2,9 @@
 title: Array Methods in JavaScript
 date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
-description: "setup"
+description: "A basic overview of the different array methods available in JavaScript. Includes Mutator, Accessor, and higher order methods."
 featuredImage: "./arraymethods.jpg"
-tags: ["Arrays", "Fundamentals"]
+tags: ["Arrays", "Fundamentals", "JavaScript"]
 ---
 
 In JavaScript, arrays are list-like variables which store multiple values. There are numerous built in methods we can call on arrays to modify or gather information from them. Though there are dozens of such methods, I will be outlining a few that I have found particularly useful.
