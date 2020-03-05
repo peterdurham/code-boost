@@ -1,10 +1,10 @@
 ---
 title: How to Setup a Basics Node/Express Application
 date: "2015-05-06T23:46:37.121Z"
-category: "Tools"
+category: "Node"
 description: "setup"
 featuredImage: "./box.png"
-tags: ["Bitcoin", "Configuration"]
+tags: ["Node", "Express", "Setup"]
 ---
 
 Node.js and Express are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.

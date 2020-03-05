@@ -1,10 +1,10 @@
 ---
-title: Basics for setting up and using GatsbyJS
+title: How-to Guide, CSS Animations
 date: "2015-05-06T23:46:37.121Z"
-category: "Javascript"
+category: "CSS"
 description: "setup"
-featuredImage: "./chrome-hill.jpg"
-tags: ["Bitcoin", "Configuration"]
+featuredImage: "./horse-desert.jpg"
+tags: ["CSS", "Animations"]
 ---
 
 Wow! I love blogging so much already.

@@ -37,12 +37,12 @@ const Bio = () => {
         display: `flex`,
       }}
     >
-      <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+      {/* <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
       <p>
         Written by <strong>{author}</strong>
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
-      </p>
+      </p> */}
     </div>
   )
 }
