@@ -15,7 +15,9 @@
     flex-wrap: wrap;
     width: 96rem;
     margin: 0 auto;
-
+    @include respond(tab-land) {
+      width: 60rem;
+    }
     @include respond(phone) {
       width: 92vw;
     }
