@@ -24,7 +24,7 @@ const TagsPage = ({
           <div className="Trending__topics">
             {group.map(tag => (
               <Link
-                to={`/tag/${kebabCase(tag.fieldValue)}/`}
+                to={`/tag/${kebabCase(tag.fieldValue.toLowerCase())}/`}
                 key={tag.fieldValue}
                 className="Trending__topic"
               >

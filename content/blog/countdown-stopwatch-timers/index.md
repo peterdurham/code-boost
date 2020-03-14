@@ -7,6 +7,9 @@ featuredImage: "./clocks.jpg"
 tags: ["React", "Timers"]
 ---
 
-Full article can be found [here](https://medium.com/@peterjd42/building-timers-in-react-stopwatch-and-countdown-bc06486560a2)
+> In this tutorial we will be using React to build a stopwatch timer and a countdown timer. Both timers will utilize intervals to keep track of time and can start, stop, resume, and reset.
 
-In the process of rewriting for Code Boost
+### Setup
+
+To begin with, I will be using Create React App to build out the basic files we will need. Assuming you have Node installed (if not download it), enter the command:
+

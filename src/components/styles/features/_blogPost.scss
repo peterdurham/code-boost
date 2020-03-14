@@ -1,7 +1,45 @@
 .scrolled {
   transform: translateY(-60px);
 }
-#BlogPost {
+#BlogPost__header {
+  width: $width-small;
+  margin: 0 auto;
+  & h1 {
+    font-size: 3.4rem;
+    line-height: 4.2rem;
+  }
+  & p {
+    font-size: 1.75rem;
+    line-height: 2.8rem;
+    margin-top: 0.4rem;
+  }
+  &--tags {
+    display: flex;
+
+    & a {
+      font-size: 1.8rem;
+      padding: 8px 12px;
+
+      background-color: #111111;
+      color: #fff;
+      transition: all 0.3s;
+      margin-top: 1.2rem;
+      margin-right: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-green;
+        color: #fff;
+      }
+    }
+  }
+}
+.BlogPost__image {
+  height: 42.1563rem;
+  margin: 4.8rem 0;
+  background-size: cover;
+  background-position: 50% 100%;
+}
+#BlogPost__markdown {
   width: $width-small;
   margin: 0 auto;
   @include respond(tab-port) {
@@ -11,39 +49,79 @@
     width: 92%;
   }
   & h1 {
-    font-size: 3.2024rem;
-    line-height: 3.9312rem;
+    font-size: 3.4rem;
+    line-height: 4.2rem;
   }
   & h2 {
-    font-size: 2.732rem;
-    line-height: 3.1567rem;
-    margin-bottom: 1.7688rem;
-    margin-top: 3.404rem;
+    font-size: 3rem;
+    line-height: 3.7rem;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
   }
   & h3 {
-    font-size: 1.952rem;
-    margin-bottom: 2.688rem;
-    margin-top: 4.704rem;
+    font-size: 2.48rem;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
   }
+  & h4 {
+    font-size: 2.3rem;
+    line-height: 2.97rem;
+    margin-bottom: 2rem;
+  }
+  & h5 {
+    font-size: 1.88rem;
+    line-height: 2.44rem;
+    margin-bottom: 2rem;
+  }
+
   & p {
-    font-size: 1.7472rem;
-    line-height: 2.79552rem;
-    margin-bottom: 2.688rem;
+    font-size: 1.75rem;
+    line-height: 2.8rem;
+  }
+  & a {
+    color: #5183f5;
+    font-weight: 600;
+  }
+  & a:hover {
+    text-decoration: underline;
   }
   & ul {
-    margin-left: 2.016rem;
-    margin-bottom: 2.688rem;
+    margin-left: 2rem;
+    margin-bottom: 2.7rem;
   }
   & li {
-    margin-left: 2.016rem;
-    margin-bottom: 0.4032rem;
+    margin-left: 2rem;
+    margin-bottom: 0.4rem;
     // padding-left: 2.016rem;
-    font-size: 1.7472rem;
-    line-height: 2.79552rem;
+    font-size: 1.75rem;
+    line-height: 2.8rem;
   }
 
   & li a {
     text-decoration: none;
     color: rgb(81, 131, 245);
+  }
+}
+blockquote {
+  color: #111111;
+  border: none;
+  background: lighten(yellow, 34%);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  margin: 1.6rem 0;
+  padding: 2.4rem;
+
+  &.conclusion {
+    border: none;
+    background: green;
+  }
+
+  p {
+    padding: 0;
+    font-size: 1.15rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

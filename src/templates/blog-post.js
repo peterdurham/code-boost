@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BackgroundImage from "gatsby-background-image"
 
 class BlogPostTemplate extends React.Component {
   // componentDidMount() {
@@ -47,11 +48,32 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
-          <header>
+          <header id="BlogPost__header">
             <h1>{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
+            <div id="BlogPost__header--tags">
+              {post.frontmatter.tags.map(tag => (
+                <Link
+                  to={`/tag/${tag
+                    .split(" ")
+                    .join("-")
+                    .split("/")
+                    .join("-")
+                    .toLowerCase()}`}
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+            <BackgroundImage
+              fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+              className="BlogPost__image"
+            ></BackgroundImage>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section
+            id="BlogPost__markdown"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
           <hr />
           <footer>
             <Bio />
@@ -106,6 +128,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

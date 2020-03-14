@@ -32,7 +32,12 @@ const Trending = () => {
         {tags.map(tag => {
           return (
             <Link
-              to={`/tag/${tag.toLowerCase()}`}
+              to={`/tag/${tag
+                .split(" ")
+                .join("-")
+                .split("/")
+                .join("-")
+                .toLowerCase()}`}
               className="Trending__topic"
               key={tag}
             >
