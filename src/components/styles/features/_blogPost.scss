@@ -15,7 +15,7 @@
   }
   &--tags {
     display: flex;
-
+    flex-wrap: wrap;
     & a {
       font-size: 1.8rem;
       padding: 8px 12px;
@@ -32,7 +32,12 @@
       }
     }
   }
+  @include respond(phone) {
+    width: 90%;
+    margin: 0 5%;
+  }
 }
+
 .BlogPost__image {
   height: 42.1563rem;
   margin: 4.8rem 0;
