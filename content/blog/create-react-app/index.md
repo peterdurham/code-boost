@@ -3,7 +3,7 @@ title: How To Build a React App using Create React App
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
-featuredImage: "./tree.jpg"
+featuredImage: "./lightbulb.jpg"
 tags: ["React", "create-react-app"]
 ---
 

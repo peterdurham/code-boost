@@ -3,7 +3,7 @@ title: Different ways to use CSS in your web app
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "setup"
-featuredImage: "./blue-buildings.jpg"
+featuredImage: "./tiles.webp"
 tags: ["CSS", "Setup"]
 ---
 

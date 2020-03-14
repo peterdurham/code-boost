@@ -3,7 +3,7 @@ title: How to Setup a Basics Node/Express Application
 date: "2015-05-06T23:46:37.121Z"
 category: "Node"
 description: "setup"
-featuredImage: "./box.png"
+featuredImage: "./server.jpg"
 tags: ["Node", "Express", "Setup"]
 ---
 

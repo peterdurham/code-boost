@@ -3,7 +3,7 @@ title: How to Fetch Data in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
-featuredImage: "./planet.jpg"
+featuredImage: "./earth.jpg"
 tags: ["React", "Fetch", "Axios", "API", "Hooks", "Async/Await"]
 ---
 

@@ -3,7 +3,7 @@ title: Conditional Rendering Basics in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
-featuredImage: "./roads.jpg"
+featuredImage: "./stoplight.jpg"
 tags: ["React", "Conditional Rendering"]
 ---
 

@@ -3,7 +3,7 @@ title: CSS Grid Basics
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "setup"
-featuredImage: "./grid-paper.png"
+featuredImage: "./meadow.jpg"
 tags: ["CSS", "Grid"]
 ---
 

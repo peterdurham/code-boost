@@ -3,7 +3,7 @@ title: Basics of the Document Object Model (DOM)
 date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
 description: "setup"
-featuredImage: "./chrome-hill.jpg"
+featuredImage: "./document.jpg"
 tags: ["JavaScript", "DOM", "Configuration"]
 ---
 

@@ -3,7 +3,7 @@ title: Basics of Position and Display Attributes (CSS)
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "setup"
-featuredImage: "./spruce-forest.webp"
+featuredImage: "./display.jpg"
 tags: ["CSS", "Properties"]
 ---
 

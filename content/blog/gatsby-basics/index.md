@@ -3,7 +3,7 @@ title: Basics for setting up and using GatsbyJS
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
 description: "setup"
-featuredImage: "./chrome-hill.jpg"
+featuredImage: "./gatsby.jpg"
 tags: ["Gatsby", "Setup", "React", "Tools"]
 ---
 

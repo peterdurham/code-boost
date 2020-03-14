@@ -3,7 +3,7 @@ title: How To Use CSS Background Images
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
 description: "How to use CSS background images. Setup a CSS selector to use and customize background images."
-featuredImage: "./fire-landscape.jpg"
+featuredImage: "./nature.jpg"
 tags: [ "Background", "Images", "CSS", "Properties"]
 ---
 

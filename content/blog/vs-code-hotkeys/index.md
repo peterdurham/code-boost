@@ -3,7 +3,7 @@ title: The Best Hotkeys To Learn for VS Code
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
 description: "setup"
-featuredImage: "./blue-buildings.jpg"
+featuredImage: "./shortcut.webp"
 tags: ["Hotkeys", "Shortcuts", "VS Code"]
 ---
 
