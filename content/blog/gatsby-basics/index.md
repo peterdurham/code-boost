@@ -7,10 +7,10 @@ featuredImage: "./gatsby.jpg"
 tags: ["Gatsby", "Setup", "React", "Tools"]
 ---
 
-Gatsby is a build tool for setting up **Static React Applications**. It uses `server-side rendering` and is great for creating blogs sites.
+Gatsby is a build tool for setting up **Static React Applications**. It uses `server-side rendering` and is great for creating blogs sites.  
+    
+Gatsby code is generated on build which is great for performance on a static site.  
   
-Gatsby code is generated on build which is great for performance on a static site. 
-
 To start with `Gatsby` first install `gatsby-cli` globally with
 
 ```bash
@@ -78,7 +78,7 @@ src/
 static/
 ```
 
-Gatsby projects use standard files you will see in other **React** applications such as `package.json`, `prettierrc`, `README.md`, and `.gitignore`. They also include 3 **gatsbt-specific** files in the root of each gatsby project: `gatsby-browser.js`, `gatsby-config.js`, `gatsby-node.js` which will be described later.
+Gatsby projects use standard files you will see in other **React** applications such as `package.json`, `prettierrc`, `README.md`, and `.gitignore`. They also include 3 **gatsby-specific** files in the root of each gatsby project: `gatsby-browser.js`, `gatsby-config.js`, `gatsby-node.js` which will be described later.
 
 ### Content folder
 This is where using `gatsby-starter-blog` really saves us a bunch of time. Here we have `assets` and `blog` folders.
