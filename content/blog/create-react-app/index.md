@@ -1,5 +1,5 @@
 ---
-title: How to setup a React application with Create React App
+title: How to setup a React app with Create React App
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "setup"
@@ -58,48 +58,49 @@ project-name
 ## File Breakdown
 Each **React** application will include source code which is compiled into `bundled` javascript, and loaded into an `HTML` file.
 
-### README.md
+#### README.md
 This is a generic **markdown** file which can include information about the project and is displayed on a **github** repo page if code is committed there using **git**.
 
-### node_modules/
+#### node_modules/
 This folder contains all the 3rd party dependency modules which are installed in an application. This folder should not be included in the `git` repo as it is very large and other users can download the same versions from `NPM`. There is no need to change any of this code and it should be included in the `.gitignore` file.
 
-### package.json
+#### package.json
 This file is required for a **node** application and includes information about the project along with `scripts` and additional `dependencies`. Scripts can be added into an object here and run using `npm run scriptname`. Dependencies will be automatically tracked here along with their version number.
 
-### .gitignore
+#### .gitignore
 This file contains a list of files and folders in the project which should be ignored by git. This often includes dependencies or private environmental variables.
 
 ## public folder
 The public folder is where the bundled javascript code is output by create-react-app. There are a bunch of files generated here including icons which you can replace. Some files which are important to note include
 
-### index.html
+#### index.html
 This is the `html` file which runs the bundled javascript. A `div` is included here to populate the entire **React** application.
 
-### manifest.json
+#### manifest.json
 This is a `json` file that is meant to easily provide web crawlers with information about your application. Information here includes names, color themes, and site icons.
 
 ## src folder
 This folder is where all of you application logic will live. It also contains the entrypoint of your React code. There is a `logo.svg` file here pregenerated which can be replaced or deleted.
 
-### index.js
+#### index.js
 This is the `JavaScript` file which will run when your application is started. It imports your application code from the `App.js` component and renders it in the `root` div located in `index.html` in the `public` folder.
 
-### App.js
+#### App.js
 This is the main component for your **React** code. Each component you make in your project will be a descendant of this component. You can build an entire working application in this file.
 
-### App.css
+#### App.css
 This is your stylesheet for `css` rules. **create-react-app** comes preconfigured to use `css` stylesheets. Also, `scss` files can be used by simply installing the `node-sass` module.
 
-### index.css
+#### index.css
 This is a secondary `css` file with generic font data that can be safely deleted or utilized for global css code.
 
-### serverWorker.js
+#### serverWorker.js
 Service works can gather data about the users settings or browser configuration to act accordingly. This is a **progressive web app** feature which can be extremely helpful in production applications. This is another file which is safe to delete for development purposes.
 
-### Testing - setupTest.js and App.test.js
+#### Testing - setupTest.js and App.test.js
 This build comes preconfigured with `jest` and `react-testing-library` as well. The `setupTest.js` file is where you can include your test configurations and `App.test.js` is a basic test file. You can also safely delete both of these files if you are not experienced in testing. 
 
+### Overview
 
 Most of the files here are already configured so that we won't have to change them again. `App.js` is the main file and component for our development. Separate component files can and should be created for larger applications.
 
