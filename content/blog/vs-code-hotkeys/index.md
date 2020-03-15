@@ -53,12 +53,13 @@ This shortcut is a powerhouse in VS Code development. First select a line you wi
 This command will automatically format your code based on whatever formatting rules are in your configuration. Format code with **Shift + Alt + F** on Windows and **shift + option + F** on Mac.
 
 ## Multiple Cursors
-There are a few ways to select multiple cursors in VS Code. When you have more than one cursor selected, your typing will occur in multiple places in the file.
-| Shortcut             | Windows            | Mac                  |
-| -------------------- | ------------------ | -------------------- |
-| Additional Cursor    | Ctrl + Alt + ↑ / ↓ | option + cmd + ↑ / ↓ |
-| Select Multiples     | Ctrl + D           | option + D           |
-| Select All of a word | Ctrl + Shift + L   | cmd + shift + L      |
+There are a few ways to select multiple cursors in VS Code. When you have more than one cursor selected, your typing will occur in multiple places in the file.  
+  
+| Shortcut              | Windows             | Mac                   |
+| --------------------- | ------------------- | --------------------- |
+| Additional Cursor     | Ctrl + Alt + ↑ / ↓  | option + cmd + ↑ / ↓  |
+| Select Multiples      | Ctrl + D            | option + D            |
+| Select All of a word  | Ctrl + Shift + L    | cmd + shift + L       |
 
 ### Create New Cursor
 If you want to create a new cursor use **Alt + left-click** on Windows or **option + left-click** on Mac. Alternatively and keyboard only, you can use **Ctrl + Alt + ↑ / ↓** on Windows or **option + cmd + ↑ / ↓** on Mac. You can do the same on Mac with __ or __.  
@@ -73,14 +74,14 @@ You can select all instances of a word in a file by holding this down or instead
 You can **cut/copy** multiple lines in VS Code. As long as your cursors are still active you can also paste on all cursors.
 
 ## Search Shortcuts
-VS Code has gotten so much traction as a result of its excellent developer experience. Here are some powerful search features you can use in the editor
+VS Code has gotten so much traction as a result of its excellent developer experience. Here are some powerful search features you can use in the editor  
+  
 | Shortcut         | Windows           | Mac             |
 | ---------------- | ----------------- | --------------- |
 | Command Palette  | Ctrl + /          | Cmd + /         |
 | Search All Files | Ctrl + Shift + F  | cmd + shift + F |
 | Split Editor     | Ctrl + \          | cmd + \         |
 | Open Terminal    | Ctrl + Shift + \` | ctrl + \`       |
-
 
 ### Command Palette
 You can access this with **Ctrl + P** on Windows and **Cmd + P** on Mac. This is a search feature that can be used to find and open files. 
