@@ -1,5 +1,5 @@
 ---
-title: How to Setup a Basics Node/Express Application
+title: How to Setup a Basic Node/Express Application
 date: "2015-05-06T23:46:37.121Z"
 category: "Node"
 description: "setup"
@@ -7,17 +7,19 @@ featuredImage: "./server.jpg"
 tags: ["Node", "Express", "Setup"]
 ---
 
-Node.js and Express are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.
-
-*Node* is a JavaScript runtime that operates outside of the browser using Chrome's V8 JavaScript engine.
-
-*Express* is web application framework for Node.js which can be used to setup a backend API.
-
+Node.js and Express are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.  
+  
+*Node* is a JavaScript runtime that operates outside of the browser using Chrome's V8 JavaScript engine.  
+  
+*Express* is web application framework for Node.js which can be used to setup a backend API.  
+  
 ### What is an API
 An API or *applied programming interface* is a computing interface exposed by a software program or internet services to allow third party use of its functionality. APIs can be used both *privately* and *publicy* to `consume` or `provide` data.
 
 ### Why build one?
 An `API` is required to interface with most modern databases. A `Node-Express` server is able to talk with both the `client` and the `database`. This setup will allow for persistent data storage, and the ability to create a user system with `login`.
+
+> Note: This tutorial will show you how to setup a basic Exprses Server and connect it to a React application but does not connect with any databases. Check out this [Full stack tutorial](https://code-boost.netlify.com/full-stack-react-node/) if you want to connect your app with a database. This tutorial is a good overview if you are new to full-stack development.
 
 ## Getting Started
 In this tutorial we will be setting up a basic `Node` and `Express` application. This application will **not** be connected to a database, however it will contain all of the logic needed to perform db operations.
@@ -113,6 +115,7 @@ router.get("/", (req, res) => {
 // @ route POST api/movies
 // @ Add Movie (public)
 router.post("/", (req, res) => {
+  console.log(req.body.title, "movie added")
   res.json({ movies: "movie added" });
 });
 
@@ -151,8 +154,57 @@ Since we are using the same machine for both `servers` while in `development` mo
 Next, open `app.js` in your react application and add the following
 
 ```jsx
-App
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+
+function App() {
+  const [movies, setMovies] = useState([]);
+
+  // On Component Mount
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  // Create
+  const onSubmitBook = async e => {
+    e.preventDefault();
+    const { movie } = e.target;
+    await axios.post("/api/movies", {
+      title: movie.value
+    });
+    movie.value = "";
+    getMovies();
+  };
+
+  // Read
+  const getMovies = async () => {
+    const res = await axios.get("/api/movies");
+    const data = res.data;
+    setMovies(data.movies);
+  };
+  if (movies.length === 0) return <div>loading...</div>;
+  return (
+    <div className="App">
+      <div>{movies[0]}</div>
+      <form onSubmit={e => onSubmitBook(e)}>
+        <label htmlFor="movie">Movie Title:</label>
+        <input type="text" name="movie" />
+        <button>Add Movie</button>
+      </form>
+    </div>
+  );
+}
+export default App;
 ```
+Try to run the `demo-client` application now while `demo-server` is running on port 5000 using
+  
+```bash
+npm start
+```
+
+### Connected
+If you open the browser for your clientside application you will see that the message `"array of movies"` was sent from the `express` API. If you try typing in the name of a movie and submit you will be able to view the browser input in your already running `demo-server` terminal.
 
 ## Next Steps - Database
 This tutorial was meant to be a basic introduction to how `Express` servers work, and how you can use them to setup APIs. There are numerous options you can use for databases including SQL and mongoDB. Check out this [full stack setup](https://code-boost.netlify.com/full-stack-react-node/) tutorial to create a `full-stack` application with **React** and **Node**. 
