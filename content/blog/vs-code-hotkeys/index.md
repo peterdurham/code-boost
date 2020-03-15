@@ -21,15 +21,15 @@ The first shortcut is to open VS Code using your terminal. Find your project fol
 Here are some basic `hotkeys` that are not VS Code specific, but are still useful.
   
 ## Typing Shortcuts
-| Shortcut  | Windows    | Mac       |
-| --------- | ---------- | --------- |
-| Copy      | Ctrl + C   | cmd + C   |
-| Cut       | Ctrl + X   | cmd + X   |
-| Paste     | Ctrl + V   | cmd + V   |
-| Save      | Ctrl + S   | cmd + S   |
-| Undo      | Ctrl + Z   | cmd + Z   |
-| Redo      | Ctrl + Y   | cmd + V   |
-| Find      | Ctrl + F   | cmd + F   |
+| Shortcut    | Windows      | Mac       |
+| ----------- | ------------ | --------- |
+| Copy        | Ctrl + C     | cmd + C   |
+| Cut         | Ctrl + X     | cmd + X   |
+| Paste       | Ctrl + V     | cmd + V   |
+| Save        | Ctrl + S     | cmd + S   |
+| Undo        | Ctrl + Z     | cmd + Z   |
+| Redo        | Ctrl + Y     | cmd + Y   |
+| Find        | Ctrl + F     | cmd + F   |
 
 ### Toggle Comments
 This shortcut works regardless of language, and will comment or uncomment any text in your code editor.
