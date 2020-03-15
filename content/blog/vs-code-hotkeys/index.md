@@ -7,39 +7,34 @@ featuredImage: "./shortcut.webp"
 tags: ["Hotkeys", "Shortcuts", "VS Code"]
 ---
 
-Each browser and code editor has numerous hotkeys and keyboard shortcuts available. If you are using VS Code, here are some of the best tricks to speeding up your coding
-
-| Shortcut              | Windows             | Mac                 |
-| --------------------- | ------------------- |                     |
-| `Shift line position` | Alt + ↑ / ↓         | Alt + ↑ / ↓         |
-| `Duplicate line`      | Shift + Alt + ↓ / ↑ | Shift + Alt + ↓ / ↑ |
-| `flex-wrap`           | **flex-shrink**     |                     |
-| `justify-content`     | **flex-basis**      |                     |
-| `align-items`         | **align-self**      |                     |
-
+If you are using VS Code, here are some of the best hotkeys to speed up your coding
 
 ## Basic Shortcuts
 
 ### Opening the Editor
-The first shortcut is for opening VS Code in your terminal. Find your project in the terminal and enter
+The first shortcut is to open VS Code using your terminal. Find your project folder and enter
 
 ```bash
 >> code .
 ```
-### OS Shortcuts
+  
+Here are some basic `hotkeys` that are not VS Code specific, but are still useful.
+  
+## Typing Shortcuts
+| Shortcut  | Windows    | Mac       |
+| --------- | ---------- | --------- |
+| Copy      | Ctrl + C   | cmd + C   |
+| Cut       | Ctrl + X   | cmd + X   |
+| Paste     | Ctrl + V   | cmd + V   |
+| Save      | Ctrl + S   | cmd + S   |
+| Undo      | Ctrl + Z   | cmd + Z   |
+| Redo      | Ctrl + Y   | cmd + V   |
+| Find      | Ctrl + F   | cmd + F   |
 
-| Shortcut              | Windows             |
-| --------------------- | ------------------- |
-| Ctrl + C              | Alt + ↑ / ↓         |
-| Ctrl + Z              | Shift + Alt + ↓ / ↑ |
-| Ctrl + X              | **flex-shrink**     |
-| `justify-content`     | **flex-basis**      |
-| `align-items`         | **align-self**      |
+### Toggle Comments
+This shortcut works regardless of language, and will comment or uncomment any text in your code editor.
 
-### Toggle Comments (Command + /)
-This shortcut works regardless of programming language, and will comment or uncomment any text in your code editor.
-
-### Shifting Lines (Alt + ↑ / ↓)
+### Shifting Lines
 This shortcut allows you to shift a line of code up or down the page without using cut and paste. It is most useful when you have your line written already, and need to adjust its place. 
 
 This shortcut can also be done with numerous adjacent lines by selecting them all first.
@@ -48,29 +43,60 @@ This shortcut can also be done with numerous adjacent lines by selecting them al
 This shortcut is a powerhouse in VS Code development. First select a line you wish to duplicate, then hold `alt` and `shift`. Now, press `up` or `down` to duplicate this line above or below your current line.
 
 ### Format Code
-
+This command will automatically format your code based on whatever formatting rules are in your configuration.
 
 ## Multiple Cursors
 There are a few ways to select multiple cursors in VS Code. When you have more than one cursor selected, your typing will occur in multiple places in the file.
+| Shortcut             | Windows            | Mac                  |
+| -------------------- | ------------------ | -------------------- |
+| Additional Cursor    | Ctrl + Alt + ↑ / ↓ | option + cmd + ↑ / ↓ |
+| Select Multiples     | Ctrl + D           | option + D           |
+| Select All of a word | Ctrl + Shift + L   | cmd + shift + L      |
 
 ### Create New Cursor
 If you want to create a new cursor on windows, use **(Alt + left-click)** or **Cmd + Alt + ↓ / ↑**. You can do the same on Mac with __ or __.  
 
 ### Select Multiples
-If you have multiple words or strings use **Ctrl + D** on Windows or __ on Mac to select the next instance of a given word or string. You can select all instances of a word in a file by holding this down or instead using **Ctrl + Shift + L** on Windows or __ on Mac.
+If you have multiple words or strings use **Ctrl + D** on Windows or __ on Mac to select the next instance of a given word or string. 
 
+### Select all instances of a word
+You can select all instances of a word in a file by holding this down or instead using **Ctrl + Shift + L** on Windows or **cmd + shift + L** on Mac.
+  
 ### Copy/Paste for multiple lines
 You can **cut/copy** multiple lines in VS Code. As long as your cursors are still active you can also paste on all cursors.
 
 ## Search Shortcuts
 VS Code has gotten so much traction as a result of its excellent developer experience. Here are some powerful search features you can use in the editor
+| Shortcut         | Windows          | Mac             |
+| ---------------- | ---------------- | --------------- |
+| Command Palette  | Ctrl + /         | Cmd + /         |
+| Search All Files | Ctrl + Shift + F | cmd + shift + F |
+| Split Editor     | Ctrl + \         | cmd + \         |
+| Open Terminal    | Ctrl + Shift + \`| ctrl + \`       |
+
 
 ### Command Palette
 You can access this with **Ctrl + P** on Windows and **Cmd + P** on Mac. This is a search feature that can be used to find and open files. 
 
 ### Search all files
+With this command you can search through every file in your project for a phrase. This is extremely helpful if you know what you're looking for but forget where its located. This hotkey is **Ctrl + Shift + F** on Windows and **cmd + shift + F** on Mac
 
+### Split Editor
+This command will quickly open a second code editor in your VS code instance. Create this second editor using **Ctrl + \*** on Windows or **cmd + \*** on Mac.
 
+### Open Integrated Terminal
+You can quickly open a new terminal in your project with **Ctrl + Shift + \`** on Windows and **ctrl + \`** on Mac.
 
+## Mac only Hotkeys
+Here are 2 hotkeys that I still haven't managed to use on *Windows*.
+
+### Navigate Line / Document 
+Using **cmd + ← / →** you can navigate to the beginning or end of a line on Mac. You can also navigate to the beginning or end of the document using **cmd + ↑ / ↓**.
+
+### Select Entire Line
+When at the end of line on Mac use **command + shift + ←** or at the beginning use **command + shift + →** to select an entire line. This hotkey can be used in combination with the previous one when in the middle of a line. Once selected, you can combo this hotkey with the *Duplicating code* hotkey or **cmd + shift + ↑ / ↓**.
+
+## Conclusion
+These are some of the basic hotkeys for VS Code. It is helpful to learn a few at a time and practice them often to build speed. There are plenty more **VS Code** hotkeys for both [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) and [Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf).
 
 

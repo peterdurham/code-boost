@@ -150,6 +150,13 @@ Since we are using the same machine for both `servers` while in `development` mo
 ...
 ```
 
+#### Axios
+Also install the package `axios` which simplifies **HTTP** requests
+
+```bash
+npm install axios
+```
+
 ### Clientside Requests
 Next, open `app.js` in your react application and add the following
 
@@ -197,14 +204,14 @@ function App() {
 }
 export default App;
 ```
-Try to run the `demo-client` application now while `demo-server` is running on port 5000 using
+Next run the `demo-client` application while `demo-server` is running (port 5000) using
   
 ```bash
 npm start
 ```
 
-### Connected
-If you open the browser for your clientside application you will see that the message `"array of movies"` was sent from the `express` API. If you try typing in the name of a movie and submit you will be able to view the browser input in your already running `demo-server` terminal.
+### Applications Connected
+If you open the browser for your clientside application you will see that the message `"array of movies"` was sent from the `express` API. If you try typing in the name of a movie and submit you will be able to view the browser input in your already running `demo-server` terminal. The `demo-server` **Node** server is communicating with the `demo-client` **React** client.
 
 ## Next Steps - Database
 This tutorial was meant to be a basic introduction to how `Express` servers work, and how you can use them to setup APIs. There are numerous options you can use for databases including SQL and mongoDB. Check out this [full stack setup](https://code-boost.netlify.com/full-stack-react-node/) tutorial to create a `full-stack` application with **React** and **Node**. 
