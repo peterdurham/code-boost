@@ -38,7 +38,8 @@ pre[class*="language-"] ::selection {
 :not(pre) > code[class*="language-"] {
   white-space: normal;
   border-radius: 0.2em;
-  padding: 0.1em;
+  padding: 0.5rem;
+  background: #f5f2f0;
 }
 
 pre[class*="language-"] {
