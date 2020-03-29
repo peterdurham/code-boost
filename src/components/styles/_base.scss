@@ -36,6 +36,21 @@ h6 {
   padding: 0;
   font-family: $font-header;
 }
+h1 {
+  font-size: 3.37rem;
+}
+h2 {
+  font-size: 2.94rem;
+}
+h3 {
+  font-size: 2.45rem;
+}
+h4 {
+  font-size: 2.31rem;
+}
+h5 {
+  font-size: 1.88rem;
+}
 button:focus {
   outline: 0;
 }
@@ -64,7 +79,7 @@ footer,
 }
 
 main {
-  padding: 11rem 0;
+  padding: 11rem 0 5rem 0;
 }
 a {
   text-decoration: none;
@@ -82,7 +97,7 @@ table {
   max-width: 100%;
   overflow-x: auto;
   display: block;
-  margin: 0 0 2rem;
+  margin: 4.8rem 0;
   font-size: 1.3rem;
 }
 thead {
