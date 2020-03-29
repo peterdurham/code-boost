@@ -7,7 +7,7 @@ featuredImage: "./meadow.jpg"
 tags: ["CSS", "Grid"]
 ---
 
-CSS Grid is a layout system for CSS that can handle rows and columns. It works similarly to `flexbox` as grid properties can be applied to a parent or child element.
+CSS Grid is a layout system for CSS that create grids of any size. It works similarly to `flexbox` as grid properties can be applied to a parent or child elements.
 
 To set up a grid container add the following to your desired parent element
 
@@ -19,9 +19,23 @@ To set up a grid container add the following to your desired parent element
 
 ## Items and Containers
 
-Here are the properties for both Items and Containers
+Here are the esesntial properties for both Items and Containers
 
 | Container Properties    | Item Properties       |
+| ----------------------- | --------------------- |
+| `display: grid`         | **grid-column-start** |
+| `grid-template-columns` | **grid-column-end**   |
+| `grid-template-rows`    | **grid-column-end**   |
+| `grid-area`             | **grid-row-start**    |
+| `grid-template`         | **grid-row-end**      |
+| `grid-column-gap`       | **grid-area**         |
+| `grid-row-gap`          | **justify-self**      |
+| `justify-items`         | **align-self**        |
+| `align-items`           | **place-self**        |
+
+
+## Shorthand Properties
+| Properties    | Shorthand for       |
 | ----------------------- | --------------------- |
 | `grid-template-columns` | **grid-column-start** |
 | `grid-template-rows`    | **grid-column-end**   |
@@ -32,7 +46,7 @@ Here are the properties for both Items and Containers
 | `justify-items`         | **align-self**        |
 | `align-items`           | **place-self**        |
   
-**Note:** For some of these properties there are numerous other possible values. For the sake of brevity, I will only be mentioning the most common ones.
+> **Note:** For some of these properties there are numerous other possible values. For the sake of brevity, I will only be mentioning the most common ones.
 
 ## Container Properties
 In order to create a flexbox, apply `display: flex` to the flex container. This will line each child item up in a row.

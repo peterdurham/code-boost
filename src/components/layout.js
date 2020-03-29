@@ -35,6 +35,7 @@ class Layout extends React.Component {
   toggleMenu = () => {
     this.setState({ menuOpen: !this.state.menuOpen })
   }
+
   render() {
     const { location, children } = this.props
 
@@ -62,13 +63,17 @@ class Layout extends React.Component {
           id="nav-container"
           className={this.state.scrolled ? "scroll" : "no-scroll"}
         >
-          <Nav isHome={isPost} toggleMenu={this.toggleMenu} />
+          <Nav
+            isHome={isPost}
+            toggleMenu={this.toggleMenu}
+            menuOpen={this.state.menuOpen}
+          />
         </div>
         {this.state.menuOpen && <Menu isPost={isPost} />}
 
         <main
           id={isPost ? "BlogPost" : "Home"}
-          className={this.state.menuOpen ? "hidden" : undefined}
+          className={this.state.menuOpen ? "" : undefined}
         >
           {children}
         </main>

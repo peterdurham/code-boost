@@ -7,7 +7,7 @@ import { IoMdSearch } from "react-icons/io"
 
 import { FaFortAwesomeAlt, FaHotjar, FaCode, FaRegSun } from "react-icons/fa"
 import { IoMdBonfire, IoMdRocket, IoIosMoon } from "react-icons/io"
-import { MdWbSunny } from "react-icons/md"
+import { MdWbSunny, MdClose } from "react-icons/md"
 import {
   WiDaySunny,
   WiMoonAltWaningCrescent5,
@@ -40,16 +40,32 @@ class Nav extends React.Component {
     return (
       <nav className="Nav">
         <button className="Nav__menu--button" onClick={this.props.toggleMenu}>
-          <FiMenu />
-          <span>Menu</span>
+          {this.props.menuOpen ? (
+            <div>
+              <MdClose />
+            </div>
+          ) : (
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <FiMenu />
+              <span>Menu</span>
+            </div>
+          )}
         </button>
         <div className="Nav__logo">
-          <Link to="/" style={{ display: "flex", alignItems: "center" }}>
-            <span>
-              <IoMdBonfire className="logo-icon" />
-            </span>
-            <span className="logo-text">Code-Boost</span>
-          </Link>
+          <div
+            onClick={() => {
+              if (this.props.menuOpen) {
+                this.props.toggleMenu()
+              }
+            }}
+          >
+            <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+              <span>
+                <IoMdBonfire className="logo-icon" />
+              </span>
+              <span className="logo-text">Code-Boost</span>
+            </Link>
+          </div>
         </div>
         <div
           style={{ width: "86px", display: "flex", justifyContent: "flex-end" }}
