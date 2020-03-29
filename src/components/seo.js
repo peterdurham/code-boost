@@ -3,6 +3,82 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+const config = {
+  title: "Peter Durham - Web Developer",
+  twitter: "https://twitter.com/peterjdurham",
+  url: "https://peterdurham.netlify.com/",
+  logo:
+    "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpgg",
+}
+
+const getSchemaOrgJSONLD = ({
+  isBlogPost,
+  url,
+  title,
+  image,
+  description,
+  datePublished,
+}) => {
+  const schemaOrgJSONLD = [
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      url,
+      name: title,
+      alternateName: config.title,
+    },
+  ]
+
+  return isBlogPost
+    ? [
+        ...schemaOrgJSONLD,
+        {
+          "@context": "https://code-boost.netlify.com/",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              item: {
+                "@id": url,
+                name: title,
+                image,
+              },
+            },
+          ],
+        },
+        {
+          "@context": "https://code-boost.netlify.com/",
+          "@type": "BlogPosting",
+          url,
+          name: title,
+          alternateName: config.title,
+          headline: title,
+          image: {
+            "@type": "ImageObject",
+            url: image,
+          },
+          description,
+          author: {
+            "@type": "Person",
+            name: "Peter Durham",
+          },
+          publisher: {
+            "@type": "Organization",
+            url: "https://code-boost.netlify.com/",
+            logo: config.logo,
+            name: "Code Boost",
+          },
+          mainEntityOfPage: {
+            "@type": "WebSite",
+            "@id": config.url,
+          },
+          datePublished,
+        },
+      ]
+    : schemaOrgJSONLD
+}
+
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -19,7 +95,14 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-
+  const schemaOrgJSONLD = getSchemaOrgJSONLD({
+    isBlogPost: true,
+    url: "https://code-boost.netlify.com/",
+    title,
+    image: "http://fake-img-link.com",
+    description,
+    datePublished: "yesterday probably",
+  })
   return (
     <Helmet
       htmlAttributes={{
@@ -61,7 +144,11 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">
+        {JSON.stringify(schemaOrgJSONLD)}
+      </script>
+    </Helmet>
   )
 }
 
