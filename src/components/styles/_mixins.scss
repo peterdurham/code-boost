@@ -10,7 +10,7 @@
     } //900px
   }
   @if $breakpoint == tab-land {
-    @media (max-width: 960px) {
+    @media (max-width: 1040px) {
       @content;
     } //1280px
   }

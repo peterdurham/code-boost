@@ -57,11 +57,11 @@ const Menu = () => {
               })}
             </div>
           </div>
-        </div>
-        <div className="Menu__bottom">
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
-          <Link to="/">Subtmit</Link>
+          <div className="Menu__bottom">
+            <Link to="/">About</Link>
+            <Link to="/">Contact</Link>
+            <Link to="/">Subtmit</Link>
+          </div>
         </div>
       </div>
     </div>

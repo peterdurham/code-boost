@@ -24,6 +24,7 @@ body {
 }
 a {
   font-family: $font-header;
+  text-decoration: none;
 }
 
 h1,
@@ -57,16 +58,17 @@ button:focus {
 nav,
 footer,
 #Home {
-  max-width: 1080px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 0 6rem;
+  padding: 0 4rem;
 
   @include respond(tab-port) {
-    width: 600px;
-    padding: 0;
+    // width: 600px;
+    // padding: 0;
   }
   @include respond(phone) {
-    width: 92vw;
+    // width: 92vw;
+    padding: 0 2rem;
   }
 }
 
@@ -74,66 +76,17 @@ footer,
   padding-top: 104px;
   margin-bottom: 12rem;
   @include respond(tab-port) {
-    width: 100%;
+    // width: 100%;
   }
 }
 
 main {
   padding: 11rem 0 5rem 0;
 }
-a {
-  text-decoration: none;
-}
+
 .hidden {
   display: none;
 }
 .bigger {
   height: 101vh;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  display: block;
-  margin: 4.8rem 0;
-  font-size: 1.3rem;
-}
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-.dark th {
-  border-bottom: 2px solid #131313;
-}
-tbody {
-  display: table-row-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
-}
-td {
-  text-align: left;
-  padding: 0.75rem !important;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  word-break: break-word;
-}
-tbody tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-.dark tbody tr:nth-child(2n) {
-  background-color: #2d2d2d;
 }

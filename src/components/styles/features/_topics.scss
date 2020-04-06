@@ -3,14 +3,16 @@
   grid-template-columns: 120px 120px 120px 120px 120px 120px;
   grid-column-gap: 48px;
   width: 100%;
+  margin-top: 32px;
   margin-bottom: 5.2rem;
   @include respond(tab-land) {
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
     grid-column-gap: 2%;
   }
-  @include respond(phone) {
+  @include respond(tab-port) {
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 5%;
+    grid-row-gap: 20px;
   }
 }
 .TopicPreview {
@@ -22,12 +24,8 @@
     transition: all 0.3s;
 
     @include respond(tab-land) {
-      width: 90px;
-      height: 90px;
-    }
-    @include respond(tab-port) {
-      width: 75px;
-      height: 75px;
+      width: 105px;
+      height: 105px;
     }
     @include respond(phone) {
       width: 90px;
@@ -43,9 +41,7 @@
     transition: all 0.3s;
   }
 }
-// .Topic:hover .Topic__image {
-//   transform: scale(1.5);
-// }
+
 .TopicPreview:hover .TopicPreview__name {
   // color: $color-green;
   transform: translateY(8px) scale(1.25);
