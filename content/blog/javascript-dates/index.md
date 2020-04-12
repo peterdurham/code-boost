@@ -15,14 +15,17 @@ In JavaScript we have access to the `Date` object for any code relating to time.
 
 ```javascript
 const date = new Date()
-// store the current date in 'date' variable
+// store the current date in &#39;date&#39; variable
 
 console.log(date)
-// Sun Feb 02 2020 08:17:01 GMT-0800 (Pacific Standard Time)
+```
 
+```terminal
+> Sun Feb 02 2020 08:17:01 GMT-0800 (Pacific Standard Time)
 ```
 
 ### Epoch Time
+
 When a date object is created, JavaScript stores this information as a Unix Epoch Time. This is the number of milliseconds that have elapsed since January 1st 1970. It is useful to understand and practice this concept, as date math can often be done in this format.
 
 It is also possible to create a date object for a different time than right now by passing in an Epoch Time as the argument when creating a new date object
@@ -32,9 +35,11 @@ const oneYearLater = new Date(31567796000)
 console.log(oneYearLater)
 // Fri Jan 01 1971 00:49:56 GMT-0800 (Pacific Standard Time)
 ```
+
 Any time between roughly -271,000 BCE and 275,000 CE can be set using the date object.
 
 ### Date String and Values
+
 Alternatively we can create dates given a `date string` or by passing in current `date values` in the date creation. Both examples below will return approximately the same date as the one above.
 
 ```javascript
@@ -45,8 +50,8 @@ const usingDateValues = new Date(1971, 0, 1, 0, 49, 0, 0)
 // date values argument is year, month, day, hour, minute, second, millisecond
 ```
 
-
 ## Date Methods
+
 Logging the date alone will give us plenty of information, however there are numerous methods to display individual pieces of data for logging or output. 
 
 Each of the following example variables will return the current year
@@ -63,20 +68,21 @@ console.log(year)
 
 The methods available are not entirely uniform, though you can definitely find (or create) everything needed to represent a certain time. Here are some of the most useful methods
 
-| Date Method           | Description            | Range           |
-| --------------------- | ---------------------- | --------------- |
-| `getTime()`           | **Epoch Time**         | 13 digit number |
-| `getDate()`           | **Current Date**       | 1-31            |
-| `getDay()`            | **Day of Week**        | 0-6             |
-| `getFullYear()`       | **Current Year**       | 4 digit number  |
-| `getMonth()`          | **Current Month**      | 0-11            |
-| `getMinutes()`        | **Current Minute**     | 0-59            |
-| `getSeconds()`        | **Curent Second**      | 0-59            |
-| `getMilliseconds()`   | **Current Millsecond** | 0-999           |
+| Date Method         | Description            | Range           |
+| ------------------- | ---------------------- | --------------- |
+| `getTime()`         | **Epoch Time**         | 13 digit number |
+| `getDate()`         | **Current Date**       | 1-31            |
+| `getDay()`          | **Day of Week**        | 0-6             |
+| `getFullYear()`     | **Current Year**       | 4 digit number  |
+| `getMonth()`        | **Current Month**      | 0-11            |
+| `getMinutes()`      | **Current Minute**     | 0-59            |
+| `getSeconds()`      | **Curent Second**      | 0-59            |
+| `getMilliseconds()` | **Current Millsecond** | 0-999           |
 
 Most of the methods are intuitive, with the exception of `getDay()` and `getMonth()`. These methods are zero indexed and can often be 1 off from what you would expect (0 is Sunday and 0 represents the 1st of the month).
 
 ### Set Methods
+
 For each of the *get* methods, we also have access to a corresponding *set* method. This can be useful when you already have a date object, and need to adjust a particular value.
 
 ```javascript
@@ -88,13 +94,14 @@ console.log(date)
 ```
 
 ### String Conversion
+
 Sometimes converting the date object to a simple Date and/or Time string will suffice. The following date methods will convert your date object to a more readable version.
 
-| Date Method            | Description            | Example              |
-| ---------------------- | ---------------------- | -------------------- |
-| `toLocaleString()`     | **Time and Date**      | 2/2/2020, 8:38:33 AM |
-| `toLocaleTimeString()` | **Current Time**       | 8:38:33 AM           |
-| `toLocaleDateString()` | **Current Date**       | 2/2/2020             |
+| Date Method              | Description     | Example              |
+| ------------------------ | --------------- | -------------------- |
+| **toLocaleString()**     | *Time and Date* | 2/2/2020, 8:38:33 AM |
+| **toLocaleTimeString()** | *Current Time*  | 8:38:33 AM           |
+| **toLocaleDateString()** | *Current Date*  | 2/2/2020             |
 
 ### Adding and Subtracting Dates
 
@@ -115,4 +122,5 @@ console.log(date)
 ```
 
 ### Conclusion
+
 The JavaScript API for dates is powerful enough to make all sorts of calculations on your own. By simply creating a new date object instance, you can keep track of and display time data in your applications.

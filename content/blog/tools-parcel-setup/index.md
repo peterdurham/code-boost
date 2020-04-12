@@ -7,11 +7,17 @@ featuredImage: "./package.jpg"
 tags: ["Tools", "Parcel", "Setup", "React", "JavaScript"]
 ---
 
-Parcel is an easy to use build tool for bundling web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration. 
+Parcel is an easy to use build tool for bundling web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration.  
 
-In this tutorial we will be setting up and deploying a React web app.
+&nbsp;  
 
-To get started, create a new `directory` and `package.json` in the terminal
+In this tutorial we will be setting up and deploying a React web app.  
+
+&nbsp;  
+
+
+
+To get started, create a new `directory` and `package.json` in the terminal  
 
 ```bash
 mkdir parcel-setup
@@ -28,6 +34,7 @@ npm install --save-dev parcel-bundler
 This will add `parcel-bundler` to our application for both development and production purposes. 
 
 ### Optional Global Install
+
 Alternatively, you can install parcel globally with the command
 
 ```bash
@@ -97,6 +104,7 @@ The `.cache` and `dist` folders get built when we run any `parcel` command, and 
 We can deploy this application by adding and running a `build` command to the `package.json` file, however let's first add React and some additional files.
 
 ## Adding React
+
 Firstly, we will need some to add some additional packages to our project to setup and parse our React. Enter the following commands in your terminal
 
 ```bash
@@ -108,6 +116,7 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
 ```
 
 ### Babel Setup
+
 Babel will transpile our React code so that the browser can read it properly. Add a `.babelrc` file to the root of your project where we can specify which `presets` and `plugins` to use. 
 
 ```JSON
@@ -146,6 +155,7 @@ const App = () => {
 };
 export default App;
 ```
+
 Here we imported a `./app.css` file here which we already created. Add the following code (or whatever you like) to `app.css` to make sure its working properly
 
 ```css
@@ -161,6 +171,7 @@ parcel src/index.html
 ```
 
 ### Adding Scripts
+
 We can simplify the development and build processes by adding scripts to our `package.json` file
 
 ```JSON
@@ -173,15 +184,19 @@ We can simplify the development and build processes by adding scripts to our `pa
 Both scripts will build our application into the `dist` folder, the `start` script will also setup a development server in the browser. We will need the `build` command specifically to deploy this application into production.
 
 ## Deploy
+
 There are plenty of locations on the internet to host this application. In this tutorial we will use [Netlify](https://www.netlify.com/), since it easy to setup and comes with a lot of features. If you haven't already, deploy your application to github and signup for / login to Netlify.
 
 Building our app in production is simple, click `New site from Git` and selecting your github (or other) repository. We now just need to specify our **Build command** and **Publish directory**.
 
 For **Build command** enter
+
 ```bash
 npm run build
 ```
+
 and for **Publish directory** enter
+
 ```bash
 dist
 ```
@@ -191,5 +206,3 @@ Next click `Deploy site` and Netlify will build out the application, hosting it 
 ### Conclusion
 
 Parcel is a great alternative to `Webpack` if you are not in need of all the extra configuration. Since Parcel comes pre-packaged with hot module replacement, babel support, and will bundle all of your assets by default, it is a great tool for building a new application.
-
-

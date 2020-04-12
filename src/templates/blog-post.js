@@ -1,41 +1,36 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 
 class BlogPostTemplate extends React.Component {
-  // componentDidMount() {
-  //   var nav = document.querySelector("#nav-container")
+  componentDidMount() {
+    const headerEls = document.querySelectorAll("h2")
+    const headerEl = document.querySelector("header")
+    const tableOfContents = document.createElement("div")
+    const tocLabel = document.createElement("h3")
+    headerEls.forEach((el, index) => (el.id = `header-${index + 1}`))
+    tableOfContents.classList.add("tableOfContents")
+    tocLabel.innerText = "Table of Contents"
+    tocLabel.style.color = "#fad000"
+    tocLabel.style.marginBottom = "10px"
+    tableOfContents.appendChild(tocLabel)
 
-  //   var scrollPos = 0
+    headerEls.forEach((el, index) => {
+      const tableLink = document.createElement("a")
+      tableLink.innerText = el.innerText
+      tableLink.href = `#${el.id}`
+      tableOfContents.appendChild(tableLink)
+    })
 
-  //   window.addEventListener("scroll", function() {
-  //     var scrollTop = document.body.getBoundingClientRect().top
+    if (headerEls.length > 0) {
+      headerEl.appendChild(tableOfContents)
+    }
+  }
 
-  //     if (scrollTop < -210) {
-  //       if (scrollTop > scrollPos) {
-  //         nav.classList.remove("slide-out")
-  //         nav.classList.add("slide-in")
-
-  //         setTimeout(() => {
-  //           nav.classList.remove("translated-out")
-  //           nav.classList.add("translated-in")
-  //         }, 400)
-  //       } else {
-  //         nav.classList.remove("slide-in")
-  //         nav.classList.add("slide-out")
-  //         setTimeout(() => {
-  //           nav.classList.remove("translated-in")
-  //           nav.classList.add("translated-out")
-  //         }, 400)
-  //       }
-  //     }
-  //     scrollPos = scrollTop
-  //   })
-  // }
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -51,10 +46,11 @@ class BlogPostTemplate extends React.Component {
         <article>
           <header id="BlogPost__header">
             <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
+            <p id="BlogPost__header--date">{post.frontmatter.date}</p>
             <div id="BlogPost__header--tags">
               {post.frontmatter.tags.map(tag => (
                 <Link
+                  key={tag}
                   to={`/tag/${tag
                     .split(" ")
                     .join("-")
@@ -76,9 +72,9 @@ class BlogPostTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <footer>
+          {/* <footer>
             <Bio />
-          </footer>
+          </footer> */}
         </article>
 
         <nav id="BlogPost__footer">
@@ -124,7 +120,7 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }
           }

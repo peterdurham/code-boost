@@ -1,6 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link, graphql } from "gatsby"
+
+import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import PostPreview from "../components/postPreview"
 
@@ -18,15 +18,11 @@ const TopicPageTemplate = ({ pageContext, data }) => {
     return node.slug === topic.toLowerCase()
   })[0].node
 
-  const topicHeader = `${edgesWithTopic.length} post${
-    edgesWithTopic.length === 1 ? "" : "s"
-  }`
   return (
     <Layout pageType="Topic">
       <div className="TopicPage__header">
         <div>
           <h1>{topic}</h1>
-          {/* <h3>{topicHeader}</h3> */}
         </div>
         <Image
           className="TopicPage__image"
@@ -50,18 +46,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
           )
         })}
       </div>
-      {/* <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul> */}
-      {/* <Link to="/topics">All topics</Link> */}
+
       <div style={{ marginTop: "8rem" }}>
         <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
         <div className="PostPreviews">
@@ -80,6 +65,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
                 />
               )
             }
+            return null
           })}
         </div>
       </div>

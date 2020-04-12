@@ -1,7 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import PropTypes from "prop-types"
-// Components
 import { Link, graphql } from "gatsby"
 import PostPreview from "../components/postPreview"
 
@@ -59,6 +57,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
                 />
               )
             }
+            return null
           })}
         </div>
       </div>

@@ -15,31 +15,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
   }
 }
-// .TagPage {
-//   &__header {
-//     margin-bottom: 2rem;
-//     font-size: 2.4rem;
-//   }
-//   &__button {
-//     font-size: 1.4rem;
-//     line-height: 2.6rem;
-//     font-weight: 700;
-//     text-transform: uppercase;
-//     border: 1px solid #15131d;
-//     padding: 4px 16px;
-//     margin: 8rem 0 4rem 0;
-//     display: inline-block;
-//     transition: all 0.3s;
-//     cursor: pointer;
-//   }
-//   &__button:hover {
-//     background-color: $color-green;
-//     border: 1px solid $color-green;
-//   }
-//   &__button:hover a {
-//     color: #fff;
-//   }
-// }
+
 .dark {
   background-color: #202020;
   color: #b3b9c5;
@@ -100,9 +76,13 @@ body {
       }
     }
   }
-  // .language-text {
-  //   color: #fff;
-  // }
+  .tableOfContents {
+    background: $color-bg-dark;
+
+    & a {
+      color: $color-yellow;
+    }
+  }
   #BlogPost__footer a {
     color: #b3b9c5;
   }
@@ -173,12 +153,12 @@ pre.language-javascript {
   border-radius: 0.4rem;
   // border-left: 10px solid orangered;
 }
-:not(pre) > code[class*="language-"] {
-  background-color: #f5f2f0;
-  color: $color-black;
-  font-size: 1.75rem;
-  line-height: 2.2rem;
-  padding: 0.2rem 0.5rem;
-  font-family: $font-text;
-  border-radius: 0.4rem;
-}
+// :not(pre) > code[class*="language-"] {
+//   font-size: 1.75rem;
+//   line-height: 2.2rem;
+//   padding: 0.2rem 0.5rem;
+//   font-family: $font-text;
+//   border-radius: 0.4rem;
+//   background-color: #1e1e3f;
+//   color: #fff;
+// }

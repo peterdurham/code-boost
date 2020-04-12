@@ -42,6 +42,7 @@ const Menu = () => {
                 if (index < 24) {
                   return (
                     <Link
+                      key={tag}
                       className="Trending__topic"
                       to={`/tag/${tag
                         .split(" ")
@@ -54,14 +55,15 @@ const Menu = () => {
                     </Link>
                   )
                 }
+                return null
               })}
             </div>
           </div>
-          <div className="Menu__bottom">
-            <Link to="/">About</Link>
-            <Link to="/">Contact</Link>
-            <Link to="/">Subtmit</Link>
-          </div>
+        </div>
+        <div className="Menu__bottom">
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Subtmit</Link>
         </div>
       </div>
     </div>

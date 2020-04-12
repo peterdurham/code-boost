@@ -73,18 +73,19 @@ condition ? () : ()
 ```
 
 In each case, we will have a condition which simplifies down to a boolean value (true or false). This could be a number of statements such as  
-  
+
 - `userLoggedIn === true`
 - `!singular`
 - `newArray.indexOf('Salmon') > -1`
 
 ### Logical &&
+
 This operator will evaluate to the second argument if the condition is true and the first argument if it is false. Unless you are a binary wiz kid this might not make much sense at first, but essentially we will use this operator when we only care to return something if our statement evalutes to true.
 
 ```jsx
 function App() {
   const [bananas, setBananas] = React.useState(1);
-  
+
   return (
     <div>
       <h1>Banana Stand</h1>
@@ -95,6 +96,7 @@ function App() {
 ```
 
 This condition will evaluate to true, therefore the statement will evaluate to the second argument, `I only have one banana`. There are multiple valid syntaxes for inline conditionals and the following will achieve the same purpose
+
 ```jsx
 // we can wrap our statement in a div
 <div>{bananas === 1 && "I only have one banana"}</div>
@@ -106,6 +108,7 @@ This condition will evaluate to true, therefore the statement will evaluate to t
 It is useful to understand each valid syntax, though many code formatters or situations will call for different solutions. 
 
 ### If-Else
+
 This is the grandaddy operator of conditional rendering in React. It will evaluate a statement, returning the first value if true, and the second value if false. Here is our previous example using an inline if-else conditional.
 
 ```jsx
@@ -138,4 +141,5 @@ Since conditionals can return either JSX or string values, we can simplify this 
 ```
 
 ### Conclusion
+
 There are many possible ways to leverage conditional operators in React to enhance your code. Since React is so performant at re-rendering the DOM, it makes sense to utilize whatever logic we need to get the job done. I have found it most helpful to explore each possible variation, choosing whatever method or syntax is most suitable.

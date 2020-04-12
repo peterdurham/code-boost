@@ -1,18 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-const sampleTopics = [
-  "Setup",
-  "Flexbox",
-  "Parcel",
-  "CSS Layout",
-  "React",
-  "Fonts",
-  "Icons",
-  "Mapbox",
-  "Express",
-]
-
 const Trending = () => {
   const data = useStaticQuery(graphql`
     {

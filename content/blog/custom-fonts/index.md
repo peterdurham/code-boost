@@ -35,11 +35,10 @@ body {
 Adding a font using [Google Fonts](https://fonts.google.com/) is similar except here we will be including a CDN link in our markup or stylesheets. Select the font you wish to add to your site, and click on the toolbar at the bottom. This will open up options to embed or customize your font. 
 
 Before you embed the font, choose `customize` and select all the font-weights you would like to include on your website. The `embed` section will now have options for either a `standard` or `@import` import. 
-  
+
 ### Standard import
 
 To include the `standard` import, add the link tag from Google Fonts anywhere in your site's head. (This can be found in the `public` folder if you are using *create-react-app*)
-
 
 ```html
   <head>
@@ -49,7 +48,7 @@ To include the `standard` import, add the link tag from Google Fonts anywhere in
 ```
 
 ### CSS import
-  
+
 Alternatively, you may include your fonts using the `@import` syntax in your CSS stylesheets. Copy the import statement, and include it at the top of your main stylesheet (or in your html head wrapped in style tags).
 
 ```css

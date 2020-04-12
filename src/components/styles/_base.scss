@@ -10,14 +10,6 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-
-  // @include respond(tab-land) {
-  //   font-size: 56.25%; //1 rem = 9px 9/16
-  // }
-
-  // @include respond(tab-port) {
-  //   font-size: 50%; //1 rem = 8px 8/16
-  // }
 }
 body {
   font-family: $font-text;
@@ -25,33 +17,55 @@ body {
 a {
   font-family: $font-header;
   text-decoration: none;
+  color: #5183f5;
+  font-weight: 600;
 }
-
+p {
+  font-size: 1.75rem;
+  line-height: 2.8rem;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
   font-family: $font-header;
 }
 h1 {
   font-size: 3.37rem;
+  line-height: 4.2rem;
 }
 h2 {
   font-size: 2.94rem;
+  line-height: 3.7rem;
+  margin-bottom: 2rem;
 }
 h3 {
   font-size: 2.45rem;
+  margin-bottom: 2rem;
 }
 h4 {
   font-size: 2.31rem;
+  line-height: 2.97rem;
+  margin-bottom: 2rem;
 }
 h5 {
   font-size: 1.88rem;
+  line-height: 2.44rem;
+  margin-bottom: 2rem;
 }
+
+ul {
+  margin: 2.7rem 2rem;
+}
+li {
+  margin-left: 2rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.75rem;
+  line-height: 2.8rem;
+}
+
 button:focus {
   outline: 0;
 }
@@ -62,12 +76,7 @@ footer,
   margin: 0 auto;
   padding: 0 4rem;
 
-  @include respond(tab-port) {
-    // width: 600px;
-    // padding: 0;
-  }
   @include respond(phone) {
-    // width: 92vw;
     padding: 0 2rem;
   }
 }
@@ -75,9 +84,6 @@ footer,
 #Home {
   padding-top: 104px;
   margin-bottom: 12rem;
-  @include respond(tab-port) {
-    // width: 100%;
-  }
 }
 
 main {

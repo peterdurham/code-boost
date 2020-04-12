@@ -13,7 +13,7 @@ In JavaScript, arrays are list-like variables which store multiple values. There
 
 These methods modify the contents of an array:
 
-### push(element)
+### Push(element)
 
 ```javascript
 const numbers = []
@@ -24,9 +24,10 @@ console.log(numbers)
 // [42]
 ```
 
-This method takes an element as its argument to add to the end of an array. Push returns the length of the new array.
+This method takes an element as its argument to add to the end of an array. It is useful when adding new items to an array. Push returns the length of the new array.
 
-### pop
+### Pop
+
 ```javascript
 const numbers = [1, 2, 3]
 const lastNumber = numbers.pop()
@@ -37,9 +38,10 @@ console.log(numbers)
 // [1, 2]
 ```
 
-This method removes the last element of an array, and returns that element.
+This method removes the last element of an array, and returns that element. Pop is the opposite of push()
 
-### shift
+### Shift
+
 ```javascript
 const numbers = [1, 2, 3]
 const firstNumber = numbers.shift()
@@ -49,10 +51,11 @@ console.log(firstNumber)
 console.log(numbers)
 // [2, 3]
 ```
-This method removes the first element of an array, and returns that element. Shift is like pop, except at the beginning of the array instead of the end.
 
+This method removes the first element of an array, and returns that element. *shit()* is like *pop()*, except at the beginning of the array instead of the end. (Another method *unshift()* is like *push()* but instead for the beginning of the array)
 
-### reverse
+### Reverse
+
 ```javascript
 const numbers = [1, 2, 3, 4]
 const reversedNumbers = numbers.reverse()
@@ -60,13 +63,15 @@ const reversedNumbers = numbers.reverse()
 console.log(reversedNumbers)
 // [4, 3, 2, 1]
 ```
-This method reverses the entire order of an array so that the first element is in the beginning and the last at the end. The reverse method returns the reversed array.
+
+This method reverses the entire order of an array so that the first element is in the beginning and the last is at the end. The reverse method returns the reversed array.
 
 ## Accessor Methods
 
 The following methods do not mutate the initial array, instead they return a new array based on it:
 
-### concat([element1, element2, …])
+### Concat( [element] )
+
 ```javascript
 const beginning = [1, 2]
 const end = [3, 4, 5]
@@ -75,18 +80,22 @@ const total = beginning.concat(end)
 console.log(total)
 // [1, 2, 3, 4, 5]
 ```
+
 This method returns a new array of the initial array with the argument array or arguments joined at the end.
 
-### indexOf(element)
+### IndexOf(element)
+
 ```javascript
 const items = ["hat", "phone", "map", "snack"]
 
 console.log(items.indexOf("map"))
 // 2
 ```
+
 This method returns the index of the first instance of the element in the array if it exists. If this element is not contained in the array, the indexOf method returns -1.
 
-### slice
+### Slice
+
 ```javascript
 const items = ["hat", "phone", "map", "snack"]
 
@@ -98,11 +107,12 @@ console.log(endItems)
 const middleItems = items.slice(1,3)
 
 console.log(middleItems)
-
 ```
+
 This method returns a portion of the original array starting at the beginning index until just before ending index. The length of the returned array is the difference of the passed indexes when they are positive. If only one argument is passed to slice, it returns the portion of the original array starting with the beginning index until the end of the array.
 
-### Array.join(seperator)
+### Join(seperator)
+
 ```javascript
 const language = "JavaScript"
 const letters = language.split("")
