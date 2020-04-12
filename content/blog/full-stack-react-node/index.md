@@ -1,8 +1,8 @@
 ---
-title: Full-stack React and Node Basic Setup (MERN)
+title: Setup a Fullstack Node and React App (MERN Stack)
 date: "2015-05-06T23:46:37.121Z"
 category: "Node"
-description: "setup"
+description: "Comprenhensive tutorial to setup a full stack React and Node application using Git, Github, Netlify, Mongodb, and Heroku."
 featuredImage: "./croatia.jpg"
 tags: ["React", "Node", "Full-stack"]
 ---

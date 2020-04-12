@@ -1,8 +1,8 @@
 ---
-title: Basic use of Forms in React
+title: How to Handle Forms and Inputs in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
-description: "setup"
+description: "Overview of different ways and best practices to handle inputs and forms in React. Two-way data binding and React Hooks examples."
 featuredImage: "./passport.jpg"
 tags: ["React", "Forms"]
 ---

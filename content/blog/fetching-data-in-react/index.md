@@ -1,8 +1,8 @@
 ---
-title: How to Fetch Data in React
+title: Different Methods to Fetch Data in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
-description: "setup"
+description: "Overview of the methods used to fetch data in React. Uses fetch, axios, class components, hooks, es5, es6, and Async / Await"
 featuredImage: "./earth.jpg"
 tags: ["React", "Fetch", "Axios", "API", "Hooks", "Async/Await"]
 ---

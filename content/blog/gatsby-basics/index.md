@@ -1,8 +1,8 @@
 ---
-title: Basics for setting up and using GatsbyJS
+title: Basics and Overview for a GatsbyJS Project
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
-description: "setup"
+description: "Gatsby is a static-site generator build tool. Overview of build files and various starer templates."
 featuredImage: "./chrome-hill.jpg"
 tags: ["Gatsby", "Setup", "React", "Tools"]
 ---

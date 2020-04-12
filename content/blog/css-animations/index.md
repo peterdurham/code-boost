@@ -2,9 +2,9 @@
 title: How-to Guide, CSS Animations
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "Comphrensive overview for using CSS Animations with best performance. Guide to understand keyframes and animation properties."
 featuredImage: "./horse-desert.jpg"
-tags: ["CSS", "Animations"]
+tags: ["CSS", "Animations", "Keyframes", "Properties"]
 ---
 
 On any webpage you can animate all elements on the DOM using **CSS animations**. Animations can be configured with `CSS` and chained together using `JavaScript`. Each CSS `animation` has an associated `keyframe` which describes when which properties will be transformed along the animations duration.
@@ -15,7 +15,7 @@ Animations are very simple in `CSS` and we can start by creating a simple `index
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS Animations how-to</title>
+    <title>How-to Guide, CSS Animations</title>
     <style>
       h1 {
         animation: slideFadeInRight 2s 1;

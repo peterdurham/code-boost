@@ -65,7 +65,7 @@ Here is our starter apollo-server setup. **typeDefs** will store our GraphQL sch
 
 ### Writing our Schema
 
-Our **schema** or type definitions are an overview of the API's inputs, which types will be accepted, and whether they are required or optional. For this API we will have our main type be `Game`  and it will accept a *title*, *genre*, *rating*, and *status* as inputs. Add the following to your typeDefs in `index.js`
+Our **schema** or type definitions are an overview of the API's inputs, which types will be accepted, and whether they are required or optional. For this API we will have our main type be `Game`  and it will accept a *title*, *genre*, *rating*, and *status* as inputs. Replace typeDefs with the following in `index.js`
 
 ```javascript
 const typeDefs = gql`
@@ -248,7 +248,7 @@ const { ApolloServer, gql } = require("apollo-server");
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://<yourUsername>:<password>@YOUR-CONNECTION-STRING-HERE",
+  "mongodb+srv://yourUsername:<password>@CONNECTION-STRING-HERE",
   { useNewUrlParser: true }
 );
 const db = mongoose.connection;
@@ -256,9 +256,24 @@ const db = mongoose.connection;
 
 Once you'ved created and whitelisted a user, the **CONNECT** button will have 3 options to connect your application. Select the second option, *Connect your application*, to get a connection string. Copy this string and replace the one above, also making sure to replace `<password>` with your password
 
+### Adding Mongoose Game Schema
+
+The Game schema we created earlier is for our GraphQL layer, we will also need to setup a schema for **mongoose**. There are some minor differences (such as *Number*instead of *Int*) though it is mostly similar to our **typeDefs** schema above. Add the following code below the `db` variable declaration.
+
+```javascript
+const gameSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  genre: String,
+  rating: Number,
+  status: String,
+});
+
+const Game = mongoose.model("Game", gameSchema);
+```
+
 ### Updating Resolvers
 
-Now that we have connected our server to **MongoDB**, let's change the resolvers to interact with the database
+Now that we have connected our server to **MongoDB** and imported the `Game` schema, let's change the resolvers to interact with the database
 
 ```javascript
 const resolvers = {
@@ -286,7 +301,6 @@ const resolvers = {
   Mutation: {
     addGame: async (obj, { game }, { userId }) => {
       try {
-        console.log(userId, "context");
         if (userId) {
           const newGame = await Game.create({
             ...game,
@@ -334,7 +348,7 @@ const server = new ApolloServer({
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
   // were coonnectied
-  console.log("✅ DATABASE CONNECTED✅");
+  console.log("✔️ Connected to MongoDB ✔️");
 
   server
     .listen({

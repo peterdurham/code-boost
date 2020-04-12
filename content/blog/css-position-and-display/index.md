@@ -2,7 +2,7 @@
 title: Basics of Position and Display Attributes (CSS)
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "Overview of two major CSS properties and their inputs. Includes block, inline, flex, grid, static, absolute, relative, fixed, and sticky."
 featuredImage: "./display.jpg"
 tags: ["CSS", "Properties"]
 ---

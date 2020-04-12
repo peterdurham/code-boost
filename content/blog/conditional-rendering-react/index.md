@@ -1,8 +1,8 @@
 ---
-title: Conditional Rendering Basics in React
+title: How To Do Conditional Rendering in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
-description: "setup"
+description: "Various methods of conditional rendering in React such as if-else, logical &&, and ternary opeartors."
 featuredImage: "./stoplight.jpg"
 tags: ["React", "Conditional Rendering"]
 ---
@@ -107,9 +107,9 @@ This condition will evaluate to true, therefore the statement will evaluate to t
 
 It is useful to understand each valid syntax, though many code formatters or situations will call for different solutions. 
 
-### If-Else
+### Ternary Operator
 
-This is the grandaddy operator of conditional rendering in React. It will evaluate a statement, returning the first value if true, and the second value if false. Here is our previous example using an inline if-else conditional.
+This is the grandaddy operator of conditional rendering in React. It will evaluate a statement, returning the first value if true, and the second value if false. Here is our previous example using a ternary operator.
 
 ```jsx
 function App() {

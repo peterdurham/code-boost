@@ -2,9 +2,9 @@
 title: CSS Flexbox Basics
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "An overview of major CSS flexbox properties and how to apply them. Numerous examples of flexbox container and item variations."
 featuredImage: "./birds.jpg"
-tags: ["CSS", "Flexbox"]
+tags: ["CSS", "Flexbox", "Properties"]
 ---
 
 ### About

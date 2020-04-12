@@ -10,7 +10,14 @@ const Topics = () => {
           node {
             name
             slug
-            image {
+            lightImage {
+              childImageSharp {
+                fluid(maxWidth: 240, maxHeight: 240) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            darkImage {
               childImageSharp {
                 fluid(maxWidth: 240, maxHeight: 240) {
                   ...GatsbyImageSharpFluid
@@ -32,12 +39,15 @@ const Topics = () => {
           name={item.name}
           slug={item.slug}
           image={item.image}
+          lightImage={item.lightImage}
+          darkImage={item.darkImage}
         />
       ))}
     </div>
   )
 }
-const Topic = ({ name, slug, image }) => {
+const Topic = ({ name, slug, lightImage, darkImage, darkMode }) => {
+  console.log(darkMode, "DARKMODE")
   return (
     <Link to={`/${slug}`} className="TopicPreview">
       <div>
@@ -49,9 +59,16 @@ const Topic = ({ name, slug, image }) => {
 
         <Image
           className="TopicPreview__image"
-          fluid={image.childImageSharp.fluid}
+          fluid={darkImage.childImageSharp.fluid}
           alt={name}
         />
+
+        <Image
+          className="TopicPreview__image"
+          fluid={lightImage.childImageSharp.fluid}
+          alt={name}
+        />
+
         <h3 className="TopicPreview__name">{name}</h3>
       </div>
     </Link>
