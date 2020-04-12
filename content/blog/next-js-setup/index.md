@@ -70,7 +70,11 @@ const About = () => (
 export default About;
 ```
 
-In order to link to this page, we will need to import the `Link` package and create some links. Add the following to the top of your `index.js` file
+In order to link to this page, we will need to import the `Link` package and create some links. 
+
+#### Adding Links
+
+Add the following to the top of your `index.js` file
 
 ```javascript
 import Link from "next/link";
@@ -86,23 +90,62 @@ Let's also create a **nav** section for our links
   <Link href="/about">
     <a>About</a>
   </Link>
+  <Link href="/projects/first-project">
+    <a>First Project</a>
+  </Link>
 </nav>
 ```
 
 Next handles links a little differently than other routing methods such as *react-router* or *Gatsby*. In Next, The `<a></a>` tag is wrapped by `<Link></Link>` tags. The main different is that the`href` property goes on the Link tag, instead of on the anchor tag. 
 
+#### Adding dynamic pages
+
+It is also possible to create pages based on the value of the URL parameter. Add a folder in your `pages` folder named `projects` and in that add a file named `[slug].js`. Add the following code to `[slug].js`
+
+```jsx
+import { useRouter } from "next/router";
+
+const Projects = () => {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  return <h2>{slug}</h2>;
+};
+
+export default Projects;
+
+```
+
+This will set load a page for us whenever a `/projects/your-slug-here` URL is hit. The name of the slug is available on `router.query` when using the `next/router` package.
+
 &nbsp;
 
-Now that we have a link setup, visit the `/about` page. Unfortunately, our **nav** didn't come with us from the homepage. 
+Now that we have a navigation with links setup, visit the `/about` page and you will realize our links are only available on the homepage. 
 
 ### Custom App Page
 
-We can add this navigation to every page by creating a `_app.js` component, which Next will load on every route. Create this file now in the `pages` folder and add the following
+We can add this navigation to every page by creating a `_app.js` file in the `pages` folder, which Next will load on every route. Create this file now in the `pages` folder and add the following
+
+```jsx
+import Layout from "../components/Layout";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+}
+
+export default MyApp;
+```
+
+Also create a `Layout.js` file in the `components` folder and include the following
 
 ```jsx
 import Link from "next/link";
 
-function MyApp({ Component, pageProps }) {
+const Layout = ({ children }) => {
   return (
     <div>
       <nav>
@@ -112,17 +155,31 @@ function MyApp({ Component, pageProps }) {
         <Link href="/about">
           <a>About</a>
         </Link>
+        <Link href="/projects/first-project">
+          <a>First Project</a>
+        </Link>
       </nav>
-      <Component {...pageProps} />
+      <div className="container">
+        <main>{children}</main>
+      </div>
+      <footer>
+        <a
+          href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
+        </a>
+      </footer>
     </div>
   );
-}
+};
+export default Layout;
 
-export default MyApp;
 
 ```
 
-You can now also remove from `index.js` everything in the `<nav></nav>` tags and the `Link` import as we included it in `_app.js` already. By storing application state at a high level in this file, we can persist it across page loads to reduce the number of server requests. Since this component is applied on build we will need to restart our development server for it to load on every page.
+You can also remove from `index.js` the `<nav></nav>` tags, `Link` import, and `<footer></footer>` code as we included it in `_app.js` already. If you are following along in the browser, we will need to restart our development server to use this component on every page.
 
 ## Adding Meta Tags
 
@@ -184,11 +241,7 @@ It makes sense to setup a SEO component which receives and includes all of this 
 
 ## Styles and CSS
 
-Next.js comes with all the standard methods for using CSS. 
-
-#### CSS
-
-To use a `.css` stylesheet, add a standard import statement to the `_app.js` page component from earlier. These styles will get applied to every page, and it is important to only upload `.css` files here to avoid naming conflicts.
+Next.js comes with all the standard methods for using CSS. For this tutorial, I will be using the CSS-in-JS solution. You can follow along or feel free to use whatever CSS method makes the most sense for your project.
 
 #### CSS-in-JS
 
@@ -196,7 +249,7 @@ Next comes with a *CSS-in-JS* syntax for inline styles that allows for creating 
 
 ```jsx
 <div>
-  <h2 className="title">This component red</h2>
+  <h2 className="title">This component is red</h2>
   <style jsx>{`
     .title {
       color: red;
@@ -205,15 +258,56 @@ Next comes with a *CSS-in-JS* syntax for inline styles that allows for creating 
 </div>
 ```
 
-You can also add globally-scoped styles to your `Page.js` component from earlier
+Let's now add globally-scoped styles to the `Page.js` component from earlier, beneath the `</footer>` component but still inside the outer `</div>`
 
 ```jsx
-<style global jsx>{`
+<style jsx global>{`
+  html,
   body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  nav {
     background: black;
+    text-align: center;
+    padding: 1rem;
+  }
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    margin: 0 1.4rem;
+  }
+  main {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer img {
+    margin-left: 0.5rem;
   }
 `}</style>
 ```
+
+#### CSS
+
+To use a `.css` stylesheet, add a standard import statement to the `_app.js` page component from earlier. These styles will get applied to every page, and it is important to only upload `.css` files here to avoid naming conflicts.
 
 #### SCSS
 
