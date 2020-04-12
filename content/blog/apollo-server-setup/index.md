@@ -139,7 +139,7 @@ Our only mutation `addGame` will accept a game that is passed in as  a `GameInpu
 
 ### Setting up Resolvers
 
-In GraphQL, our resolvers are similar to express API endpoints. These resolvers will have access to request parameters, user context, and return the specified data. We can start by setting up resolvers for our queries and mutations. Replace the `resolvers` object we declared earlier with the following in `index.js`
+In GraphQL, our resolvers are similar to express API endpoints. These resolvers will have access to request parameters, user context, and return the specified data. We can start by setting up resolvers for our queries and mutations. Replace the empty `resolvers` object we declared earlier with the following in `index.js`
 
 ```javascript
 const placeholderGames = [
@@ -179,7 +179,7 @@ The GraphQL playground is used for testing out Mutations and Queries in developm
 
 &nbsp;  
 
-We can now test out all three of our resolvers. Try out each of the following into the GraphQL playground and run the query
+We can now test out all three of our resolvers. Try out each of the following into the GraphQL playground. You can paste each query individually, however if you are new to GraphQL I suggest typing your queries in manually. At each level in a *query* or *mutation* you can hold `Ctrl + Space` (or `Shift + Space`) to open up a dropdown of options depending on where you are in the graph. You can also use `Ctrl + Enter` to run a query.
 
 ##### All Games Query
 
@@ -212,14 +212,9 @@ mutation addGame {
     title
   }
 }
-
 ```
 
-
-
 CONSIDER HOW MUCH OF THESE 3 AND TO EXPLAIN THEN GOOD
-
-
 
 ## Connecting to MongoDB
 
@@ -241,7 +236,7 @@ Here you will be able to whitelist any IP of the current device you are on, or i
 
 ### Server Connection String
 
-Now that we have a **MongoDB** account setup and a DB cluster running with a login, let's connect our node server by adding the following to the top of`index.js` 
+Now that we have a **MongoDB** account setup and a DB cluster running with a login, let's connect our node server by adding the following to the top of `index.js` 
 
 ```javascript
 const { ApolloServer, gql } = require("apollo-server");
@@ -305,7 +300,7 @@ const resolvers = {
           const newGame = await Game.create({
             ...game,
           });
-     
+
           const allGames = Game.find();
           return allBooks;
         }
@@ -358,8 +353,6 @@ db.once("open", function() {
       console.log(`Server started at ${url}`);
     });
 });
-
-
 ```
 
 ### Heroku Signup

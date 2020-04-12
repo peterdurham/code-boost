@@ -1,5 +1,4 @@
 ---
-
 title: Use NextJS to Create a Server Rendered React App
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
@@ -8,8 +7,6 @@ featuredImage: "./stonehenge.jpg"
 tags: ["React", "JavaScript", "Tools", "Next", "Now"]
 
 ---
-
-
 
 ### Why NextJS?
 
@@ -53,13 +50,11 @@ You'll notice that **create-next-app** setup the following for us:
 
 - added next scripts: `dev`, `build`, and `start` to the package.json file.
 
-
-
 Take some time now to look through the `index.js` file in the `pages` folder. This will be our homepage route and this file provides some examples of various **Next** features. This page will likely change with new versions of Next, but still contains examples of how to handle metadata with `next/head` and setup inline CSS styles (locally or globally) with `<style jsx>` tags.
 
 ## Pages and Routing
 
-Each **.js** file in the `pages` folder will automatically generate a page at the route it is named, if it is a valid React component. Pages and components created this way do not need to `import React from 'react'` at the top as Next already imports this on every page. Create a new component in the `pages` folder called `about.js`
+Each **.js** file in the `pages` folder will automatically generate a page at the route it is named, if it is a valid React component. Pages and components do not need to `import React from 'react'` at the top as Next already imports this on every component. Create a new component in the `pages` folder called `about.js`
 
 ```jsx
 const About = () => (
@@ -70,11 +65,30 @@ const About = () => (
 export default About;
 ```
 
-In order to link to this page, we will need to import the `Link` package and create some links. 
+This page will be available at the `/about` route.
+
+#### Adding dynamic pages
+
+It is also possible to create pages based on the value of the URL parameter. Add a folder in your `pages` folder named `projects` and in that add a file named `[slug].js`. Add the following code to `[slug].js`
+
+```jsx
+import { useRouter } from "next/router";
+
+const Projects = () => {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  return <h2>{slug}</h2>;
+};
+
+export default Projects;
+```
+
+This will set load a page for us whenever a `/projects/your-slug-here` URL is hit. The name of the slug is available on `router.query` when using the `next/router` package.
 
 #### Adding Links
 
-Add the following to the top of your `index.js` file
+We can now add links for these pages by adding the following to the top of your `index.js` file
 
 ```javascript
 import Link from "next/link";
@@ -97,26 +111,6 @@ Let's also create a **nav** section for our links
 ```
 
 Next handles links a little differently than other routing methods such as *react-router* or *Gatsby*. In Next, The `<a></a>` tag is wrapped by `<Link></Link>` tags. The main different is that the`href` property goes on the Link tag, instead of on the anchor tag. 
-
-#### Adding dynamic pages
-
-It is also possible to create pages based on the value of the URL parameter. Add a folder in your `pages` folder named `projects` and in that add a file named `[slug].js`. Add the following code to `[slug].js`
-
-```jsx
-import { useRouter } from "next/router";
-
-const Projects = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  return <h2>{slug}</h2>;
-};
-
-export default Projects;
-
-```
-
-This will set load a page for us whenever a `/projects/your-slug-here` URL is hit. The name of the slug is available on `router.query` when using the `next/router` package.
 
 &nbsp;
 
@@ -175,8 +169,6 @@ const Layout = ({ children }) => {
   );
 };
 export default Layout;
-
-
 ```
 
 You can also remove from `index.js` the `<nav></nav>` tags, `Link` import, and `<footer></footer>` code as we included it in `_app.js` already. If you are following along in the browser, we will need to restart our development server to use this component on every page.
@@ -199,7 +191,6 @@ const Meta = () => {
   );
 };
 export default Meta;
-
 ```
 
 Here we added some basic site information, feel free to change the title and add more tags of your own. It also makes sense to make some page-specific meta tags for better SEO. Add the following to the `about.js` page
@@ -231,7 +222,6 @@ const About = (props) => {
 };
 export default About;
 ```
-
 
 Here we have another second title, *About Page*. Since we are lower in the project tree than the `Page` component, this title will overwrite our *Next Demo* title from above. This title tag shows up in the browser tab and is useful to change for specific pages. We also added description meta tags which are specific to this content. 
 
@@ -319,7 +309,7 @@ npm install sass
 
 Add an import for your `.scss` file to the `_app.js` component like you would importing a CSS file.
 
-#### Other Methods
+#### Other CSS Methods
 
 Next has a solution for pretty much every CSS method. There is support for **CSS Modules**, **Styled Components**, **Less**, **Stylus**, and more.
 
@@ -345,4 +335,11 @@ along with some other links to your *Now* deploy overview and project settings p
 
 ### Import Project (Now Dashboard)
 
-In the **Now** Dashboard, there is an option for `Import Project`. This will allow you to choose a **Github**, **Gitlab**, or **Bitbucket** repository to deploy. This service will detect your build configuration and fill out the build command + start scripts automatically. Simply sit back and way for the server to deploy!
+In the **Now** Dashboard, there is an option for `Import Project`. This will allow you to choose a **Github**, **Gitlab**, or **Bitbucket** repository to deploy. This service will detect your build configuration and fill out the build command + start scripts automatically. 
+
+&nbsp;
+
+Simply sit back and way for the server to deploy!
+
+### Conclusion
+Next and Now is a powerhouse combination for hosting Server rendered front-end applications. **Zeit**, the team behind both projects, is often innovating and adding new features.

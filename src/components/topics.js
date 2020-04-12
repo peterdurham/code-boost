@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
+import ThemeContext from "../context/ThemeContext"
 
 const Topics = () => {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,7 @@ const Topics = () => {
     }
   `)
   let topics = data.allTopicsJson.edges
-
+  const theme = useContext(ThemeContext)
   return (
     <div className="TopicPreviews">
       {topics.map(({ node: item }) => (
@@ -41,33 +42,29 @@ const Topics = () => {
           image={item.image}
           lightImage={item.lightImage}
           darkImage={item.darkImage}
+          darkMode={theme.darkMode}
         />
       ))}
     </div>
   )
 }
 const Topic = ({ name, slug, lightImage, darkImage, darkMode }) => {
-  console.log(darkMode, "DARKMODE")
   return (
     <Link to={`/${slug}`} className="TopicPreview">
       <div>
-        {/* <BackgroundImage
-            fluid={image.childImageSharp.fluid}
-            className="Topic__image"
+        {darkMode ? (
+          <Image
+            className="TopicPreview__image"
+            fluid={darkImage.childImageSharp.fluid}
             alt={name}
-          ></BackgroundImage> */}
-
-        <Image
-          className="TopicPreview__image"
-          fluid={darkImage.childImageSharp.fluid}
-          alt={name}
-        />
-
-        <Image
-          className="TopicPreview__image"
-          fluid={lightImage.childImageSharp.fluid}
-          alt={name}
-        />
+          />
+        ) : (
+          <Image
+            className="TopicPreview__image"
+            fluid={lightImage.childImageSharp.fluid}
+            alt={name}
+          />
+        )}
 
         <h3 className="TopicPreview__name">{name}</h3>
       </div>
