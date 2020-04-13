@@ -1,8 +1,8 @@
 ---
-title: Parcel Basic Setup, Vanilla JS and React
+title: Parcel Basic Setup For Vanilla JS and React
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
-description: "setup"
+description: "Learn how to setup a Parcel JavaScript project. Simple build tool for React and Vanilla applications."
 featuredImage: "./package.jpg"
 tags: ["Tools", "Parcel", "Setup", "React", "JavaScript"]
 ---
@@ -14,8 +14,6 @@ Parcel is an easy to use build tool for bundling web applications. It is a simpl
 In this tutorial we will be setting up and deploying a React web app.  
 
 &nbsp;  
-
-
 
 To get started, create a new `directory` and `package.json` in the terminal  
 

@@ -1,6 +1,6 @@
 #menu-container {
   width: $width-medium;
-  margin: 0 auto;
+  margin: 20px auto;
   @include respond(tab-land) {
     width: 90%;
     margin: 0 5%;

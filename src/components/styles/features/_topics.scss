@@ -22,7 +22,6 @@
     border-radius: 50%;
     margin: 1rem auto;
     transition: all 0.3s;
-
     @include respond(tab-land) {
       width: 105px;
       height: 105px;

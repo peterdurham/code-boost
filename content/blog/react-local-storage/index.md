@@ -1,8 +1,8 @@
 ---
-title: Using Local Storage to save data with React
+title: Guide To Using Local Storage For Saving Data
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
-description: "setup"
+description: "Learn how to use localstorage to save data to the browsers. Data persists beyond page load like a database."
 featuredImage: "./storage.jpg"
 tags: ["React", "Localstorage"]
 ---

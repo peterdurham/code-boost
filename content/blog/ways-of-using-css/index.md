@@ -1,8 +1,8 @@
 ---
-title: Different ways to use CSS in your web app
+title: Different ways to use CSS
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "Learn all the methods to use stylesheets with CSS and variations such as SCSS and CSS-in-JS."
 featuredImage: "./tiles.webp"
 tags: ["CSS", "Setup"]
 ---

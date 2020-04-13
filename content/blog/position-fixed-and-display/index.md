@@ -2,7 +2,7 @@
 title: Basics of Position and Display Attributes (CSS)
 date: "2015-05-06T23:46:37.121Z"
 category: "CSS"
-description: "setup"
+description: "CSS Properties Position and Display. Options: block, inline, flexbox, grid for Position and static, relative, absolute, and fixed for Display."
 featuredImage: "./lost-places.jpg"
 tags: ["CSS", "Properties"]
 ---

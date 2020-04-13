@@ -1,10 +1,10 @@
 ---
-title: Using The Date object and methods in JavaScript
+title: Using the Date Object and Methods in JavaScript
 date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
-description: "setup"
+description: "Use the Date API in JavaScript to create and read dates. Explains epoch time and date methods."
 featuredImage: "./stonehenge.jpg"
-tags: ["Dates", "JavaScript", "Vanilla JS"]
+tags: ["Dates", "JavaScript"]
 ---
 
 In JavaScript we have access to the `Date` object for any code relating to time. By calling a new instance of this object, we can store the current time in a variable.

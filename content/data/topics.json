@@ -18,27 +18,27 @@
     "slug": "react",
     "image": "../assets/topics/reactlogo.png",
     "lightImage": "../assets/topics/react-logo.png",
-    "darkImage": "../assets/topics/reactlogo.png"
+    "darkImage": "../assets/topics/react-logo.png"
   },
   {
     "name": "Node",
     "slug": "node",
     "image": "../assets/topics/nodelogo8.png",
     "lightImage": "../assets/topics/nodelogo2.png",
-    "darkImage": "../assets/topics/nodelogo8.png"
+    "darkImage": "../assets/topics/nodelogo2.png"
   },
   {
     "name": "GraphQL",
     "slug": "graphql",
     "image": "../assets/topics/graphqllogo3.png",
-    "lightImage": "../assets/topics/graphqllogo2.png",
-    "darkImage": "../assets/topics/graphqllogo3.png"
+    "lightImage": "../assets/topics/gql-logo.png",
+    "darkImage": "../assets/topics/gql-logo.png"
   },
   {
     "name": "Tools",
     "slug": "tools",
-    "image": "../assets/topics/toolslogo3.png",
-    "lightImage": "../assets/topics/toolslogo3.png",
-    "darkImage": "../assets/topics/toolslogo3.png"
+    "image": "../assets/topics/tools-logo.png",
+    "lightImage": "../assets/topics/settings-logo2.png",
+    "darkImage": "../assets/topics/settings-logo2.png"
   }
 ]

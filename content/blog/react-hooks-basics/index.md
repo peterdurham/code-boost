@@ -1,8 +1,8 @@
 ---
-title: How to use React Hooks
+title: How to Use React Hooks Basics With Examples
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
-description: "setup"
+description: "Overview on React Hooks with examples. How to use each Hook including useState, useEffect, and useContext."
 featuredImage: "./lost-places.jpg"
 tags: ["React", "Hooks"]
 ---

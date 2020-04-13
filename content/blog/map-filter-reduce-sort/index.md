@@ -2,7 +2,7 @@
 title: Using Map, Filter, Reduce, and Sort in Javascript
 date: "2015-05-01T22:12:03.284Z"
 category: "JavaScript"
-description: "setup"
+description: "Overview of several basic JavaScript array methods. Explains how to use these four  common methods."
 featuredImage: "./solarpanels.jpg"
 tags: [ "Arrays", "JavaScript", "Vanilla JS"]
 ---

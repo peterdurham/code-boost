@@ -2,7 +2,7 @@
 title: JavaScript DOM Methods and Properties
 date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
-description: "setup"
+description: "Overview of the different methods and properties that can be used on the Document object model or DOM in JavaScript."
 featuredImage: "./cubes.jpg"
 tags: ["JavaScript", "DOM", "Methods"]
 ---
