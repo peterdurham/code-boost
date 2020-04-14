@@ -26,7 +26,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
         </div>
         <Image
           className="TopicPage__image"
-          fluid={topicInfo.image.childImageSharp.fluid}
+          fluid={topicInfo.lightImage.childImageSharp.fluid}
           alt={topicInfo.name}
         />{" "}
       </div>

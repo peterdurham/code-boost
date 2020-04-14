@@ -2,42 +2,42 @@
   {
     "name": "JavaScript",
     "slug": "javascript",
-    "image": "../assets/topics/jslogo2.png",
+    "image": "../assets/topics/javascriptlogo.png",
     "lightImage": "../assets/topics/javascriptlogo.png",
     "darkImage": "../assets/topics/javascriptlogo.png"
   },
   {
     "name": "CSS",
     "slug": "css",
-    "image": "../assets/topics/csslogo.png",
+    "image": "../assets/topics/css-logo.png",
     "lightImage": "../assets/topics/css-logo.png",
     "darkImage": "../assets/topics/css-logo.png"
   },
   {
     "name": "React",
     "slug": "react",
-    "image": "../assets/topics/reactlogo.png",
+    "image": "../assets/topics/react-logo2.png",
     "lightImage": "../assets/topics/react-logo2.png",
     "darkImage": "../assets/topics/react-logo2.png"
   },
   {
     "name": "Node",
     "slug": "node",
-    "image": "../assets/topics/nodelogo8.png",
+    "image": "../assets/topics/node-logo.png",
     "lightImage": "../assets/topics/node-logo.png",
     "darkImage": "../assets/topics/node-logo.png"
   },
   {
     "name": "GraphQL",
     "slug": "graphql",
-    "image": "../assets/topics/graphqllogo3.png",
+    "image": "../assets/topics/gql-logo.png",
     "lightImage": "../assets/topics/gql-logo.png",
     "darkImage": "../assets/topics/gql-logo.png"
   },
   {
     "name": "Tools",
     "slug": "tools",
-    "image": "../assets/topics/tools-logo.png",
+    "image": "../assets/topics/tools-settings-logo.png",
     "lightImage": "../assets/topics/tools-settings-logo.png",
     "darkImage": "../assets/topics/tools-settings-logo.png"
   }
