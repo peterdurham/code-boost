@@ -3,29 +3,29 @@
     "name": "JavaScript",
     "slug": "javascript",
     "image": "../assets/topics/jslogo2.png",
-    "lightImage": "../assets/topics/javascript-logo.png",
-    "darkImage": "../assets/topics/javascript-logo.png"
+    "lightImage": "../assets/topics/javascriptlogo.png",
+    "darkImage": "../assets/topics/javascriptlogo.png"
   },
   {
     "name": "CSS",
     "slug": "css",
     "image": "../assets/topics/csslogo.png",
-    "lightImage": "../assets/topics/csslogo2.png",
-    "darkImage": "../assets/topics/csslogo2.png"
+    "lightImage": "../assets/topics/css-logo.png",
+    "darkImage": "../assets/topics/css-logo.png"
   },
   {
     "name": "React",
     "slug": "react",
     "image": "../assets/topics/reactlogo.png",
-    "lightImage": "../assets/topics/react-logo.png",
-    "darkImage": "../assets/topics/react-logo.png"
+    "lightImage": "../assets/topics/react-logo2.png",
+    "darkImage": "../assets/topics/react-logo2.png"
   },
   {
     "name": "Node",
     "slug": "node",
     "image": "../assets/topics/nodelogo8.png",
-    "lightImage": "../assets/topics/nodelogo2.png",
-    "darkImage": "../assets/topics/nodelogo2.png"
+    "lightImage": "../assets/topics/node-logo.png",
+    "darkImage": "../assets/topics/node-logo.png"
   },
   {
     "name": "GraphQL",
@@ -38,7 +38,7 @@
     "name": "Tools",
     "slug": "tools",
     "image": "../assets/topics/tools-logo.png",
-    "lightImage": "../assets/topics/settings-logo2.png",
-    "darkImage": "../assets/topics/settings-logo2.png"
+    "lightImage": "../assets/topics/tools-settings-logo.png",
+    "darkImage": "../assets/topics/tools-settings-logo.png"
   }
 ]
