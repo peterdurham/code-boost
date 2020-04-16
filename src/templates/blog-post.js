@@ -1,40 +1,38 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+import _ from "lodash"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import BackgroundImage from "gatsby-background-image"
+import { GiQuillInk } from "react-icons/gi"
 
 class BlogPostTemplate extends React.Component {
+  state = {
+    tocItems: [],
+  }
+
   componentDidMount() {
     const headerEls = document.querySelectorAll("h2")
-    const headerEl = document.querySelector("header")
-    const tableOfContents = document.createElement("div")
-    const tocLabel = document.createElement("h3")
-    headerEls.forEach((el, index) => (el.id = `header-${index + 1}`))
-    tableOfContents.classList.add("tableOfContents")
-    tocLabel.innerText = "Table of Contents"
-    tocLabel.style.color = "#fad000"
-    tocLabel.style.marginBottom = "10px"
-    tableOfContents.appendChild(tocLabel)
+    const headerData = []
 
-    headerEls.forEach((el, index) => {
-      const tableLink = document.createElement("a")
-      tableLink.innerText = el.innerText
-      tableLink.href = `#${el.id}`
-      tableOfContents.appendChild(tableLink)
+    headerEls.forEach(el => {
+      el.id = `${_.kebabCase(el.textContent)}`
+      const tocItem = {
+        text: el.textContent,
+        id: el.id,
+      }
+      headerData.push(tocItem)
     })
-
-    if (headerEls.length > 0) {
-      headerEl.appendChild(tableOfContents)
-    }
+    this.setState({ tocItems: headerData })
   }
 
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const { tocItems } = this.state
 
     return (
       <Layout location={this.props.location} title={siteTitle} pageType="Post">
@@ -50,6 +48,7 @@ class BlogPostTemplate extends React.Component {
             <div id="BlogPost__header--tags">
               {post.frontmatter.tags.map(tag => (
                 <Link
+                  className="Tag"
                   key={tag}
                   to={`/tag/${tag
                     .split(" ")
@@ -66,15 +65,22 @@ class BlogPostTemplate extends React.Component {
               fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
               className="BlogPost__image"
             ></BackgroundImage>
+            <div className="tableOfContents">
+              <h4>Table of Contents</h4>
+              {tocItems.map(item => {
+                return (
+                  <a href={`./#${item.id}`}>
+                    <GiQuillInk />
+                    <span>{item.text}</span>
+                  </a>
+                )
+              })}
+            </div>
           </header>
           <section
-            id="BlogPost__markdown"
+            className="BlogPost__markdown"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-
-          {/* <footer>
-            <Bio />
-          </footer> */}
         </article>
 
         <nav id="BlogPost__footer">

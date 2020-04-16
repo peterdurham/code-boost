@@ -48,8 +48,7 @@ If you have mutiple font file types available, it makes sense to import them all
 
 ```css
 @font-face {
-  src: url("./assets/fonts/my_font.eot") format('embedded-opentype'),
-       url("./assets/fonts/my_font.woff") format("woff"),
+  src: url("./assets/fonts/my_font.woff") format("woff"),
        url("./assets/fonts/my_font.woff2") format("woff2"),
        url("./assets/fonts/my_font.ttf") format("truetype");
   font-family: "My Font";

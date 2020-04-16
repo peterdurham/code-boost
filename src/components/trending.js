@@ -26,7 +26,7 @@ const Trending = () => {
                 .split("/")
                 .join("-")
                 .toLowerCase()}`}
-              className="Trending__topic"
+              className="Tag"
               key={tag}
             >
               {tag}

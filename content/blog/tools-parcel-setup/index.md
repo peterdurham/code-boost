@@ -7,15 +7,11 @@ featuredImage: "./package.jpg"
 tags: ["Tools", "Parcel", "Setup", "React", "JavaScript"]
 ---
 
-Parcel is an easy to use build tool for bundling web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration.  
+**Parcel** is an easy to use build tool for *bundling* web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration. In this tutorial, we will be setting up a *Vanilla JavaScript* app, converting into a *React app*, then deploying it live to **Netlify**.  
 
-&nbsp;  
+## Parcel Basic Setup
 
-In this tutorial we will be setting up and deploying a React web app.  
-
-&nbsp;  
-
-To get started, create a new `directory` and `package.json` in the terminal  
+To get started, create a new directory and **node** project in the terminal using
 
 ```bash
 mkdir parcel-setup
@@ -57,7 +53,8 @@ In the `index.html` file add a basic html setup
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Parcel Setup</title>
 </head>
@@ -82,7 +79,9 @@ We now have a basic working web application and can run it locally with the foll
 parcel index.html
 ```
 
-This will spin up a development server on `http://localhost:1234/` by default. Parcel comes with built-in hot module replacement, so any saved changes in our code will immediately be reflected in the browser.
+This will spin up a development server on `http://localhost:1234/` by default. **Parcel** comes with built-in *hot module replacement*, so any saved changes in our code will immediately be reflected in the browser.
+
+&nbsp;
 
 Currently our project folder should look something like this
 
@@ -97,11 +96,11 @@ parcel-setup/
 - package.json
 ```
 
-The `.cache` and `dist` folders get built when we run any `parcel` command, and the `node_modules` folder includes our installed dependencies.
+The `.cache` and `dist` folders get built when we run any `parcel` command, and the `node_modules` folder includes our installed dependencies. We can deploy this application by adding and running a `build` command to the `package.json` file, however let's first setup React and some additional files. 
 
-We can deploy this application by adding and running a `build` command to the `package.json` file, however let's first add React and some additional files.
+>  Deploy this **Vanilla JavaScript** application directly by skipping down to the **Adding Scripts** section below.
 
-## Adding React
+## Adding React to Parcel
 
 Firstly, we will need some to add some additional packages to our project to setup and parse our React. Enter the following commands in your terminal
 
@@ -118,7 +117,6 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react
 Babel will transpile our React code so that the browser can read it properly. Add a `.babelrc` file to the root of your project where we can specify which `presets` and `plugins` to use. 
 
 ```JSON
-// .babelrc
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
@@ -126,9 +124,11 @@ Babel will transpile our React code so that the browser can read it properly. Ad
 
 ### Reorganizing files
 
-Let's next create a `src/` folder in the root of our application now to get organized. Move the `index.html` and `index.js` files to the src folder and make additional `app.js` and `app.css` files.
+Let's create a `src/` folder in the root level of our application to get organized. Move the `index.html` and `index.js` files to this folder and make additional `app.js` and `app.css` files.
 
-The `index.html` file will be the entrypoint to our page, calling the `index.js` file which will bring in our React code. Let's change `index.js` now
+&nbsp;
+
+The `index.html` file will be the entrypoint to our page, calling the `index.js` file which will bring in our **React** code. Let's change `index.js` now
 
 ```javascript
 import React from "react";
@@ -138,7 +138,7 @@ import App from "./app";
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-This file will render our React application in the `html` file we built earlier. We also imported `"./app"` which we can fill out now in `app.js`
+This file will render our React application in the **html** file we built earlier. We also imported `"./app"` which we can fill out now in `app.js`
 
 ```jsx
 import React from "react";
@@ -154,7 +154,7 @@ const App = () => {
 export default App;
 ```
 
-Here we imported a `./app.css` file here which we already created. Add the following code (or whatever you like) to `app.css` to make sure its working properly
+Here we imported a `./app.css` file which we already created. Add the following code (or whatever you like) to `app.css` to make sure its working properly
 
 ```css
 h1 {
@@ -179,13 +179,25 @@ We can simplify the development and build processes by adding scripts to our `pa
 },
 ```
 
-Both scripts will build our application into the `dist` folder, the `start` script will also setup a development server in the browser. We will need the `build` command specifically to deploy this application into production.
+Both scripts will build our application into the `dist` folder. The `start` script will also setup a development server in the browser. We will need the `build` command specifically to *deploy* this application into **production**.
 
-## Deploy
+### Adding .gitignore
 
-There are plenty of locations on the internet to host this application. In this tutorial we will use [Netlify](https://www.netlify.com/), since it easy to setup and comes with a lot of features. If you haven't already, deploy your application to github and signup for / login to Netlify.
+We will also need to setup a `.gitignore` file before we deploy, add one now to the *root* of your project folder now, including at least the following folders
 
-Building our app in production is simple, click `New site from Git` and selecting your github (or other) repository. We now just need to specify our **Build command** and **Publish directory**.
+```bash
+node_modules
+dist
+.cache
+```
+
+## Deploy a Parcel App
+
+There are plenty of locations on the internet to host our application. In this tutorial we will use [Netlify](https://www.netlify.com/), since it easy to setup and comes with a lot of features. If you haven't already, deploy your application to github and signup for / login to Netlify.
+
+&nbsp;
+
+Building our app in production is as simple as clicking  `New site from Git` and selecting your github (or other) repository. We now just need to specify our **Build command** and **Publish directory**.
 
 For **Build command** enter
 

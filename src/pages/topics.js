@@ -25,7 +25,7 @@ const TopicsPage = ({
             <Link
               to={`/${topic.fieldValue.toLowerCase()}/`}
               key={topic.fieldValue}
-              className="Trending__topic"
+              className="Tag"
             >
               <span>
                 {topic.fieldValue} ({topic.totalCount})

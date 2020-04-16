@@ -26,7 +26,7 @@ const TagsPage = ({
               <Link
                 to={`/tag/${kebabCase(tag.fieldValue.toLowerCase())}/`}
                 key={tag.fieldValue}
-                className="Trending__topic"
+                className="Tag"
               >
                 <span>
                   {tag.fieldValue} ({tag.totalCount})

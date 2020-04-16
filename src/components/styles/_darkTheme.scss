@@ -1,9 +1,8 @@
 body {
-  color: #111111;
-  background-color: #fff;
-  color: rgb(42, 42, 42);
+  color: $color-bg-darkest;
+
   & a {
-    color: $color-black;
+    color: $color-bg-darkest;
   }
   & #nav-container {
     background-color: #fff;
@@ -15,19 +14,31 @@ body {
     color: rgba(255, 255, 255, 0.5);
   }
 }
+.BlogPost__markdown {
+  & .language-text {
+    color: $color-bg-dark;
+    background: rgba(0, 0, 0, 0.06);
+  }
+}
 
 .dark {
-  background-color: #202020;
-  color: #b3b9c5;
+  background-color: $color-darkmode-18;
+  color: $color-text-light;
 
+  & #nav-container {
+    background-color: $color-bg-darkest;
+  }
+  & .PostPreview {
+    background-color: $color-darkmode-17;
+  }
   & a {
-    color: #b3b9c5;
+    color: $color-text-light;
   }
   & p {
-    color: #b3b9c5;
+    color: $color-text-light;
   }
   & button {
-    color: #b3b9c5;
+    color: $color-text-light;
   }
   & .logo-text {
     color: #ffffff;
@@ -35,28 +46,23 @@ body {
   & h1,
   h2,
   h3 {
-    color: #cecece;
+    color: $color-text-lighter;
   }
-  & .PostPreview {
-    background-color: rgb(48, 48, 48);
-  }
-  & #nav-container {
-    background-color: #202020;
-  }
+
   & .language-text {
-    color: #b3b9c5;
+    color: $color-text-light;
     background: rgba(255, 255, 255, 0.1);
   }
   .Menu {
-    background-color: #202020;
+    background-color: $color-bg-darkest;
   }
   & .TagPage__button {
-    border: 1px solid #b3b9c5;
+    border: 1px solid $color-text-light;
   }
   blockquote {
     color: #fff;
     border: none;
-    background: rgb(24, 24, 24);
+    background: $color-bg-darkest;
     border-radius: 4px;
     font-size: 1.2rem;
     margin: 1.6rem 0;
@@ -77,12 +83,18 @@ body {
     }
   }
   .tableOfContents {
+    border: 2px solid $color-yellow;
+    background-color: $color-bg-darkest;
     & a {
+      color: $color-text-lightest;
+      transition: all 0.3s;
+    }
+    & a:hover {
       color: $color-yellow;
     }
   }
   #BlogPost__footer a {
-    color: #b3b9c5;
+    color: $color-text-light;
   }
 }
 
@@ -94,50 +106,46 @@ table {
   overflow-x: auto;
   display: block;
   margin: 4.8rem 0;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 thead {
   display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
 }
 tr {
   display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
 }
 .dark th {
-  border-bottom: 2px solid #131313;
+  border-bottom: 2px solid $color-bg-darkest;
 }
 tbody {
   display: table-row-group;
   vertical-align: middle;
-  border-color: inherit;
 }
 tr {
   display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
+}
+th {
+  padding: 1rem 2rem;
+  text-align: left;
 }
 td {
   text-align: left;
-  padding: 0.75rem !important;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+  padding: 1rem 2rem !important;
   hyphens: auto;
   word-break: break-word;
 }
+
 tbody tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: $color-text-lightest;
 }
 .dark tbody tr:nth-child(2n) {
-  background-color: #2d2d2d;
+  background-color: $color-bg-dark;
 }
 
 .gatsby-highlight {
   font-size: 1.4rem;
   margin: 2.688rem 0;
-  // box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
+
   & pre {
     border-radius: 8px;
     box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
@@ -146,10 +154,13 @@ tbody tr:nth-child(2n) {
 
 pre.language-javascript {
   padding: 2.016rem;
-
   font-size: 1.6rem;
   border-radius: 0.4rem;
   // border-left: 10px solid orangered;
+}
+pre.language-terminal {
+  background: black;
+  border-top: 10px solid $color-green;
 }
 // :not(pre) > code[class*="language-"] {
 //   font-size: 1.75rem;

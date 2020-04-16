@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import { IoIosSearch } from "react-icons/io"
@@ -43,7 +43,7 @@ const Menu = () => {
                   return (
                     <Link
                       key={tag}
-                      className="Trending__topic"
+                      className="Tag"
                       to={`/tag/${tag
                         .split(" ")
                         .join("-")
