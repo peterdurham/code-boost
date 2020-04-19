@@ -69,7 +69,7 @@ class BlogPostTemplate extends React.Component {
               <h4>Table of Contents</h4>
               {tocItems.map(item => {
                 return (
-                  <a href={`./#${item.id}`}>
+                  <a key={item.id} href={`./#${item.id}`}>
                     <GiQuillInk />
                     <span>{item.text}</span>
                   </a>

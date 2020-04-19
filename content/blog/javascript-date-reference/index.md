@@ -20,8 +20,6 @@ console.log(date);
 >> Sun Feb 02 2020 08:17:01 GMT-0800 (Pacific Standard Time)
 ```
 
-
-
 ## Epoch Time
 
 When a date object is created, JavaScript stores this information as a **Unix Epoch Time**. This is the number of *milliseconds* that have elapsed since January 1st, 1970. This concept is useful to understand and practice, as date math is often done in this format.  
@@ -38,8 +36,6 @@ console.log(exampleDate);
 ```terminal
 >> Fri Jan 01 1971 00:49:56 GMT-0800 (Pacific Standard Time)
 ```
-
-
 
 Any time between roughly -271,000 BCE and 275,000 CE can be set using the date object.
 
@@ -93,8 +89,6 @@ console.log(date);
 ```terminal
 >> Wed Feb 02 -250000 09:33:00 GMT-0752 (Pacific Standard Time)
 ```
-
-
 
 ## Using Locale Date Strings
 

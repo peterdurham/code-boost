@@ -1,13 +1,15 @@
 ---
-title: How To Do Conditional Rendering in React
+title: Conditional Rendering Basics in React
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "Various methods of conditional rendering in React such as if-else, logical &&, and ternary opeartors."
-featuredImage: "./stoplight.jpg"
+featuredImage: "./question.jpg"
 tags: ["React", "Conditional Rendering"]
 ---
 
-Oftentimes when building React interfaces, we will want to display different elements depending on the state of the application. There are numerous ways to do this in React, depending on the situation. In this tutorial we will walk through several of the options available.
+Oftentimes when building with **React**, we will want to display different elements depending on the state of the application. There are numerous ways to do this in React, depending on the situation. In this tutorial we will walk through several of the options available.
+
+## Rendering with If / Else
 
 Each component in React has a `return` statement, which includes some JSX or markup. We can use `if` statements to decide which JSX is returned. In the following example, our component will return the number of bananas along with a label. If there is only 1 banana we would like to make it singular, otherwise we can make it plural.
 
@@ -56,13 +58,11 @@ function App() {
 }
 ```
 
-There are further ways to simplify this code such as concatenating an `s` if our condition is true, however this should well demonstrate that we can set variables to either JSX or a string value.
+There are further ways to simplify this code such as concatenating an `s` if our condition is true, however this should well demonstrate that we can set conditional variables in either JSX or JavaScript.
 
 ## Inline Conditionals
 
-The previous examples outline how we can either return two sets of markup, or two possible variable values. For our bananas example, there are (thankfully) simpler ways to achieve our goal.
-
-In React and JavaScript we have access to the `logical &&` and `if-else` operators. Here is their basic syntax
+The previous examples outline how we can conditionally return markup. For our bananas example, there are (thankfully) simpler ways to achieve our goal. In React and JavaScript we have access to the `logical &&` and `if-else` operators. Here is their basic syntax
 
 ```javascript
 // logical &&
@@ -78,9 +78,9 @@ In each case, we will have a condition which simplifies down to a boolean value 
 - `!singular`
 - `newArray.indexOf('Salmon') > -1`
 
-### Logical &&
+## Logical &&
 
-This operator will evaluate to the second argument if the condition is true and the first argument if it is false. Unless you are a binary wiz kid this might not make much sense at first, but essentially we will use this operator when we only care to return something if our statement evalutes to true.
+This operator will evaluate to the second argument if the condition is true and the first argument if it is false. We will use this operator mainly when we only care to return something if our statement evalutes to true.
 
 ```jsx
 function App() {
@@ -107,7 +107,7 @@ This condition will evaluate to true, therefore the statement will evaluate to t
 
 It is useful to understand each valid syntax, though many code formatters or situations will call for different solutions. 
 
-### Ternary Operator
+## Ternary Operator
 
 This is the grandaddy operator of conditional rendering in React. It will evaluate a statement, returning the first value if true, and the second value if false. Here is our previous example using a ternary operator.
 
@@ -131,6 +131,8 @@ function App() {
 ```
 
 Starting with `{() ? () : ()}` can be helpful at first to grasp this conditional and avoid syntax errors. Oftentimes these statements will be longer than 1 line so it helps to understand the allowable spacing. Code formatters such as *prettier* will rearrange the syntax in a number of ways.
+
+&nbsp;
 
 Since conditionals can return either JSX or string values, we can simplify this example further
 
