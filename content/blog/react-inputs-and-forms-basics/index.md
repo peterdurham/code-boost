@@ -1,6 +1,6 @@
 ---
 title: How to Handle Inputs and Forms in React
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-04-17"
 category: "React"
 description: "Overview of different best practices and methods to handle inputs and forms in React. Two-way data binding and React Hooks examples."
 featuredImage: "./forms.jpg"

@@ -1,6 +1,6 @@
 ---
 title: How to Add Custom Fonts to you Websites
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-04-06"
 category: "CSS"
 description: "Basic overview of how to add custom fonts to your webpage or application. Use font files with @fontface or the Google Fonts CDN."
 featuredImage: "./fonts4.jpg"

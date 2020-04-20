@@ -1,6 +1,6 @@
 ---
 title: How to use React Icons in Your Projects
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-03-23"
 category: "React"
 description: "Learn how to add icons to your project and update SVG icons with react-icons. React Addon Library for icons."
 featuredImage: "./icons-dark.jpg"
@@ -52,7 +52,7 @@ These icons can be added to your JSX by simply calling a self-enclosed element w
 <TiBeer />
 ```
 
-<img src="C:\Users\Peter\Desktop\websites\code-boost\content\blog\react-icons\react_icons1.jpg" title="" alt="icons" width="718">
+![icons black](./react_icons1.jpg)
 
 ## Icon Styling
 
@@ -65,7 +65,7 @@ svg {
 }
 ```
 
-![icons bigger and orange](C:\Users\Peter\Desktop\websites\code-boost\content\blog\react-icons\react_icons2.jpg)
+![icons orange](./react_icons2.jpg)
 
 If you are using other svgs, it makes more sense to add an icon class and/or id to your icons instead. Icons can be further customized like any other element.
 
@@ -90,6 +90,6 @@ and change add the following CSS
 }
 ```
 
-![different colored icons](C:\Users\Peter\Desktop\websites\code-boost\content\blog\react-icons\react_icons3.jpg)
+![icons colors](./react_icons3.jpg)
 
 React-icons really simplifies the process of acquiring and maintaining icons in a react project. With so many options available for icons, it's a very useful package to install. 

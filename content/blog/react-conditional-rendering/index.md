@@ -1,6 +1,6 @@
 ---
 title: Conditional Rendering Basics in React
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-02-26"
 category: "React"
 description: "Various methods of conditional rendering in React such as if-else, logical &&, and ternary opeartors."
 featuredImage: "./question.jpg"

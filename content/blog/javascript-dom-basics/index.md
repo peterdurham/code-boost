@@ -1,23 +1,23 @@
 ---
-title: Overview and Basics of the Document Object Model (DOM)
-date: "2015-05-06T23:46:37.121Z"
+title: Basics of the Document Object Model (DOM)
+date: "2020-04-08"
 category: "JavaScript"
 description: "Learn how to interact with the Document Object Model or DOM. Render and interact with html pages using vanilla JavaScript."
 featuredImage: "./document.jpg"
 tags: ["JavaScript", "DOM", "Configuration"]
 ---
 
-The DOM, or Document Object Model is a programming interface for HTML documents. It is used by the browser to render webpages from HTML code. Each element in a document is part of a branched tree structure that includes parent and child nodes. The browser uses JavaScript to update various properties and elements in the document.
+The **DOM**, or *Document Object Mode*l is a programming interface for HTML documents. It is used by the browser to render webpages from HTML code. Each element in a document is part of a branched tree structure that includes parent and child nodes. The browser uses JavaScript to update various properties and elements in the document.
 
-## Terminology
+## DOM Terminology
 
 ### Window
 
-The `window` is the outermost (parent) object of the Document Object Model. It stores information about the browser window such as the size, location, history, etc. Global properties and methods are stored on the window object.
+The `window` is the outermost object of the Document Object Model. It stores information about the browser window such as the size, location, history, etc. Global properties and methods are stored on the window object.
 
 ### Document
 
-The `document` is an object version of the html document. It is a property on the window and contains all the html on the page. It includes methods to select html elements and add event listeners. 
+The `document` is an object version of the html document. It is a property on the window and contains all the html of the page. It includes methods to select html elements and add event listeners. 
 
 ### HTML
 
@@ -58,7 +58,7 @@ var containerElement = document.querySelector(".container");
 var rootElement = document.querySelector("#root");
 ```
 
-** `querySelector` will return the first element matching the selector and `querySelectorAll` will return an array of all matching elements.
+> **Note:** `querySelector` will return the first element matching the selector and `querySelectorAll` will return an array of all matching elements.
 
 ## Modifying Attributes
 
@@ -70,13 +70,13 @@ containerElement.innerText = "This is the new text";
 rootElement.id = "app-container";
 ```
 
-## Event Listeners
+## Adding Event Listeners
 
 The browser is able to listen for specified events that are occur using JavaScript. An event listener can be added to a DOM node, and triggers when a particular event occurs. Lots of events can be listened for including onClick, onScroll, onChange, onDrag, etc. 
 
 ```javascript
 buttonElement.addEventListener("click", () => {
-  console.log("BUTTON CLICKED!");
+  console.log("Button Clicked!");
 })
 window.addEventListener(("scroll"), () => {
   console.log("Scroll height: ", window.scrollY);

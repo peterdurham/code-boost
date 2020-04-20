@@ -1,6 +1,6 @@
 ---
 title: Using the Date Object and Methods in JavaScript
-date: "2020-02-20T23:46:37.121Z"
+date: "2020-02-02"
 category: "JavaScript"
 description: "Use the Date API in JavaScript to create and read dates. Explains epoch time and date methods."
 featuredImage: "./stonehenge.jpg"
