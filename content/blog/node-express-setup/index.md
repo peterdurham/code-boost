@@ -7,22 +7,31 @@ featuredImage: "./server.jpg"
 tags: ["Node", "Express", "Setup"]
 ---
 
-Node.js and Express are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.  
-  
+**Node.js** and **Express** are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.  
+
+&nbsp;
+
 *Node* is a JavaScript runtime that operates outside of the browser using Chrome's V8 JavaScript engine.  
-  
+
+&nbsp;
+
 *Express* is web application framework for Node.js which can be used to setup a backend API.  
-  
+
 ### What is an API
+
 An API or *applied programming interface* is a computing interface exposed by a software program or internet services to allow third party use of its functionality. APIs can be used both *privately* and *publicy* to `consume` or `provide` data.
 
 ### Why build one?
+
 An `API` is required to interface with most modern databases. A `Node-Express` server is able to talk with both the `client` and the `database`. This setup will allow for persistent data storage, and the ability to create a user system with `login`.
 
 > Note: This tutorial will show you how to setup a basic Exprses Server and connect it to a React application but does not connect with any databases. Check out this [Full stack tutorial](https://code-boost.netlify.com/full-stack-react-node/) if you want to connect your app with a database. This tutorial is a good overview if you are new to full-stack development.
 
 ## Getting Started
+
 In this tutorial we will be setting up a basic `Node` and `Express` application. This application will **not** be connected to a database, however it will contain all of the logic needed to perform db operations.
+
+&nbsp;
 
 First, make sure you have [Node](https://nodejs.org/en/download/) installed on your computer. Next create a new project folder and navigate into it
 
@@ -30,7 +39,9 @@ First, make sure you have [Node](https://nodejs.org/en/download/) installed on y
 mkdir demo-server
 cd demo-server
 ```
+
 In the project folder, initiate a new `node` application with the following
+
 ```bash
 npm init -y
 ```
@@ -54,12 +65,15 @@ This will create a `package.json` file that will specify your project's `start s
 ```
 
 ### Dependencies
+
 As with all **JavaScript**, there is usually a 3rd party library to make your life easier. In the root of your project folder, install the following dependencies in your project
 
 ```bash
 npm install express cors body-parser
 ```
+
 also enter
+
 ```bash
 npm install --save-de nodemon
 ```
@@ -74,6 +88,7 @@ npm install --save-de nodemon
 There are plenty of other useful packages in `node` development, however this will be enough to setup a simple server.
 
 ### Server
+
 Now that we have our start `scripts` ready and our `depencies` installed, we can setup our `server` code. In `server.js` add the following
 
 ```javascript
@@ -129,19 +144,24 @@ module.exports = router;
 ```
 
 With that we should be able to access our application in the browser. Enter the following start script
+
 ```bash
 npm run dev
 ```
+
 and open up the browser at `http://localhost:5000/api/movies/test` to see if it is working correctly.
 
 ## Setup a frontend (React)
+
 We can also setup a frontend application to interface with out application using **React**. Create an application now using
 
 ```bash
 npx create-react-app demo-client
 cd demo-client
 ```
+
 ### Proxy
+
 Since we are using the same machine for both `servers` while in `development` mode, we can use a `proxy`. In the demo-client's `package.json` add the following *proxy* entry
 
 ```json
@@ -151,6 +171,7 @@ Since we are using the same machine for both `servers` while in `development` mo
 ```
 
 #### Axios
+
 Also install the package `axios` which simplifies **HTTP** requests
 
 ```bash
@@ -158,6 +179,7 @@ npm install axios
 ```
 
 ### Clientside Requests
+
 Next, open `app.js` in your react application and add the following
 
 ```jsx
@@ -204,14 +226,17 @@ function App() {
 }
 export default App;
 ```
+
 Next run the `demo-client` application while `demo-server` is running (port 5000) using
-  
+
 ```bash
 npm start
 ```
 
 ### Applications Connected
+
 If you open the browser for your clientside application you will see that the message `"array of movies"` was sent from the `express` API. If you try typing in the name of a movie and submit you will be able to view the browser input in your already running `demo-server` terminal. The `demo-server` **Node** server is communicating with the `demo-client` **React** client.
 
 ## Next Steps - Database
+
 This tutorial was meant to be a basic introduction to how `Express` servers work, and how you can use them to setup APIs. There are numerous options you can use for databases including SQL and mongoDB. Check out this [full stack setup](https://code-boost.netlify.com/full-stack-react-node/) tutorial to create a `full-stack` application with **React** and **Node**. 

@@ -3,7 +3,7 @@ title: Overview of Different ways to use CSS
 date: "2020-03-09"
 category: "CSS"
 description: "Learn all the methods to use stylesheets with CSS and variations such as SCSS and CSS-in-JS."
-featuredImage: "./tiles.webp"
+featuredImage: "./hallstatt.webp"
 tags: ["CSS", "Setup"]
 ---
 

@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
+import Search from "./search"
 import { IoIosSearch } from "react-icons/io"
+
 const Menu = () => {
   const data = useStaticQuery(graphql`
     {
@@ -10,15 +12,34 @@ const Menu = () => {
           fieldValue
         }
       }
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              description
+              tags
+              category
+            }
+          }
+        }
+      }
     }
   `)
   const tags = data.tagsGroup.group.map(tag => tag.fieldValue)
+  const blogPosts = data.allMarkdownRemark.edges
+  console.log(blogPosts)
 
   return (
     <div className="Menu">
       <div id={"menu-container"}>
         <div className="Menu__search">
           <input type="text" placeholder="Search" />
+          <Search />
           <div className="Menu__search--icon">
             <IoIosSearch />
           </div>
