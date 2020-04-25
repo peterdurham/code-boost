@@ -3,7 +3,7 @@ title: How to Setup SCSS in Your Web Projects
 date: "2020-03-06"
 category: "Tools"
 description: "Learn to setup SCSS projects (aka SASS) for vanilla JavaScript or React with parcel and create-react-app."
-featuredImage: "./deer.webp"
+featuredImage: "./fall-leaves.webp"
 tags: ["Tools", "Setup", "CSS"]
 ---
 

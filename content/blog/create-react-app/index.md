@@ -1,9 +1,9 @@
 ---
-title: How To Use Create React App, Setup Overview
+title: Create-React-App Setup Explained
 date: "2015-05-06T23:46:37.121Z"
 category: "React"
 description: "How to use Create React App and an explaination of what the files created do. Explains Project structure and purpose of files."
-featuredImage: "./lightbulb.jpg"
+featuredImage: "./sea-2755858_1280.webp"
 tags: ["React", "create-react-app"]
 ---
 

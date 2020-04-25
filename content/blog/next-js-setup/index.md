@@ -3,7 +3,7 @@ title: Use NextJS to Create a Server Rendered React App
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
 description: "Build a Next.JS application for Server-side rendered React pages. Deploy to the Now cloud platform by Zeit. "
-featuredImage: "./stonehenge.jpg"
+featuredImage: "./sign.jpg"
 tags: ["React", "JavaScript", "Tools", "Next", "Now"]
 
 ---

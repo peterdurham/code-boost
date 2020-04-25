@@ -4,9 +4,9 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const config = {
-  title: "Peter Durham - Web Developer",
+  title: "Code Boost - Web Development Tutorials",
   twitter: "https://twitter.com/peterjdurham",
-  url: "https://peterdurham.netlify.com/",
+  url: "https://www.code-boost.com/",
   logo:
     "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpgg",
 }
@@ -33,7 +33,7 @@ const getSchemaOrgJSONLD = ({
     ? [
         ...schemaOrgJSONLD,
         {
-          "@context": "https://code-boost.netlify.com/",
+          "@context": "https://code-boost.com/",
           "@type": "BreadcrumbList",
           itemListElement: [
             {
@@ -65,7 +65,7 @@ const getSchemaOrgJSONLD = ({
           },
           publisher: {
             "@type": "Organization",
-            url: "https://code-boost.netlify.com/",
+            url: "https://code-boost.com/",
             logo: config.logo,
             name: "Code Boost",
           },
@@ -97,7 +97,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost: true,
-    url: "https://code-boost.netlify.com/",
+    url: "https://code-boost.com/",
     title,
     image: "http://fake-img-link.com",
     description,

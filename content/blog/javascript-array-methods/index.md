@@ -1,5 +1,5 @@
 ---
-title: Array Methods Overview in JavaScript
+title: Array Methods in JavaScript
 date: "2020-03-16"
 category: "JavaScript"
 description: "A basic overview of the different array methods available in JavaScript. Includes Mutator, Accessor, and higher order methods."

@@ -3,7 +3,7 @@ title: Parcel Basic Setup For Vanilla JS and React
 date: "2020-03-17"
 category: "Tools"
 description: "Learn how to setup a Parcel JavaScript project. Simple build tool for React and Vanilla applications."
-featuredImage: "./package.jpg"
+featuredImage: "./parcel.jpg"
 tags: ["Tools", "Parcel", "Setup", "React", "JavaScript"]
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: How To Use JavaScript ES Modules Import and Export
+title: How To Use JavaScript Import/Export (ES Modules)
 date: "2015-05-06T23:46:37.121Z"
 category: "JavaScript"
 description: "Basic overview on how to import and export in JavaScript using the ES Modules and Common JS."
-featuredImage: "./cubes.jpg"
+featuredImage: "./container.webp"
 tags: ["JavaScript", "Import/Export", "Methods"]
 
 ---

@@ -3,7 +3,7 @@ title: Basics of the Document Object Model (DOM)
 date: "2020-04-08"
 category: "JavaScript"
 description: "Learn how to interact with the Document Object Model or DOM. Render and interact with html pages using vanilla JavaScript."
-featuredImage: "./document.jpg"
+featuredImage: "./tree.jpg"
 tags: ["JavaScript", "DOM", "Configuration"]
 ---
 

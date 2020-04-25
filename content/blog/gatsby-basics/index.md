@@ -3,7 +3,7 @@ title: How to Setup a GatsbyJS Project
 date: "2020-04-22"
 category: "Tools"
 description: "Gatsby is a static-site generator build tool. Overview of build files and various starer templates."
-featuredImage: "./musician.jpg"
+featuredImage: "./night-photograph.jpg"
 tags: ["Gatsby", "Setup", "React", "Tools"]
 ---
 

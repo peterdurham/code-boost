@@ -3,7 +3,7 @@ title: JavaScript DOM Methods and Properties
 date: "2020-02-16"
 category: "JavaScript"
 description: "Overview of the different methods and properties that can be used on the Document object model or DOM in JavaScript."
-featuredImage: "./cubes.jpg"
+featuredImage: "./abstract.jpg"
 tags: ["JavaScript", "DOM", "Methods"]
 ---
 

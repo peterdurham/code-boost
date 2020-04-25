@@ -1,17 +1,17 @@
 ---
-title: The Best Hotkeys To Learn for VS Code
+title: The Best Shortcuts To Learn for VS Code
 date: "2015-05-06T23:46:37.121Z"
 category: "Tools"
-description: "Hotkeys and shortcuts to use in VS Code. Learn effective key combinations to edit and arrange code in the editor."
+description: "Shortcuts and hotkeys to use in VS Code. Learn effective key combinations to edit and arrange code in the editor."
 featuredImage: "./shortcut.webp"
 tags: ["Hotkeys", "Shortcuts", "VS Code"]
 ---
 
-If you are using VS Code, here are some of the best hotkeys to speed up your coding
+If you are using **VS Code**, here are some of the best shortcuts to speed up your coding
 
-## Basic Shortcuts
+### Basic Shortcuts
 
-Here's a quick refresher of some basic `hotkeys` that are not VS Code specific, but are still useful.
+Here's a quick refresher of some basic hotkeys that are *not* VS Code specific, but are still useful.
 
 ## Typing Shortcuts
 
@@ -125,6 +125,6 @@ Using **cmd + ← / →** you can navigate to the beginning or end of a line on 
 
 When at the end of line on Mac use **command + shift + ←** or at the beginning use **command + shift + →** to select an entire line. This hotkey can be used in combination with the previous one when in the middle of a line. Once selected, you can combo this hotkey with the *Duplicating code* hotkey or **cmd + shift + ↑ / ↓**.
 
-## Conclusion
+### Conclusion
 
 These are some of the basic hotkeys for VS Code. It is helpful to learn a few at a time and practice them often to build speed. There are plenty more **VS Code** hotkeys for both [Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) and [Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf).
