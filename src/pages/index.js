@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 import Trending from "../components/trending"
 import Topics from "../components/topics"
-import PostPreview from "../components/postPreview"
+import Card from "../components/card"
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,11 +20,11 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Trending />
         <Topics />
-        <div className="PostPreviews">
+        <div className="Cards">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <PostPreview
+              <Card
                 key={node.fields.slug}
                 title={title}
                 slug={node.fields.slug}

@@ -38,8 +38,8 @@ const Menu = () => {
     <div className="Menu">
       <div id={"menu-container"}>
         <div className="Menu__search">
-          <input type="text" placeholder="Search" />
-          <Search />
+          {/* <input type="text" placeholder="Search" /> */}
+          <Search blogPosts={blogPosts} />
           <div className="Menu__search--icon">
             <IoIosSearch />
           </div>

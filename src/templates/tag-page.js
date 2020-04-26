@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
-import PostPreview from "../components/postPreview"
+import Card from "../components/card"
 
 const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -19,11 +19,11 @@ const TagPageTemplate = ({ pageContext, data }) => {
     <Layout pageType="Tag">
       <h2 className="TagPage__header">{tagHeader}</h2>
 
-      <div className="PostPreviews">
+      <div className="Cards">
         {edgesWithTag.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <PostPreview
+            <Card
               key={title}
               title={title}
               slug={node.fields.slug}
@@ -41,12 +41,12 @@ const TagPageTemplate = ({ pageContext, data }) => {
 
       <div>
         <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
-        <div className="PostPreviews">
+        <div className="Cards">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 3) {
               return (
-                <PostPreview
+                <Card
                   key={title}
                   title={title}
                   slug={node.fields.slug}

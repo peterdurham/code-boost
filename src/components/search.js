@@ -1,20 +1,16 @@
 import React from "react"
-
+import { navigate } from "gatsby"
 import Downshift from "downshift"
 
-const items = [
-  { value: "apple" },
-  { value: "pear" },
-  { value: "orange" },
-  { value: "grape" },
-  { value: "banana" },
-]
-
-const Search = () => {
+const Search = ({ blogPosts }) => {
   return (
     <Downshift
-      onChange={selection => alert(`You selected ${selection.value}`)}
-      itemToString={item => (item ? item.value : "")}
+      onChange={(selection, e) => {
+        navigate(selection.node.fields.slug)
+        console.log(e)
+        e.reset()
+      }}
+      itemToString={item => (item ? item : "")}
     >
       {({
         getInputProps,
@@ -31,26 +27,36 @@ const Search = () => {
           <input {...getInputProps()} />
           <ul {...getMenuProps()}>
             {isOpen
-              ? items
-                  .filter(
-                    item => !inputValue || item.value.includes(inputValue)
-                  )
-                  .map((item, index) => (
-                    <li
-                      {...getItemProps({
-                        key: item.value,
-                        index,
-                        item,
-                        style: {
-                          backgroundColor:
-                            highlightedIndex === index ? "lightgray" : "white",
-                          fontWeight: selectedItem === item ? "bold" : "normal",
-                        },
-                      })}
-                    >
-                      {item.value}
-                    </li>
-                  ))
+              ? blogPosts
+                  .filter(item => {
+                    const text = item.node.frontmatter.title.toLowerCase()
+                    return (
+                      !inputValue || text.includes(inputValue.toLowerCase())
+                    )
+                  })
+                  .map((item, index) => {
+                    return (
+                      <li
+                        {...getItemProps({
+                          key: item.node.frontmatter.title,
+                          index,
+                          item,
+                          style: {
+                            backgroundColor:
+                              highlightedIndex === index
+                                ? "lightgray"
+                                : "white",
+                            fontWeight:
+                              selectedItem === item ? "bold" : "normal",
+                          },
+                        })}
+                      >
+                        {/* <Link to={item.node.fields.slug}> */}
+                        {item.node.frontmatter.title}
+                      </li>
+                    )
+                  })
+                  .filter((item, index) => index < 5)
               : null}
           </ul>
         </div>

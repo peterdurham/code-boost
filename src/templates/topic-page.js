@@ -2,7 +2,7 @@ import React from "react"
 
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import PostPreview from "../components/postPreview"
+import Card from "../components/card"
 
 import Layout from "../components/layout"
 
@@ -30,11 +30,11 @@ const TopicPageTemplate = ({ pageContext, data }) => {
           alt={topicInfo.name}
         />{" "}
       </div>
-      <div className="PostPreviews">
+      <div className="Cards">
         {edgesWithTopic.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <PostPreview
+            <Card
               key={title}
               title={title}
               slug={node.fields.slug}
@@ -49,12 +49,12 @@ const TopicPageTemplate = ({ pageContext, data }) => {
 
       <div style={{ marginTop: "8rem" }}>
         <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
-        <div className="PostPreviews">
+        <div className="Cards">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 3) {
               return (
-                <PostPreview
+                <Card
                   key={title}
                   title={title}
                   slug={node.fields.slug}

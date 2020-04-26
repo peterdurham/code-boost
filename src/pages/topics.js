@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-import PostPreview from "../components/postPreview"
+import Card from "../components/card"
 
 const TopicsPage = ({
   data: {
@@ -38,12 +38,12 @@ const TopicsPage = ({
         <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
           Top Posts
         </h2>
-        <div className="PostPreviews">
+        <div className="Cards">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 6) {
               return (
-                <PostPreview
+                <Card
                   key={title}
                   title={title}
                   slug={node.fields.slug}

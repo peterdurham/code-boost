@@ -3,23 +3,16 @@ import { Link } from "gatsby"
 
 import BackgroundImage from "gatsby-background-image"
 
-const PostPreview = ({
-  frontmatter,
-  title,
-  slug,
-  date,
-  description,
-  excerpt,
-}) => {
+const Card = ({ frontmatter, title, slug, date, description, excerpt }) => {
   return (
-    <article className="PostPreview" key={slug}>
+    <article className="Card" key={slug}>
       <Link style={{ boxShadow: `none` }} to={slug}>
         <BackgroundImage
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
-          className="PostPreview__image"
+          className="Card__image"
         ></BackgroundImage>
-        <div className="PostPreview__title">
-          <div className="PostPreview__tag">{frontmatter.category}</div>
+        <div className="Card__title">
+          <div className="Card__tag">{frontmatter.category}</div>
           <h3>{title}</h3>
         </div>
       </Link>
@@ -35,4 +28,4 @@ const PostPreview = ({
     </article>
   )
 }
-export default PostPreview
+export default Card
