@@ -1,6 +1,6 @@
 ---
 title: How To Setup an Apollo GraphQL Server
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-04-26"
 category: "GraphQL"
 description: "Learn how to setup an Apollo GraphQL server in a Node.js application and connect it with a mongoDB database."
 featuredImage: "./apollo.jpg"
@@ -30,7 +30,7 @@ This will create a new project folder with a node project inside, adding our nec
 npm install --save-dev nodemon
 ```
 
-Next, we should add the following scripts to  to the newly created `package.json` file.
+Next, we should add the following scripts to  to the newly created **package.json** file.
 
 ```json
 {

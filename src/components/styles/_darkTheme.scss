@@ -62,7 +62,7 @@ body {
   blockquote {
     color: #fff;
     border: none;
-    background: $color-bg-darkest;
+    background: $color-medium;
     border-radius: 4px;
     font-size: 1.6rem;
     margin: 1.6rem 0;
@@ -159,8 +159,8 @@ pre.language-javascript {
   // border-left: 10px solid orangered;
 }
 pre.language-terminal {
-  background: black;
-  border-top: 10px solid $color-green;
+  background: $color-bg-darkest;
+  border-top: 12px solid $color-yellow;
 }
 // :not(pre) > code[class*="language-"] {
 //   font-size: 1.75rem;

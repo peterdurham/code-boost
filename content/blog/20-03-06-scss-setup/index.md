@@ -143,11 +143,11 @@ More information about how `create-react-app` works can be found [here](http://l
 
 SCSS also allows for the import of `.scss` files in other .scss files. This allows us to create a `main.scss` file which imports all of our individual .scss files. We will create several different `.scss` files to handle certain functionalities or features on our page. This setup allows us to scale up our application while still making our stylesheets readable and accessible. Add the following folders and files to your application now
 
-```
+```bash
 styles/
  - components/
- --- nav.scss
- --- footer.scss
+ -- nav.scss
+ -- footer.scss
  - animations.scss
  - base.scss
  - mixins.scss

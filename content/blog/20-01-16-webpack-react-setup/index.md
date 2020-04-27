@@ -1,6 +1,6 @@
 ---
 title: How to Setup a React Webpack Application
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-01-16"
 category: "React"
 description: "Basic tutorial to setup a React Application using Webpack bundler for assets. Configuration and setup for using Webpack."
 featuredImage: "./webpack.jpg"

@@ -1,6 +1,6 @@
 ---
 title: How To Use the Position and Display CSS Attributes
-date: "2020-04-19"
+date: "2020-04-17"
 category: "CSS"
 description: "CSS Properties Position and Display. Options: block, inline, flexbox, grid for Position and static, relative, absolute, and fixed for Display."
 featuredImage: "./composed.jpg"

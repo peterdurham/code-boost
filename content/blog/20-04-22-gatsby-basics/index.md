@@ -35,11 +35,11 @@ Starters in **gatsby** are git repositories which contain boilerplate project co
 
 | Starter name                 | Description                 |
 | ---------------------------- | --------------------------- |
-| `gatsby-starter-default`     | simple and quick starter    |
-| `gatsby-starter-blog`        | basic markdown blog setup   |
-| `gatsby-starter-netlify-cms` | example Netlify CMS project |
-| `gatsby-advanced-starter`    | includes advanced use cases |
-| `gatsby-material-starter`    | basic material design setup |
+| **gatsby-starter-default**     | simple and quick starter    |
+| **gatsby-starter-blog**        | basic markdown blog setup   |
+| **gatsby-starter-netlify-cms** | example Netlify CMS project |
+| **gatsby-advanced-starter**    | includes advanced use cases |
+| **gatsby-material-starter**    | basic material design setup |
 
 There are hundreds of `gatsby` starters available and new ones introduced all the time. For this tutorial we will be using `gatsby-starter-blog` as it includes the default project as well as a basic `markdown` blog setup (one of gatsby's best features).
 
@@ -60,13 +60,13 @@ gatsby develop
 
 This will run your **gatsby** project in the browser at `http://localhost:8000`.
 
-> Success: The gatsby build tool is similar to create-react-app as it will create a ready to deploy React application which can also be developed on locally. The rest of this tutorial will describe basic files and features in a gatsby-starter-blog project.
+> **Success**: The gatsby build tool is similar to create-react-app as it will create a ready to deploy React application which can also be developed on locally. The rest of this tutorial will describe basic files and features in a gatsby-starter-blog project.
 
 ## Project Structure
 
 The **gatsby** blog starter will create the following folders along with various other files
 
-```
+```bash
 content/
 - assets/
 - blog/
@@ -136,7 +136,7 @@ The `static` folder is where we can include some of our static assets for the pr
 
 Each gatsby project comes with and requires the following 3 **gatsby** files.
 
-> Note: If you make changes in any of these 3 files, make sure to restart your gatsby project as this data is collected when the project is built.
+> **Note**: If you make changes in any of these 3 files, make sure to restart your gatsby project as this data is collected when the project is built.
 
 ### Gatsby Browser
 
