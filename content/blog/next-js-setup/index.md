@@ -10,7 +10,7 @@ tags: ["React", "JavaScript", "Tools", "Next", "Now"]
 
 ### Why NextJS?
 
-Tools such as *create-react-app*, *parcel*, and *webpack* are **Client rendered** by default, and will not be optimized for Google's search engine crawlers. This problem has been solved by *NextJS* and *Gatsby*, which are currently the most popular build tools for **Server rendering** in React. Server rendering is useful for sites like stores or blogs to rank better in SEO by sending all metadata with the initial page load.
+Most frontend build tools (i.e. create-react-app) are are **Client rendered** by default, and will not be optimized for Google's search engine crawlers. This problem has been solved by *NextJS* and *Gatsby*, which are currently the most popular build tools for **Server rendering** in React. Server rendering is useful for sites like stores or blogs to rank better in SEO by sending all metadata with the initial page load.
 
 ### NextJS Features
 
@@ -24,11 +24,11 @@ To quickly setup a Next project use the command
 npx create-next-app next-demo
 ```
 
-This will setup a new project folder with the name `next-demo`, exactly like *create-react-app* would. **npx** is a command that will search the **npm registry** for the newest version of **create-next-app** and use it to build our project. This saves us from having to install next globally, which can also be done if preferred.
+This will setup a new project folder with the name `next-demo`, exactly like *create-react-app* would. Select the default options for any promts you might get. **npx** is a command  that will search the **npm registry** for the newest version of **create-next-app** and use it to build our project. This saves us from having to install next globally, which can also be done if preferred.
 
 &nbsp;
 
-Next projects can also be setup manually, though for this tutorial we will run the project that we built above using *create-next-app*.
+Next projects can also be setup manually, though we will run the project initialized above using *create-next-app*.
 
 ```bash
 cd next-demo
@@ -36,7 +36,7 @@ code .
 npm run dev
 ```
 
-> **Note:** the command `code .` in the terminal will open VS Code in the `next-demo` folder if you have it installed
+> **Shortcut:** the command `code .` in the terminal will open VS Code in the `next-demo` folder if you have it installed
 
 ![](C:\Users\Peter\Desktop\websites\code-boost\content\blog\next-js-setup\next_app.jpg)
 
@@ -50,7 +50,7 @@ You'll notice that **create-next-app** setup the following for us:
 
 - added next scripts: `dev`, `build`, and `start` to the package.json file.
 
-Take some time now to look through the `index.js` file in the `pages` folder. This will be our homepage route and this file provides some examples of various **Next** features. This page will likely change with new versions of Next, but still contains examples of how to handle metadata with `next/head` and setup inline CSS styles (locally or globally) with `<style jsx>` tags.
+Take some time now to look through the `index.js` file in the `pages` folder. This will be our homepage route and this file provides some examples of various **Next** features. This boilerplate page will likely change with new versions of Next, but still contains examples of how to handle metadata and setup inline CSS styles (locally or globally).
 
 ## Pages and Routing
 
@@ -67,7 +67,7 @@ export default About;
 
 This page will be available at the `/about` route.
 
-#### Adding dynamic pages
+### Adding dynamic pages
 
 It is also possible to create pages based on the value of the URL parameter. Add a folder in your `pages` folder named `projects` and in that add a file named `[slug].js`. Add the following code to `[slug].js`
 
@@ -86,35 +86,73 @@ export default Projects;
 
 This will set load a page for us whenever a `/projects/your-slug-here` URL is hit. The name of the slug is available on `router.query` when using the `next/router` package.
 
-#### Adding Links
+### Index Page
 
-We can now add links for these pages by adding the following to the top of your `index.js` file
-
-```javascript
-import Link from "next/link";
-```
-
-Let's also create a **nav** section for our links
+The `index.js` file is full of boilerplate code that we can replace with the following
 
 ```jsx
-<nav>
-  <Link href="/">
-    <a>Home</a>
-  </Link>
-  <Link href="/about">
-    <a>About</a>
-  </Link>
-  <Link href="/projects/first-project">
-    <a>First Project</a>
-  </Link>
-</nav>
+import Link from "next/link";
+
+function Home() {
+  return (
+    <div>
+      <nav>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+        <Link href="/projects/first-project">
+          <a>First Project</a>
+        </Link>
+      </nav>
+      <div className="container">
+        <h1>Create Next App Starter</h1>
+      </div>
+
+      <style jsx global>{`
+        html,
+        body {
+          font-family: -apple-system, Fira Sans, Helvetica Neue, sans-serif;
+        }
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        nav {
+          padding: 20px 0;
+          text-align: center;
+          position: fixed;
+          top: 0;
+        }
+        a {
+          margin: 0 10px;
+        }
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+export default Home;
 ```
 
-Next handles links a little differently than other routing methods such as *react-router* or *Gatsby*. In Next, The `<a></a>` tag is wrapped by `<Link></Link>` tags. The main different is that the`href` property goes on the Link tag, instead of on the anchor tag. 
+At the top, Next handles links a little differently than other routing methods such as *react-router* or *Gatsby*. In Next, The `<a></a>` tag is wrapped by `<Link></Link>` tags. The main different is that the `href` property goes on the Link tag, instead of on the anchor tag. 
 
 &nbsp;
 
-Now that we have a navigation with links setup, visit the `/about` page and you will realize our links are only available on the homepage. 
+You'll notice there are also `<style jsx>` tags which contain some css. These tags are specific to the component they are declared in, unless the `global` property is added in which case they are global styles.
+
+&nbsp;
+
+Now visit the `/about` page and you will also realize our navigation is only available on the homepage. 
 
 ### Custom App Page
 
@@ -134,48 +172,30 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-Also create a `Layout.js` file in the `components` folder and include the following
+Also create a `components` folder and and `Layout.js` file with the following
 
 ```jsx
 import Link from "next/link";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-        <Link href="/projects/first-project">
-          <a>First Project</a>
-        </Link>
-      </nav>
-      <div className="container">
-        <main>{children}</main>
-      </div>
-      <footer>
-        <a
-          href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-        </a>
-      </footer>
+    <div className="container">
+      <main>{children}</main>
     </div>
   );
 };
 export default Layout;
 ```
 
-You can also remove from `index.js` the `<nav></nav>` tags, `Link` import, and `<footer></footer>` code as we included it in `_app.js` already. If you are following along in the browser, we will need to restart our development server to use this component on every page.
+It also makes sense to switch over the navigation and global css styles code from `index.js` to `Layout.js` since it will be loaded on every page, let's do that next. 
+
+&nbsp;
+
+If you are following along in the browser, we will need to restart our development server to use this component on every page.
 
 ## Adding Meta Tags
 
-We can add **metadata** to our pages using the Next `Head` component. This component can be used in any page or component, let's create a `Meta` component now to add metadata that should show up on every page. (Also make sure to import this component to `Page.js` to include it in the layout)
+We can add **metadata** to our pages using the Next `Head` component. This component can be used in any page or component, let's create a `Meta.js` component now to add metadata that should show up on every page. (Make sure to import and include this component in the recently created  `Layout.js` )
 
 ```jsx
 import Head from "next/head";
@@ -193,7 +213,7 @@ const Meta = () => {
 export default Meta;
 ```
 
-Here we added some basic site information, feel free to change the title and add more tags of your own. It also makes sense to make some page-specific meta tags for better SEO. Add the following to the `about.js` page
+Here we added some basic site information, feel free to change the title and add more tags of your own. It also makes sense to make some page-specific meta tags for better SEO. Also replace the `about.js` page with the following
 
 ```jsx
 import Head from "next/head";
@@ -229,77 +249,15 @@ Here we have another second title, *About Page*. Since we are lower in the proje
 
 It makes sense to setup a SEO component which receives and includes all of this data in a template, rather than copy it out individually. This is especially true for blog posts or large numbers of pages. 
 
-## Styles and CSS
+## Other Methods for CSS
 
-Next.js comes with all the standard methods for using CSS. For this tutorial, I will be using the CSS-in-JS solution. You can follow along or feel free to use whatever CSS method makes the most sense for your project.
+Next.js comes with all the standard methods for using CSS.
 
-#### CSS-in-JS
-
-Next comes with a *CSS-in-JS* syntax for inline styles that allows for creating single page components. Component-scoped style tags can be added to any component
-
-```jsx
-<div>
-  <h2 className="title">This component is red</h2>
-  <style jsx>{`
-    .title {
-      color: red;
-    }
-  `}</style>
-</div>
-```
-
-Let's now add globally-scoped styles to the `Page.js` component from earlier, beneath the `</footer>` component but still inside the outer `</div>`
-
-```jsx
-<style jsx global>{`
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-      sans-serif;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  nav {
-    background: black;
-    text-align: center;
-    padding: 1rem;
-  }
-  nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.4rem;
-    margin: 0 1.4rem;
-  }
-  main {
-    padding: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  footer {
-    width: 100%;
-    height: 100px;
-    border-top: 1px solid #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer img {
-    margin-left: 0.5rem;
-  }
-`}</style>
-```
-
-#### CSS
+### CSS
 
 To use a `.css` stylesheet, add a standard import statement to the `_app.js` page component from earlier. These styles will get applied to every page, and it is important to only upload `.css` files here to avoid naming conflicts.
 
-#### SCSS
+### SCSS
 
 To use a `.scss` styledsheet, first install the `sass` package with
 
@@ -309,7 +267,7 @@ npm install sass
 
 Add an import for your `.scss` file to the `_app.js` component like you would importing a CSS file.
 
-#### Other CSS Methods
+### Other CSS Methods
 
 Next has a solution for pretty much every CSS method. There is support for **CSS Modules**, **Styled Components**, **Less**, **Stylus**, and more.
 
@@ -325,7 +283,13 @@ To install `Now` globally, enter the following in your terminal
 npm i -g now
 ```
 
-This will allow you to deploy by simply using the command `now` when inside the project you wish to deploy. If it is a new project, you will be asked to provide a name and some basic settings. Selecting the default settings for each question will deploy your Next app. You will get a hosted production link such as
+This will allow you to deploy by using the command
+
+```bash
+now
+```
+
+when inside the project you wish to deploy. If it is a new project, you will be asked to provide a name and some basic settings. Selecting the default settings for each question will deploy your Next app. You will get a hosted production link such as
 
 ```bash
 https://next-test-app-seven.now.sh
@@ -342,4 +306,5 @@ In the **Now** Dashboard, there is an option for `Import Project`. This will all
 Simply sit back and way for the server to deploy!
 
 ### Conclusion
+
 Next and Now is a powerhouse combination for hosting Server rendered front-end applications. **Zeit**, the team behind both projects, is often innovating and adding new features.

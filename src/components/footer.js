@@ -6,6 +6,7 @@ import {
   TiSocialFacebook,
   TiSocialTwitter,
   TiSocialYoutube,
+  TiSocialLinkedin,
 } from "react-icons/ti"
 
 const Footer = () => {
@@ -32,14 +33,14 @@ const Footer = () => {
             <span className="Footer__social--icon-container" id="tw-icon">
               <TiSocialTwitter className="Footer__social--icon" />
             </span>
+            <span className="Footer__social--icon-container" id="fb-icon">
+              <TiSocialFacebook className="Footer__social--icon" />
+            </span>
             <span className="Footer__social--icon-container" id="yt-icon">
               <TiSocialYoutube className="Footer__social--icon" />
             </span>
-            <span className="Footer__social--icon-container" id="ig-icon">
-              <AiOutlineInstagram className="Footer__social--icon" />
-            </span>
-            <span className="Footer__social--icon-container" id="fb-icon">
-              <TiSocialFacebook className="Footer__social--icon" />
+            <span className="Footer__social--icon-container" id="li-icon">
+              <TiSocialLinkedin className="Footer__social--icon" />
             </span>
           </div>
         </div>
@@ -55,9 +56,7 @@ const Footer = () => {
       </div>
       <div className="Footer__copyright">
         {" "}
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        Gatsby
+        © {new Date().getFullYear()} Code-Boost
       </div>
     </footer>
   )

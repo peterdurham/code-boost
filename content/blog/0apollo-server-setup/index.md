@@ -15,7 +15,7 @@ A GraphQL server (i.e. *apollo-server*) is comparable with a REST server (i.e. *
 
 ## Apollo Server Setup
 
-To start, make sure you have Node JS installed (download it [here]([Download | Node.js](https://nodejs.org/en/download/))) then setup a new node project
+To start, make sure you have Node JS installed (download it [here]([Download | Node.js](https://nodejs.org/en/download/))) then setup a new node project with the following commands
 
 ```bash
 mkdir games-server
@@ -24,29 +24,24 @@ npm init -y
 npm install apollo-server graphql mongoose
 ```
 
-This will create a new project folder with a node project inside, adding our necessary dependencies. We can also install *nodemon* for development purposes
+This will create a new folder, initialize a node project, and add our dependencies to it. Here **apollo-server** is our server setup, **graphql** is our query language, and **mongoose** allows us to interact with MongoDB. We can also install *nodemon* for development purposes
 
 ```bash
 npm install --save-dev nodemon
 ```
 
-Next, we should add the following scripts to  to the newly created **package.json** file.
+Next, add the following scripts to to the newly created `package.json` file
 
 ```json
-{
-  ...
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-  }
-}
+"start": "node index.js",
+"dev": "nodemon index.js",
 ```
 
 The `start` command will run in production and the `dev` command will be useful when we are making changes to the API. The package *nodemon* will refresh our changes in real-time so we don't need to restart the server.
 
 ### Server File (index.js)
 
-Now, we should set up the entry point to our application which we added to the *package.json* start scripts. Create a `index.js` file in the root project folder and add the following
+Let's set up the entry point to our application which we added to the *package.json* start scripts. Create a `index.js` file in the root level of the project and add the following
 
 ```javascript
 const { ApolloServer, gql } = require("apollo-server");
@@ -61,7 +56,7 @@ server.listen().then(({ url }) => {
 });
 ```
 
-Here is our starter apollo-server setup. **typeDefs** will store our GraphQL schema in a string template literal. The **resolvers** object will contain our query logic and is where we interact with the database. 
+Here is our starter apollo-server setup. **typeDefs** will soon store our GraphQL schema in a string template literal. The **resolvers** object will contain our query logic and is where we interact with the database. 
 
 ### Writing our Schema
 
@@ -111,11 +106,12 @@ In this example we also created another custom type `Status` which is actually a
 
 ### Mutations and Query Type
 
-Additionally we will need to add the shape of our queries and mutations in our GraphQL schema. In GraphQL, a **query** *retrieves* data while a **mutation** *updates* it. Add the following *below* the enum Status in our `typeDefs`
+Additionally we will need to add the shape of our queries and mutations in our GraphQL schema. In GraphQL, a **query** *retrieves* data while a **mutation** *updates* it. Add these types *below* the enum Status in our `typeDefs` template string
 
 ```javascript
 const typeDefs = gql`
   ...
+    
   type Query {
     games: [Game]
     game(id: ID): Game
@@ -124,10 +120,11 @@ const typeDefs = gql`
   type Mutation {
     addGame(game: GameInput): [Game]
   }
+
 `;
 ```
 
-Here we are only designating the types for our queries and mutations.  The logic for these methods will be setup later in our resolvers. The values after the colon specify what type will be returned when the query or mutation is called.
+Here we are designating the types for our queries and mutations.  The logic for these methods will be setup later in our resolvers. The values after the colon specify what type will be returned when the query or mutation is called.
 
 &nbsp;
 
@@ -173,15 +170,17 @@ This command will setup a GraphQL playground at the port we specified above. Ope
 
 ### GraphQL Playground
 
-ADD AN IMAGE OF GQL PLAYGROUND
+![graphql playground](C:\Users\Peter\Desktop\websites\code-boost\content\blog\0apollo-server-setup\playground.jpg)
 
-The GraphQL playground is used for testing out Mutations and Queries in development mode. To start, on the left side add the keyword `mutation` or `query` followed by the *name* of the task you are performing. Each tab in the playground will have the name of the mutation or query it contains and will persist when the browser is closed with localStorage for future testing purposes.
+The GraphQL playground is used for creating and testing out Mutations and Queries in development mode. To start, on the left side add the keyword `mutation` or `query` followed by the *name* of the task you are performing. Each tab in the playground will have the name of the mutation or query it contains and will persist when the browser is closed for future testing purposes.
 
 &nbsp;  
 
-We can now test out all three of our resolvers. Try out each of the following into the GraphQL playground. You can paste each query individually, however if you are new to GraphQL I suggest typing your queries in manually. At each level in a *query* or *mutation* you can hold `Ctrl + Space` (or `Shift + Space`) to open up a dropdown of options depending on where you are in the graph. You can also use `Ctrl + Enter` to run a query.
+We can now test out all three of our resolvers. Try out each of the following into the GraphQL playground. When typing in the playground at each level in a *query* or *mutation* you can hold `Ctrl + Space` (or `Shift + Space`) to open up a dropdown of options depending on where you are in the graph. You can also use `Ctrl + Enter` to run a query.
 
-##### All Games Query
+&nbsp;
+
+#### All Games Query
 
 ```javascript
 query allGames {
@@ -192,7 +191,7 @@ query allGames {
 }
 ```
 
-##### Single Game Query
+#### Single Game Query
 
 ```javascript
 query singleGame {
@@ -203,7 +202,7 @@ query singleGame {
 }
 ```
 
-##### Add a New Game
+#### Add a New Game
 
 ```javascript
 mutation addGame {
@@ -213,8 +212,6 @@ mutation addGame {
   }
 }
 ```
-
-CONSIDER HOW MUCH OF THESE 3 AND TO EXPLAIN THEN GOOD
 
 ## Connecting to MongoDB
 
@@ -236,10 +233,9 @@ Here you will be able to whitelist any IP of the current device you are on, or i
 
 ### Server Connection String
 
-Now that we have a **MongoDB** account setup and a DB cluster running with a login, let's connect our node server by adding the following to the top of `index.js` 
+Now that we have a **MongoDB** account setup and a DB cluster running with a login, let's connect our node server by adding the following to the top of `index.js`  below the *apollo-server* import
 
 ```javascript
-const { ApolloServer, gql } = require("apollo-server");
 const mongoose = require("mongoose");
 
 mongoose.connect(
@@ -249,7 +245,7 @@ mongoose.connect(
 const db = mongoose.connection;
 ```
 
-Once you'ved created and whitelisted a user, the **CONNECT** button will have 3 options to connect your application. Select the second option, *Connect your application*, to get a connection string. Copy this string and replace the one above, also making sure to replace `<password>` with your password
+Once you'ved created and whitelisted a user, the **CONNECT** button will have 3 options to connect your application. Select the option *Connect your application*, to get a connection string. Copy this string and replace the one above, also making sure to replace `<password>` with your password
 
 ### Adding Mongoose Game Schema
 
@@ -296,15 +292,12 @@ const resolvers = {
   Mutation: {
     addGame: async (obj, { game }, { userId }) => {
       try {
-        if (userId) {
-          const newGame = await Game.create({
-            ...game,
-          });
+        const newGame = await Game.create({
+          ...game,
+        });
 
-          const allGames = Game.find();
-          return allBooks;
-        }
-        return games;
+        const allGames = Game.find();
+        return allGames;
       } catch (e) {
         console.log("e", e);
       }
@@ -313,11 +306,9 @@ const resolvers = {
 };
 ```
 
-### Do u need pubsub?
-
 ### Back to GraphQL Playground
 
-Now that our database logic is setup, our queries and mutations will be interacting with **MongoDB**. Our game and games queries will be empty by default, but you can add a few games with the `addGame` query. Also try out the `game` and `games` queries once you've added them. This is the last stage to getting our Apollo server up and running.
+Now that our database logic is setup, our queries and mutations will be interacting with **MongoDB**. Our game and games queries will be empty by default, but you can add a few games with the `addGame` query. Also try out the `game` and `games` queries once you've added them.
 
 ## Deploy to Production (Heroku)
 
@@ -329,20 +320,11 @@ const server = new ApolloServer({
   resolvers,
   introspection: true,
   playground: true,
-  context: ({ req }) => {
-    const fakeUser = {
-      userId: "helloImAUser"
-    };
-    return {
-      // ...fakeUser   if this is commented out user wont be logged in and mutation wont happen
-      ...fakeUser
-    };
-  }
 });
 
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
-  // were coonnectied
+  // were connected!
   console.log("✔️ Connected to MongoDB ✔️");
 
   server
@@ -357,21 +339,53 @@ db.once("open", function() {
 
 ### Heroku Signup
 
-There is a free tier at Heroku that let's you host node applications which will only work when active, but spin down otherwise. This means it usually takes about 5-10 seconds to boot up a cold server, and will work normally until a certain amount of time has elapsed. If you haven't already, sign up for Heroku [here](https://signup.heroku.com/).  
+There is a free tier at Heroku that let's you host node applications which will only work when active, but spin down otherwise. This means it usually takes about 5-10 seconds to boot up an inactive server, and will work normally until a certain amount of time has elapsed. 
 
-&nbsp;  
+&nbsp;
 
-Once you have signed up, login using the following terminal command
+If you haven't already, sign up for Heroku [here](https://signup.heroku.com/).  
+
+### Deployment Setup
+
+Before we deploy to Heroku, we will want to add a **.gitignore** file and and a **env** file for private variables. First create a `.gitignore` file in the root level of your project and add
+
+```bash
+node_modules
+```
+
+Also create a `.env` file adding an entry with your MongoDB URL connection URL
+
+```bash
+MONGO_URL=mongodb+srv://yourUsername:<password>@CONNECTION-STRING
+```
+
+we will need to also install `dotenv` to read the environmental variable
+
+```bash
+npm install dotenv
+```
+
+Lastly we will import the private variable at the top of `index.js` with
+
+```javascript
+require("dotenv").config();
+```
+
+and adjust the database connection line just below it to
+
+```javascript
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+```
+
+Now that our project is setup for deployment enter the following sequence of terminal commands to deploy a new application
 
 ```bash
 heroku login
-```
-
-Deploy you application using the following commands
-
-```bash
-heroku init-create-whayever
-git push heroku masteR? whas it
+git init
+git add .
+git commit -m "initial commit"
+heroku create
+git push heroku master
 ```
 
 Once your server has deployed, test it out at the provided heroku URL. 

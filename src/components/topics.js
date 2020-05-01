@@ -50,8 +50,8 @@ const Topics = () => {
 }
 const Topic = ({ name, slug, lightImage, darkImage, darkMode }) => {
   return (
-    <Link to={`/${slug}`} className="TopicPreview">
-      <div>
+    <Link to={`/${slug}`}>
+      <div className="TopicPreview">
         {darkMode ? (
           <Image
             className="TopicPreview__image"

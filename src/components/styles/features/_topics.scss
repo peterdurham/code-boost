@@ -20,7 +20,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin: 1rem auto;
+    margin: 1rem auto 0.4rem auto;
     transition: all 0.3s;
     @include respond(tab-land) {
       width: 105px;
@@ -42,10 +42,10 @@
 }
 
 .TopicPreview:hover .TopicPreview__name {
-  transform: translateY(8px) scale(1.25);
+  // transform: translateY(12px);
 }
 .TopicPreview:hover .TopicPreview__image {
-  transform: scale(1.09);
+  transform: scale(1.14);
 }
 
 .TopicPage {
@@ -53,7 +53,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 7.2rem 0 12.2rem 0;
+    margin: 4.2rem 0 7.2rem 0;
     & h1 {
       font-size: 4.2rem;
       margin-right: 4.2rem;
