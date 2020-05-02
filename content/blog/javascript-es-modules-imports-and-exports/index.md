@@ -30,7 +30,7 @@ export const person = { name: "Fred" };
 export const sayHello = () => console.log("Hello!");
 ```
 
-*Or* Exporting **named** modules at the Bottom
+*Or* exporting **named** modules at the bottom
 
 ```javascript
 const multiplier = 1.3674;
@@ -40,10 +40,10 @@ const sayHello = () => console.log("Hello!");
 export { multiplier, ids, person, sayHello }
 ```
 
-Importing **named** modules at the Top
+Importing **named** modules at the top
 
 ```javascript
-import { multiplier, person, sayHello } from "./data";
+import { multiplier, person, sayHello} from "./data";
 ```
 
 These *named* import modules must be imported in brackets with the specified named. If you are export multiple modules from a single file it often makes sense to use named imports.
@@ -52,13 +52,9 @@ These *named* import modules must be imported in brackets with the specified nam
 
 Each `.js` file has one **default** export that can be called whatever you like when imported. Default imports can have any name a JavaScript variable can have, and it does not matter if they are even named in the file they are exported from.
 
-Exporting **default** modules inline
+&nbsp;
 
-```javascript
-export default const dataIds = [319, 523, 624];
-```
-
-*Or*, Exporting a **default** anonymous module.
+Exporting a **default** anonymous module.
 
 ```javascript
 export default [319, 523, 624];

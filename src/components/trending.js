@@ -4,14 +4,19 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 const Trending = () => {
   const data = useStaticQuery(graphql`
     {
-      tagsGroup: allMarkdownRemark(limit: 10) {
+      tagsGroup: allMarkdownRemark(limit: 4) {
         group(field: frontmatter___tags) {
           fieldValue
+          totalCount
         }
       }
     }
   `)
-  const tags = data.tagsGroup.group.map(tag => tag.fieldValue)
+  const tags = data.tagsGroup.group
+    // .filter(tag => tag.totalCount > 1)
+    .map(tag => {
+      return tag.fieldValue
+    })
 
   return (
     <div className="Trending">

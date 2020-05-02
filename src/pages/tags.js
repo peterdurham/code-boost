@@ -41,7 +41,7 @@ const TagsPage = ({
         <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
           Top Posts
         </h2>
-        <div className="Cards">
+        <div className="Cards-layout">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 6) {

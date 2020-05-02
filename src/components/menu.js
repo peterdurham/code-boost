@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Search from "./search"
+import Card from "./card"
 import { IoIosSearch } from "react-icons/io"
 
-const Menu = () => {
+const Menu = ({ menuOpen }) => {
   const data = useStaticQuery(graphql`
     {
       tagsGroup: allMarkdownRemark(limit: 100) {
@@ -24,68 +24,119 @@ const Menu = () => {
               description
               tags
               category
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   `)
+
+  const [searchTerm, setSearchTerm] = useState("")
+
   const tags = data.tagsGroup.group.map(tag => tag.fieldValue)
   const blogPosts = data.allMarkdownRemark.edges
-  console.log(blogPosts)
 
+  const filteredPosts = blogPosts.filter(({ node }) => {
+    const { frontmatter } = node
+
+    const titleMatch = frontmatter.title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+    const topicMatch = frontmatter.category
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+    const tagsMatch = frontmatter.tags
+      .map(tag => tag.toLowerCase())
+      .some(tag => tag.includes(searchTerm.toLowerCase()))
+    const descriptionMatch = frontmatter.description
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+
+    return titleMatch || topicMatch || tagsMatch || descriptionMatch
+  })
+  console.log(filteredPosts)
   return (
     <div className="Menu">
       <div id={"menu-container"}>
         <div className="Menu__search">
-          {/* <input type="text" placeholder="Search" /> */}
-          <Search blogPosts={blogPosts} />
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={e => setSearchTerm(e.target.value)}
+          />
           <div className="Menu__search--icon">
             <IoIosSearch />
           </div>
         </div>
-        <div className="Menu__top">
-          <div className="Menu__top--left">
-            <h2>Topics →</h2>
-            <div className="Menu__topics">
-              <Link to="/javascript">JavaScript</Link>
-              <Link to="/css">CSS</Link>
-              <Link to="/react">React</Link>
-              <Link to="/node">Node</Link>
-              <Link to="/graphql">GraphQL</Link>
-              <Link to="/tools">Tools</Link>
+        {searchTerm ? (
+          <>
+            <h3>
+              Search Results for "<strong>{searchTerm}</strong>"
+            </h3>
+            <div className="Cards-layout Menu__search--result">
+              {filteredPosts.map(({ node }) => (
+                <Card
+                  key={node.frontmatter.title}
+                  title={node.frontmatter.title}
+                  slug={node.fields.slug}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  frontmatter={node.frontmatter}
+                />
+              ))}
             </div>
-          </div>
-          <div className="Menu__top--right">
-            <h2>Individual Topics →</h2>
-            <div className="Menu__tags">
-              {tags.map((tag, index) => {
-                if (index < 24) {
-                  return (
-                    <Link
-                      key={tag}
-                      className="Tag"
-                      to={`/tag/${tag
-                        .split(" ")
-                        .join("-")
-                        .split("/")
-                        .join("-")
-                        .toLowerCase()}`}
-                    >
-                      {tag}
-                    </Link>
-                  )
-                }
-                return null
-              })}
+          </>
+        ) : (
+          <>
+            <div className="Menu__top">
+              <div className="Menu__top--left">
+                <h3>Categories →</h3>
+                <div className="Menu__topics">
+                  <Link to="/javascript">JavaScript</Link>
+                  <Link to="/css">CSS</Link>
+                  <Link to="/react">React</Link>
+                  <Link to="/node">Node</Link>
+                  <Link to="/graphql">GraphQL</Link>
+                  <Link to="/tools">Tools</Link>
+                </div>
+              </div>
+              <div className="Menu__top--right">
+                <h3>Individual Topics →</h3>
+                <div className="Menu__tags">
+                  {tags.map((tag, index) => {
+                    if (index < 24) {
+                      return (
+                        <Link
+                          key={tag}
+                          className="Tag"
+                          to={`/tag/${tag
+                            .split(" ")
+                            .join("-")
+                            .split("/")
+                            .join("-")
+                            .toLowerCase()}`}
+                        >
+                          {tag}
+                        </Link>
+                      )
+                    }
+                    return null
+                  })}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="Menu__bottom">
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
-          <Link to="/">Subtmit</Link>
-        </div>
+            <div className="Menu__bottom">
+              <Link to="/about">About</Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   )

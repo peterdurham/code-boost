@@ -1,4 +1,4 @@
-.Cards {
+.Cards-layout {
   display: flex;
   flex-wrap: wrap;
 
@@ -9,28 +9,30 @@
   @include respond(phone) {
     grid-template-columns: 100%;
   }
-}
 
-@media (min-width: 1040px) {
-  .Card:not(:nth-child(3n)) {
-    margin-right: 3rem;
+  @media (min-width: 1040px) {
+    .Card:not(:nth-child(3n)) {
+      margin-right: 3rem;
+    }
   }
-}
-@media (max-width: 1040px) and (min-width: 600px) {
-  .Card:not(:nth-child(2n)) {
-    margin-right: 2rem;
+  @media (max-width: 1040px) and (min-width: 600px) {
+    .Card:not(:nth-child(2n)) {
+      margin-right: 2rem;
+    }
   }
-}
 
-@include respond(phone) {
+  @include respond(phone) {
+    .Card {
+      margin: 0;
+    }
+  }
   .Card {
-    margin: 0;
+    margin-bottom: 40px;
   }
 }
 
 .Card {
   width: 30rem;
-  margin-bottom: 4rem;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
   position: relative;
@@ -79,7 +81,7 @@
     }
 
     @include respond(phone) {
-      height: calc(100vw / 7);
+      height: calc(100vw / 4.4);
     }
 
     & h3 {

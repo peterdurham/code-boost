@@ -19,7 +19,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
     <Layout pageType="Tag">
       <h2 className="TagPage__header">{tagHeader}</h2>
 
-      <div className="Cards">
+      <div className="Cards-layout">
         {edgesWithTag.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -41,7 +41,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
 
       <div>
         <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
-        <div className="Cards">
+        <div className="Cards-layout">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 3) {
@@ -68,6 +68,11 @@ const TagPageTemplate = ({ pageContext, data }) => {
 export default TagPageTemplate
 export const pageQuery = graphql`
   {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark {
       edges {
         node {

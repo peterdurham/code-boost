@@ -30,7 +30,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
           alt={topicInfo.name}
         />{" "}
       </div>
-      <div className="Cards">
+      <div className="Cards-layout">
         {edgesWithTopic.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -49,7 +49,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
 
       <div style={{ marginTop: "8rem" }}>
         <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
-        <div className="Cards">
+        <div className="Cards-layout">
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 3) {
@@ -76,6 +76,11 @@ const TopicPageTemplate = ({ pageContext, data }) => {
 export default TopicPageTemplate
 export const pageQuery = graphql`
   {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark {
       edges {
         node {

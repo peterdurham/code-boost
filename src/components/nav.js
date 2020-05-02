@@ -23,7 +23,7 @@ class Nav extends React.Component {
           ) : (
             <div style={{ display: "flex", alignItems: "center" }}>
               <FiMenu />
-              <span>Menu</span>
+              <span className="Nav__menu--button-text">Menu</span>
             </div>
           )}
         </button>
@@ -43,9 +43,7 @@ class Nav extends React.Component {
             </Link>
           </div>
         </div>
-        <div
-          style={{ width: "86px", display: "flex", justifyContent: "flex-end" }}
-        >
+        <div className="Nav__right">
           <button
             className="Nav__mode"
             onClick={theme.toggleDarkMode}

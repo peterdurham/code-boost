@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
         <SEO title="All posts" />
         <Trending />
         <Topics />
-        <div className="Cards">
+        <div className="Cards-layout">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (

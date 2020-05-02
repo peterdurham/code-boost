@@ -1,8 +1,8 @@
-.logo-text {
-  @include respond(phone) {
-    font-size: 1.4rem;
-  }
-}
+// .logo-text {
+//   @include respond(phone) {
+//     font-size: 1.8rem;
+//   }
+// }
 #nav-container {
   position: fixed;
   top: 0px;
@@ -33,10 +33,17 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    // color: $color-lightblack;
     transition: all 0.3s;
+
     @include respond(phone) {
       font-size: 1rem;
+      width: 36px;
+    }
+
+    &-text {
+      @include respond(phone) {
+        display: none;
+      }
     }
     & svg {
       font-size: 3.2rem;
@@ -58,12 +65,8 @@
     }
   }
   &__logo {
-    // & span {
-    //   font-size: 2.4rem;
-    //   font-weight: 700;
-    // }
-    & p {
-      font-size: 1.4rem;
+    @include respond(phone) {
+      transform: translateX(-10px);
     }
   }
   &__search--button {
@@ -97,5 +100,13 @@
   }
   &__mode:hover {
     color: $color-yellow;
+  }
+  &__right {
+    width: 86px;
+    display: flex;
+    justify-content: flex-end;
+    @include respond(phone) {
+      width: 36px;
+    }
   }
 }

@@ -1,22 +1,23 @@
 #menu-container {
   width: $width-medium;
-  margin: 20px auto;
+  margin: 0 auto;
   @include respond(tab-land) {
     width: 90%;
     margin: 0 5%;
   }
 }
 .Menu {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  position: fixed;
   z-index: 1;
   padding-top: 104px;
-
+  & h3 {
+    margin-bottom: 24px;
+  }
   &__search {
     position: relative;
-    width: 800px;
-    margin: 0px auto 40px auto;
+    width: 50%;
+    margin: 30px auto 60px auto;
     @include respond(tab-land) {
       width: 100%;
     }
@@ -32,6 +33,13 @@
       top: 12px;
       left: 8px;
       font-size: 2rem;
+    }
+    &--result {
+      padding-bottom: 60px;
+
+      & .Card {
+        margin-bottom: 30px;
+      }
     }
   }
   &__topics {
@@ -51,7 +59,7 @@
     }
   }
   &__tags {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     @include respond(tab-land) {
@@ -61,29 +69,29 @@
   &__top {
     display: flex;
     height: 60vh;
+
     @include respond(tab-land) {
       flex-direction: column;
     }
-    &--left {
-      // flex-basis: 50%;
-      width: 50%;
-      & h2 {
-        margin-bottom: 12px;
-      }
+    @include respond(phone) {
+      height: auto;
     }
-    &--right {
-      // flex-basis: 50%;
-      width: 50%;
+
+    &--left {
+      width: 25%;
       @include respond(tab-land) {
         width: 100%;
       }
-      & h2 {
-        margin-bottom: 12px;
+    }
+    &--right {
+      width: 75%;
+      @include respond(tab-land) {
+        width: 100%;
       }
     }
   }
   &__bottom {
-    width: 250px;
+    width: 120px;
     margin: 0 auto;
     margin-top: 40px;
     & a {
@@ -93,6 +101,9 @@
     }
     & a:hover {
       color: $color-green;
+    }
+    @include respond(phone) {
+      margin-bottom: 50px;
     }
   }
 }

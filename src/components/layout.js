@@ -69,20 +69,24 @@ class Layout extends React.Component {
             menuOpen={this.state.menuOpen}
           />
         </div>
-        {this.state.menuOpen && <Menu isPost={isPost} />}
-
-        <main
-          id={isPost ? "BlogPost" : "Home"}
-          className={this.state.menuOpen ? "" : undefined}
-        >
-          {children}
-        </main>
-        <div
-          id="footer-container"
-          className={this.state.menuOpen ? "bigger" : undefined}
-        >
-          <Footer isHome={isPost} />
-        </div>
+        {this.state.menuOpen ? (
+          <Menu isPost={isPost} menuOpen={this.state.menuOpen} />
+        ) : (
+          <main
+            id={isPost ? "BlogPost" : "Home"}
+            className={this.state.menuOpen ? "" : undefined}
+          >
+            {children}
+          </main>
+        )}
+        {!this.state.menuOpen && (
+          <div
+            id="footer-container"
+            className={this.state.menuOpen ? "bigger" : undefined}
+          >
+            <Footer isHome={isPost} />
+          </div>
+        )}
       </div>
     )
   }

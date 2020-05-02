@@ -34,6 +34,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               title
+              category
             }
           }
         }
@@ -69,6 +70,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
+        topic: post.node.frontmatter.category,
         next,
       },
     })

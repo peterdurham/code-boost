@@ -7,6 +7,7 @@ import _ from "lodash"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiQuillInk } from "react-icons/gi"
+import Card from "../components/card"
 
 class BlogPostTemplate extends React.Component {
   state = {
@@ -29,13 +30,24 @@ class BlogPostTemplate extends React.Component {
   }
 
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { data, pageContext, location } = this.props
+    const post = data.markdownRemark
+    const siteTitle = data.site.siteMetadata.title
+    const { previous, next, topic } = pageContext
     const { tocItems } = this.state
+    const similarPosts = data.allMarkdownRemark.edges
+      .filter(item => {
+        return (
+          item.node.frontmatter.category === topic &&
+          item.node.frontmatter.title !== post.frontmatter.title
+        )
+      })
+      .filter((item, index) => {
+        return index < 2
+      })
 
     return (
-      <Layout location={this.props.location} title={siteTitle} pageType="Post">
+      <Layout location={location} title={siteTitle} pageType="Post">
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -81,6 +93,24 @@ class BlogPostTemplate extends React.Component {
             className="BlogPost__markdown"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+          <div className="BlogPost__similar">
+            <h3>Other {this.props.pageContext.topic} Tutorials</h3>
+            <div className="BlogPost__similar--posts">
+              {similarPosts.map(({ node }) => {
+                return (
+                  <Card
+                    key={node.fields.slug}
+                    title={node.frontmatter.title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    excerpt={node.excerpt}
+                    frontmatter={node.frontmatter}
+                  />
+                )
+              })}
+            </div>
+          </div>
         </article>
 
         <nav id="BlogPost__footer">
@@ -124,10 +154,33 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        category
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }

@@ -51,7 +51,10 @@ If you wish to reverse the order of the items in your flexbox, this can be achie
 ### Flex-wrap
 
 *no-wrap* | *wrap* | *wrap-reverse*
-The default value here is `no-wrap`, meaning that the items in a flexbox will overflow past the container width (or height in a vertical flexbox) if they are wide enough. The value `wrap` will move items onto a newline instead of letting them overflow out of a container. If you again, wish to reverse your items, `wrap-reverse` does the same thing as wrap, reversing the item order.
+
+&nbsp;  
+
+The default value here is `no-wrap`, meaning that the items in a flexbox will overflow out of the container instead of wrapping on to the next line. The value `wrap` will move items onto a new line instead. If you wish to reverse your items, `wrap-reverse` does the same thing as wrap, reversing the item order.
 
 ![flex-wrap](./flex-example3.jpg)
 
@@ -63,11 +66,9 @@ The default value here is `no-wrap`, meaning that the items in a flexbox will ov
 
 This property is the *strawberry jam* of flexbox. Oftentimes there will be extra space left over in your container. This is the property you set to distribute that space. 
 
-The values `flex-start` and `flex-end` will place your flexed items at the beginning or end of your container accordingly.
+&nbsp;
 
-If you want to center your content, `center` is the clear choice here.
-
-Using the values `space-between`, `space-around`, and `space-evenly` will distribute that extra space in often useful ways. `space-between` will place the first item at the start and the last item at the end, with equal space in between items. `space-around` will distribute the extra space equally to the left and right sides of each item (appearing as twice the space on inner elements). Finally, `space-evenly` will divide the remaining space "evenly" applied to every gap between and around items.
+The values `flex-start` and `flex-end` will place your flexed items at the beginning or end of your container accordingly. If you want to center your content, `center` is the clear choice here. Using the values `space-between`, `space-around`, and `space-evenly` will distribute that extra space in often useful ways. `space-between` will place the first item at the start and the last item at the end, with equal space in between items. `space-around` will distribute the extra space equally to the left and right sides of each item (appearing as twice the space on inner elements). Finally, `space-evenly` will divide the remaining space "evenly" applied to every gap between and around items.
 
 ![justify-content](./flex-example4.jpg)
 
@@ -107,14 +108,14 @@ A lot can be done in flexbox using **container** properties alone, especially if
 
 *number*
 
+
+&nbsp;  
+
+This property is similar to `z-index` for html elements on a page. By default, flexed items will be displayed in standard order.  Each element in a flexbox has a default of `order: 0`. Items will be placed in the flexbox from **least to greatest** order. Negative order items will be moved towards the beginning and positive towards the end.
+
 &nbsp;
-This property is similar to `z-index` for html elements on a page. By default, flexed items will be displayed in standard order. 
 
-Each element in a flexbox has a default of `order: 0`. Items will be placed in the flexbox from **least to greatest** order. Negative order items will be moved towards the beginning and positive towards the end.
-
-This property is useful if you wish to adjust the order of your elements on specific screen sizes.
-
-In the following example, we can apply a different `order` value for each color class. 
+This property is useful if you wish to adjust the order of your elements on specific screen sizes. In the following example, we can apply a different `order` value for each color class. 
 
 ```css
 .green { order: 1; }
@@ -133,6 +134,8 @@ In the following example, we can apply a different `order` value for each color 
 
 This property determines how additional space will be distributed to items when the window gets larger. By default each item has `flex-grow: 1` assigned. If a flexbox assigns additional size to items in its container, it will be according to each of the flex-grow proportions.
 
+&nbsp;
+
 In the following example, I added `flex-grow` properties to the `green` and `yellow` color classes. 
 
 ```css
@@ -149,6 +152,8 @@ In the following example, I added `flex-grow` properties to the `green` and `yel
 &nbsp;
 
 This property behaves similarly to `flex-grow` however it dictates how space will be removed from items when the window shrinks. Each element in a flexbox defaults to `flex-shrink: 1`
+
+&nbsp;
 
 In the following example, I have bumped up the box width so that all boxes will be smaller than their assigned size in order to fit on the line. I also added `flex-shrink` to each element.
 
@@ -171,6 +176,8 @@ As you can see, the red element had the highest `flex-shrink` value, and it is t
 
 This property determines what size a flexed item should be before the remaining space is distributed. It takes in a length value such as pixels, %, rems, etc. By default flexed items have the value `auto` for this property. This means that each item's basis will be that items default size. By increasing or decreasing this value, you can set the intended size of items in your flexbox.
 
+&nbsp;
+
 In the following example, I have set each of the elements to have a different percentage values for `flex-basis`. 
 
 ```css
@@ -190,7 +197,11 @@ In the following example, I have set each of the elements to have a different pe
 
 Think of this property as the same `align-items` for indivdual items in a flexbox. This property defaults to auto, taking up whatever command is applied in `align-items`.
 
+&nbsp;
+
 This property is useful if you wish to align certain items differently than the rest. Adding this property to a flexed item will override the value applied by align-items.
+
+&nbsp;
 
 In the following example, I added `align-self` to the first 3 items.
 
