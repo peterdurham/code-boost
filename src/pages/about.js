@@ -1,10 +1,15 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const AboutPage = () => {
   return (
     <Layout>
+      <SEO
+        title="About Code-Boost"
+        canonical={`https://www.code-boost.com/about/`}
+      />
       <div style={{ minHeight: "420px" }}>
         <h2 style={{ marginTop: "20px" }}>About Code-Boost</h2>
         <p style={{ marginBottom: "20px" }}>

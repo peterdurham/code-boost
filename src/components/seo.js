@@ -127,7 +127,7 @@ const getSchemaOrgJSONLD = ({
     : schemaOrgJSONLD
 }
 
-function SEO({ description, title, slug, frontmatter, isBlogPost }) {
+function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
   const { site, file } = useStaticQuery(
     graphql`
       query {
@@ -169,6 +169,11 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        title !== "404: Not Found"
+          ? [{ rel: "canonical", key: canonical, href: canonical }]
+          : []
+      }
       meta={[
         {
           name: `description`,
@@ -188,7 +193,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
         },
         {
           name: `twitter:url`,
-          content: `https://code-boost.com${slug}`,
+          content: canonical,
         },
         {
           name: `twitter:creator`,
@@ -220,7 +225,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
         },
         {
           property: `og:url`,
-          content: `https://code-boost.com${slug}`,
+          content: canonical,
         },
         {
           property: `og:site_name`,

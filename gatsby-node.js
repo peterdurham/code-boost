@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-    console.log(value, value.slice(10), "NODE")
+
     createNodeField({
       name: `slug`,
       node,
@@ -65,8 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
     const slug = post.node.fields.slug
-    console.log(slug, "posts")
-    console.log(post.node.fields.slug, "working posts")
+
     createPage({
       path: slug,
       component: blogPost,

@@ -3,7 +3,7 @@ title: The Best Shortcuts To Learn for VS Code
 date: "2020-05-01 11:00:00"
 category: "Tools"
 description: "Shortcuts and hotkeys to use in VS Code. Learn effective key combinations to edit and arrange code in the editor."
-featuredImage: "./shortcut.webp"
+featuredImage: "./shortcut.jpg"
 tags: ["Hotkeys", "Shortcuts", "VS Code"]
 ---
 

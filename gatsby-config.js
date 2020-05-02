@@ -77,6 +77,12 @@ module.exports = {
         icon: `content/assets/logo.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.code-boost.com`,
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-typography`,
     //   options: {

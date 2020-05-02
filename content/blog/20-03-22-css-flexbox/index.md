@@ -3,7 +3,7 @@ title: CSS Flexbox Basics
 date: "2020-03-22 11:00:00"
 category: "CSS"
 description: "An overview of major CSS flexbox properties and how to apply them. Numerous examples of flexbox container and item variations."
-featuredImage: "./beach-umbrellas.jpg"
+featuredImage: "./sarajevo.jpg"
 tags: ["CSS", "Flexbox", "Properties"]
 ---
 

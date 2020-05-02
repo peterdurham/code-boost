@@ -54,6 +54,7 @@ class BlogPostTemplate extends React.Component {
           slug={pageContext.slug}
           frontmatter={post.frontmatter}
           isBlogPost={true}
+          canonical={`https://code-boost.com${pageContext.slug}`}
         />
 
         <article>

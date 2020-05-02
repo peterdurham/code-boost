@@ -17,7 +17,10 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle} pageType="Home">
-        <SEO title="All posts" isBlogPost={false} />
+        <SEO
+          title="Code-Boost Tutorials"
+          canonical={`https://www.code-boost.com/`}
+        />
         <Trending />
         <Topics />
         <div className="Cards-layout">

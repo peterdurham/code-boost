@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 // Utilities
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Card from "../components/card"
 
 const TopicsPage = ({
@@ -17,7 +17,10 @@ const TopicsPage = ({
 }) => {
   return (
     <Layout pageType="Topics">
-      <Helmet title={title} />
+      <SEO
+        title="About Code-Boost"
+        canonical={`https://www.code-boost.com/about/`}
+      />
       <div>
         <h1 style={{ margin: "2rem 0 4rem 0", fontSize: "2.4rem" }}>Topics</h1>
         <div className="Trending__topics">

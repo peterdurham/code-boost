@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import Card from "../components/card"
+import SEO from "../components/seo"
 
 const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -17,6 +18,15 @@ const TagPageTemplate = ({ pageContext, data }) => {
   } tagged with "${tag}"`
   return (
     <Layout pageType="Tag">
+      <SEO
+        title={`${tag} tutorials`}
+        canonical={`https://code-boost.com/tag/${tag
+          .split(" ")
+          .join("-")
+          .split("/")
+          .join("-")
+          .toLowerCase()}/`}
+      />
       <h2 className="TagPage__header">{tagHeader}</h2>
 
       <div className="Cards-layout">

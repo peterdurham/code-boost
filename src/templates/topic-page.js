@@ -2,9 +2,10 @@ import React from "react"
 
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import Card from "../components/card"
 
+import Card from "../components/card"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const TopicPageTemplate = ({ pageContext, data }) => {
   const { topic } = pageContext
@@ -20,6 +21,10 @@ const TopicPageTemplate = ({ pageContext, data }) => {
 
   return (
     <Layout pageType="Topic">
+      <SEO
+        title={`${topic} tutorials`}
+        canonical={`https://code-boost.com/${topic.toLowerCase()}/`}
+      />
       <div className="TopicPage__header">
         <div>
           <h1>{topic}</h1>

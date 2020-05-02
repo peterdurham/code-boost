@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 // Utilities
 import kebabCase from "lodash/kebabCase"
 // Components
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Card from "../components/card"
 
@@ -19,7 +19,10 @@ const TagsPage = ({
   return (
     <Layout pageType="Tags">
       <div>
-        <Helmet title={title} />
+        <SEO
+          title="About Code-Boost"
+          canonical={`https://www.code-boost.com/tags/`}
+        />
         <div>
           <h1 style={{ marginBottom: "2rem" }}>Tags</h1>
           <div className="Trending__topics">
