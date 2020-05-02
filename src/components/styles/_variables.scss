@@ -3,21 +3,15 @@ $width-medium: 96rem;
 $width-large: 120rem;
 
 $nav-height: 7.4rem;
+$font-header: "Arimo", "Noto Sans", sans-serif;
+$font-header: "Noto Sans", "Arimo", sans-serif;
 
-// BEST 2 header options so far
-$font-header: "Fira Sans", sans-serif;
-$font-header: "Righteous", cursive;
-$font-header: "Signika", sans-serif;
-$font-header: "Varela Round", sans-serif;
-$font-header: "Nunito Sans", sans-serif;
-$font-header: "-apple-system", sans-serif;
-$font-header: "Arimo", sans-serif;
+$font-text: "Nanum Gothic", "Jost", sans-serif;
+$font-text: "Jost", "Nanum Gothic", sans-serif;
 
-$font-text: "Merriwether", sans-serif;
-$font-text: "Libre Franklin", sans-serif;
+$font-code: Monaco, "Operator Mono", "Source Code Pro", "Fira Code", monospace;
 
 $color-green: rgb(35, 140, 44);
-$color-yellow: rgb(255, 203, 0);
 $color-yellow: #fad000;
 $color-blue: #2a94c5;
 
@@ -41,17 +35,6 @@ $color-darkmode-15: black;
 $color-darkmode-16: rgb(13, 19, 24);
 $color-darkmode-17: rgb(26, 29, 34);
 $color-darkmode-18: rgb(19, 24, 27);
-// $color-darkmode-19: black;
-// $color-darkmode-20: black;
-// $color-darkmode-21: black;
-// $color-darkmode-22: black;
-// $color-darkmode-23: black;
-// $color-darkmode-24: black;
-// $color-darkmode-25: black;
-// $color-darkmode-26: black;
-// $color-darkmode-27: black;
-// $color-darkmode-28: black;
-// $color-darkmode-29: black;
 
 $color-bg-dark: rgb(48, 48, 48);
 $color-bg-darker: rgb(32, 32, 32);
@@ -100,18 +83,7 @@ $color-fit-footer: #1c1e2f;
   @include respond(phone) {
     font-size: 2rem;
   }
-  // letter-spacing: 1px;
-  // color: rgb(3, 3, 3);
-  // color: rgb(6, 5, 12);
-  // color: #111111;
-  // color: rgb(21, 19, 29);
-  // color: rgb(42, 42, 42);
-  font-family: "Righteous", cursive;
-  font-family: "Signika", sans-serif;
-  font-family: "Fira Sans", sans-serif;
-  font-family: "Arimo", sans-serif;
-  font-family: "Nunito Sans", sans-serif;
-  font-family: "Varela Round", sans-serif;
+
   font-family: $font-header;
 }
 //

@@ -7,7 +7,7 @@
   margin: 0 auto;
 
   &--date {
-    font-size: 1.37rem;
+    font-size: 1.42rem;
     line-height: 2.2rem;
     margin-top: 0.4rem;
   }
@@ -35,8 +35,8 @@
   }
   &__similar {
     width: $width-small;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 60px auto;
+
     &--posts {
       display: flex;
       flex-wrap: wrap;

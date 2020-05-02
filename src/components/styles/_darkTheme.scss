@@ -51,7 +51,7 @@ body {
 
   & .language-text {
     color: $color-text-light;
-    background: rgba(255, 255, 255, 0.1);
+    background: $color-bg-dark;
   }
   .Menu {
     background-color: $color-bg-darkest;
@@ -62,7 +62,7 @@ body {
   blockquote {
     color: #fff;
     border: none;
-    background: $color-medium;
+    background: $color-bg-dark;
     border-radius: 4px;
     font-size: 1.6rem;
     margin: 1.6rem 0;
