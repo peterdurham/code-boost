@@ -3,14 +3,6 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const config = {
-  title: "Code Boost - Web Development Tutorials",
-  twitter: "https://twitter.com/peterjdurham",
-  url: "https://www.code-boost.com/",
-  logo:
-    "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpgg",
-}
-
 const getSchemaOrgJSONLD = ({
   isBlogPost,
   url,
@@ -18,14 +10,20 @@ const getSchemaOrgJSONLD = ({
   image,
   description,
   datePublished,
+  tags,
+  topic,
 }) => {
   const schemaOrgJSONLD = [
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
-      url,
-      name: title,
-      alternateName: config.title,
+      "@id": "https://code-boost.com#website",
+      url: "https://code-boost.com",
+      name: "Code-Boost",
+      alternateName: "code-boost",
+      author: {
+        "@id": "https://code-boost.com#organization",
+      },
     },
   ]
 
@@ -48,38 +46,58 @@ const getSchemaOrgJSONLD = ({
           ],
         },
         {
-          "@context": "https://code-boost.netlify.com/",
-          "@type": "BlogPosting",
-          url,
-          name: title,
-          alternateName: config.title,
-          headline: title,
+          "@context": "http://schema.org",
+          "@type": "TechArticle",
+          "@id": `${url}#blog-post`,
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": { url },
+          },
+          url: { url },
+          headline: { title },
+          // wordCount: null,
+          description: { description },
+          audience: "JavaScript developers",
+
           image: {
             "@type": "ImageObject",
-            url: image,
+            url:
+              "https://scotch-res.cloudinary.com/image/upload/w_1500,q_auto:good,f_auto/v1588276873/rs3zmi4fqxalxiwmdohj.png",
+            height: 750,
+            width: 1500,
           },
-          description,
+
+          keywords: { tags },
+          datePublished,
+          dateModified: "2020-04-30 13:01:15",
+          articleSection: "Tutorials",
           author: {
             "@type": "Person",
             name: "Peter Durham",
+
+            image: {
+              "@type": "ImageObject",
+              url: { image },
+              height: 300,
+              width: 300,
+            },
+
+            url: "https://peterdurham.netlify.com/",
           },
+
           publisher: {
-            "@type": "Organization",
-            url: "https://code-boost.com/",
-            logo: config.logo,
             name: "Code Boost",
+            url: "https://code-boost.com/",
+            logo:
+              "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
+            "@id": `${url}#organization`,
           },
-          mainEntityOfPage: {
-            "@type": "WebSite",
-            "@id": config.url,
-          },
-          datePublished,
         },
       ]
     : schemaOrgJSONLD
 }
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, title, slug, frontmatter, isBlogPost }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -93,20 +111,21 @@ function SEO({ description, lang, meta, title }) {
       }
     `
   )
-
+  console.log(frontmatter, "FRONT")
   const metaDescription = description || site.siteMetadata.description
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
-    isBlogPost: true,
-    url: "https://code-boost.com/",
-    title,
+    isBlogPost,
+    url: `https://code-boost.com${slug}`,
+    title: "",
+    description: "",
+    tags: frontmatter.tags.join(", "),
     image: "http://fake-img-link.com",
-    description,
     datePublished: "yesterday probably",
   })
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "en",
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -143,7 +162,7 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     >
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
@@ -154,15 +173,17 @@ function SEO({ description, lang, meta, title }) {
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
   description: ``,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
+  // frontmatter: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  // description: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+
+  // topics: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default SEO

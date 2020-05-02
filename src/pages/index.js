@@ -17,11 +17,12 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle} pageType="Home">
-        <SEO title="All posts" />
+        <SEO title="All posts" isBlogPost={false} />
         <Trending />
         <Topics />
         <div className="Cards-layout">
           {posts.map(({ node }) => {
+            console.log(node)
             const title = node.frontmatter.title || node.fields.slug
             return (
               <Card
