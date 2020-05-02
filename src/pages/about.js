@@ -23,7 +23,17 @@ const AboutPage = () => {
           regular new <strong>tutorials</strong>, <strong>articles</strong>, and{" "}
           <strong>videos</strong>.
         </p>
-        <div style={{ fontSize: "36px", margin: "20px 0 100px 0" }}>💻🚀⭐</div>
+        <div style={{ fontSize: "36px", margin: "20px 0 100px 0" }}>
+          <span role="img" aria-label="Laptop.">
+            💻
+          </span>
+          <span role="img" aria-label="Rocket.">
+            🚀
+          </span>
+          <span role="img" aria-label="Star.">
+            ⭐
+          </span>
+        </div>
 
         <h3>Thanks for visiting!!</h3>
       </div>

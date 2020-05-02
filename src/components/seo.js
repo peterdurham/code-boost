@@ -11,7 +11,7 @@ const getSchemaOrgJSONLD = ({
   description,
   datePublished,
   tags,
-  topic,
+  postImage,
 }) => {
   const schemaOrgJSONLD = [
     {
@@ -31,19 +31,50 @@ const getSchemaOrgJSONLD = ({
     ? [
         ...schemaOrgJSONLD,
         {
-          "@context": "https://code-boost.com/",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              item: {
-                "@id": url,
-                name: title,
-                image,
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "@id": `${url}#blog-post`,
+          url,
+          headline: title,
+          description: description,
+          publisher: {
+            "@id": "https://code-boost.com/#organization",
+          },
+          datePublished,
+          // dateModified: "",
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@id": "https://code-boost.com",
+                  name: "Home",
+                },
               },
-            },
-          ],
+
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@id": "https://code-boost.com",
+                  name: "Tutorials",
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@id": url,
+                  name: title,
+                },
+              },
+            ],
+          },
+          sourceOrganization: {
+            "@id": "https://code-boost.com/#organization",
+          },
         },
         {
           "@context": "http://schema.org",
@@ -51,25 +82,24 @@ const getSchemaOrgJSONLD = ({
           "@id": `${url}#blog-post`,
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": { url },
+            "@id": url,
           },
-          url: { url },
-          headline: { title },
+          url: url,
+          headline: title,
           // wordCount: null,
-          description: { description },
+          description: description,
           audience: "JavaScript developers",
 
           image: {
             "@type": "ImageObject",
-            url:
-              "https://scotch-res.cloudinary.com/image/upload/w_1500,q_auto:good,f_auto/v1588276873/rs3zmi4fqxalxiwmdohj.png",
-            height: 750,
-            width: 1500,
+            url: postImage,
+            height: 314,
+            width: 600,
           },
 
-          keywords: { tags },
+          keywords: tags,
           datePublished,
-          dateModified: "2020-04-30 13:01:15",
+          // dateModified: "2020-04-30 13:01:15",
           articleSection: "Tutorials",
           author: {
             "@type": "Person",
@@ -77,7 +107,7 @@ const getSchemaOrgJSONLD = ({
 
             image: {
               "@type": "ImageObject",
-              url: { image },
+              url: image,
               height: 300,
               width: 300,
             },
@@ -98,7 +128,7 @@ const getSchemaOrgJSONLD = ({
 }
 
 function SEO({ description, title, slug, frontmatter, isBlogPost }) {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -108,20 +138,30 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
             author
           }
         }
+        file(absolutePath: { regex: "/navlogo.png/" }) {
+          absolutePath
+        }
       }
     `
   )
-  console.log(frontmatter, "FRONT")
+
   const metaDescription = description || site.siteMetadata.description
+  const postImage = isBlogPost
+    ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
+    : ""
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
     url: `https://code-boost.com${slug}`,
-    title: "",
-    description: "",
-    tags: frontmatter.tags.join(", "),
-    image: "http://fake-img-link.com",
-    datePublished: "yesterday probably",
+    title: isBlogPost ? frontmatter.title : null,
+    description: isBlogPost ? frontmatter.description : null,
+    tags: isBlogPost ? frontmatter.tags.join(", ") : "",
+    logo: file.absolutePath,
+    postImage,
+    image:
+      "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
+    datePublished: isBlogPost ? frontmatter.date : "",
   })
+
   return (
     <Helmet
       htmlAttributes={{
@@ -135,20 +175,20 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
           content: metaDescription,
         },
         {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
           name: `twitter:card`,
           content: `summary`,
+        },
+        {
+          name: `twitter:image`,
+          content: postImage,
+        },
+        {
+          name: `twitter:site`,
+          content: "@BoostCode",
+        },
+        {
+          name: `twitter:url`,
+          content: `https://code-boost.com${slug}`,
         },
         {
           name: `twitter:creator`,
@@ -162,11 +202,39 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:image`,
+          content: postImage,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: isBlogPost ? "article" : "website",
+        },
+        {
+          property: `og:url`,
+          content: `https://code-boost.com${slug}`,
+        },
+        {
+          property: `og:site_name`,
+          content: `Code-Boost`,
+        },
       ]}
     >
-      <script type="application/ld+json">
-        {JSON.stringify(schemaOrgJSONLD)}
-      </script>
+      {schemaOrgJSONLD.map((schema, index) => {
+        return (
+          <script type="application/ld+json" key={index}>
+            {JSON.stringify(schema)}
+          </script>
+        )
+      })}
     </Helmet>
   )
 }
@@ -174,16 +242,15 @@ function SEO({ description, title, slug, frontmatter, isBlogPost }) {
 SEO.defaultProps = {
   lang: `en`,
   description: ``,
+  isBlogPost: false,
 }
 
 SEO.propTypes = {
-  // frontmatter: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
+  frontmatter: PropTypes.object,
   title: PropTypes.string.isRequired,
-  // description: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-
-  // topics: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string.isRequired,
+  slug: PropTypes.string,
+  isBlogPost: PropTypes.bool,
 }
 
 export default SEO

@@ -15,7 +15,11 @@ class Nav extends React.Component {
 
     return (
       <nav className="Nav">
-        <button className="Nav__menu--button" onClick={this.props.toggleMenu}>
+        <button
+          className="Nav__menu--button"
+          onClick={this.props.toggleMenu}
+          aria-label="Toggle Menu."
+        >
           {this.props.menuOpen ? (
             <div>
               <MdClose />
@@ -28,7 +32,7 @@ class Nav extends React.Component {
           )}
         </button>
         <div className="Nav__logo">
-          <div
+          <button
             onClick={() => {
               if (this.props.menuOpen) {
                 this.props.toggleMenu()
@@ -41,7 +45,7 @@ class Nav extends React.Component {
               </span>
               <span className="logo-text">Code-Boost</span>
             </Link>
-          </div>
+          </button>
         </div>
         <div className="Nav__right">
           <button

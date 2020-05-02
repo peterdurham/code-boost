@@ -1,6 +1,6 @@
 ---
 title: How and Why to Use React Hooks
-date: "2020-03-28"
+date: "2020-03-28 11:00:00"
 category: "React"
 description: "Overview on React Hooks with examples. How to use each Hook including useState, useEffect, and useContext."
 featuredImage: "./bananas.jpg"

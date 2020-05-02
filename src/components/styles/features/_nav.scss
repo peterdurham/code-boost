@@ -68,6 +68,10 @@
     @include respond(phone) {
       transform: translateX(-10px);
     }
+    & button {
+      background: none;
+      border: none;
+    }
   }
   &__search--button {
     background: none;

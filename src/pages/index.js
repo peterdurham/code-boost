@@ -22,7 +22,6 @@ class BlogIndex extends React.Component {
         <Topics />
         <div className="Cards-layout">
           {posts.map(({ node }) => {
-            console.log(node)
             const title = node.frontmatter.title || node.fields.slug
             return (
               <Card

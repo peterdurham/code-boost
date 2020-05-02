@@ -1,6 +1,6 @@
 ---
 title: JavaScript DOM Methods and Properties
-date: "2020-02-16"
+date: "2020-02-16 11:00:00"
 category: "JavaScript"
 description: "Overview of the different methods and properties that can be used on the Document object model or DOM in JavaScript."
 featuredImage: "./abstract.jpg"

@@ -61,7 +61,7 @@ const Menu = ({ menuOpen }) => {
 
     return titleMatch || topicMatch || tagsMatch || descriptionMatch
   })
-  console.log(filteredPosts)
+
   return (
     <div className="Menu">
       <div id={"menu-container"}>

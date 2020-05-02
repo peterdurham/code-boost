@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import { AiOutlineInstagram } from "react-icons/ai"
 import {
   TiSocialFacebook,
   TiSocialTwitter,
@@ -47,7 +46,7 @@ const Footer = () => {
         <div className="Footer__links">
           {topics.map(({ node: item }) => {
             return (
-              <Link to={item.slug} key={item.name}>
+              <Link to={`/${item.slug}`} key={item.name}>
                 <div className="Footer__link">{item.name}</div>
               </Link>
             )
