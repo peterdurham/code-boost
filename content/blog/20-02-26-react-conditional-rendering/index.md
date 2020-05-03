@@ -89,20 +89,20 @@ function App() {
   return (
     <div>
       <h1>Banana Stand</h1>
-      {bananas === 1 && "I only have one banana"}
+      {bananas === 1 && "one singular banana, please"}
     </div>
   );
 }
 ```
 
-This condition will evaluate to true, therefore the statement will evaluate to the second argument, `I only have one banana`. There are multiple valid syntaxes for inline conditionals and the following will achieve the same purpose
+This condition will evaluate to true, therefore the statement will evaluate to the second expression, `one singular banana, please`. There are multiple valid syntaxes for inline conditionals and the following will achieve the same purpose
 
 ```jsx
 // we can wrap our statement in a div
-<div>{bananas === 1 && "I only have one banana"}</div>
+<div>{bananas === 1 && "one singular banana, please"}</div>
 
 // we can wrap our conditional in parenthesis
-{(bananas === 1) && "I only have one banana"}
+{(bananas === 1) && "one singular banana, please"}
 ```
 
 It is useful to understand each valid syntax, though many code formatters or situations will call for different solutions. 
