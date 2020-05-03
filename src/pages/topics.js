@@ -1,7 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-// Utilities
-// Components
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"

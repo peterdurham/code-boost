@@ -2,8 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import _ from "lodash"
-
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiQuillInk } from "react-icons/gi"

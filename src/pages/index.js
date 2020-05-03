@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
 import Trending from "../components/trending"
 import Topics from "../components/topics"
 import Card from "../components/card"
@@ -39,7 +37,6 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
-        {/* <Bio /> */}
       </Layout>
     )
   }

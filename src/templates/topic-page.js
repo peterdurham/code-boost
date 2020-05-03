@@ -12,7 +12,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
   const { edges } = data.allMarkdownRemark
 
   const edgesWithTopic = edges.filter(({ node }) => {
-    return node.frontmatter.category === topic
+    return node.frontmatter.tags.includes(topic)
   })
 
   const topicInfo = data.allTopicsJson.edges.filter(({ node }) => {
@@ -126,24 +126,3 @@ export const pageQuery = graphql`
     }
   }
 `
-// export const pageQuery = graphql`
-//   query($topic: String) {
-//     allMarkdownRemark(
-//       limit: 2000
-//       sort: { fields: [frontmatter___date], order: DESC }
-//       filter: { frontmatter: { category: { in: [$topic] } } }
-//     ) {
-//       totalCount
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

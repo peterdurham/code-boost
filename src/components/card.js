@@ -16,15 +16,6 @@ const Card = ({ frontmatter, title, slug, date, description, excerpt }) => {
           <h3>{title}</h3>
         </div>
       </Link>
-      {/* <small>{date}</small> */}
-
-      {/* <section>
-        <p
-          dangerouslySetInnerHTML={{
-            __html: description || excerpt,
-          }}
-        />
-      </section> */}
     </article>
   )
 }

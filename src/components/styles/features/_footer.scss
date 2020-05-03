@@ -13,6 +13,10 @@ footer {
     padding: 3rem 0 1rem 0;
     width: 100%;
     border-bottom: 1px solid grey;
+
+    & a {
+      color: #fff;
+    }
   }
   &__content {
     padding: 2rem 0;
@@ -35,6 +39,9 @@ footer {
     &--icons {
       display: flex;
       margin-top: 10px;
+      & a {
+        color: #fff;
+      }
     }
     &--icon {
       &-container {
@@ -62,7 +69,6 @@ footer {
   &__link {
     font-size: 1.6rem;
     font-weight: 700;
-
     transition: all 0.3s;
     cursor: pointer;
   }

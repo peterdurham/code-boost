@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-// Utilities
 import kebabCase from "lodash/kebabCase"
-// Components
 import { Link, graphql } from "gatsby"
+
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Card from "../components/card"

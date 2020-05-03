@@ -170,7 +170,7 @@ This command will setup a GraphQL playground at the port we specified above. Ope
 
 ### GraphQL Playground
 
-![graphql playground](C:\Users\Peter\Desktop\websites\code-boost\content\blog\0apollo-server-setup\playground.jpg)
+![graphql playground](./playground.jpg)
 
 The GraphQL playground is used for creating and testing out Mutations and Queries in development mode. To start, on the left side add the keyword `mutation` or `query` followed by the *name* of the task you are performing. Each tab in the playground will have the name of the mutation or query it contains and will persist when the browser is closed for future testing purposes.
 

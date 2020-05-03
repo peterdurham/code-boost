@@ -1,5 +1,5 @@
 ---
-title: Parcel Basic Setup For Vanilla JS and React
+title: Parcel Basic Setup for Vanilla JS and React
 date: "2020-01-05 11:00:00"
 category: "Tools"
 description: "Learn how to setup a Parcel JavaScript project. Simple build tool for React and Vanilla applications."

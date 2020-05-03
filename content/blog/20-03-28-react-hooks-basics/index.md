@@ -4,7 +4,7 @@ date: "2020-03-28 11:00:00"
 category: "React"
 description: "Overview on React Hooks with examples. How to use each Hook including useState, useEffect, and useContext."
 featuredImage: "./bananas.jpg"
-tags: ["React", "Hooks"]
+tags: ["React", "Hooks", "Basics"]
 ---
 
 ## Why Hooks

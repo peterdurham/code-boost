@@ -8,7 +8,6 @@ const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
 
-  // TODO: REPLACE THIS WITH SLICKER GQL QUERY IN FUTURE
   const edgesWithTag = edges.filter(({ node }) => {
     return node.frontmatter.tags.includes(tag)
   })

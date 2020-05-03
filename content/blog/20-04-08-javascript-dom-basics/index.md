@@ -13,11 +13,11 @@ The **DOM**, or *Document Object Mode*l is a programming interface for HTML docu
 
 ### Window
 
-The `window` is the outermost object of the Document Object Model. It stores information about the browser window such as the size, location, history, etc. Global properties and methods are stored on the window object.
+The **window** is the outermost object of the Document Object Model. It stores information about the browser window such as the size, location, history, etc. Global properties and methods are stored on the window object.
 
 ### Document
 
-The `document` is an object version of the html document. It is a property on the window and contains all the html of the page. It includes methods to select html elements and add event listeners. 
+The **document** is an object version of the html document. It is a property on the window and contains all the html of the page. It includes methods to select html elements and add event listeners. 
 
 ### HTML
 

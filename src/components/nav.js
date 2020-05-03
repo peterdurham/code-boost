@@ -10,7 +10,6 @@ import { WiMoonAltWaningCrescent5 } from "react-icons/wi"
 class Nav extends React.Component {
   static contextType = ThemeContext
   render() {
-    // const { switchTheme, theme } = this.props
     const theme = this.context
 
     return (

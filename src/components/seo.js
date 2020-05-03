@@ -256,6 +256,7 @@ SEO.propTypes = {
   description: PropTypes.string.isRequired,
   slug: PropTypes.string,
   isBlogPost: PropTypes.bool,
+  canonical: PropTypes.string,
 }
 
 export default SEO

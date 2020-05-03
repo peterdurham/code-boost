@@ -1,6 +1,6 @@
 ---
 title: How to Setup a Basic Node/Express Application
-date: "2020-05-16 11:00:00"
+date: "2020-03-11 11:00:00"
 category: "Node"
 description: "Tutorial for setting up a Node Express application server. Learn how to setup and develop an API."
 featuredImage: "./server.jpg"

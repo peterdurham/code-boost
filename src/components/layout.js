@@ -48,8 +48,6 @@ class Layout extends React.Component {
     } else if (notStored) {
       themeClass = "not-stored"
     }
-
-    // const rootPath = `${__PATH_PREFIX__}/`
     const isPost = this.props.pageType === "Post"
 
     return (

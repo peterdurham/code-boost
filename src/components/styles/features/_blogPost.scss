@@ -28,7 +28,6 @@
 .BlogPost {
   &__image {
     height: 38.743rem;
-
     margin: 3.2rem 0;
     background-size: cover;
     background-position: 50% 100%;
@@ -59,8 +58,6 @@
 }
 
 .tableOfContents {
-  // border: 4px solid $color-yellow;
-  // transform: translateX(-40px);
   padding: 20px 20px;
   border-radius: 4px;
   font-size: 1.6rem;
@@ -88,7 +85,6 @@
 #BlogPost__footer {
   & ul {
     display: flex;
-
     justify-content: space-between;
     list-style: none;
     padding-top: 20px;

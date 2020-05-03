@@ -54,8 +54,10 @@
       font-weight: 700;
       transition: all 0.3s;
     }
-    & a:hover {
-      color: $color-green;
+    @include respond(not-phone) {
+      & a:hover {
+        color: $color-green;
+      }
     }
   }
   &__tags {
@@ -91,7 +93,7 @@
     }
   }
   &__bottom {
-    width: 120px;
+    width: 50px;
     margin: 0 auto;
     margin-top: 40px;
     & a {
@@ -99,8 +101,10 @@
       font-size: 1.6rem;
       transition: all 0.3s;
     }
-    & a:hover {
-      color: $color-green;
+    @include respond(not-phone) {
+      & a:hover {
+        color: $color-green;
+      }
     }
     @include respond(phone) {
       margin-bottom: 50px;

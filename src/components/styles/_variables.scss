@@ -12,10 +12,39 @@ $font-text: "Jost", "Nanum Gothic", sans-serif;
 $font-code: Monaco, "Operator Mono", "Source Code Pro", "Fira Code", monospace;
 
 $color-green: rgb(35, 140, 44);
+$color-fit-yellow: rgb(255, 203, 0);
 $color-yellow: #fad000;
 $color-blue: #2a94c5;
-
 $color-medium: rgb(73, 73, 73);
+$color-medium-light: rgb(133, 133, 133);
+$color-bg-dark: rgb(48, 48, 48);
+$color-bg-darker: rgb(32, 32, 32);
+$color-bg-darkest: rgb(17, 17, 17);
+$color-bg-code: rgb(15, 17, 26);
+$color-text-dark: #2a2a2a;
+$color-text-light: #b3b9c5;
+$color-text-lighter: #cecece;
+$color-text-lightest: #f8f8f8;
+
+.logo-icon {
+  color: $color-fit-yellow;
+  font-size: 4.2rem;
+  transform: translateY(2px);
+  @include respond(phone) {
+    font-size: 3.6rem;
+  }
+}
+.logo-text {
+  margin-left: 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2.4rem;
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+
+  font-family: $font-header;
+}
 
 $color-darkmode-01: rgb(31, 31, 31);
 $color-darkmode-02: black;
@@ -36,16 +65,6 @@ $color-darkmode-16: rgb(13, 19, 24);
 $color-darkmode-17: rgb(26, 29, 34);
 $color-darkmode-18: rgb(19, 24, 27);
 
-$color-bg-dark: rgb(48, 48, 48);
-$color-bg-darker: rgb(32, 32, 32);
-$color-bg-darkest: rgb(17, 17, 17);
-// $color-bg-code: rgb(30, 30, 63);
-$color-bg-code: rgb(15, 17, 26);
-$color-text-dark: #2a2a2a;
-$color-text-light: #b3b9c5;
-$color-text-lighter: #cecece;
-$color-text-lightest: #f8f8f8;
-
 $color-grey: grey;
 $color-dark1: rgb(24, 24, 24);
 $color-dark2: rgb(36, 36, 36);
@@ -58,7 +77,6 @@ $color-lightblack: rgb(28, 30, 47);
 $color-portfolio-green: rgb(30, 57, 42);
 $color-green-nodeupdate: rgba(55, 233, 85, 0.75);
 
-$color-fit-yellow: rgb(255, 203, 0);
 //good
 $color-green02: #1d7324;
 $color-green03: #238c2c;
@@ -67,25 +85,7 @@ $color-green08: #1f6521;
 $color-blue01: #1e88e5;
 
 $color-fit-footer: #1c1e2f;
-.logo-icon {
-  color: $color-fit-yellow;
-  font-size: 4.2rem;
-  transform: translateY(2px);
-  @include respond(phone) {
-    font-size: 3.6rem;
-  }
-}
-.logo-text {
-  margin-left: 9px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 2.4rem;
-  @include respond(phone) {
-    font-size: 2rem;
-  }
 
-  font-family: $font-header;
-}
 //
 $color-grey1: rgb(23, 22, 27);
 $color-grey2: rgb(34, 33, 38);

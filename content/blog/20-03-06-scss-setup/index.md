@@ -277,3 +277,7 @@ Lastly, in the `animation.scss` file we can include any keyframe animations we w
 ### Additional Components
 
 In this example, we also setup `nav.scss` and `footer.scss` files. Use these files (and syntax) to add feature-specific stylesheets as you create them. By separating as many core functionalities as possible, SCSS manages to simplify setting up and maintaining styles.
+
+&nbsp;
+
+These are some of the basic techniques and setup for setting up SCSS in your projects.

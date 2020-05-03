@@ -7,9 +7,11 @@
   color: #fff;
   transition: all 0.3s;
   cursor: pointer;
-  &:hover {
-    background-color: $color-yellow;
-    color: #fff;
+  @include respond(not-phone) {
+    &:hover {
+      background-color: $color-yellow;
+      color: #fff;
+    }
   }
 }
 

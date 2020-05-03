@@ -4,7 +4,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import {
   TiSocialFacebook,
   TiSocialTwitter,
-  TiSocialYoutube,
   TiSocialLinkedin,
 } from "react-icons/ti"
 
@@ -24,23 +23,45 @@ const Footer = () => {
   let topics = data.allTopicsJson.edges
   return (
     <footer className="Footer">
-      <div className="Footer__logo">Code-Boost</div>
+      <div className="Footer__logo">
+        {" "}
+        <Link to="/">Code-Boost</Link>
+      </div>
+
       <div className="Footer__content">
         <div className="Footer__social">
           <div className="Footer__social--text">Follow Us</div>
           <div className="Footer__social--icons">
-            <span className="Footer__social--icon-container" id="tw-icon">
-              <TiSocialTwitter className="Footer__social--icon" />
-            </span>
-            <span className="Footer__social--icon-container" id="fb-icon">
-              <TiSocialFacebook className="Footer__social--icon" />
-            </span>
-            <span className="Footer__social--icon-container" id="yt-icon">
-              <TiSocialYoutube className="Footer__social--icon" />
-            </span>
-            <span className="Footer__social--icon-container" id="li-icon">
-              <TiSocialLinkedin className="Footer__social--icon" />
-            </span>
+            <a
+              target="_blank"
+              href="https://twitter.com/BoostCode"
+              rel="noopener noreferrer"
+            >
+              <span className="Footer__social--icon-container" id="tw-icon">
+                <TiSocialTwitter className="Footer__social--icon" />
+              </span>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/code-boost-7038341a7/"
+              rel="noopener noreferrer"
+            >
+              <span className="Footer__social--icon-container" id="li-icon">
+                <TiSocialLinkedin className="Footer__social--icon" />
+              </span>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/peter.durham.98031"
+              rel="noopener noreferrer"
+            >
+              <span className="Footer__social--icon-container" id="fb-icon">
+                <TiSocialFacebook className="Footer__social--icon" />
+              </span>
+            </a>
+            {/* <span className="Footer__social--icon-container" id="yt-icon">
+                <TiSocialYoutube className="Footer__social--icon" />
+              </span> */}
           </div>
         </div>
         <div className="Footer__links">

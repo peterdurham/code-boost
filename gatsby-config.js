@@ -5,7 +5,7 @@ module.exports = {
     description: `A web development tutorials blog for JavaScript, CSS, React, GraphQL and more.`,
     siteUrl: `https://www.code-boost.com/`,
     social: {
-      twitter: `peterjdurham`,
+      twitter: `BoostCode`,
     },
   },
   plugins: [
@@ -83,11 +83,5 @@ module.exports = {
         siteUrl: `https://www.code-boost.com`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
   ],
 }
