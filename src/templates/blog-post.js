@@ -79,17 +79,19 @@ class BlogPostTemplate extends React.Component {
               fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
               className="BlogPost__image"
             ></BackgroundImage>
-            <div className="tableOfContents">
-              <h4>Table of Contents</h4>
-              {tocItems.map(item => {
-                return (
-                  <a key={item.id} href={`./#${item.id}`}>
-                    <GiQuillInk />
-                    <span>{item.text}</span>
-                  </a>
-                )
-              })}
-            </div>
+            {tocItems.length > 0 && (
+              <div className="tableOfContents">
+                <h4>Table of Contents</h4>
+                {tocItems.map(item => {
+                  return (
+                    <a key={item.id} href={`./#${item.id}`}>
+                      <GiQuillInk />
+                      <span>{item.text}</span>
+                    </a>
+                  )
+                })}
+              </div>
+            )}
           </header>
           <section
             className="BlogPost__markdown"

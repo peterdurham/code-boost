@@ -1,6 +1,6 @@
 ---
 title: How To Use CSS Background Images
-date: "2020-05-07 11:00:00"
+date: "2020-05-06 11:00:00"
 category: "CSS"
 description: "Setup background images in CSS with the background property and a URL, accepts JPG, PNG, SVG, GIF, or WEBP."
 featuredImage: "./nature.jpg"
@@ -31,7 +31,7 @@ The `background` or `background-image` properties are interchangeable and accept
 
 ### Background-size
 
-Unless your image is the exact same size as your div element, you might have noticed that it is not properly fitted to the screen. The `background-size` property will adjust this for us, and takes the following arguments:
+Unless your image is the exact same size as your div element, you might notice that it is not properly fitted to the screen. The `background-size` property can adjust this for us, and takes the following arguments:
 
 - **auto** : default setting, original image size. This will crop if image is bigger than the container and repeat if it is smaller.
 - **length value**: accepts either one or two CSS length values. One argument determines the longer axis and two arguments the *width* and *height* of the image
