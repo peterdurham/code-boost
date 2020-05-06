@@ -1,5 +1,5 @@
 ---
-title: How To Use CSS Background Images
+title: How to Use CSS Background Images
 date: "2020-05-06 11:00:00"
 category: "CSS"
 description: "Setup background images in CSS with the background property and a URL, accepts JPG, PNG, SVG, GIF, or WEBP."
