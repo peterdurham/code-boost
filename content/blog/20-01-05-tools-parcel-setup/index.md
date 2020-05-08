@@ -124,7 +124,7 @@ Babel will transpile our React code so that the browser can read it properly. Ad
 
 ### Reorganizing files
 
-Let's create a `src/` folder in the root level of our application to get organized. Move the `index.html` and `index.js` files to this folder and make additional `app.js` and `app.css` files.
+Let's create a `src/` folder in the root level of our application to get organized. Move the `index.html` and `index.js` files to this folder and make additional `App.js` and `styles.css` files.
 
 &nbsp;
 
@@ -133,16 +133,16 @@ The `index.html` file will be the entrypoint to our page, calling the `index.js`
 ```javascript
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app";
+import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
-This file will render our React application in the **html** file we built earlier. We also imported `"./app"` which we can fill out now in `app.js`
+This file will render our React application in the **html** file we built earlier. We also imported `"./App"` which we can fill out now in `App.js`
 
 ```jsx
 import React from "react";
-import "./app.css";
+import "./styles.css";
 
 const App = () => {
   return (
@@ -154,7 +154,7 @@ const App = () => {
 export default App;
 ```
 
-Here we imported a `./app.css` file which we already created. Add the following code (or whatever you like) to `app.css` to make sure its working properly
+Here we imported `./styles.css`, which we created earlier. Add the following code (or whatever you like) to this file to make sure its working properly
 
 ```css
 h1 {
