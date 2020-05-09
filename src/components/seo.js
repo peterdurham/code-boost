@@ -148,7 +148,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
   const metaDescription = description || site.siteMetadata.description
   const postImage = isBlogPost
     ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
-    : ""
+    : "https://pbs.twimg.com/profile_images/1256757018662105088/09_AHIPO_400x400.png"
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
     url: `https://code-boost.com${slug}`,

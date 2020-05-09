@@ -19,6 +19,7 @@ class BlogIndex extends React.Component {
           title="Code-Boost Tutorials"
           canonical={`https://www.code-boost.com/`}
         />
+
         <Trending />
         <Topics />
         <div className="Cards-layout">
