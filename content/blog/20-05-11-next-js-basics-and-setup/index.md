@@ -37,8 +37,6 @@ npm run dev
 
 > **Shortcut:** the command `code .` in the terminal will open VS Code in the `next-demo` folder if you have it installed
 
-![](C:\Users\Peter\Desktop\websites\code-boost\content\blog\next-js-setup\next_app.jpg)
-
 You'll notice that **create-next-app** setup the following for us:
 
 - a `pages` folder
