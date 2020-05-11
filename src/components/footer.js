@@ -52,7 +52,7 @@ const Footer = () => {
             </a>
             <a
               target="_blank"
-              href="https://www.facebook.com/peter.durham.98031"
+              href="https://www.facebook.com/Code-Boost-102807441437727/"
               rel="noopener noreferrer"
             >
               <span className="Footer__social--icon-container" id="fb-icon">

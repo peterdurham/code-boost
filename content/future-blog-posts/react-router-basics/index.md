@@ -6,3 +6,15 @@ description: "Build a Next.JS application for Server-side rendered React pages. 
 featuredImage: "./sign.jpg"
 tags: ["React", "JavaScript", "Tools", "Next", "Now"]
 ---
+
+
+## React-Router Components
+
+TABLE HERE
+
+## Basic Setup
+
+## Nested Routing
+
+## Query Parameters
+
