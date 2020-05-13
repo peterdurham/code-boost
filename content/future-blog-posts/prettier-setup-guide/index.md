@@ -3,7 +3,7 @@ title: Prettier Setup Guide
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: ""
-featuredImage: "./sign.jpg"
+featuredImage: "./plant.webp"
 tags: ["React", "JavaScript", "Tools", "Next", "Now"]
 ---
 

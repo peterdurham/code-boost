@@ -3,7 +3,7 @@ title: How to Setup React in a HTML File
 date: "2020-06-26 11:00:00"
 category: "React"
 description: "How to set up a boilerplate React project in a HTML page using React and Babel."
-featuredImage: "./solarpanels.jpg"
+featuredImage: "./plant.webp"
 tags: [ "Setup", "React"]
 ---
 

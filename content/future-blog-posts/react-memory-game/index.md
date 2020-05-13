@@ -4,7 +4,7 @@ title: How to build a Memory Game from scratch in React
 date: "2020-06-20 11:00:00"
 category: "React"
 description: ""
-featuredImage: ""
+featuredImage: "./plant.webp"
 tags: [ "React", "Game", "JavaScript"]
 
 ---

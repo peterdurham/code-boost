@@ -4,7 +4,7 @@ date: "2020-06-20 11:00:00"
 category: "JavaScript"
 description: "Overview of several basic JavaScript array methods. Explains how to use these four  common methods."
 featuredImage: "./solarpanels.jpg"
-tags: [ "Arrays", "JavaScript", "Vanilla JS"]
+tags: [ "Arrays", "JavaScript"]
 ---
 
 In Javascript, all arrays have access to numerous methods that transform them. Some of the most useful ones include:  

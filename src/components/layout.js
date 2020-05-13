@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import "./styles/main.scss"
 import ThemeContext from "../context/ThemeContext"
 import Nav from "./nav"
+import NavBig from "./navBig"
 import Footer from "./footer"
 import Menu from "./menu"
 

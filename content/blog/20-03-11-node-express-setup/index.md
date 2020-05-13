@@ -50,17 +50,10 @@ This will create a `package.json` file that will specify your project's `start s
 
 ```json
 {
-  "name": "demo-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
     "server": "node server.js"
   },
-  "keywords": [],
-  "author": "Peter Durham",
-  "license": "ISC"
 }
 ```
 
