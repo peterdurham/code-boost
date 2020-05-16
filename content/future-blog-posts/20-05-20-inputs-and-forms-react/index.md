@@ -7,7 +7,7 @@ featuredImage: "./forms.jpg"
 tags: ["React", "Forms", "Code Along"]
 ---
 
-Forms are helpful for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using **create-react-app** (or whichever build tool you prefer).
+Forms are helpful for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) (or whichever build tool you prefer).
 
 ## Controlled Components
 

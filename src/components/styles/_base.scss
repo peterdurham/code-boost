@@ -19,8 +19,6 @@ body {
 a {
   font-family: $font-header;
   text-decoration: none;
-  color: #5183f5;
-  font-weight: 600;
 }
 p {
   font-size: 1.85rem;
@@ -58,20 +56,12 @@ h5 {
   margin-bottom: 2rem;
 }
 
-ul {
-  margin: 2.7rem 2rem;
-}
-li {
-  margin-left: 2rem;
-  margin-bottom: 0.4rem;
-  font-size: 1.75rem;
-  line-height: 2.8rem;
-}
+
 
 button:focus {
   outline: 0;
 }
-nav,
+
 footer,
 #Home {
   max-width: 1040px;
@@ -94,4 +84,17 @@ main {
 
 .hidden {
   display: none;
+}
+#nav-container {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 42;
+  transition: transform 0.3s;
+}
+.no-scroll {
+  // box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.scroll {
+  transform: translateY(-60px);
 }

@@ -88,6 +88,8 @@
     justify-content: space-between;
     list-style: none;
     padding-top: 20px;
+    width: $width-medium;
+    margin: 0 auto;
   }
   & li {
     display: inline;
@@ -100,12 +102,27 @@
   & a:hover {
     color: $color-yellow;
   }
+  // ul {
+  //   margin: 2.7rem 2rem;
+  // }
+  // li {
+  //   margin-left: 2rem;
+  //   margin-bottom: 0.4rem;
+  //   font-size: 1.75rem;
+  //   line-height: 2.8rem;
+  // }
 }
 
 .BlogPost__markdown {
   width: $width-small;
   margin: 0 auto;
-
+  & a {
+    color: $color-text-blue;
+  }
+  & a:hover {
+    text-decoration: underline;
+    // color: $color-bg-darkest;
+  }
   & h2 {
     margin-top: 6rem;
   }

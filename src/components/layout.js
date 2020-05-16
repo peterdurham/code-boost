@@ -2,10 +2,41 @@ import React from "react"
 import Helmet from "react-helmet"
 import "./styles/main.scss"
 import ThemeContext from "../context/ThemeContext"
+import styled, { ThemeProvider, injectGlobal } from "styled-components";
 import Nav from "./nav"
-import NavBig from "./navBig"
 import Footer from "./footer"
 import Menu from "./menu"
+
+
+const theme = {
+  red: "red",
+  blue: "#0066cc",
+  green: "rgb(35,140,44)",
+  gold: "rgb(255,203,0)",
+  yellow: "#fad000",
+  black: "#393939",
+  grey: "#3a3a3a",
+  white: "#ffffff",
+  lightgrey: "#e1e1e1",
+  offWhite: "#ededed",
+  maxWidth: "1240px",
+  light: "#b3b9c5",
+  lighter: "#cecece",
+  lightest: "#f8f8f8",
+  medium: "rgb(73, 73, 73)",
+  mediumLight: "rgb(133, 133, 133)",
+  dark: "rgb(48, 48, 48)",
+  darker: "rgb(32, 32, 32)",
+  darkest: "rgb(17, 17, 17)",
+  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
+  navHeight: '60px',
+  fontHeader: "'Noto Sans', 'Arimo', sans-serif;",
+  fontText: "'Jost', 'Nanum Gothic', sans-serif;",
+  fontCode: "Monaco, 'Operator Mono', 'Source Code Pro', 'Fira Code', monospace;",
+  widthSmall: "74rem",
+  widthMedium: "96rem",
+  widthLarge: "120rem",
+};
 
 class Layout extends React.Component {
   static contextType = ThemeContext
@@ -52,7 +83,7 @@ class Layout extends React.Component {
     const isPost = this.props.pageType === "Post"
 
     return (
-      <div>
+      <ThemeProvider theme={theme}>
         <Helmet
           bodyAttributes={{
             class: `theme ${themeClass}`,
@@ -86,7 +117,7 @@ class Layout extends React.Component {
             <Footer isHome={isPost} />
           </div>
         )}
-      </div>
+      </ThemeProvider>
     )
   }
 }

@@ -9,13 +9,17 @@ $font-header: "Noto Sans", "Arimo", sans-serif;
 $font-text: "Nanum Gothic", "Jost", sans-serif;
 $font-text: "Jost", "Nanum Gothic", sans-serif;
 
-$font-code: Monaco, "Operator Mono", "Source Code Pro", "
- Code", monospace;
+$font-code: Monaco, "Operator Mono", "Source Code Pro", "Fira Code", monospace;
 
 $color-green: rgb(35, 140, 44);
 $color-fit-yellow: rgb(255, 203, 0);
 $color-yellow: #fad000;
-$color-blue: #2a94c5;
+$color-text-blue: #2a94c5;
+
+$color-text-blue: #5183f5;
+$color-text-blue: #009bff;
+$color-text-blue-hovered: #0085db;
+$color-text-blue: #0066cc;
 $color-medium: rgb(73, 73, 73);
 $color-medium-light: rgb(133, 133, 133);
 $color-bg-dark: rgb(48, 48, 48);
@@ -27,25 +31,9 @@ $color-text-light: #b3b9c5;
 $color-text-lighter: #cecece;
 $color-text-lightest: #f8f8f8;
 
-.logo-icon {
-  color: $color-fit-yellow;
-  font-size: 4.2rem;
-  transform: translateY(2px);
-  @include respond(phone) {
-    font-size: 3.6rem;
-  }
-}
-.logo-text {
-  margin-left: 9px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 2.4rem;
-  @include respond(phone) {
-    font-size: 2rem;
-  }
+$color-gradient: linear-gradient(95deg, #31dccf, #244fe7);
 
-  font-family: $font-header;
-}
+
 
 $color-darkmode-01: rgb(31, 31, 31);
 $color-darkmode-02: black;

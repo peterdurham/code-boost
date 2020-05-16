@@ -5,8 +5,13 @@ body {
     color: $color-bg-darkest;
   }
   & #nav-container {
-    background-color: #fff;
-    // background-color: #111111;
+    background-color: $color-bg-darkest;
+  }
+  & .logo-text {
+    color: #ffffff;
+  }
+  & button {
+    color: $color-text-light;
   }
   .Menu {
     background-color: #fff;
@@ -14,6 +19,7 @@ body {
   .Footer__link {
     color: rgba(255, 255, 255, 0.5);
   }
+
 }
 .BlogPost__markdown {
   & .language-text {
@@ -26,24 +32,20 @@ body {
   background-color: $color-darkmode-18;
   color: $color-text-light;
 
-  & #nav-container {
-    background-color: $color-bg-darkest;
-  }
+
   & .Card {
     background-color: $color-darkmode-17;
   }
-  & a {
-    color: $color-text-light;
+  .BlogPost__markdown {
+    & a {
+      color: $color-text-blue;
+    }
   }
   & p {
     color: $color-text-light;
   }
-  & button {
-    color: $color-text-light;
-  }
-  & .logo-text {
-    color: #ffffff;
-  }
+ 
+
   & h1,
   h2,
   h3 {
