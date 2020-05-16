@@ -1,16 +1,20 @@
 import React from "react"
 import Helmet from "react-helmet"
 import "./styles/main.scss"
-import ThemeContext from "../context/ThemeContext"
-import styled, { ThemeProvider, injectGlobal } from "styled-components";
+import ModeContext from "../context/ModeContext"
+import styled, { ThemeProvider } from "styled-components"
 import Nav from "./nav"
 import Footer from "./footer"
 import Menu from "./menu"
 
-
 const theme = {
   red: "red",
-  blue: "#0066cc",
+  // blue: "#009bff",
+  // blue: "#0085db",
+  // blue: "#0066cc",
+  // blue: "#5183f5",
+  // blue: "#0066cc",
+  blue: "#3273dc",
   green: "rgb(35,140,44)",
   gold: "rgb(255,203,0)",
   yellow: "#fad000",
@@ -29,17 +33,23 @@ const theme = {
   darker: "rgb(32, 32, 32)",
   darkest: "rgb(17, 17, 17)",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
-  navHeight: '74px',
+  navHeight: "74px",
   fontHeader: "'Noto Sans', 'Arimo', sans-serif;",
   fontText: "'Jost', 'Nanum Gothic', sans-serif;",
-  fontCode: "Monaco, 'Operator Mono', 'Source Code Pro', 'Fira Code', monospace;",
+  fontCode:
+    "Monaco, 'Operator Mono', 'Source Code Pro', 'Fira Code', monospace;",
   widthSmall: "74rem",
   widthMedium: "96rem",
   widthLarge: "120rem",
-};
-
+}
+const MainContent = styled.div`
+  padding: 14rem 0 7rem 0;
+  @media (max-width: 600px) {
+    padding-top: 11rem;
+  }
+`
 class Layout extends React.Component {
-  static contextType = ThemeContext
+  static contextType = ModeContext
   state = {
     scrolled: false,
     menuOpen: false,
@@ -102,12 +112,12 @@ class Layout extends React.Component {
         {this.state.menuOpen ? (
           <Menu isPost={isPost} menuOpen={this.state.menuOpen} />
         ) : (
-          <main
+          <MainContent
             id={isPost ? "BlogPost" : "Home"}
             className={this.state.menuOpen ? "" : undefined}
           >
             {children}
-          </main>
+          </MainContent>
         )}
         {!this.state.menuOpen && (
           <div

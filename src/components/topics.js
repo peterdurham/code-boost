@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Image from "gatsby-image"
-import ThemeContext from "../context/ThemeContext"
+import ModeContext from "../context/ModeContext"
 
 const Topics = () => {
   const data = useStaticQuery(graphql`
@@ -31,7 +31,7 @@ const Topics = () => {
     }
   `)
   let topics = data.allTopicsJson.edges
-  const theme = useContext(ThemeContext)
+  const mode = useContext(ModeContext)
   return (
     <div className="TopicPreviews">
       {topics.map(({ node: item }) => (
@@ -42,7 +42,7 @@ const Topics = () => {
           image={item.image}
           lightImage={item.lightImage}
           darkImage={item.darkImage}
-          darkMode={theme.darkMode}
+          darkMode={mode.darkMode}
         />
       ))}
     </div>

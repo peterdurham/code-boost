@@ -16,22 +16,28 @@ body {
   .Menu {
     background-color: #fff;
   }
-  .Footer__link {
+  .footerLinks a {
     color: rgba(255, 255, 255, 0.5);
   }
-
-}
-.BlogPost__markdown {
-  & .language-text {
+  .footerLinks a:hover {
+    color: $color-green;
+  }
+  .blogPostMarkdown .language-text {
     color: $color-bg-dark;
     background: rgba(0, 0, 0, 0.06);
+  }
+  .blogPostLinks a {
+    color: $color-bg-dark;
+    transition: all 0.2s;
+  }
+  .blogPostLinks a:hover {
+    color: $color-yellow;
   }
 }
 
 .dark {
   background-color: $color-darkmode-18;
   color: $color-text-light;
-
 
   & .Card {
     background-color: $color-darkmode-17;
@@ -44,7 +50,6 @@ body {
   & p {
     color: $color-text-light;
   }
- 
 
   & h1,
   h2,
@@ -52,7 +57,7 @@ body {
     color: $color-text-lighter;
   }
 
-  & .language-text {
+  .blogPostMarkdown .language-text {
     color: $color-text-light;
     background: $color-bg-dark;
   }
@@ -95,7 +100,7 @@ body {
       color: $color-yellow;
     }
   }
-  #BlogPost__footer a {
+  .blogPostLinks a {
     color: $color-text-light;
   }
 }

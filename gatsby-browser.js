@@ -1,6 +1,6 @@
 import React from "react"
-import { ThemeProvider } from "./src/context/ThemeContext"
+import { ModeProvider } from "./src/context/ModeContext"
 
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider>{element}</ThemeProvider>
+  <ModeProvider>{element}</ModeProvider>
 )

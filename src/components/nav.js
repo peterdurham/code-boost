@@ -1,30 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
-import ThemeContext from "../context/ThemeContext"
-import styled from 'styled-components'
+import ModeContext from "../context/ModeContext"
+import styled from "styled-components"
 
 import { FiMenu } from "react-icons/fi"
 import { IoMdBonfire } from "react-icons/io"
 import { MdWbSunny, MdClose } from "react-icons/md"
 import { WiMoonAltWaningCrescent5 } from "react-icons/wi"
 
-
 const MainNavStyles = styled.div`
-  height: ${(props) => props.theme.navHeight};
+  height: ${props => props.theme.navHeight};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: ${(props) => props.theme.fontHeader};
+  font-family: ${props => props.theme.fontHeader};
   max-width: 1040px;
   margin: 0 auto;
   padding: 0 4rem;
   & button {
-    font-family: ${(props) => props.theme.fontHeader}
+    font-family: ${props => props.theme.fontHeader};
   }
   & button:hover {
-    color: ${props => props.theme.yellow}
+    color: ${props => props.theme.yellow};
   }
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     padding: 0 2rem;
   }
   .navLogo {
@@ -43,7 +42,7 @@ const MainNavStyles = styled.div`
       color: ${props => props.theme.yellow};
       font-size: 4.2rem;
       transform: translateY(2px);
-      @media (max-width:600px) {
+      @media (max-width: 600px) {
         font-size: 3.6rem;
       }
     }
@@ -53,11 +52,11 @@ const MainNavStyles = styled.div`
       font-weight: 700;
       font-size: 2.4rem;
       color: ${props => props.theme.white};
-      @media (max-width:600px) {
+      @media (max-width: 600px) {
         font-size: 2rem;
       }
-    
-      font-family: ${props => props.theme.fontHeader}
+
+      font-family: ${props => props.theme.fontHeader};
     }
   }
   .navMode {
@@ -77,7 +76,6 @@ const MainNavStyles = styled.div`
         font-size: 3.2rem;
       }
     }
-    
   }
 `
 
@@ -89,7 +87,7 @@ const NavButton = styled.button`
   display: flex;
   align-items: center;
   transition: all 0.3s;
-  @media (max-width:600px) {
+  @media (max-width: 600px) {
     font-size: 1rem;
     width: 36px;
   }
@@ -99,7 +97,7 @@ const NavButton = styled.button`
     }
   }
   & div {
-    display: flex; 
+    display: flex;
     align-items: center;
   }
   & svg {
@@ -120,10 +118,10 @@ const SubNavStyles = styled.div`
   background: ${props => props.theme.light};
   height: 40px;
   align-items: center;
-  font-family: ${(props) => props.theme.fontHeader};
+  font-family: ${props => props.theme.fontHeader};
   color: ${props => props.theme.dark};
   font-size: 1.4rem;
-  
+
   .subNavContent {
     max-width: 1040px;
     margin: 0 auto;
@@ -132,7 +130,7 @@ const SubNavStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 4rem;
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
       padding: 0 2rem;
     }
     & nav {
@@ -149,19 +147,16 @@ const SubNavStyles = styled.div`
 `
 
 class Nav extends React.Component {
-  static contextType = ThemeContext
+  static contextType = ModeContext
   render() {
-    const theme = this.context
+    const mode = this.context
 
     return (
       <>
         <MainNavStyles>
-          <NavButton
-            onClick={this.props.toggleMenu}
-            aria-label="Toggle Menu."
-          >
+          <NavButton onClick={this.props.toggleMenu} aria-label="Toggle Menu.">
             {this.props.menuOpen ? (
-                <MdClose />
+              <MdClose />
             ) : (
               <div>
                 <FiMenu />
@@ -187,11 +182,11 @@ class Nav extends React.Component {
           </div>
           <div className="navMode">
             <button
-              onClick={theme.toggleDarkMode}
+              onClick={mode.toggleDarkMode}
               aria-label="Toggle Dark Mode."
               title="Toggle Dark Mode"
             >
-              {theme.darkMode ? <MdWbSunny /> :   <WiMoonAltWaningCrescent5 />}
+              {mode.darkMode ? <MdWbSunny /> : <WiMoonAltWaningCrescent5 />}
             </button>
           </div>
         </MainNavStyles>
@@ -219,5 +214,3 @@ class Nav extends React.Component {
   }
 }
 export default Nav
-
-

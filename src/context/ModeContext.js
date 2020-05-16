@@ -6,16 +6,16 @@ const defaultState = {
   toggleDarkMode: () => {},
 }
 
-const ThemeContext = React.createContext(defaultState)
+const ModeContext = React.createContext(defaultState)
 
-class ThemeProvider extends Component {
+class ModeProvider extends Component {
   state = {
     darkMode: false,
     notStored: false,
   }
 
   componentDidMount() {
-    const isDarkMode = JSON.parse(localStorage.getItem("codeboosttheme"))
+    const isDarkMode = JSON.parse(localStorage.getItem("codeboostmode"))
 
     if (isDarkMode) {
       this.setState({ darkMode: isDarkMode })
@@ -26,7 +26,7 @@ class ThemeProvider extends Component {
     const { darkMode } = this.state
 
     if (prevState.darkMode !== darkMode) {
-      localStorage.setItem("codeboosttheme", JSON.stringify(darkMode))
+      localStorage.setItem("codeboostmode", JSON.stringify(darkMode))
     }
   }
 
@@ -47,7 +47,7 @@ class ThemeProvider extends Component {
     const { darkMode, notStored } = this.state
 
     return (
-      <ThemeContext.Provider
+      <ModeContext.Provider
         value={{
           darkMode,
           notStored,
@@ -57,11 +57,11 @@ class ThemeProvider extends Component {
         }}
       >
         {children}
-      </ThemeContext.Provider>
+      </ModeContext.Provider>
     )
   }
 }
 
-export default ThemeContext
+export default ModeContext
 
-export { ThemeProvider }
+export { ModeProvider }
