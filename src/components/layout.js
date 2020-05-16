@@ -29,7 +29,7 @@ const theme = {
   darker: "rgb(32, 32, 32)",
   darkest: "rgb(17, 17, 17)",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
-  navHeight: '60px',
+  navHeight: '74px',
   fontHeader: "'Noto Sans', 'Arimo', sans-serif;",
   fontText: "'Jost', 'Nanum Gothic', sans-serif;",
   fontCode: "Monaco, 'Operator Mono', 'Source Code Pro', 'Fira Code', monospace;",
