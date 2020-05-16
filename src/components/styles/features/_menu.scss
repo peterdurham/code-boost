@@ -1,6 +1,7 @@
 #menu-container {
   width: $width-medium;
   margin: 0 auto;
+  text-align: center;
   @include respond(tab-land) {
     width: 90%;
     margin: 0 5%;
@@ -45,6 +46,7 @@
   &__topics {
     display: flex;
     flex-direction: column;
+
     @include respond(tab-land) {
       margin-bottom: 20px;
     }
@@ -71,6 +73,7 @@
   &__top {
     display: flex;
     height: 60vh;
+    text-align: left;
 
     @include respond(tab-land) {
       flex-direction: column;
@@ -78,9 +81,9 @@
     @include respond(phone) {
       height: auto;
     }
-
     &--left {
       width: 25%;
+
       @include respond(tab-land) {
         width: 100%;
       }

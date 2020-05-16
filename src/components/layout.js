@@ -111,7 +111,11 @@ class Layout extends React.Component {
           />
         </div>
         {this.state.menuOpen ? (
-          <Menu isPost={isPost} menuOpen={this.state.menuOpen} />
+          <Menu
+            isPost={isPost}
+            menuOpen={this.state.menuOpen}
+            toggleMenu={this.toggleMenu}
+          />
         ) : (
           <MainContent
             id={isPost ? "BlogPost" : "Home"}

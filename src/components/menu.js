@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Card from "./card"
+import CardSearch from "./cardSearch"
 import { IoIosSearch } from "react-icons/io"
 
-const Menu = ({ menuOpen }) => {
+const Menu = ({ menuOpen, toggleMenu }) => {
   const data = useStaticQuery(graphql`
     {
       tagsGroup: allMarkdownRemark(limit: 100) {
@@ -24,13 +25,6 @@ const Menu = ({ menuOpen }) => {
               description
               tags
               category
-              featuredImage {
-                childImageSharp {
-                  fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
             }
           }
         }
@@ -82,7 +76,7 @@ const Menu = ({ menuOpen }) => {
             </h3>
             <div className="Cards-layout Menu__search--result">
               {filteredPosts.map(({ node }) => (
-                <Card
+                <CardSearch
                   key={node.frontmatter.title}
                   title={node.frontmatter.title}
                   slug={node.fields.slug}
@@ -92,6 +86,18 @@ const Menu = ({ menuOpen }) => {
                 />
               ))}
             </div>
+            <button
+              className="searchLinkContainer"
+              onClick={() => {
+                if (menuOpen) {
+                  toggleMenu()
+                }
+              }}
+            >
+              <Link to="/" className="paginationLink searchLink">
+                Home
+              </Link>
+            </button>
           </>
         ) : (
           <>

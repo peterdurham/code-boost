@@ -100,9 +100,7 @@ const PageFooter = styled.footer`
     transition: all 0.3s;
     cursor: pointer;
   }
-  .footerLink:hover {
-    color: $color-green;
-  }
+
   .footerCopyright {
     border-top: 1px solid grey;
     font-size: 1.4rem;
