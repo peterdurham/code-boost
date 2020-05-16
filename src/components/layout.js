@@ -27,6 +27,7 @@ const theme = {
   light: "#b3b9c5",
   lighter: "#cecece",
   lightest: "#f8f8f8",
+  mediumDark: "rgb(62,62,62)",
   medium: "rgb(73, 73, 73)",
   mediumLight: "rgb(133, 133, 133)",
   dark: "rgb(48, 48, 48)",

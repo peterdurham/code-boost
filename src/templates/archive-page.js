@@ -8,26 +8,51 @@ import Trending from "../components/trending"
 import Topics from "../components/topics"
 import Card from "../components/card"
 import Sidebar from "../components/sidebar"
-import { FaAngleDoubleRight } from "react-icons/fa"
+import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa"
 
 const PageContainer = styled.div`
   display: flex;
-
+  padding-top: 20px;
   .pageContent {
     max-width: 1040px;
-
     @media (max-width: 1200px) {
       max-width: 100%;
     }
-    .paginationLink {
-      margin-left: auto;
+  }
+
+  & .paginationLinks {
+    width: 420px;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+      width: 92%;
     }
+  }
+
+  & .paginationLinks a:hover {
+    transform: translateY(2px);
+  }
+  & .paginationDisabled {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.32), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+    color: ${props => props.theme.mediumLight};
+    padding: 14px 22px;
+    font-size: 17px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
 `
 
-class BlogIndex extends React.Component {
+class Archive extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, pageContext } = this.props
+    const { numPages, limit, skip, currentPage } = pageContext
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
@@ -39,9 +64,7 @@ class BlogIndex extends React.Component {
               title="Code-Boost Tutorials"
               canonical={`https://www.code-boost.com/`}
             />
-
-            <Trending />
-            <Topics />
+            <h2>Tutorials</h2>
             <div className="Cards-layout">
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
@@ -58,10 +81,39 @@ class BlogIndex extends React.Component {
                 )
               })}
             </div>
-            <Link to="/archive/2" className="paginationLink archiveLink">
-              Archives
-              <FaAngleDoubleRight />
-            </Link>
+            <div className="paginationLinks">
+              {currentPage === 1 && (
+                <div to="/archive" disabled className="paginationDisabled">
+                  <FaAngleDoubleLeft />
+                  <span>Previous</span>
+                </div>
+              )}
+              {currentPage === 2 && (
+                <Link to="/archive" className="paginationLink">
+                  <FaAngleDoubleLeft />
+                  <span>Previous</span>
+                </Link>
+              )}
+              {currentPage > 2 && (
+                <Link
+                  to={`/archive/${currentPage - 1}`}
+                  className="paginationLink"
+                >
+                  <FaAngleDoubleLeft />
+                  <span>Previous</span>
+                </Link>
+              )}
+              {currentPage < numPages && (
+                <Link
+                  to={`/archive/${currentPage + 1}`}
+                  className="paginationLink"
+                >
+                  <span>Next</span>
+                  <FaAngleDoubleRight />
+                </Link>
+              )}
+            </div>
+            {}
           </div>
           {/* <Sidebar /> */}
         </PageContainer>
@@ -70,10 +122,10 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default Archive
 
 export const pageQuery = graphql`
-  query {
+  query archiveQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -81,7 +133,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 12
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {

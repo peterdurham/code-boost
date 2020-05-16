@@ -78,6 +78,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // Create Archive Pages
+  const postsPerPage = 12
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/archive` : `/archive/${i + 1}`,
+      component: path.resolve("./src/templates/archive-page.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // Create Topics Pages
   topics.forEach(topic => {
     createPage({
       path: `/${topic.fieldValue.toLowerCase()}/`,
@@ -88,6 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // Create Tag Pages
   tags.forEach(tag => {
     createPage({
       path: `/tag/${_.kebabCase(tag.fieldValue.toLowerCase())}/`,

@@ -143,3 +143,47 @@ blockquote {
     margin-bottom: 24px;
   }
 }
+
+.paginationLink {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.32), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+  color: $color-bg-dark;
+  padding: 14px 22px;
+  font-size: 17px;
+  min-width: 200px;
+  max-width: 247px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s all;
+  @media (max-width: 600px) {
+    width: 50%;
+    min-width: 100px;
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+  & svg {
+    font-size: 2.2rem;
+    color: $color-medium;
+  }
+  & svg:first-child {
+    margin-right: 8px;
+  }
+  & svg:not(:first-child) {
+    margin-left: 8px;
+  }
+}
+.archiveLink {
+  margin-top: 30px;
+}
+.archiveLink svg {
+  margin-left: 8px;
+}
+
+.archiveLink:hover {
+  transform: translateY(2px);
+  color: $color-bg-darkest;
+}
+.archiveLink:hover svg {
+  color: $color-bg-darker;
+}
