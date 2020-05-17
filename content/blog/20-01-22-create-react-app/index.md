@@ -11,7 +11,7 @@ Create React App is a command line tool to build and deploy single-page `React` 
 
 &nbsp;
 
-First make sure you have **Node** installed (or download it [here]([Download | Node.js](https://nodejs.org/en/download/))). Choose a name for the project and enter the command
+First make sure you have **Node** installed (or download it [here](https://nodejs.org/en/download/)). Choose a name for the project and enter the command
 
 ```bash
 npx create-react-app project-name

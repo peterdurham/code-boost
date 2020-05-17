@@ -109,7 +109,7 @@ const App = () => {
 export default App;
 ```
 
-With this change to hooks, we separated our state into three useState variables. We could refactor this into one useState hook, though for simplicity we will use three. The useEffect syntax is somewhat similar to componentDidMount with some minor changes such as a secondary argument (`[]` here) to indicate when the hook should run. You can learn more about hooks in this [React Hooks Basics](./react-hooks-basics) overview. 
+With this change to hooks, we separated our state into three useState variables. We could refactor this into one useState hook, though for simplicity we will use three. The useEffect syntax is somewhat similar to componentDidMount with some minor changes such as a secondary argument (`[]` here) to indicate when the hook should run. You can learn more about hooks in this [React Hooks Basics](/react-hooks-basics) overview. 
 
 
 

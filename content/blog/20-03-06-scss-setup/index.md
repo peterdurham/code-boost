@@ -19,7 +19,7 @@ It is possible to compile SCSS yourself, however most web application bundlers e
 
 ## HTML / SCSS Setup (Parcel)
 
-Parcel is a web application bundler similar to Webpack, but with less (zero) configuration. You can find a tutorial for setting up and hosting simple Parcel applications [here](http://localhost:8000/tools-parcel-setup/) or simply follow along below. 
+Parcel is a web application bundler similar to Webpack, but with less (zero) configuration. You can follow this tutorial for setting up and hosting [simple Parcel applications](/tools-parcel-setup/) or simply follow along below. 
 
 ```bash
 mkdir parcel-project
@@ -137,7 +137,7 @@ Here we are making use of `SCSS` variables by declaring them after the `$` sign.
 
 &nbsp;
 
-More information about how `create-react-app` works can be found [here](http://localhost:8000/create-react-app/)
+This [create-react-app](/create-react-app) tutorial has more details on how the tool works
 
 ## SCSS Folder Setup
 

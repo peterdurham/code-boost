@@ -50,7 +50,7 @@ This property is particularly useful if you want to have more than one element o
 
 &nbsp;
 
-More details about Flexbox can be found [here](https://code-boost.com/css-flexbox)
+More details about Flexbox can be found [here](/css-flexbox)
 
 ### Grid
 
@@ -62,7 +62,7 @@ The position property is useful if you plan to take an element out of the standa
 
 ### Static
 
-By default, html elements are included in the document according to [box-model](https://code-boost.netlify.com/) rules. The default position value for every element is `static`.
+By default, html elements are included in the document according to box-model rules. The default position value for every element is `static`.
 
 ### Relative
 

@@ -7,7 +7,7 @@ featuredImage: "./media-icons.jpg"
 tags: ["React", "Icons", "Tools", "Libraries"]
 ---
 
-There are plenty of occasions in web development to reach for icons. Installing an icon package lets you import icons as svg. Of all the icon libraries for React, `react-icons` is the best.
+There are plenty of occasions in web development to reach for icons. Installing an icon package lets you import icons as svg. Of all the icon libraries for React, [react-icons](https://www.npmjs.com/package/react-icons) is the best.
 
 ## React-icons
 
@@ -24,7 +24,7 @@ There are plenty of occasions in web development to reach for icons. Installing 
 - Devicons
 - Ant Design Icons
 
-The full list of available icons can be found and referenced [here](https://react-icons.netlify.com/#/)
+Here is a [full list](https://react-icons.netlify.com/#/) of available icons
 
 This popular package for React can be installed with the command
 

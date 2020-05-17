@@ -7,7 +7,7 @@ featuredImage: "./cartons.jpg"
 tags: ["Tools", "Parcel", "Setup", "React", "JavaScript"]
 ---
 
-**Parcel** is an easy to use build tool for *bundling* web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration. In this tutorial, we will be setting up a *Vanilla JavaScript* app, converting into a *React app*, then deploying it live to **Netlify**.  
+**Parcel** is an easy to use build tool for *bundling* web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration. In this tutorial, we will be setting up a *Vanilla JavaScript* app, converting into a *React app*, then deploying it live to [Netlify](https://www.netlify.com/).  
 
 ## Parcel Basic Setup
 

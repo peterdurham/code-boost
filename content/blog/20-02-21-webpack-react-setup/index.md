@@ -261,4 +261,4 @@ This last property is where we specify the **port** that we want to run the dev 
 
 ## Build for production
 
-Now that we've built and run a basic **React** application in the browser, its time to prepare it for **production**. Learn more about that [here]([Production | webpack](https://webpack.js.org/guides/production/))
+Now that we've built and run a basic **React** application in the browser, its time to prepare it for **production**. Learn more about that [here](https://webpack.js.org/guides/production/).

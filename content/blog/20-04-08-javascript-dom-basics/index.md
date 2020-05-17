@@ -83,4 +83,4 @@ window.addEventListener(("scroll"), () => {
 })
 ```
 
-There is plenty more to understanding the Document Object Model, and how to interface with it using JavaScript. To learn more about DOM Methods check out [this](http://code-boost.netlify.com/javascript-dom-methods/) tutorial.
+There is plenty more to understanding the Document Object Model, and how to interface with it using JavaScript. To learn more, check out this [DOM Methods](/javascript-dom-methods) tutorial.

@@ -270,7 +270,7 @@ Next has a solution for pretty much every CSS method. There is support for **CSS
 
 ## Deployment with Now
 
-There are two, equally simple hosting options for a **Next.js** project using **Now**. Both methods require using a Now account which you can sign up for [here]([Sign Up - ZEIT](https://zeit.co/signup)).
+There are two, equally simple hosting options for a **Next.js** project using **Now**. Both methods require using a Now account which you can sign up for [here](https://zeit.co/signup).
 
 ### Command Line Deploy
 

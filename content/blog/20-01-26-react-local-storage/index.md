@@ -63,7 +63,7 @@ const App = () => {
 export default App;
 ```
 
-You'll notice we imported `useState` and `useEffect` at the top of this file. We will be using these hooks to store our *state*, and update the browser's *local storage*. You can learn more about Hooks in this [basic tutorial](./react-hooks-basics).
+You'll notice we imported `useState` and `useEffect` at the top of this file. We will be using these hooks to store our *state*, and update the browser's *local storage*. You can learn more in this [Hooks basics tutorial](/react-hooks-basics).
 
 ### Adding Notes
 
@@ -122,7 +122,6 @@ npm start
 
 If you open the React devtools in your browser, you can see that the `notes` array in our application state stores our input data.
 
-IMAGE HERE
 
 ### Displaying Notes
 
@@ -251,7 +250,5 @@ Lastly, we can add some basic styles to round out the application. Add your own 
   text-align: center;
 }
 ```
-
-IMAGE HERE
 
 We did it! `localStorage` is working, and we now have a fully featured note taking app that behaves very similarly to if it had been built with a database. The best part about `localStorage` is the code is very easy to reuse. As long as you have a variable to save and load you can copy the  `useState` hooks from one project to the next, changing variable names and conditional logic. Understanding `localStorage` is also useful because many authentication methods utilize it to hold session tokens for login.

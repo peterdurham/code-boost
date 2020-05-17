@@ -144,7 +144,7 @@ The `gatsby-browser.js` file lets you respond to actions within the browser, and
 
 ### Gatsby Config
 
-The `gatsby-config.js` file defines your site's metadata, plugins, and other general configuration details. Make sure to include any additional plugins that you install here. Most plugins can be used by adding a string with the plugin's name or an object specified in the plugins [docs](https://www.gatsbyjs.org/plugins/).
+The `gatsby-config.js` file defines your site's metadata, plugins, and other general configuration details. Make sure to include any additional plugins that you install here. Most plugins can be used by adding a string with the plugin's name or an object specified in the [plugins docs](https://www.gatsbyjs.org/plugins/).
 
 ### Gatsby Node
 

@@ -72,8 +72,6 @@ const BlogPost = styled.article`
   }
 `
 
-const TableOfContents = styled.div``
-
 const BlogPostMarkdown = styled.section`
   width: ${props => props.theme.widthSmall};
   margin: 0 auto;

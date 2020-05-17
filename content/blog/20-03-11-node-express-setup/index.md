@@ -25,7 +25,7 @@ An API or *applied programming interface* is a computing interface exposed by a 
 
 An `API` is required to interface with most modern databases. A `Node-Express` server is able to talk with both the `client` and the `database`. This setup will allow for persistent data storage, and the ability to create a user system with `login`.
 
-> Note: This tutorial will show you how to setup a basic Exprses Server and connect it to a React application but does not connect with any databases. Check out this [Full stack tutorial](https://code-boost.netlify.com/full-stack-react-node/) if you want to connect your app with a database. This tutorial is a good overview if you are new to full-stack development.
+> Note: This tutorial will show you how to setup a basic Exprses Server and connect it to a React application but does not connect with any databases. Check out this [Full stack tutorial](/full-stack-react-node/) if you want to connect your app with a database. This tutorial is a good overview if you are new to full-stack development.
 
 ## Getting Started
 
@@ -232,4 +232,4 @@ If you open the browser for your clientside application you will see that the me
 
 ## Next Steps - Database
 
-This tutorial was meant to be a basic introduction to how `Express` servers work, and how you can use them to setup APIs. There are numerous options you can use for databases including SQL and mongoDB. Check out this [full stack setup](https://code-boost.netlify.com/full-stack-react-node/) tutorial to create a `full-stack` application with **React** and **Node**. 
+This tutorial was meant to be a basic introduction to how `Express` servers work, and how you can use them to setup APIs. There are numerous options you can use for databases including SQL and mongoDB. Check out this [full stack setup](/full-stack-react-node) tutorial to create a `full-stack` application with **React** and **Node**. 

@@ -1,13 +1,13 @@
 ---
 title: How to Handle Inputs and Forms in React
-date: "2020-05-20 11:00:00"
+date: "2020-05-18 11:00:00"
 category: "React"
 description: "Overview of different best practices and methods to handle inputs and forms in React. Two-way data binding and React Hooks examples."
 featuredImage: "./forms.jpg"
 tags: ["React", "Forms", "Code Along"]
 ---
 
-Forms are helpful for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) (or whichever build tool you prefer).
+Forms are helpful for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using [create-react-app](https://www.code-boost.com/create-react-app/) (or whichever build tool you prefer).
 
 ## Controlled Components
 
@@ -24,14 +24,13 @@ const App = () => {
   const [name, setName] = useState("");
 
   return (
-    <div className="App">
-      <input 
-        onChange={e => setName(e.target.value)} value={name} 
-      />
+    <div style={{ textAlign: "center" }}>
+      <h2>Controlled form component:</h2>
+      <input onChange={(e) => setName(e.target.value)} value={name} />
       <div>{name}</div>
     </div>
   );
-}
+};
 export default App;
 ```
 
@@ -41,7 +40,7 @@ Here we are updating the name value with the `useState()` hook when the input is
 
 The **onChange** input `e.target.value` refers to the current value of the input, *after* the key is pressed. The name we set is then reflected in the `<div></div>` below the input. This is a basic example of how to use a single input in **React**. However, for more complex examples (and probably always), we will want to wrap inputs with a `form` element.
 
-## Using a Form Element
+## Multiple Form Fields
 
 ```jsx
 import React, { useState } from "react";
@@ -61,9 +60,12 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "400px", margin: "60px auto" }}>
       <form
-        style={{ display: "flex", flexDirection: "column" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
         <label htmlFor="name">Name: </label>
         <input
@@ -80,8 +82,6 @@ const App = () => {
           onChange={(e) => handleChange(e)}
           value={data.age}
         />
-
-        <input type="Submit" />
       </form>
       <div>
         <h2>Output</h2>
@@ -100,38 +100,64 @@ In this component, the `form` element wraps our input tags and captures their in
 
 Also in the `handleChange` event, you'll notice we are setting the key value pair `[name]: value` onto our `data` object using the ES6 *computed property names* syntax. This means we set the property with the input's **name** to be the input's **value**. This logic will work for additional inputs too since every input will have a *name* and *value*.
 
-### Using a Submit Event
+## Form Submit Event
 
-We can also trigger the form when the submit button is *clicked*. This is useful when we are waiting for the user completes the form so we can send the data elsewhere. To setup an **onSubmit** event, add the following method to `App.js`  
+We can also trigger the form when the submit button is *clicked*. This is useful when we are waiting for the user completes the form so we can send the data elsewhere. The next example uses the **onSubmit** handler instead of multiple **onChange** handlers with *value* properties connected to state.
 
 ```jsx
-const onSubmitForm = (event) => {
-  event.preventDefault();
-  const { name, age } = event.target;
-  setData({
-    name: name.value,
-    age: age.value,
+import React, { useState } from "react";
+
+const App = () => {
+  const [data, setData] = useState({
+    name: "",
+    age: "",
   });
+
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    const { name, age } = event.target;
+    setData({
+      name: name.value,
+      age: age.value,
+    });
+  };
+  return (
+    <div style={{ width: "400px", margin: "60px auto" }}>
+      <form
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <label htmlFor="name">Name: </label>
+        <input type="text" name="name" />
+
+        <label htmlFor="age">Age: </label>
+        <input type="number" name="age" />
+
+        <input type="Submit" />
+      </form>
+      <div>
+        <h2>Output</h2>
+        <p>Name: {data.name}</p>
+        <p>Age: {data.age}</p>
+      </div>
+    </div>
+  );
 };
+export default App;
 ```
 
-Also add the submit handler line onto the `<form>` tag.
-
-```jsx
-<form 
-  onSubmit={(e) => onSubmitForm(e)}
->
-```
-
-When our `onSubmitForm` method is called we can pass along the **event** object, which stores our inputs. The default behavior is for an html page to reload whenever a form is submitted, however since we are handling the form ourselves, we will call `event.preventDefault()` to stop the page refresh. 
+When our `onSubmitForm` method is called we can pass along the **event** object, which stores all of our inputs. The default behavior is for an html page to reload whenever a form is submitted, however since we are handling the form ourselves, we will call `event.preventDefault()` to stop the page refresh. Next we can pull `name` and `age` from the event object and set it into state. This method is more useful when dealing with APIs where you can craft a request that gets fired when the *submit* button is clicked.
 
 &nbsp;
 
-In this last example, the form element listens for a `Submit` event (such as a button click) from any of its children, then passes up all of the input data in a process called **event bubbling**.
+> This form element listens for a `onSubmit` event (such as a button click) from any of its children, then passes up all of the input data in a process called **event bubbling**.
 
 ## Third Party Form Libaries
 
-While it makes sense to code your own forms in **React**, sometimes it is overkill to setup a database and email server as well... especially just for a single form. There are plenty of *third-party* services such as **Form-data**, **Basin**, **Airtable**, and dozens of others which provide cheap form storage and email alerts. If you are hosting your site on **Netlify**, you can setup a simple form integration using [Netlify Forms]([Netlify Forms | Netlify](https://www.netlify.com/products/forms/)) for free if you receive less than 100 submissions per month.
+While it makes sense to code your own forms in **React**, sometimes it is overkill to setup a database and email server as well... especially just for a single form. There are plenty of *third-party* services such as [Formspree](https://formspree.io/), [Basin](https://usebasin.com/), [Wufoo](https://www.wufoo.com/), and dozens of others which provide cheap form storage and email alerts. If you are hosting your site on **Netlify**, you can setup a simple form integration using [Netlify Forms](https://www.netlify.com/products/forms/) for free if you receive less than 100 submissions per month.
 
 ### Conclusion
 

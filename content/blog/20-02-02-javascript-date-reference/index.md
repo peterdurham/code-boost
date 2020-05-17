@@ -126,4 +126,4 @@ console.log(date);
 
 ### Library Considerations
 
-The JavaScript API for dates is powerful enough to make all sorts of calculations on your own. By simply creating a new date object instance, you can keep track of and display time data in your applications. If you are looking to add a library to do the heavy lifting **Date-fns** and **Moment** are both popular choices.
+The JavaScript API for dates is powerful enough to make all sorts of calculations on your own. By simply creating a new date object instance, you can keep track of and display time data in your applications. If you are looking to add a library to do the heavy lifting [date-fns](https://date-fns.org/) and [Moment](https://momentjs.com/) are both popular choices.
