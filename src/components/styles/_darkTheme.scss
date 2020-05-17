@@ -67,6 +67,10 @@ body {
   & .TagPage__button {
     border: 1px solid $color-text-light;
   }
+  & .paginationLink {
+    background: rgb(26, 29, 34);
+    color: #fff;
+  }
   blockquote {
     color: #fff;
     border: none;

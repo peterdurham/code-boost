@@ -1,9 +1,7 @@
 .Cards-layout {
   display: flex;
   flex-wrap: wrap;
-  @media (min-height: 900px) {
-    min-height: 586px;
-  }
+
   @include respond(tab-land) {
     grid-template-columns: 50% 50%;
     grid-column-gap: 2px;
@@ -22,18 +20,6 @@
       margin-right: 2rem;
     }
   }
-
-  @include respond(phone) {
-    .Card {
-      margin: 0;
-    }
-  }
-  .Card {
-    margin-bottom: 40px;
-    @media (min-height: 900px) {
-      height: 253px;
-    }
-  }
 }
 
 .Card {
@@ -42,6 +28,8 @@
   cursor: pointer;
   position: relative;
   transition: all 0.3s;
+  margin-bottom: 40px;
+
   @include respond(tab-land) {
     width: calc(50% - 10px);
   }
