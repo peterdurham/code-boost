@@ -6,13 +6,13 @@ datePublished: 2020-02-16T19:00:00.000Z
 dateModified: 2020-02-16T19:00:00.000Z
 description: Overview of the different methods and properties that can be used
   on the Document object model or DOM in JavaScript.
-featuredpost: false
+featuredPost: false
 category: JavaScript
 tags:
   - JavaScript
   - DOM
   - Methods
-featuredimage: /img/javascript_dom_abstract.jpg
+featuredImage: /img/javascript_dom_abstract.jpg
 ---
 In all browsers that use JavaScript we have access to a multitude of methods to affect what goes on the page. These methods will generally involve selecting and adjusting individual elements or accessing properties on the window.
 

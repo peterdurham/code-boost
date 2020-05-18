@@ -6,14 +6,14 @@ datePublished: 2020-01-11T19:00:00.000Z
 dateModified: 2020-01-11T19:00:00.000Z
 description: Learn how to add icons to your project and update SVG icons with
   react-icons. React Addon Library for icons.
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
   - Icons
   - Tools
   - Libraries
-featuredimage: /img/media-icons.jpg
+featuredImage: /img/media-icons.jpg
 ---
 There are plenty of occasions in web development to reach for icons. Installing an icon package lets you import icons as svg. Of all the icon libraries for React, [react-icons](https://www.npmjs.com/package/react-icons) is the best.
 

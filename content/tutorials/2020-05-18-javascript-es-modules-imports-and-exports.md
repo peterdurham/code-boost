@@ -6,13 +6,13 @@ datePublished: 2020-01-17T19:00:00.000Z
 dateModified: 2020-01-17T19:00:00.000Z
 description: Basic overview on how to import and export in JavaScript using the
   ES Modules syntax.
-featuredpost: false
+featuredPost: false
 category: JavaScript
 tags:
   - JavaScript
   - Import/Export
   - Methods
-featuredimage: /img/container.jpg
+featuredImage: /img/container.jpg
 ---
 JavaScript projects very often have multiple **.js** files, making it necessary to be able to access code from one file in another. Bundlers such as **Webpack** and **Parcel** are able to collect all of this code into a single or several machine readable files.  
 

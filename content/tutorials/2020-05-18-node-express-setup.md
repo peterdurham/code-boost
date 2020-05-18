@@ -6,13 +6,13 @@ datePublished: 2020-03-11T18:00:00.000Z
 dateModified: 2020-03-11T18:00:00.000Z
 description: Tutorial for setting up a Node Express application server. Learn
   how to setup and develop an API.
-featuredpost: false
+featuredPost: false
 category: Node
 tags:
   - Node
   - Express
   - Setup
-featuredimage: /img/node_express_server.jpg
+featuredImage: /img/node_express_server.jpg
 ---
 **Node.js** and **Express** are the cornerstore tools used to build Backend and Full-stack applications using JavaScript.  
 

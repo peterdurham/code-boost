@@ -6,14 +6,14 @@ datePublished: 2020-05-06T18:00:00.000Z
 dateModified: 2020-05-06T18:00:00.000Z
 description: Setup background images in CSS with the background property and a
   URL, accepts JPG, PNG, SVG, GIF, or WEBP.
-featuredpost: false
+featuredPost: false
 category: CSS
 tags:
   - Background
   - CSS
   - Image
   - Properties
-featuredimage: /img/background_image_nature.jpg
+featuredImage: /img/background_image_nature.jpg
 ---
 The CSS `background` or `background-image` property is a handy alternative to the `<img />` tag for displaying images. To use this property, first create a div tag in your html
 

@@ -6,12 +6,12 @@ datePublished: 2020-02-26T19:00:00.000Z
 dateModified: 2020-02-26T19:00:00.000Z
 description: Various methods of conditional rendering in React such as if-else,
   logical &&, and ternary opeartors.
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
   - Conditional Rendering
-featuredimage: /img/react_conditional_rendering.jpg
+featuredImage: /img/react_conditional_rendering.jpg
 ---
 Oftentimes when building with **React**, we will want to display different elements depending on the state of the application. There are numerous ways to do this in React, depending on the situation. In this tutorial we will walk through several of the options available.
 

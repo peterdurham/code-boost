@@ -6,7 +6,7 @@ datePublished: 2020-05-13T18:00:00.000Z
 dateModified: 2020-05-13T18:00:00.000Z
 description: Overview of the methods used to fetch data in React. Uses fetch,
   axios, class components, hooks, es5, es6, and Async / Await
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
@@ -15,7 +15,7 @@ tags:
   - Async/Await
   - Hooks
   - Axios
-featuredimage: /img/fetch_data_earth.jpg
+featuredImage: /img/fetch_data_earth.jpg
 ---
 There are plenty of methods you can use to retrieve data in **React**. This tutorial will explain some of the standard methods and syntaxes to do so. Each example is a standalone `App` component that can be copied to another React App for quick usage.
 

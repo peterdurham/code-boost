@@ -2,7 +2,7 @@
 title: Build Server-side rendered React apps with NextJS
 date: "2020-05-13 11:00:00"
 category: "Tools"
-description: "Build a Next.JS application for Server-side rendered React pages. Deploy to the Now cloud platform by Zeit. "
+description: "Build a Next.JS application for Server-side rendered React pages. Deploy to the Now cloud platform by Zeit."
 featuredImage: "./sign.jpg"
 tags: ["React", "Tools", "Next", "Now"]
 ---

@@ -6,7 +6,7 @@ datePublished: 2020-01-05T19:00:00.000Z
 dateModified: 2020-01-05T19:00:00.000Z
 description: Learn how to setup a Parcel JavaScript project. Simple build tool
   for React and Vanilla applications.
-featuredpost: false
+featuredPost: false
 category: Tools
 tags:
   - Tools
@@ -14,7 +14,7 @@ tags:
   - Setup
   - React
   - JavaScript
-featuredimage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/tools_parcel_cartons.jpg
 ---
 **Parcel** is an easy to use build tool for *bundling* web applications. It is a simpler alternative to *Webpack*, requiring little to no configuration. In this tutorial, we will be setting up a *Vanilla JavaScript* app, converting into a *React app*, then deploying it live to [Netlify](https://www.netlify.com/).  
 

@@ -6,13 +6,13 @@ datePublished: 2020-01-26T19:00:00.000Z
 dateModified: 2020-01-26T19:00:00.000Z
 description: Learn how to use localStorage to save data to your browser's
   memory. Data persists beyond page load like a database.
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
   - Code Along
   - Browser
-featuredimage: /img/react_local_storage_container.jpg
+featuredImage: /img/react_local_storage_container.jpg
 ---
 As a library, React is great for displaying data on the front end. This data will not persist when the page refreshes however, so we will need to setup a data store of some kind. Modern web browsers allow us to store and retrieve strings of data using the browser’s built in `setItem` and `getItem` methods.
 

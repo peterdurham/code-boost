@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/static/img`,
+        name: `images`,
       },
     },
     {
@@ -41,9 +41,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/tutorials`,
+        name: `tutorials`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

@@ -6,14 +6,14 @@ datePublished: 2020-04-22T18:00:00.000Z
 dateModified: 2020-04-22T18:00:00.000Z
 description: Gatsby is a static-site generator build tool. Overview of build
   files and various starer templates.
-featuredpost: false
+featuredPost: false
 category: Tools
 tags:
   - Gatsby
   - Setup
   - React
   - Tools
-featuredimage: /img/basics-night-photograph.jpg
+featuredImage: /img/basics-night-photograph.jpg
 ---
 Gatsby is a build tool for setting up **Static React Applications**. It uses `server-side rendering` and is great for creating blogs sites.  
 

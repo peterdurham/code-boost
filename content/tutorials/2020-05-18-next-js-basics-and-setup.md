@@ -6,14 +6,14 @@ datePublished: 2020-05-13T18:00:00.000Z
 dateModified: 2020-05-13T18:00:00.000Z
 description: Build a Next.JS application for Server-side rendered React pages.
   Deploy to the Now cloud platform by Zeit.
-featuredpost: false
+featuredPost: false
 category: Tools
 tags:
   - React
   - Tools
   - Next
   - Now
-featuredimage: /img/next_now_sign.jpg
+featuredImage: /img/next_now_sign.jpg
 ---
 There are plenty of methods you can use to retrieve data in **React**. This tutorial will explain some of the standard methods and syntaxes to do so. Each example is a standalone `App` component that can be copied to another React App for quick usage.
 

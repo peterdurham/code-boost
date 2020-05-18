@@ -6,13 +6,13 @@ datePublished: 2020-01-22T19:00:00.000Z
 dateModified: 2020-01-22T19:00:00.000Z
 description: How to use Create React App and an explanation  of what the files
   created do. Explains Project structure and purpose of files.
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
   - create-react-app
   - Tools
-featuredimage: /img/sea-2755858_1280.jpg
+featuredImage: /img/sea-2755858_1280.jpg
 ---
 Create React App is a command line tool to build and deploy single-page `React` applications. It uses `webpack` and other packages under the hood for easy development setup. It is a great tool to use when you are first learning **React** as it lets you focus on writing components.
 

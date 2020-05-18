@@ -6,13 +6,13 @@ datePublished: 2020-04-08T18:00:00.000Z
 dateModified: 2020-04-08T18:00:00.000Z
 description: Learn how to interact with the Document Object Model or DOM. Render
   and interact with html pages using vanilla JavaScript.
-featuredpost: false
+featuredPost: false
 category: JavaScript
 tags:
   - JavaScript
   - DOM
   - Basics
-featuredimage: /img/javascript_basics_tree_diagram.jpg
+featuredImage: /img/javascript_basics_tree_diagram.jpg
 ---
 The **DOM**, or *Document Object Mode*l is a programming interface for HTML documents. It is used by the browser to render webpages from HTML code. Each element in a document is part of a branched tree structure that includes parent and child nodes. The browser uses JavaScript to update various properties and elements in the document.
 

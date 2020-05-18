@@ -7,7 +7,7 @@ featuredImage: "./nature.jpg"
 tags: [ "Background", "Images", "CSS", "Properties"]
 ---
 
-The css `background` or `background-image` property is a handy alternative to the `<img />` tag for displaying images. To use this property, first create a div tag in your html
+The CSS `background` or `background-image` property is a handy alternative to the `<img />` tag for displaying images. To use this property, first create a div tag in your html
 
 ```html
 <div id="bg-demo"></div>

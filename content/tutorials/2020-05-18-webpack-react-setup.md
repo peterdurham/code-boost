@@ -6,13 +6,13 @@ datePublished: 2020-02-21T19:00:00.000Z
 dateModified: 2020-02-21T19:00:00.000Z
 description: Basic tutorial to setup a React Application using Webpack bundler
   for assets. Configuration and setup for using Webpack.
-featuredpost: false
+featuredPost: false
 category: React
 tags:
   - React
   - Webpack
   - Setup
-featuredimage: /img/webpack_setup.jpg
+featuredImage: /img/webpack_setup.jpg
 ---
 ### What is Webpack
 

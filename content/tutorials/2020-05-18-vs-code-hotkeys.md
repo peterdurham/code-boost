@@ -6,13 +6,13 @@ datePublished: 2020-05-01T18:00:00.000Z
 dateModified: 2020-05-01T18:00:00.000Z
 description: Shortcuts and hotkeys to use in VS Code. Learn effective key
   combinations to edit and arrange code in the editor.
-featuredpost: false
+featuredPost: false
 category: Tools
 tags:
   - Hotkeys
   - Shortcuts
   - VS Code
-featuredimage: /img/editor_shortcuts.jpg
+featuredImage: /img/editor_shortcuts.jpg
 ---
 If you are using **VS Code**, here are some of the best shortcuts to speed up your coding
 

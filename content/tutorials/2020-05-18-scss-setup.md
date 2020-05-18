@@ -6,13 +6,13 @@ datePublished: 2020-03-06T19:00:00.000Z
 dateModified: 2020-03-06T19:00:00.000Z
 description: Learn to setup SCSS projects (aka SASS) for vanilla JavaScript or
   React with parcel and create-react-app.
-featuredpost: false
+featuredPost: false
 category: Tools
 tags:
   - Tools
   - Setup
   - CSS
-featuredimage: /img/setup_scss_leaves.jpg
+featuredImage: /img/setup_scss_leaves.jpg
 ---
 SCSS is a preprocessor for CSS that lets you use additional features in your CSS stylesheets. It automatically compiles your .**scss** files into **.css** files for the browser to read. 
 

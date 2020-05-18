@@ -159,7 +159,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
     postImage,
     image:
       "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
-    datePublished: isBlogPost ? frontmatter.date : "",
+    datePublished: isBlogPost ? frontmatter.datePublished : "",
   })
 
   return (

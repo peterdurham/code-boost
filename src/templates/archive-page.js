@@ -73,7 +73,7 @@ class Archive extends React.Component {
                     key={node.fields.slug}
                     title={title}
                     slug={node.fields.slug}
-                    date={node.frontmatter.date}
+                    datePublished={node.frontmatter.datePublished}
                     description={node.frontmatter.description}
                     excerpt={node.excerpt}
                     frontmatter={node.frontmatter}
@@ -132,7 +132,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___datePublished], order: DESC }
       limit: $limit
       skip: $skip
     ) {
@@ -143,7 +143,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            datePublished(formatString: "MMMM DD, YYYY")
             title
             description
             tags

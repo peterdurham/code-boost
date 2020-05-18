@@ -180,7 +180,7 @@ class BlogPostTemplate extends React.Component {
           <BlogPost>
             <header>
               <h1>{post.frontmatter.title}</h1>
-              <p className="blogPostDate">{post.frontmatter.date}</p>
+              <p className="blogPostDate">{post.frontmatter.datePublished}</p>
               <div className="blogPostTags">
                 {post.frontmatter.tags.map(tag => (
                   <Link
@@ -228,7 +228,7 @@ class BlogPostTemplate extends React.Component {
                       key={node.fields.slug}
                       title={node.frontmatter.title}
                       slug={node.fields.slug}
-                      date={node.frontmatter.date}
+                      datePublished={node.frontmatter.datePublished}
                       description={node.frontmatter.description}
                       excerpt={node.excerpt}
                       frontmatter={node.frontmatter}
@@ -278,7 +278,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        datePublished(formatString: "MMMM DD, YYYY")
         description
         tags
         category

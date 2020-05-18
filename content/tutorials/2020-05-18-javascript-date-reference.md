@@ -6,12 +6,12 @@ datePublished: 2020-02-02T23:41:00.000Z
 dateModified: 2020-02-02T23:41:00.000Z
 description: Use the Date API in JavaScript to create and read dates. Explains
   epoch time and date methods.
-featuredpost: false
+featuredPost: false
 category: JavaScript
 tags:
   - JavaScript
   - Time
-featuredimage: /img/javascript_dates_stonehenge.jpg
+featuredImage: /img/javascript_dates_stonehenge.jpg
 ---
 In JavaScript, we can create and store dates using the **Date** object. By creating a new instance of this object, we can save the current time to a variable. This object gets used often in web applications for things like placing an order or logging in to an application. An instance of the **Date** object is created and stored to a database or in a cookie.
 

@@ -1,9 +1,11 @@
 const path = require(`path`)
 const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
+  fmImagesToRelative(node)
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
@@ -25,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     {
       postsRemark: allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { fields: [frontmatter___datePublished], order: DESC }
         limit: 1000
       ) {
         edges {

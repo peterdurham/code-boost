@@ -6,13 +6,13 @@ datePublished: 2020-04-03T18:00:00.000Z
 dateModified: 2020-04-03T18:00:00.000Z
 description: Basic overview of how to add custom fonts to your webpage or
   application. Use font files with @fontface or the Google Fonts CDN.
-featuredpost: false
+featuredPost: false
 category: CSS
 tags:
   - Fonts
   - Basics
   - CSS
-featuredimage: /img/text_fonts_custom.jpg
+featuredImage: /img/text_fonts_custom.jpg
 ---
 Most web browsers come with all of the basic fonts, however that's only a small fraction of the available fonts online (*free* and *premium*). Additional fonts can be added either using **font files** (*TTF*, *OTF*, *WOFF*, *WOFF2*,  etc) or by including them with a **CDN** such as *Google Fonts*.
 

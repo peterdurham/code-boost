@@ -6,14 +6,14 @@ datePublished: 2020-04-26T18:00:00.000Z
 dateModified: 2020-04-26T18:00:00.000Z
 description: Learn how to setup an Apollo GraphQL server in a Node.js
   application and connect it with a mongoDB database.
-featuredpost: false
+featuredPost: false
 category: GraphQL
 tags:
   - Apollo
   - Node
   - GraphQL
   - Setup
-featuredimage: /img/apollo_server_setup.jpg
+featuredImage: /img/apollo_server_setup.jpg
 ---
 *Apollo Server* is an open-source GraphQL server for Node.js. It can be used with *Apollo Client* on the frontend to create a fullstack application. In this tutorial we will setup our own server for video game data. Once we have a working API, we can connect it to *Mongodb Atlas*, and deploy it to *Heroku*.
 

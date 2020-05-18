@@ -7,13 +7,13 @@ dateModified: 2020-04-17T18:00:00.000Z
 description: "CSS Properties Position and Display. Options: block, inline,
   flexbox, grid for Position and static, relative, absolute, and fixed for
   Display."
-featuredpost: false
+featuredPost: false
 category: CSS
 tags:
   - CSS
   - Properties
   - Basics
-featuredimage: /img/css_position_and_display_basics.jpg
+featuredImage: /img/css_position_and_display_basics.jpg
 ---
 `Display` and `Position` are two of the most used CSS properties, each accepting a variety of arguments. Below are some of the most common applications of these properties.
 

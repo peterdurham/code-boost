@@ -6,13 +6,13 @@ datePublished: 2020-03-16T18:00:00.000Z
 dateModified: 2020-03-16T18:00:00.000Z
 description: A basic overview of the different array methods available in
   JavaScript. Includes Mutator, Accessor, and higher order methods.
-featuredpost: false
+featuredPost: false
 category: JavaScript
 tags:
   - Arrays
   - Fundamentals
   - JavaScript
-featuredimage: /img/javascript_array_hacker.jpg
+featuredImage: /img/javascript_array_hacker.jpg
 ---
 In JavaScript, **arrays** are *list-like* variables which store multiple values in a given order. There are numerous built in methods we can call on arrays to modify or arrange them. Though there are dozens of such methods, these are a few that I have found particularly useful. Follow along by either reading the code blocks beneath each function, or entering the commands in the terminal yourself.
 
