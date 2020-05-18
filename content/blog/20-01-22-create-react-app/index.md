@@ -2,7 +2,7 @@
 title: Create-React-App Setup Explained
 date: "2020-01-22 11:00:00"
 category: "React"
-description: "How to use Create React App and an explaination of what the files created do. Explains Project structure and purpose of files."
+description: "How to use Create React App and an explanation  of what the files created do. Explains Project structure and purpose of files."
 featuredImage: "./sea-2755858_1280.jpg"
 tags: ["React", "create-react-app", "Tools"]
 ---
