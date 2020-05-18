@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Create-React-App Setup Explained
 datePublished: 2020-01-23T07:00:00.000Z
-dateModified: 2020-01-23T07:00:00.000Z
+dateModified: 2020-05-18T02:41:02.905Z
 category: React
 description: How to use Create React App and an explanation of what the files
   created do. Explains Project structure and purpose of files.
