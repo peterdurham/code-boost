@@ -7,7 +7,7 @@ featuredImage: "./plant.webp"
 tags: ["React", "Basics"]
 ---
 
-## JavaScript and The DOM  s
+## JavaScript and The DOM
 
 ## What is React?
 
