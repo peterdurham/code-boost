@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Setup a GatsbyJS Project
 slug: gatsby-basics
-datePublished: 2020-04-22T18:00:00.000Z
+date: 2020-04-22T18:00:00.000Z
 dateModified: 2020-04-22T18:00:00.000Z
 description: Gatsby is a static-site generator build tool. Overview of build
   files and various starer templates.

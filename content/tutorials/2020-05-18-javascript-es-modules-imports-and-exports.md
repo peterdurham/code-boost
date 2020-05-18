@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Use JavaScript Import/Export (ES Modules)
 slug: javascript-es-modules-imports-and-exports
-datePublished: 2020-01-17T19:00:00.000Z
+date: 2020-01-17T19:00:00.000Z
 dateModified: 2020-01-17T19:00:00.000Z
 description: Basic overview on how to import and export in JavaScript using the
   ES Modules syntax.

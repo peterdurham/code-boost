@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: CSS Flexbox Basics
 slug: css-flexbox
-datePublished: 2020-03-22T18:00:00.000Z
+date: 2020-03-22T18:00:00.000Z
 dateModified: 2020-03-22T18:00:00.000Z
 description: An overview of major CSS flexbox properties and how to apply them.
   Numerous examples of flexbox container and item variations.

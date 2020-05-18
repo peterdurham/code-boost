@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How and Why to Use React Hooks
 slug: react-hooks-basics
-datePublished: 2020-03-28T18:00:00.000Z
+date: 2020-03-28T18:00:00.000Z
 dateModified: 2020-03-28T18:00:00.000Z
 description: Overview on React Hooks with examples. How to use each Hook
   including useState, useEffect, and useContext.

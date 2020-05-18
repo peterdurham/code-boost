@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How To Setup an Apollo GraphQL Server
 slug: apollo-server-setup
-datePublished: 2020-04-26T18:00:00.000Z
+date: 2020-04-26T18:00:00.000Z
 dateModified: 2020-04-26T18:00:00.000Z
 description: Learn how to setup an Apollo GraphQL server in a Node.js
   application and connect it with a mongoDB database.

@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How To Use the Position and Display CSS Attributes
 slug: css-position-and-display
-datePublished: 2020-04-17T18:00:00.000Z
+date: 2020-04-17T18:00:00.000Z
 dateModified: 2020-04-17T18:00:00.000Z
 description: "CSS Properties Position and Display. Options: block, inline,
   flexbox, grid for Position and static, relative, absolute, and fixed for

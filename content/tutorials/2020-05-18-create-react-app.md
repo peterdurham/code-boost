@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Create-React-App Setup Explained
 slug: create-react-app
-datePublished: 2020-01-22T19:00:00.000Z
+date: 2020-01-22T19:00:00.000Z
 dateModified: 2020-01-22T19:00:00.000Z
 description: How to use Create React App and an explanation  of what the files
   created do. Explains Project structure and purpose of files.

@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Setup a Basic Node/Express Application
 slug: node-express-setup
-datePublished: 2020-03-11T18:00:00.000Z
+date: 2020-03-11T18:00:00.000Z
 dateModified: 2020-03-11T18:00:00.000Z
 description: Tutorial for setting up a Node Express application server. Learn
   how to setup and develop an API.

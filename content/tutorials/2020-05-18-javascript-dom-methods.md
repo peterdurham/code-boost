@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: JavaScript DOM Methods and Properties
 slug: javascript-dom-methods
-datePublished: 2020-02-16T19:00:00.000Z
+date: 2020-02-16T19:00:00.000Z
 dateModified: 2020-02-16T19:00:00.000Z
 description: Overview of the different methods and properties that can be used
   on the Document object model or DOM in JavaScript.

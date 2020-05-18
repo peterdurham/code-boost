@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Conditional Rendering Basics in React
 slug: react-conditional-rendering
-datePublished: 2020-02-26T19:00:00.000Z
+date: 2020-02-26T19:00:00.000Z
 dateModified: 2020-02-26T19:00:00.000Z
 description: Various methods of conditional rendering in React such as if-else,
   logical &&, and ternary opeartors.

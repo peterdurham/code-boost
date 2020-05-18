@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: The Best Shortcuts To Learn for VS Code
 slug: vs-code-hotkeys
-datePublished: 2020-05-01T18:00:00.000Z
+date: 2020-05-01T18:00:00.000Z
 dateModified: 2020-05-01T18:00:00.000Z
 description: Shortcuts and hotkeys to use in VS Code. Learn effective key
   combinations to edit and arrange code in the editor.

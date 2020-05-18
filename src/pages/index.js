@@ -50,7 +50,7 @@ class BlogIndex extends React.Component {
                     key={node.fields.slug}
                     title={title}
                     slug={node.fields.slug}
-                    datePublished={node.frontmatter.datePublished}
+                    date={node.frontmatter.date}
                     description={node.frontmatter.description}
                     excerpt={node.excerpt}
                     frontmatter={node.frontmatter}
@@ -80,7 +80,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___datePublished], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: 12
     ) {
       edges {
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            datePublished(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
             tags

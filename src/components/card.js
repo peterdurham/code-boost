@@ -3,14 +3,7 @@ import { Link } from "gatsby"
 
 import BackgroundImage from "gatsby-background-image"
 
-const Card = ({
-  frontmatter,
-  title,
-  slug,
-  datePublished,
-  description,
-  excerpt,
-}) => {
+const Card = ({ frontmatter, title, slug, date, description, excerpt }) => {
   return (
     <article className="Card" key={slug}>
       <Link style={{ boxShadow: `none` }} to={slug}>

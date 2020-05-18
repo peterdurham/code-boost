@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Parcel Basic Setup for Vanilla JS and React
 slug: tools-parcel-setup
-datePublished: 2020-01-05T19:00:00.000Z
+date: 2020-01-05T19:00:00.000Z
 dateModified: 2020-01-05T19:00:00.000Z
 description: Learn how to setup a Parcel JavaScript project. Simple build tool
   for React and Vanilla applications.

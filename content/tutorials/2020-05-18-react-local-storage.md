@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Save Data with Local Storage in React
 slug: react-local-storage
-datePublished: 2020-01-26T19:00:00.000Z
+date: 2020-01-26T19:00:00.000Z
 dateModified: 2020-01-26T19:00:00.000Z
 description: Learn how to use localStorage to save data to your browser's
   memory. Data persists beyond page load like a database.

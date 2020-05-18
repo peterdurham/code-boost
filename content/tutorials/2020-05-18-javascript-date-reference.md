@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Using the Date Object and Methods in JavaScript
 slug: javascript-date-reference
-datePublished: 2020-02-02T23:41:00.000Z
+date: 2020-02-02T23:41:00.000Z
 dateModified: 2020-02-02T23:41:00.000Z
 description: Use the Date API in JavaScript to create and read dates. Explains
   epoch time and date methods.

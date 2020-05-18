@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Build Server-side rendered React apps with NextJS
 slug: next-js-basics-and-setup
-datePublished: 2020-05-13T18:00:00.000Z
+date: 2020-05-13T18:00:00.000Z
 dateModified: 2020-05-13T18:00:00.000Z
 description: Build a Next.JS application for Server-side rendered React pages.
   Deploy to the Now cloud platform by Zeit.

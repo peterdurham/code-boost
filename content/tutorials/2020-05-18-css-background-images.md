@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Use CSS Background Images
 slug: css-background-images
-datePublished: 2020-05-06T18:00:00.000Z
+date: 2020-05-06T18:00:00.000Z
 dateModified: 2020-05-06T18:00:00.000Z
 description: Setup background images in CSS with the background property and a
   URL, accepts JPG, PNG, SVG, GIF, or WEBP.

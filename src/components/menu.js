@@ -20,7 +20,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
               slug
             }
             frontmatter {
-              datePublished(formatString: "MMMM DD, YYYY")
+              date(formatString: "MMMM DD, YYYY")
               title
               description
               tags
@@ -80,7 +80,7 @@ const Menu = ({ menuOpen, toggleMenu }) => {
                   key={node.frontmatter.title}
                   title={node.frontmatter.title}
                   slug={node.fields.slug}
-                  datePublished={node.frontmatter.datePublished}
+                  date={node.frontmatter.date}
                   description={node.frontmatter.description}
                   frontmatter={node.frontmatter}
                 />

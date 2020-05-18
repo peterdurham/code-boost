@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Setup SCSS in Your Web Projects
 slug: scss-setup
-datePublished: 2020-03-06T19:00:00.000Z
+date: 2020-03-06T19:00:00.000Z
 dateModified: 2020-03-06T19:00:00.000Z
 description: Learn to setup SCSS projects (aka SASS) for vanilla JavaScript or
   React with parcel and create-react-app.

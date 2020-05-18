@@ -5,7 +5,7 @@ const CardSearch = ({
   frontmatter,
   title,
   slug,
-  datePublished,
+  date,
   description,
   excerpt,
 }) => {

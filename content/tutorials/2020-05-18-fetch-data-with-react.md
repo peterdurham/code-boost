@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Different Methods to Fetch Data with React
 slug: fetch-data-with-react
-datePublished: 2020-05-13T18:00:00.000Z
+date: 2020-05-13T18:00:00.000Z
 dateModified: 2020-05-13T18:00:00.000Z
 description: Overview of the methods used to fetch data in React. Uses fetch,
   axios, class components, hooks, es5, es6, and Async / Await

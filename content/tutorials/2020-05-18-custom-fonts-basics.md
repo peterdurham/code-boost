@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Add Custom Fonts to you Websites
 slug: custom-fonts-basics
-datePublished: 2020-04-03T18:00:00.000Z
+date: 2020-04-03T18:00:00.000Z
 dateModified: 2020-04-03T18:00:00.000Z
 description: Basic overview of how to add custom fonts to your webpage or
   application. Use font files with @fontface or the Google Fonts CDN.

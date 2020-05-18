@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Array Methods in JavaScript
 slug: javascript-array-methods
-datePublished: 2020-03-16T18:00:00.000Z
+date: 2020-03-16T18:00:00.000Z
 dateModified: 2020-03-16T18:00:00.000Z
 description: A basic overview of the different array methods available in
   JavaScript. Includes Mutator, Accessor, and higher order methods.

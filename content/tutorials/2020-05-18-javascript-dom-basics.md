@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Basics of the Document Object Model (DOM)
 slug: javascript-dom-basics
-datePublished: 2020-04-08T18:00:00.000Z
+date: 2020-04-08T18:00:00.000Z
 dateModified: 2020-04-08T18:00:00.000Z
 description: Learn how to interact with the Document Object Model or DOM. Render
   and interact with html pages using vanilla JavaScript.

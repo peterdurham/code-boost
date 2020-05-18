@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: How to Setup a React Webpack Application
 slug: webpack-react-setup
-datePublished: 2020-02-21T19:00:00.000Z
+date: 2020-02-21T19:00:00.000Z
 dateModified: 2020-02-21T19:00:00.000Z
 description: Basic tutorial to setup a React Application using Webpack bundler
   for assets. Configuration and setup for using Webpack.

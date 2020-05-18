@@ -10,6 +10,7 @@ const getSchemaOrgJSONLD = ({
   image,
   description,
   datePublished,
+  dateModified,
   tags,
   postImage,
 }) => {
@@ -41,7 +42,7 @@ const getSchemaOrgJSONLD = ({
             "@id": "https://code-boost.com/#organization",
           },
           datePublished,
-          // dateModified: "",
+          dateModified,
           breadcrumb: {
             "@type": "BreadcrumbList",
             itemListElement: [
@@ -99,7 +100,7 @@ const getSchemaOrgJSONLD = ({
 
           keywords: tags,
           datePublished,
-          // dateModified: "2020-04-30 13:01:15",
+          dateModified,
           articleSection: "Tutorials",
           author: {
             "@type": "Person",
@@ -159,7 +160,8 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
     postImage,
     image:
       "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
-    datePublished: isBlogPost ? frontmatter.datePublished : "",
+    datePublished: isBlogPost ? frontmatter.date : "",
+    dateModified: isBlogPost ? frontmatter.dateModified : "",
   })
 
   return (

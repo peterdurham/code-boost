@@ -43,7 +43,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
               key={title}
               title={title}
               slug={node.fields.slug}
-              datePublished={node.frontmatter.datePublished}
+              date={node.frontmatter.date}
               description={node.frontmatter.description}
               excerpt={node.excerpt}
               frontmatter={node.frontmatter}
@@ -63,7 +63,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
                   key={title}
                   title={title}
                   slug={node.fields.slug}
-                  datePublished={node.frontmatter.datePublished}
+                  date={node.frontmatter.date}
                   description={node.frontmatter.description}
                   excerpt={node.excerpt}
                   frontmatter={node.frontmatter}
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            datePublished(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
             tags
