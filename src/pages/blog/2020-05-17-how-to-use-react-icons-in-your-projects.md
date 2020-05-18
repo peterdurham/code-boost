@@ -1,11 +1,14 @@
 ---
 templateKey: blog-post
 title: How to use React Icons in Your Projects
-date: 2020-05-17T23:39:39.375Z
+datePublished: 2020-05-18T02:13:50.046Z
+dateModified: 2020-05-18T02:13:50.111Z
+category: React
 description: Learn how to add icons to your project and update SVG icons with
-  react-icons. React Addon Library for icons.
+  react-icons. React Addon Library for icons!
 featuredpost: false
 featuredimage: /img/media-icons.jpg
+date: 2020-05-17T23:39:39.375Z
 tags:
   - React
   - Icons
