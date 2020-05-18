@@ -6,12 +6,14 @@ datePublished: 2020-05-20T18:00:00.000Z
 dateModified: 2020-05-20T18:00:00.000Z
 description: Learn all the methods to use stylesheets with CSS and variations
   such as SCSS and CSS-in-JS.
+featuredPost: false
+featuredImage: /img/different_css_methods.jpg
+featuredimage: /img/different_css_methods.jpg
 featuredpost: false
 category: CSS
 tags:
   - CSS
   - Setup
-featuredimage: /img/different_css_methods.jpg
 ---
 **CSS** or *Cascading Style Sheets* is a way to add styles to web documents. There are numerous methods of applying CSS to your webpage or application.
 
