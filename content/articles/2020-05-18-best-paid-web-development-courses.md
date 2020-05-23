@@ -20,7 +20,7 @@ There is a great deal of web development learning material on the internet, and 
 ## Udemy
 Udemy is an excellent platform with an enormous variety of tutorials, usually in the affordable $10-12 range. Video series range from on average 15-30 hours of content with ratings and thorough descriptions. Its safe to say that there are probably at least two Udemy courses for any specific topic you're looking for. 
 &nbsp;
-Udemy is great for sampling a wide range of material affordably and potentially finding a great deal on a full length introductory course. With too many quality instructors to name here, I recommend watching the free introduction videos for highly rated or relavant material.
+Udemy is great for sampling a wide range of material affordably and potentially finding a great deal on a full length introductory course. With too many quality instructors to name here, I recommend watching the free introduction videos for highly rated or relevant material.
 
 ## Levelup Tuts
 Levelup tutorials is a longtime youtube channel with countless videos on a wide variety of topics. In addition to that, it is also a premium tutorial series platform with a new ~5 hour video course every month. Levelup tuts was made by Scott Tolinski who is really great at introducing new web technologies in an approachable and relevant way.
