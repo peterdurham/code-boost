@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Setup SCSS in Your Web Projects
+title: How to Set up SCSS in Your Web Projects
 slug: scss-setup
 date: 2020-03-06T19:00:00.000Z
 dateModified: 2020-03-06T19:00:00.000Z

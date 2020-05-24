@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Use CSS Background Images
+title: How to use CSS Background Images
 slug: css-background-images
 date: 2020-05-06T18:00:00.000Z
 dateModified: 2020-05-06T18:00:00.000Z

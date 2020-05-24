@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Setup a Basic Node/Express Application
+title: How to Set up a Basic Node/Express Application
 slug: node-express-setup
 date: 2020-03-11T18:00:00.000Z
 dateModified: 2020-03-11T18:00:00.000Z

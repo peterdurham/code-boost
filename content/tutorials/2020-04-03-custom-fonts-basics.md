@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Add Custom Fonts to you Websites
+title: How to add Custom Fonts to you websites
 slug: custom-fonts-basics
 date: 2020-04-03T18:00:00.000Z
 dateModified: 2020-04-03T18:00:00.000Z

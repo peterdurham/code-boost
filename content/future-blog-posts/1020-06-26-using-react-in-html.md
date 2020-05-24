@@ -1,10 +1,10 @@
 ---
-title: How to Setup React in a HTML File
+title: Get Started using React in a HTML File
 date: "2020-06-26 11:00:00"
 category: "React"
 description: "How to set up a boilerplate React project in a HTML page using React and Babel."
-featuredImage: "./plant.webp"
-tags: [ "Setup", "React"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: [ "Setup", "React", "HTML"]
 ---
 
 React is a frontend library for building applications and websites. Most people create their React application with a build tool such as **webpack**, **create-react-app**, **parcel**, **Next**, **Gatsby**, etc. An alternative to this is to load React via a CDN into an index.html file which can be easily hosted on Netlify or AWS.

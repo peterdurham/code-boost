@@ -1,11 +1,11 @@
 ---
 
-title: CSS Units Overview
+title: Ultimate Guide to CSS Units
 date: "2020-07-01 11:00:00"
 category: "JavaScript"
 description: "Overview of the different units for measuring length in CSS. Basics for styling with absolute and relative units."
-featuredImage: "./plant.webp"
-tags: [ "CSS", "Basics", "Properties", "Units"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: [ "CSS", "Units", "Basics", "Properties"]
 
 ---
 

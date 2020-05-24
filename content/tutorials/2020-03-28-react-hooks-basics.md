@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How and Why to Use React Hooks
+title: How and Why to use React Hooks
 slug: react-hooks-basics
 date: 2020-03-28T18:00:00.000Z
 dateModified: 2020-03-28T18:00:00.000Z

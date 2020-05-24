@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How To Setup an Apollo GraphQL Server
+title: How to Set up an Apollo GraphQL Server
 slug: apollo-server-setup
 date: 2020-04-26T18:00:00.000Z
 dateModified: 2020-04-26T18:00:00.000Z

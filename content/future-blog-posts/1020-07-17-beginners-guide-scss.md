@@ -1,10 +1,10 @@
 ---
-title: Beginner's guide to using SCSS
+title: Beginner's Guide to Using SCSS
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: "A complete beginner's guide and overview to using SCSS features like nested selectors, variables, imports, and mixins."
-featuredImage: "./plant.webp"
-tags: ["CSS", "SCSS", "Tools"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["CSS", "SCSS", "Basics"]
 ---
 
 **SCSS** is a popular preprocessor too for CSS that provides additional highly desirable features. The syntax originally was derived from **SASS** which is a similar tool. In addition to its useful features, SCSS has seen wide adoption because `.scss` files work with *CSS* styles too. 

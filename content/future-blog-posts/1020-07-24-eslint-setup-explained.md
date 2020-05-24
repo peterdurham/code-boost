@@ -1,10 +1,10 @@
 ---
-title: How to setup ESLint
+title: ESLint Setup Explained
 date: "2020-05-11 11:00:00"
 category: "Tools"
-description: "Build a Next.JS application for Server-side rendered React pages. Deploy to the Now cloud platform by Zeit. "
-featuredImage: "./plant.webp"
-tags: ["React", "Tools", "Next", "Now"]
+description: "Install and configure ESlint for static error checking in JavaScript. Setup a default project and add the plugins."
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["ESLint", "Tools", "Setup", "Testing"]
 ---
 
 ESLint is a tool for establishing and enforcing patterns across a project to make code more consistent. It is a great tool to help enforce and clean up messy code.

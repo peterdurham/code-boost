@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Setup a GatsbyJS Project
+title: How to Set up a Gatsby JS Project
 slug: gatsby-basics
 date: 2020-04-22T18:00:00.000Z
 dateModified: 2020-04-22T18:00:00.000Z

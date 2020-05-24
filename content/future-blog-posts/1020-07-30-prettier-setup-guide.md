@@ -1,10 +1,10 @@
 ---
-title: Prettier Setup Guide
+title: Prettier Code Formatting Setup Guide
 date: "2020-05-11 11:00:00"
 category: "Tools"
-description: ""
-featuredImage: "./plant.webp"
-tags: ["React", "JavaScript", "Tools", "Next", "Now"]
+description: "Tutorial for setting up prettier in your JavaScript web applications for automatic layout formatting to save time and effort."
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: [ "Tools", "Prettier", "Setup"]
 ---
 
 Prettier is a code formatter that works with several languages including CSS, JavaScript, and React. Prettier is opinionated, in that it makes certain stylistic choices for you such as when to make a new line.

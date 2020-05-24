@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How To Use the Position and Display CSS Attributes
+title: How to use the Position and Display CSS Attributes
 slug: css-position-and-display
 date: 2020-04-17T18:00:00.000Z
 dateModified: 2020-04-17T18:00:00.000Z

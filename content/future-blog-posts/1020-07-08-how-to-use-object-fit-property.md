@@ -1,10 +1,10 @@
 ---
-title: How to Use the Object-Fit Property in CSS
+title: How to use the Object-Fit Property in CSS
 date: "2020-05-11 11:00:00"
 category: "Tools"
-description: "Use the Object-fit property in CSS to vertically and horizontally crop image and video elements."
-featuredImage: "./tree-diagram.jpg"
-tags: ["CSS", "Properties"]
+description: "Explains how the Object-fit CSS property vertically and horizontally crops image and video elements."
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["CSS", "Properties", "Image"]
 ---
 
 Images used in HTML or JSX will be loaded by default at their actual size and aspect ratio. Oftentimes we need to fit images into a specific sized container while maintaining that aspect ratio. For the longest time the `background` property (instead of `<img />` tags) was the primary way to do this.  

@@ -1,10 +1,10 @@
 ---
-title: How to use CSS Media Queries for Responsive Development
+title: Responsive Development using CSS Media Queries
 date: "2020-07-11 11:00:00"
 category: "Tools"
 description: "How to style applications for various screen sizes using CSS media queries. Learn how to write mobile-first, desktop-first, and responsive code."
-featuredImage: "./plant.webp"
-tags: ["CSS", "Responsive", "Tools", "Media Queries"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["CSS", "Responsive", "Properties", "Media Queries"]
 ---
 
 ## What is a Media Query?

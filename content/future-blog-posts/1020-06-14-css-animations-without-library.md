@@ -1,10 +1,10 @@
 ---
-title: How-to Guide, CSS Animations
+title: How to use CSS Animations
 date: "2020-06-14"
 category: "CSS"
 description: "Comphrensive overview for using CSS Animations with best performance. Guide to understand keyframes and animation properties."
-featuredImage: "./horse-desert.jpg"
-tags: ["CSS", "Animations", "Keyframes", "Properties"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["CSS", "Animations", "Keyframes", "Properties", "No Library"]
 ---
 
 On any webpage you can animate all elements on the DOM using **CSS animations**. Animations can be configured with `CSS` and chained together using `JavaScript`. Each CSS `animation` has an associated `keyframe` which describes when which properties will be transformed along the animations duration.

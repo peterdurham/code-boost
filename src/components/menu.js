@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Card from "./card"
 import CardSearch from "./cardSearch"
 import { IoIosSearch } from "react-icons/io"
 

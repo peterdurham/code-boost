@@ -2,8 +2,8 @@
 title: GraphQL Basics
 date: "2020-05-11 11:00:00"
 category: "GraphQL"
-description: ""
-featuredImage: "./plant.webp"
+description: "Basic GraphQL tutorial explaining the query language, schema, resolvers, mutations, and more."
+featuredImage: /img/tools_parcel_cartons.jpg
 tags: ["GraphQL", "Basics"]
 ---
 

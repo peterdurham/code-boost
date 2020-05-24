@@ -1,10 +1,10 @@
 ---
-title: Setup a Fullstack Node and React App (MERN Stack)
-date: "2020-06-02 11:00:00"
+title: Set up a Full Stack Node and React App (MERN)
+date: "2020-06-30 11:00:00"
 category: "Node"
 description: "Comprenhensive tutorial to setup a full stack React and Node application using Git, Github, Netlify, Mongodb, and Heroku."
-featuredImage: "./croatia.jpg"
-tags: ["React", "Node", "Full-stack", "Setup"]
+featuredImage: /img/tools_parcel_cartons.jpg
+tags: ["React", "Node", "Full Stack", "Setup"]
 ---
 
 This tutorial is meant to help you create a basic working Full-stack application using React and Node.js. Before we get started, make sure you have Node JS installed on your computer.
