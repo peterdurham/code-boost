@@ -3,7 +3,7 @@ title: Using GraphQL in your Gatsby sites
 date: "2020-07-05 11:00:00"
 category: "GraphQL"
 description: "Gatsby tutorial to setup GraphQL queries in a blog application. Overview of graphql in Gatsby, page queries, and static queries."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/graphql_gatsby_twilight_road.jpg
 tags: [ "Gatsby", "GraphQL", "React"]
 ---
 ## What is Gatsby?

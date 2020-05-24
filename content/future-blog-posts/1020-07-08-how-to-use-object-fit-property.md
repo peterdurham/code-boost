@@ -3,7 +3,7 @@ title: How to use the Object-Fit Property in CSS
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: "Explains how the Object-fit CSS property vertically and horizontally crops image and video elements."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/object_fit_property.jpg
 tags: ["CSS", "Properties", "Image"]
 ---
 
@@ -34,15 +34,15 @@ For comparison in each example, the original image with **no properties** will b
 
 ### Without object-fit (crunches image)
 ![images with object-fit](./object-fit1.jpg)
-### object-fit: contain (entire image)
+### Contain (entire image)
 ![object-fit contain](./object-fit2.jpg)
-### object-fit: cover (fills container)
+### Cover (fills container)
 ![object-fit cover](./object-fit3.jpg)
-### object-fit: fill (stretch fills container)
+### Fill (stretch fills container)
 ![object-fit fill](./object-fit4.jpg)
-### object-fit: none (original size)
+### None (original size)
 ![object-fit none](./object-fit5.jpg)
-### object-fit: scale-down (contain < none)
+### Scale-down (contain < none)
 ![object-fit scale-down](./object-fit6.jpg)
 
 ## Full-width media

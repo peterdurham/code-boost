@@ -3,7 +3,7 @@ title: ESLint Setup Explained
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: "Install and configure ESlint for static error checking in JavaScript. Setup a default project and add the plugins."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/es_lint_setup.jpg
 tags: ["ESLint", "Tools", "Setup", "Testing"]
 ---
 

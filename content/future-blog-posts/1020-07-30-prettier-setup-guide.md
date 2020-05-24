@@ -1,9 +1,9 @@
 ---
-title: Prettier Code Formatting Setup Guide
+title: Prettier Code Formatter Setup Guide
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: "Tutorial for setting up prettier in your JavaScript web applications for automatic layout formatting to save time and effort."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/prettier_setup_guide.jpg
 tags: [ "Tools", "Prettier", "Setup"]
 ---
 

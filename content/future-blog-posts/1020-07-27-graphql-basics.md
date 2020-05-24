@@ -3,7 +3,7 @@ title: GraphQL Basics
 date: "2020-05-11 11:00:00"
 category: "GraphQL"
 description: "Basic GraphQL tutorial explaining the query language, schema, resolvers, mutations, and more."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/graphql_basics.jpg
 tags: ["GraphQL", "Basics"]
 ---
 

@@ -3,7 +3,7 @@ title: How to use CSS Animations
 date: "2020-06-14"
 category: "CSS"
 description: "Comphrensive overview for using CSS Animations with best performance. Guide to understand keyframes and animation properties."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/css_animations_without_library.jpg
 tags: ["CSS", "Animations", "Keyframes", "Properties", "No Library"]
 ---
 

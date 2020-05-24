@@ -3,7 +3,7 @@ title: How to Build a Stopwatch Timer using React
 date: "2020-06-09 11:00:00"
 category: "React"
 description: "Learn how to setup and deploy a stopwatch timer using setInterval in a React JavaScript project."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/react_stopwatch_timer.jpg
 tags: ["React", "Stopwatch Timer", "Time"]
 ---
 

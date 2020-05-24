@@ -3,7 +3,7 @@ title: Get Started using React in a HTML File
 date: "2020-06-26 11:00:00"
 category: "React"
 description: "How to set up a boilerplate React project in a HTML page using React and Babel."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/react_in_html.jpg
 tags: [ "Setup", "React", "HTML"]
 ---
 

@@ -4,7 +4,7 @@ title: Ultimate Guide to CSS Units
 date: "2020-07-01 11:00:00"
 category: "JavaScript"
 description: "Overview of the different units for measuring length in CSS. Basics for styling with absolute and relative units."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/css_units_ultimate_guide.jpg
 tags: [ "CSS", "Units", "Basics", "Properties"]
 
 ---
@@ -95,4 +95,4 @@ The following example will take up the top 80% of the page
 }
 ```
 
-Understanding which unit to reach for can take practice, and over time you will develop new tricks and tools for various situations! :fire:
+Understanding which unit to reach for can take practice, and over time you will develop new tricks and tools for various situations! 🔥

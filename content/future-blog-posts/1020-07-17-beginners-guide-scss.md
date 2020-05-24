@@ -3,7 +3,7 @@ title: Beginner's Guide to Using SCSS
 date: "2020-05-11 11:00:00"
 category: "Tools"
 description: "A complete beginner's guide and overview to using SCSS features like nested selectors, variables, imports, and mixins."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/beginners_guide_to_scss.jpg
 tags: ["CSS", "SCSS", "Basics"]
 ---
 

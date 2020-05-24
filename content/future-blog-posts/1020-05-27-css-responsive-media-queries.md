@@ -3,7 +3,7 @@ title: Responsive Development using CSS Media Queries
 date: "2020-07-11 11:00:00"
 category: "Tools"
 description: "How to style applications for various screen sizes using CSS media queries. Learn how to write mobile-first, desktop-first, and responsive code."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/media_queries_two_devices.jpg
 tags: ["CSS", "Responsive", "Properties", "Media Queries"]
 ---
 
@@ -84,8 +84,8 @@ For the rest of this tutorial we will be focused on `min-width` and `max-width` 
 - device-aspect-ratio
 
 ## Mobile First Setup
-If you've been coding for any amount of time, you've probably heard the term "mobile-first". Considering what the mobile code will look like early on is often a great way to avoid adding unnecessary CSS styles.
-&nbsp;
+If you've been coding for any amount of time, you've probably heard the term "mobile-first". Considering what the mobile code will look like early on is often a great way to avoid adding unnecessary CSS styles.   
+&nbsp;   
 To setup **mobile-first** styles we will write our CSS for phones, and use media queries for larger devices. Here are the screen sizes we will want to cover with some typical pixel widths
 
 | Device/s        | Min-width |

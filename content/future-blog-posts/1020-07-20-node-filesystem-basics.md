@@ -3,7 +3,7 @@ title: Node File System Basics
 date: "2020-05-11 11:00:00"
 category: "Node"
 description: "Tutorial for using the node file system module to create, read, update and delete files and folders locally."
-featuredImage: /img/tools_parcel_cartons.jpg
+featuredImage: /img/node_file_system.jpg
 tags: ["Node", "File System", "Methods"]
 ---
 Node.js comes with a built-in **File System** (fs) module that has all the features needed to perform CRUD operators on local files and folders. All you need to use the file system is
