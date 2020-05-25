@@ -42,8 +42,10 @@ Running a Gatsby app will start up a development server as usual, in addition to
 http://localhost:8000/___graphql
 ```
 
-In this tool we can write queries on the left and run them on the right. At the far right of the screen there is documentation for our GraphQL queries.  
-&nbsp;  
+In this tool we can write queries on the left and run them on the right. At the far right of the screen there is documentation for our GraphQL queries. 
+ 
+
+&nbsp;  
   
 Click on the **Query** link under *ROOT TYPES* to view all of the queries we have available along with their inputs. Since GraphQL is a **typed** language, we can view the inputs for each query and whether they are required.  
 &nbsp;  

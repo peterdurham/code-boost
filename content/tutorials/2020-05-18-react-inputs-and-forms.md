@@ -6,16 +6,14 @@ slug: react-inputs-and-forms
 date: 2020-05-18T18:00:00.000Z
 dateModified: 2020-05-18T18:00:00.000Z
 category: React
-featuredImage: /img/using_forms_and_inputs.jpg
-featuredimage: /img/using_forms_and_inputs.jpg
-featuredpost: false
+featuredPost: false
 description: Overview of different best practices and methods to handle inputs
   and forms in React. Two-way data binding and React Hooks examples.
-featuredPost: false
 tags:
   - React
   - Forms
   - Code Along
+featuredImage: /img/using_forms_and_inputs.jpg
 ---
 Forms are helpful for allowing user input on a webpage. In order to setup a basic form in React, first create a new project using [create-react-app](https://www.code-boost.com/create-react-app/) (or whichever build tool you prefer).
 
