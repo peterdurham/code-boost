@@ -1,16 +1,17 @@
 ---
+datePublished: 2020-05-18T18:00:00.000Z
 templateKey: blog-post
 title: How to Handle Inputs and Forms in React
 slug: react-inputs-and-forms
-datePublished: 2020-05-18T18:00:00.000Z
+date: 2020-05-18T18:00:00.000Z
 dateModified: 2020-05-18T18:00:00.000Z
-description: Overview of different best practices and methods to handle inputs
-  and forms in React. Two-way data binding and React Hooks examples.
-featuredPost: false
+category: React
 featuredImage: /img/using_forms_and_inputs.jpg
 featuredimage: /img/using_forms_and_inputs.jpg
 featuredpost: false
-category: React
+description: Overview of different best practices and methods to handle inputs
+  and forms in React. Two-way data binding and React Hooks examples.
+featuredPost: false
 tags:
   - React
   - Forms
