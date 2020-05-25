@@ -2,8 +2,8 @@
 templateKey: blog-post
 title: Using GraphQL in your Gatsby sites
 slug: using-graphql-in-gatsby-sites
-date: 2020-05-26T06:00:00.000Z
-dateModified: 2020-05-26T06:00:00.000Z
+date: 2020-05-25T18:08:08.031Z
+dateModified: 2020-05-25T18:08:08.544Z
 description: Gatsby tutorial to setup GraphQL queries in a blog application.
   Overview of graphql in Gatsby, page queries, and static queries.
 featuredPost: false
