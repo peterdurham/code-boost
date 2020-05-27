@@ -96,6 +96,14 @@ const BlogPostMarkdown = styled.section`
     font-size: 1.75rem;
     line-height: 2.8rem;
   }
+  & img {
+    margin: 36px 0;
+  }
+  @media (max-width: 740px) {
+    & img {
+      width: 100%;
+    }
+  }
   .gatsby-resp-image-wrapper {
     margin: 6rem 0;
     box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 0.12);
