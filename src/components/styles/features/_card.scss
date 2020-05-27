@@ -61,6 +61,15 @@
     line-height: 16px;
     padding: 2px 5px;
   }
+  &__topiclogo {
+    position: absolute;
+    left: 10px;
+    top: -64px;
+    width: 52px;
+    height: 52px;
+  }
+  &__topiclogo img {
+  }
   &__title {
     height: 9.6rem;
     padding: 2.4rem 1.6rem;

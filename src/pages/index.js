@@ -30,7 +30,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-
+    console.log(data.allTopicsJson)
     return (
       <Layout location={this.props.location} title={siteTitle} pageType="Home">
         <PageContainer>
@@ -45,6 +45,11 @@ class BlogIndex extends React.Component {
             <div className="Cards-layout">
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
+                const topicLogo = data.allTopicsJson.edges.filter(
+                  edge => edge.node.name === node.frontmatter.category
+                )[0]
+                console.log("TOPIC LOGO: ", topicLogo.node)
+
                 return (
                   <Card
                     key={node.fields.slug}
@@ -54,6 +59,7 @@ class BlogIndex extends React.Component {
                     description={node.frontmatter.description}
                     excerpt={node.excerpt}
                     frontmatter={node.frontmatter}
+                    topic={topicLogo.node}
                   />
                 )
               })}
@@ -100,6 +106,28 @@ export const pageQuery = graphql`
                 fluid(maxWidth: 400) {
                   ...GatsbyImageSharpFluid
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+    allTopicsJson {
+      edges {
+        node {
+          name
+          slug
+          lightImage {
+            childImageSharp {
+              fluid(maxWidth: 240, maxHeight: 240) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          darkImage {
+            childImageSharp {
+              fluid(maxWidth: 240, maxHeight: 240) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
