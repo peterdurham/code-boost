@@ -41,7 +41,7 @@ Here are the properties for both Items and Containers
 
 In order to create a flexbox, apply `display: flex` to the desired parent container. This will line each child item up in a row.
 
-![display flex](./flex-example1.jpg)
+![display flex](/img/flex-example1.jpg)
 
 ### Flex-direction
 
@@ -51,7 +51,7 @@ In order to create a flexbox, apply `display: flex` to the desired parent contai
 
 By default, this property is set to `row`, meaning your items will be aligned horizontally and in order. Changing this property to `column` will adjust the direction of your items to be aligned vertically instead. It is helpful to think of a flexbox like an **axis**, `row` being along an `x-axis`, and `column` along a `y-axis`.
 
-![flex direction](./flex-example2.jpg)
+![flex direction](/img/flex-example2.jpg)
 
 If you wish to reverse the order of the items in your flexbox, this can be achieved with `row-reverse` or `column-reverse`. This can be useful for adjusting the order of navigation links on certain screen sizes.
 
@@ -63,7 +63,7 @@ If you wish to reverse the order of the items in your flexbox, this can be achie
 
 The default value here is `no-wrap`, meaning that the items in a flexbox will overflow out of the container instead of wrapping on to the next line. The value `wrap` will move items onto a new line instead. If you wish to reverse your items, `wrap-reverse` does the same thing as wrap, reversing the item order.
 
-![flex-wrap](./flex-example3.jpg)
+![flex-wrap](/img/flex-example3.jpg)
 
 ### Justify-content
 
@@ -77,7 +77,7 @@ This property is the *strawberry jam* of flexbox. Oftentimes there will be extra
 
 The values `flex-start` and `flex-end` will place your flexed items at the beginning or end of your container accordingly. If you want to center your content, `center` is the clear choice here. Using the values `space-between`, `space-around`, and `space-evenly` will distribute that extra space in often useful ways. `space-between` will place the first item at the start and the last item at the end, with equal space in between items. `space-around` will distribute the extra space equally to the left and right sides of each item (appearing as twice the space on inner elements). Finally, `space-evenly` will divide the remaining space "evenly" applied to every gap between and around items.
 
-![justify-content](./flex-example4.jpg)
+![justify-content](/img/flex-example4.jpg)
 
 ### Align-items
 
@@ -95,7 +95,7 @@ The value `stretch`, will set the height of every item in a row flexbox to be 10
 
 Finally, the value `baseline` will behave similarly to center, except when flexed items contain text. In this case, it will use the bottom of the text rather than the centerline of the item. This is useful when you have text elements with varying heights/sizes. 
 
-![align items](./flex-example5.jpg)
+![align items](/img/flex-example5.jpg)
 
 ### Align-content
 
@@ -105,7 +105,7 @@ Finally, the value `baseline` will behave similarly to center, except when flexe
 
 This property behaves similar to justify-content except along the **cross** axis. `align-content` is only useful if `flex-wrap: wrap` is on and there are multiple lines to distribute space among.
 
-![align content](./flex-example6.jpg)
+![align content](/img/flex-example6.jpg)
 
 ## Item Properties
 
@@ -131,7 +131,7 @@ This property is useful if you wish to adjust the order of your elements on spec
 .yellow { order: 4; }
 ```
 
-![order](./flex-example7.jpg)
+![order](/img/flex-example7.jpg)
 
 ### Flex-grow
 
@@ -150,7 +150,7 @@ In the following example, I added `flex-grow` properties to the `green` and `yel
 .yellow { flex-grow: 2; }
 ```
 
-![flex grow](./flex-example8.jpg)
+![flex grow](/img/flex-example8.jpg)
 
 ### Flex-shrink
 
@@ -171,7 +171,7 @@ In the following example, I have bumped up the box width so that all boxes will 
 .red { flex-shrink: 4; }
 ```
 
-![flex shrink](./flex-example9.jpg)
+![flex shrink](/img/flex-example9.jpg)
 
 As you can see, the red element had the highest `flex-shrink` value, and it is the smallest element. This property will shrink each element according to how much additional space it would need for every item to be full-sized in the container.
 
@@ -194,7 +194,7 @@ In the following example, I have set each of the elements to have a different pe
 .red { flex-basis: 40%; }
 ```
 
-![flex basis](./flex-example10.jpg)
+![flex basis](/img/flex-example10.jpg)
 
 ### Align-self
 
@@ -218,7 +218,7 @@ In the following example, I added `align-self` to the first 3 items.
 .blue { align-self: flex-end; }
 ```
 
-![align self](./flex-example11.jpg)
+![align self](/img/flex-example11.jpg)
 
 ### Overview
 
@@ -236,6 +236,6 @@ With so many elements and nuances in web development, I often find myself search
 }
 ```
 
-![centering everything](./flex-example12.jpg)
+![centering everything](/img/flex-example12.jpg)
 
 Even with 1 item (or only text) in your container, flexbox will position things exactly where you want them ;)
