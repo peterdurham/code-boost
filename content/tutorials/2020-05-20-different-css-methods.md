@@ -1,14 +1,14 @@
 ---
 datePublished: 2020-05-20T18:00:00.000Z
 templateKey: blog-post
-title: Overview of Different ways to use CSS
+title: Different Ways of Using CSS
 slug: different-css-methods
 date: 2020-05-20T18:00:00.000Z
 dateModified: 2020-05-20T18:00:00.000Z
-category: CSS
-featuredPost: false
 description: Learn all the methods to use stylesheets with CSS and variations
   such as SCSS and CSS-in-JS.
+featuredPost: false
+category: CSS
 tags:
   - CSS
   - Setup
