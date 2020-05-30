@@ -1,7 +1,7 @@
 ---
 datePublished: 2020-05-20T18:00:00.000Z
 templateKey: blog-post
-title: Different Ways of Using CSS
+title: Different Ways to Use CSS
 slug: different-css-methods
 date: 2020-05-20T18:00:00.000Z
 dateModified: 2020-05-20T18:00:00.000Z
