@@ -1,5 +1,30 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import styled from "styled-components"
+
+const TrendingTagStyles = styled.div`
+  margin: 16px 0;
+  width: $width-medium;
+  @media (max-width: 1040px) {
+    width: 100%;
+  }
+  .trendingTagsHeader {
+    font-family: $font-header;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .trendingTags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 96rem;
+
+    @media (max-width: 1040px) {
+      width: 100%;
+    }
+  }
+`
 
 const Trending = () => {
   const data = useStaticQuery(graphql`
@@ -19,9 +44,9 @@ const Trending = () => {
     })
 
   return (
-    <div className="Trending">
-      <h2 className="Trending__header">Trending Topics</h2>
-      <div className="Trending__topics">
+    <TrendingTagStyles>
+      <h2 className="trendingTagsHeader">Trending Topics</h2>
+      <div className="trendingTags">
         {tags.map(tag => {
           return (
             <Link
@@ -39,7 +64,7 @@ const Trending = () => {
           )
         })}
       </div>
-    </div>
+    </TrendingTagStyles>
   )
 }
 export default Trending

@@ -2,6 +2,97 @@ import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
+import styled from "styled-components"
+
+const CardStyles = styled.article`
+  width: 30rem;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  margin-bottom: 40px;
+  &:hover {
+    transform: translate(4px, -4px);
+  }
+  @media (max-width: 1040px) {
+    width: calc(50% - 10px);
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  @media (min-width: 1040px) {
+    &:not(:nth-child(3n)) {
+      margin-right: 3rem;
+    }
+  }
+  @media (max-width: 1040px) and (min-width: 600px) {
+    &:not(:nth-child(2n)) {
+      margin-right: 2rem;
+    }
+  }
+
+  & .cardImage {
+    height: 15.7rem;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 100%;
+    @media (max-width: 1040px) {
+      height: calc(50vw / 2);
+    }
+    @media (max-width: 600px) {
+      height: calc(100vw / 2.5);
+    }
+  }
+  & .cardTag {
+    position: absolute;
+    background-color: ${props => props.theme.yellow};
+    color: #111;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: ${props => props.theme.fontHeader};
+    left: 16px;
+    top: -10px;
+    line-height: 16px;
+    padding: 2px 5px;
+  }
+  & .cardTopicLogo {
+    position: absolute;
+    left: 10px;
+    top: -64px;
+    width: 52px;
+    height: 52px;
+  }
+
+  & .cardTitle {
+    height: 9.6rem;
+    padding: 2.4rem 1.6rem;
+    font-family: ${props => props.theme.fontHeader};
+    font-weight: 400 !important;
+    line-height: 2.8rem;
+    position: relative;
+
+    @media (max-width: 1040px) {
+      height: calc(50vw / 3.75);
+    }
+
+    @media (max-width: 600px) {
+      height: calc(100vw / 4.4);
+    }
+
+    & h3 {
+      font-size: 19px;
+      @media (max-width: 840px) {
+        font-size: 15px;
+        line-height: 21px;
+      }
+    }
+    & a {
+      font-size: 1.96rem;
+    }
+  }
+`
 
 const Card = ({
   frontmatter,
@@ -13,21 +104,21 @@ const Card = ({
   topic,
 }) => {
   return (
-    <article className="Card" key={slug}>
+    <CardStyles key={slug}>
       <Link style={{ boxShadow: `none` }} to={slug}>
         <BackgroundImage
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
-          className="Card__image"
+          className="cardImage"
         ></BackgroundImage>
-        <div className="Card__title">
-          {/* <div className="Card__topiclogo">
+        <div className="cardTitle">
+          {/* <div className="cardTopicLogo">
             <Image fluid={topic.darkImage.childImageSharp.fluid} />
           </div> */}
-          <div className="Card__tag">{frontmatter.category}</div>
+          <div className="cardTag">{frontmatter.category}</div>
           <h3>{title}</h3>
         </div>
       </Link>
-    </article>
+    </CardStyles>
   )
 }
 export default Card

@@ -96,5 +96,20 @@ module.exports = {
         siteUrl: `https://www.code-boost.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Sans`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Jost`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
   ],
 }

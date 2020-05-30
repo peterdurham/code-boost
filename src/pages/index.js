@@ -4,11 +4,12 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Trending from "../components/trending"
-import Topics from "../components/topics"
+import TrendingTags from "../components/trendingTags"
+import TopicLinks from "../components/topicLinks"
 import Card from "../components/card"
 import Sidebar from "../components/sidebar"
 import { FaAngleDoubleRight } from "react-icons/fa"
+import { CardsLayout } from "../components/styles/CardsLayout"
 
 const PageContainer = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    console.log(data.allTopicsJson)
+
     return (
       <Layout location={this.props.location} title={siteTitle} pageType="Home">
         <PageContainer>
@@ -40,15 +41,14 @@ class BlogIndex extends React.Component {
               canonical={`https://www.code-boost.com/`}
             />
 
-            <Trending />
-            <Topics />
-            <div className="Cards-layout">
+            <TrendingTags />
+            <TopicLinks />
+            <CardsLayout>
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 const topicLogo = data.allTopicsJson.edges.filter(
                   edge => edge.node.name === node.frontmatter.category
                 )[0]
-                console.log("TOPIC LOGO: ", topicLogo.node)
 
                 return (
                   <Card
@@ -63,7 +63,7 @@ class BlogIndex extends React.Component {
                   />
                 )
               })}
-            </div>
+            </CardsLayout>
             <Link to="/archive/2" className="paginationLink archiveLink">
               Archives
               <FaAngleDoubleRight />

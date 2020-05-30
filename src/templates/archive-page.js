@@ -4,11 +4,9 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Trending from "../components/trending"
-import Topics from "../components/topics"
 import Card from "../components/card"
-import Sidebar from "../components/sidebar"
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa"
+import { CardsLayout } from "../components/styles/CardsLayout"
 
 const PageContainer = styled.div`
   display: flex;
@@ -52,7 +50,7 @@ const PageContainer = styled.div`
 class Archive extends React.Component {
   render() {
     const { data, pageContext } = this.props
-    const { numPages, limit, skip, currentPage } = pageContext
+    const { numPages, currentPage } = pageContext
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
@@ -65,7 +63,7 @@ class Archive extends React.Component {
               canonical={`https://www.code-boost.com/`}
             />
             <h2>Tutorials</h2>
-            <div className="Cards-layout">
+            <CardsLayout>
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
@@ -80,7 +78,7 @@ class Archive extends React.Component {
                   />
                 )
               })}
-            </div>
+            </CardsLayout>
             <div className="paginationLinks">
               {currentPage === 1 && (
                 <div to="/archive" disabled className="paginationDisabled">

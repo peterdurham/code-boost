@@ -6,6 +6,20 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Card from "../components/card"
+import { CardsLayout } from "../components/styles/CardsLayout"
+import styled from "styled-components"
+
+const TagsPageStyles = styled.div`
+  .trendingTags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 96rem;
+
+    @media (max-width: 1040px) {
+      width: 100%;
+    }
+  }
+`
 
 const TagsPage = ({
   data: {
@@ -17,14 +31,14 @@ const TagsPage = ({
 }) => {
   return (
     <Layout pageType="Tags">
-      <div>
+      <TagsPageStyles>
         <SEO
           title="About Code-Boost"
           canonical={`https://www.code-boost.com/tags/`}
         />
         <div>
           <h1 style={{ marginBottom: "2rem" }}>Tags</h1>
-          <div className="Trending__topics">
+          <div className="trendingTags">
             {group.map(tag => (
               <Link
                 to={`/tag/${kebabCase(tag.fieldValue.toLowerCase())}/`}
@@ -38,12 +52,12 @@ const TagsPage = ({
             ))}
           </div>
         </div>
-      </div>
+      </TagsPageStyles>
       <div>
         <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
           Top Posts
         </h2>
-        <div className="Cards-layout">
+        <CardsLayout>
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 6) {
@@ -61,7 +75,7 @@ const TagsPage = ({
             }
             return null
           })}
-        </div>
+        </CardsLayout>
       </div>
     </Layout>
   )

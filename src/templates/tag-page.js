@@ -1,8 +1,38 @@
 import React from "react"
 import Layout from "../components/layout"
+import styled from "styled-components"
 import { Link, graphql } from "gatsby"
+
 import Card from "../components/card"
 import SEO from "../components/seo"
+import { CardsLayout } from "../components/styles/CardsLayout"
+
+const TagPageStyles = styled.div`
+  .tagPageHeader {
+    margin: 4.2rem 0;
+    font-size: 3.2rem;
+  }
+  .tagPageButton {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid ${props => props.theme.darkest};
+    padding: 4px 16px;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .tagPageButton:hover {
+    background-color: ${props => props.theme.green};
+    border: 1px solid ${props => props.theme.green};
+  }
+  .tagPageButton:hover span {
+    color: #fff;
+  }
+`
 
 const TagPageTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -26,50 +56,54 @@ const TagPageTemplate = ({ pageContext, data }) => {
           .join("-")
           .toLowerCase()}/`}
       />
-      <h2 className="TagPage__header">{tagHeader}</h2>
+      <TagPageStyles>
+        <h2 className="tagPageHeader">{tagHeader}</h2>
 
-      <div className="Cards-layout">
-        {edgesWithTag.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <Card
-              key={title}
-              title={title}
-              slug={node.fields.slug}
-              date={node.frontmatter.date}
-              description={node.frontmatter.description}
-              excerpt={node.excerpt}
-              frontmatter={node.frontmatter}
-            />
-          )
-        })}
-      </div>
-      <Link to="/tags" className="TagPage__button">
-        <span>See all tags</span>
-      </Link>
-
-      <div>
-        <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>Top Posts</h2>
-        <div className="Cards-layout">
-          {edges.map(({ node }, index) => {
+        <CardsLayout>
+          {edgesWithTag.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
-            if (index < 3) {
-              return (
-                <Card
-                  key={title}
-                  title={title}
-                  slug={node.fields.slug}
-                  date={node.frontmatter.date}
-                  description={node.frontmatter.description}
-                  excerpt={node.excerpt}
-                  frontmatter={node.frontmatter}
-                />
-              )
-            }
-            return null
+            return (
+              <Card
+                key={title}
+                title={title}
+                slug={node.fields.slug}
+                date={node.frontmatter.date}
+                description={node.frontmatter.description}
+                excerpt={node.excerpt}
+                frontmatter={node.frontmatter}
+              />
+            )
           })}
+        </CardsLayout>
+        <Link to="/tags" className="tagPageButton">
+          <span>See all tags</span>
+        </Link>
+
+        <div>
+          <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>
+            Top Posts
+          </h2>
+          <CardsLayout>
+            {edges.map(({ node }, index) => {
+              const title = node.frontmatter.title || node.fields.slug
+              if (index < 3) {
+                return (
+                  <Card
+                    key={title}
+                    title={title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    excerpt={node.excerpt}
+                    frontmatter={node.frontmatter}
+                  />
+                )
+              }
+              return null
+            })}
+          </CardsLayout>
         </div>
-      </div>
+      </TagPageStyles>
     </Layout>
   )
 }

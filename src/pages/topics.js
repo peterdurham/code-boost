@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/card"
+import { CardsLayout } from "../components/styles/CardsLayout"
 
 const TopicsPage = ({
   data: {
@@ -39,7 +40,7 @@ const TopicsPage = ({
         <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
           Top Posts
         </h2>
-        <div className="Cards-layout">
+        <CardsLayout>
           {edges.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             if (index < 6) {
@@ -57,7 +58,7 @@ const TopicsPage = ({
             }
             return null
           })}
-        </div>
+        </CardsLayout>
       </div>
     </Layout>
   )
