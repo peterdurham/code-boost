@@ -441,7 +441,9 @@ body {
   h3 {
     color: ${theme.lighter};
   }
-
+  .yellow-box {
+    display: none;
+  }
   .blogPostMarkdown .language-text {
     color: ${theme.light};
     background: ${theme.dark};
