@@ -77,6 +77,14 @@ const PageContainer = styled.div`
       margin-left: 8px;
     }
   }
+  & .tutorialsHeader {
+    font-family: $font-header;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
 `
 
 class Archive extends React.Component {
@@ -94,7 +102,11 @@ class Archive extends React.Component {
               title="Code-Boost Tutorials"
               canonical={`https://www.code-boost.com/`}
             />
-            <h2>Tutorials</h2>
+
+            <div className="yellow-box-container">
+              <div className="yellow-box"></div>
+              <h2 className="tutorialsHeader">Tutorials</h2>
+            </div>
             <CardsLayout>
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug

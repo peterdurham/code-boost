@@ -45,17 +45,17 @@ const CardStyles = styled.article`
   }
   & .cardTag {
     position: absolute;
-    background-color: ${props => props.theme.yellow};
-    color: #111;
+    background-color: ${props => props.theme.green};
+    color: #fff;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
     font-family: ${props => props.theme.fontHeader};
     left: 16px;
-    top: -10px;
+    top: -12px;
     line-height: 16px;
-    padding: 2px 5px;
+    padding: 4px 7px;
   }
   & .cardTopicLogo {
     position: absolute;

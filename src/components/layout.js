@@ -45,6 +45,7 @@ const theme = {
   grey30: "rgb(26, 29, 34)",
   grey31: "rgb(15, 17, 26)",
   blues: "linear-gradient(95deg, #31dccf, #244fe7)",
+  blue: "#00bcda",
   blue: "#3273dc",
   green: "rgb(35,140,44)",
   gold: "rgb(255,203,0)",
@@ -362,10 +363,23 @@ blockquote {
   cursor: pointer;
   @media (min-width: 600px) {
     &:hover {
-      background-color: ${theme.yellow};
+      background-color: ${theme.green};
       color: #fff;
     }
   }
+}
+.yellow-box-container {
+  display: inline-block;
+  position: relative;
+}
+.yellow-box {
+  background: ${props => props.theme.yellow};
+  height: 11px;
+  width: 100%;
+  position: absolute;
+  bottom: 22px;
+  z-index: -1;
+  transform: rotate(-1deg);
 }
 /* COLORS HERE */
 body {

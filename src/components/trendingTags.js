@@ -5,16 +5,19 @@ import styled from "styled-components"
 const TrendingTagStyles = styled.div`
   margin: 16px 0;
   width: $width-medium;
+
   @media (max-width: 1040px) {
     width: 100%;
   }
   .trendingTagsHeader {
     font-family: $font-header;
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
+    display: inline-block;
   }
+
   .trendingTags {
     display: flex;
     flex-wrap: wrap;
@@ -45,7 +48,10 @@ const Trending = () => {
 
   return (
     <TrendingTagStyles>
-      <h2 className="trendingTagsHeader">Trending Topics</h2>
+      <div className="yellow-box-container">
+        <div className="yellow-box"></div>
+        <h2 className="trendingTagsHeader">Trending Topics</h2>
+      </div>
       <div className="trendingTags">
         {tags.map(tag => {
           return (

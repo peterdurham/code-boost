@@ -23,6 +23,15 @@ const PageContainer = styled.div`
     .paginationLink {
       margin-left: auto;
     }
+
+    .tutorialsHeader {
+      font-family: $font-header;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
   }
 `
 
@@ -40,9 +49,12 @@ class BlogIndex extends React.Component {
               title="Code-Boost Tutorials"
               canonical={`https://www.code-boost.com/`}
             />
-
             <TrendingTags />
             <TopicLinks />
+            <div className="yellow-box-container">
+              <div className="yellow-box"></div>
+              <h2 className="tutorialsHeader">Tutorials</h2>
+            </div>
             <CardsLayout>
               {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.fields.slug
