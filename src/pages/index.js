@@ -65,7 +65,7 @@ class BlogIndex extends React.Component {
               })}
             </CardsLayout>
             <Link to="/archive/2" className="paginationLink archiveLink">
-              Archives
+              📚 Tutorial Archives
               <FaAngleDoubleRight />
             </Link>
           </div>

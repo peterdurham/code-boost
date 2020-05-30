@@ -157,6 +157,11 @@ button:focus {
 .hidden {
   display: none;
 }
+.mobile-hidden {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
 #nav-container {
   position: fixed;
   top: 0px;
@@ -238,6 +243,7 @@ blockquote {
     min-width: 100px;
     max-width: 150px;
     margin-bottom: 20px;
+   
   }
   & svg {
     font-size: 2.2rem;

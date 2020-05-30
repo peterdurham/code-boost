@@ -19,7 +19,6 @@ const PageContainer = styled.div`
   }
 
   & .paginationLinks {
-    width: 420px;
     margin: 0 auto;
     margin-top: 30px;
     display: flex;
@@ -33,6 +32,26 @@ const PageContainer = styled.div`
   & .paginationLinks a:hover {
     transform: translateY(2px);
   }
+  & .paginationDetails {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.32), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+    color: ${props => props.theme.dark};
+    padding: 14px 22px;
+    font-size: 17px;
+    min-width: 154px;
+    max-width: 197px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s all;
+    @media (max-width: 600px) {
+      width: 50%;
+      min-width: 100px;
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+  }
+
   & .paginationDisabled {
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.32), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
@@ -43,14 +62,27 @@ const PageContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 52px;
     cursor: pointer;
+    font-family: ${props => props.theme.fontHeader};
+    & svg {
+      font-size: 2.2rem;
+    }
+  }
+  @media (min-width: 600px) {
+    .icon-left {
+      margin-right: 8px;
+    }
+    .icon-right {
+      margin-left: 8px;
+    }
   }
 `
 
 class Archive extends React.Component {
   render() {
     const { data, pageContext } = this.props
-    const { numPages, currentPage } = pageContext
+    const { numPages, numPosts, currentPage } = pageContext
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
@@ -81,15 +113,15 @@ class Archive extends React.Component {
             </CardsLayout>
             <div className="paginationLinks">
               {currentPage === 1 && (
-                <div to="/archive" disabled className="paginationDisabled">
-                  <FaAngleDoubleLeft />
-                  <span>Previous</span>
-                </div>
+                <button disabled className="paginationDisabled">
+                  <FaAngleDoubleLeft className="icon-left" />
+                  <span className="mobile-hidden">Previous</span>
+                </button>
               )}
               {currentPage === 2 && (
                 <Link to="/archive" className="paginationLink">
                   <FaAngleDoubleLeft />
-                  <span>Previous</span>
+                  <span className="mobile-hidden">Previous</span>
                 </Link>
               )}
               {currentPage > 2 && (
@@ -98,17 +130,28 @@ class Archive extends React.Component {
                   className="paginationLink"
                 >
                   <FaAngleDoubleLeft />
-                  <span>Previous</span>
+                  <span className="mobile-hidden">Previous</span>
                 </Link>
               )}
-              {currentPage < numPages && (
+              {currentPage > 0 && (
+                <div className="paginationDetails">
+                  <span className="mobile-hidden">Page</span>&nbsp;
+                  {currentPage} of {numPages}
+                </div>
+              )}
+              {currentPage < numPages ? (
                 <Link
                   to={`/archive/${currentPage + 1}`}
                   className="paginationLink"
                 >
-                  <span>Next</span>
+                  <span className="mobile-hidden">Next</span>
                   <FaAngleDoubleRight />
                 </Link>
+              ) : (
+                <button disabled className="paginationDisabled">
+                  <span className="mobile-hidden">Next</span>
+                  <FaAngleDoubleRight className="icon-right" />
+                </button>
               )}
             </div>
             {}
