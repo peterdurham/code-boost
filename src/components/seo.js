@@ -129,7 +129,7 @@ const getSchemaOrgJSONLD = ({
 }
 
 function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
-  const { site, file } = useStaticQuery(
+  const { site, file, logo } = useStaticQuery(
     graphql`
       query {
         site {
@@ -142,14 +142,21 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
         file(absolutePath: { regex: "/navlogo.png/" }) {
           absolutePath
         }
+        logo: file(absolutePath: { regex: "/squarelogo.png/" }) {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   )
-
+  console.log(logo)
   const metaDescription = description || site.siteMetadata.description
   const postImage = isBlogPost
     ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
-    : "https://pbs.twimg.com/profile_images/1256757018662105088/09_AHIPO_400x400.png"
+    : `https://code-boost.com${logo.childImageSharp.fluid.src}`
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
     isBlogPost,
     url: `https://code-boost.com${slug}`,
@@ -158,8 +165,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
     tags: isBlogPost ? frontmatter.tags.join(", ") : "",
     logo: file.absolutePath,
     postImage,
-    image:
-      "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
+    image: `https://code-boost.com${logo.childImageSharp.fluid.src}`,
     datePublished: isBlogPost ? frontmatter.date : "",
     dateModified: isBlogPost ? frontmatter.dateModified : "",
   })
