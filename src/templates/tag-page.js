@@ -26,8 +26,8 @@ const TagPageStyles = styled.div`
     cursor: pointer;
   }
   .tagPageButton:hover {
-    background-color: ${props => props.theme.green};
-    border: 1px solid ${props => props.theme.green};
+    background: ${props => props.theme.gradient02};
+    border: 1px solid #fff;
   }
   .tagPageButton:hover span {
     color: #fff;

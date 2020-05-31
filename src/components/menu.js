@@ -69,7 +69,9 @@ const MenuStyles = styled.div`
     }
     @media (min-width: 600px) {
       & a:hover {
-        color: ${props => props.theme.green};
+        background: -webkit-linear-gradient(#01a692, #84cf00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
@@ -117,7 +119,9 @@ const MenuStyles = styled.div`
     }
     @media (min-width: 600px) {
       & a:hover {
-        color: ${props => props.theme.green};
+        background: -webkit-linear-gradient(#01a692, #84cf00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
     @media (max-width: 600px) {

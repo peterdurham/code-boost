@@ -109,7 +109,7 @@ class BlogIndex extends React.Component {
                     />
                   )
                 }
-                return
+                return null
               })}
             </CardsLayout>
             <Link to="/archive/2" className="paginationLink archiveLink">

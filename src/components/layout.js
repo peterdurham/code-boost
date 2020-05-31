@@ -414,7 +414,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
   }
   .footerLinks a:hover {
-    /* color: ${theme.green}; */
+
     background: -webkit-linear-gradient(#01A692, #84CF00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -460,13 +460,14 @@ body {
     color: ${theme.light};
     background: ${theme.dark};
   }
+  .tagPageButton:hover {
+    background: ${props => props.theme.gradient02};
+    border: 1px solid #000;
+  }
   .Menu {
-    background-color: ${theme.darkest};
+    background-color: ${theme.dark};
   }
-  & .tagPageButton {
-    border: 1px solid ${theme.light};
-    color: #fff;
-  }
+  
   & .paginationLink {
     background: rgb(26, 29, 34);
     color: #fff;

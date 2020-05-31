@@ -152,7 +152,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
       }
     `
   )
-  console.log(logo)
+
   const metaDescription = description || site.siteMetadata.description
   const postImage = isBlogPost
     ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
