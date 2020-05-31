@@ -82,14 +82,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create Archive Pages
   const postsPerPage = 12
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  const numPages = Math.ceil((posts.length - 2) / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/archive` : `/archive/${i + 1}`,
       component: path.resolve("./src/templates/archive-page.js"),
       context: {
         limit: postsPerPage,
-        skip: i * postsPerPage,
+        skip: i * postsPerPage + 2,
         numPages,
         currentPage: i + 1,
       },

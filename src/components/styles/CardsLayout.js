@@ -12,4 +12,5 @@ const CardsLayout = styled.div`
     grid-template-columns: 100%;
   }
 `
+
 export { CardsLayout }

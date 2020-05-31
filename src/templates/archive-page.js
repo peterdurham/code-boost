@@ -12,7 +12,7 @@ const PageContainer = styled.div`
   display: flex;
   padding-top: 20px;
   .pageContent {
-    max-width: 1040px;
+    width: 1040px;
     @media (max-width: 1200px) {
       max-width: 100%;
     }
@@ -105,7 +105,7 @@ class Archive extends React.Component {
 
             <div className="yellow-box-container">
               <div className="yellow-box"></div>
-              <h2 className="tutorialsHeader">Tutorials</h2>
+              <h2 className="tutorialsHeader">Tutorials Page {currentPage}</h2>
             </div>
             <CardsLayout>
               {posts.map(({ node }) => {

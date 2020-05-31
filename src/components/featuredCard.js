@@ -4,8 +4,9 @@ import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
-const CardStyles = styled.article`
-  width: 30rem;
+const FeaturedCardStyles = styled.article`
+  width: 465px;
+
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.12);
   cursor: pointer;
   position: relative;
@@ -17,11 +18,11 @@ const CardStyles = styled.article`
   @media (max-width: 1040px) {
     width: calc(50% - 10px);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 840px) {
     width: 100%;
   }
   @media (min-width: 1040px) {
-    &:not(:nth-child(3n)) {
+    &:not(:nth-child(2n)) {
       margin-right: 3rem;
     }
   }
@@ -32,12 +33,15 @@ const CardStyles = styled.article`
   }
 
   & .cardImage {
-    height: 15.7rem;
+    height: 22.3rem;
     width: 100%;
     background-size: cover;
     background-position: 50% 100%;
     @media (max-width: 1040px) {
       height: calc(50vw / 2);
+    }
+    @media (max-width: 840px) {
+      height: calc(100vw / 2.5);
     }
     @media (max-width: 600px) {
       height: calc(100vw / 2.5);
@@ -94,9 +98,17 @@ const CardStyles = styled.article`
   }
 `
 
-const Card = ({ frontmatter, title, slug, date, description, topic }) => {
+const FeaturedCard = ({
+  frontmatter,
+  title,
+  slug,
+  date,
+  description,
+  excerpt,
+  topic,
+}) => {
   return (
-    <CardStyles key={slug}>
+    <FeaturedCardStyles key={slug}>
       <Link style={{ boxShadow: `none` }} to={slug}>
         <BackgroundImage
           fluid={frontmatter.featuredImage.childImageSharp.fluid}
@@ -110,7 +122,7 @@ const Card = ({ frontmatter, title, slug, date, description, topic }) => {
           <h3>{title}</h3>
         </div>
       </Link>
-    </CardStyles>
+    </FeaturedCardStyles>
   )
 }
-export default Card
+export default FeaturedCard

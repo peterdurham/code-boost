@@ -44,7 +44,16 @@ const theme = {
   grey29: "rgb(13, 19, 24)",
   grey30: "rgb(26, 29, 34)",
   grey31: "rgb(15, 17, 26)",
-  blues: "linear-gradient(95deg, #31dccf, #244fe7)",
+  gradient01: "linear-gradient(95deg, #31dccf, #244fe7)",
+  gradient02: "linear-gradient(95deg, #01A692, #84CF00)",
+  gradient03: "linear-gradient(95deg, #AC1753, #532E86)",
+  gradient04: "linear-gradient(95deg, #E79330, #DA1C5C)",
+  gradient05: "linear-gradient(95deg, #16D2DF, #E420FC)",
+  gradient06: "linear-gradient(95deg, #FF8248, #5D099A)",
+  gradient07: "linear-gradient(95deg, #FE7E47, #FD1B5F)",
+  gradient08: "linear-gradient(95deg, #E79330, #16D2DF)",
+  gradient09: "linear-gradient(95deg, #AC1753, #01A692)",
+  gradient10: "linear-gradient(95deg, #244fe7, #DA1C5C)",
   blue: "#00bcda",
   blue: "#3273dc",
   green: "rgb(35,140,44)",
@@ -242,7 +251,7 @@ blockquote {
   @media (max-width: 600px) {
     width: 50%;
     min-width: 100px;
-    max-width: 150px;
+    max-width: 250px;
     margin-bottom: 20px;
    
   }
@@ -357,13 +366,13 @@ blockquote {
   padding: 6px 12px;
   margin-right: 7px;
   margin-bottom: 7px;
-  background-color: #000;
+  background: #000;
   color: #fff;
-  transition: all 0.3s;
+
   cursor: pointer;
   @media (min-width: 600px) {
     &:hover {
-      background-color: ${theme.green};
+      background: ${props => props.theme.gradient02};
       color: #fff;
     }
   }
@@ -405,7 +414,10 @@ body {
     color: rgba(255, 255, 255, 0.5);
   }
   .footerLinks a:hover {
-    color: ${theme.green};
+    /* color: ${theme.green}; */
+    background: -webkit-linear-gradient(#01A692, #84CF00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   }
   .blogPostMarkdown .language-text {
     color: ${theme.dark};

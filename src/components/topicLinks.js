@@ -9,8 +9,8 @@ const TopicLinkStyles = styled.div`
   grid-template-columns: 120px 120px 120px 120px 120px 120px;
   grid-column-gap: 48px;
   width: 100%;
-  margin-top: 32px;
-  margin-bottom: 5.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   @media (max-width: 1040px) {
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
     grid-column-gap: 2%;
