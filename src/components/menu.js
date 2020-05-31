@@ -7,14 +7,13 @@ import { IoIosSearch } from "react-icons/io"
 import { CardsLayout } from "./styles/CardsLayout"
 
 const MenuStyles = styled.div`
-  .Menu {
-    min-height: 100vh;
-    width: 100%;
-    z-index: 1;
-    padding-top: 104px;
-    & h3 {
-      margin-bottom: 24px;
-    }
+  padding-top: 104px;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 1;
+
+  & h3 {
+    margin-bottom: 24px;
   }
 
   .menuContainer {
