@@ -142,7 +142,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
         file(absolutePath: { regex: "/navlogo.png/" }) {
           absolutePath
         }
-        logo: file(absolutePath: { regex: "/squarelogo.png/" }) {
+        logo: file(absolutePath: { regex: "/rocketimage.jpg/" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
