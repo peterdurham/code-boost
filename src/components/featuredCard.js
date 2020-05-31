@@ -33,7 +33,7 @@ const FeaturedCardStyles = styled.article`
   }
 
   & .cardImage {
-    height: 22.3rem;
+    height: 24.3rem;
     width: 100%;
     background-size: cover;
     background-position: 50% 100%;

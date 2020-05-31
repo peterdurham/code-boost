@@ -9,8 +9,8 @@ const TopicLinkStyles = styled.div`
   grid-template-columns: 120px 120px 120px 120px 120px 120px;
   grid-column-gap: 48px;
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  transform: translateY(-7px);
+  margin-bottom: 1.2rem;
   @media (max-width: 1040px) {
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
     grid-column-gap: 2%;
@@ -19,6 +19,7 @@ const TopicLinkStyles = styled.div`
     grid-template-columns: 30% 30% 30%;
     grid-column-gap: 5%;
     grid-row-gap: 20px;
+    margin-top: 2rem;
   }
 
   .topicLinkImage {
@@ -38,11 +39,12 @@ const TopicLinkStyles = styled.div`
   }
   .topicLinkName {
     text-align: center;
-    font-size: 1.8rem;
-    line-height: 2.47rem;
-    letter-spacing: 1.2px;
+    font-size: 2.1rem;
+    line-height: 2.57rem;
+    letter-spacing: 0.2px;
     font-family: $font-header;
     transition: all 0.3s;
+    /* transform: translateY(-2px); */
   }
   .topicLink:hover .topicLinkImage {
     transform: scale(1.14);

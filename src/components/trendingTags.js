@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 
 const TrendingTagStyles = styled.div`
-  margin: 16px 0;
+  margin-top: 12px;
   width: $width-medium;
 
   @media (max-width: 1040px) {

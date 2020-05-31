@@ -780,7 +780,7 @@ pre > code.line-highlight[data-end]:after {
 `
 
 const MainContent = styled.div`
-  padding: 14rem 0 7rem 0;
+  padding: 12rem 0 7rem 0;
   @media (max-width: 600px) {
     padding-top: 11rem;
   }
