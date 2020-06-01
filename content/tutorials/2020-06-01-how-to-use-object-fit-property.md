@@ -58,27 +58,27 @@ top. The second image will fit inside a **400px by 400px** container beneath it.
 
 ### Without object-fit (crunches image)
 
-![images with object-fit](./object-fit1.jpg)
+![images with object-fit](/img/object-fit1.jpg)
 
 ### Contain (entire image)
 
-![object-fit contain](./object-fit2.jpg)
+![object-fit contain](/img/object-fit2.jpg)
 
 ### Cover (fills container)
 
-![object-fit cover](./object-fit3.jpg)
+![object-fit cover](/img/object-fit3.jpg)
 
 ### Fill (stretch fills container)
 
-![object-fit fill](./object-fit4.jpg)
+![object-fit fill](/img/object-fit4.jpg)
 
 ### None (original size)
 
-![object-fit none](./object-fit5.jpg)
+![object-fit none](/img/object-fit5.jpg)
 
 ### Scale-down (contain < none)
 
-![object-fit scale-down](./object-fit6.jpg)
+![object-fit scale-down](/img/object-fit6.jpg)
 
 ## Full-width media
 
@@ -95,7 +95,7 @@ more of the road with object-position. In this case we could do something like
 }
 ```
 
-![object-fit full width](./object-fit7.jpg)
+![object-fit full width](/img/object-fit7.jpg)
 
 ### Conclusion
 
