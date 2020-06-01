@@ -3,7 +3,7 @@ templateKey: blog-post
 title: How to use the Object-Fit Property in CSS
 slug: how-to-use-object-fit-property
 date: 2020-06-01T17:57:44.249Z
-dateModified: 2020-06-01T17:57:46.502Z
+dateModified: 2020-06-01T18:14:44.245Z
 description: Learn how the Object-fit CSS property vertically and horizontally
   crops image and video elements.
 featuredPost: false
