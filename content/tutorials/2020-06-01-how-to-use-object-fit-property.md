@@ -22,7 +22,7 @@ tags) was the primary way to do this.
 With `object-fit`, we can make our images responsive and crop how we want them. This
 property works on media elements such as **images** and **videos**.
 
-## Property Values
+## Object-fit values
 
 The `object-fit` property is assigned to any media element with specified dimensions. It
 works similarly to the `background` CSS property which you can learn more about
