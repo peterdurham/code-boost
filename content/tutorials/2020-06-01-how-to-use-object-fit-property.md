@@ -22,7 +22,7 @@ tags) was the primary way to do this.
 With `object-fit`, we can make our images responsive and crop how we want them. This
 property works on media elements such as **images** and **videos**.
 
-## Object-fit
+## Object-fit Values
 
 The `object-fit` property is assigned to any media element with specified dimensions. It
 works similarly to the `background` CSS property which you can learn more about
@@ -51,7 +51,7 @@ the position. By default, this property is set to `50%, 50%` which is equivalent
 `center, center`. The top-left of an element is equivalent to `0% 0%` or `top left` while
 the bottom-right is `100% 100%` or `bottom right`.
 
-## Examples
+## Object-fit Examples
 
 For comparison in each example, the original image with **no properties** will be at the
 top. The second image will fit inside a **400px by 400px** container beneath it.
@@ -80,7 +80,7 @@ top. The second image will fit inside a **400px by 400px** container beneath it.
 
 ![object-fit scale-down](/img/object-fit6.jpg)
 
-## Full-width media
+## Full-width Images
 
 Another good use case would be if we wanted our image to fill the full width of the
 screen, without changing aspect ratio. We can also center the image at the bottom to show
