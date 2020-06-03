@@ -2,8 +2,8 @@
 templateKey: blog-post
 title: ESLint Setup Explained
 slug: eslint-setup-explained
-date: 2020-06-03T14:42:12.642Z
-dateModified: 2020-06-03T14:42:11.561Z
+date: 2020-06-03T17:58:13.870Z
+dateModified: 2020-06-03T17:58:14.733Z
 description: Install and configure ESLint for static error checking in
   JavaScript. Setup a default project and add plugins for various libraries.
 featuredPost: false
