@@ -8,11 +8,11 @@ import Menu from "./menu"
 
 const theme = {
   red: "red",
-  // blue: "#009bff",
-  // blue: "#0085db",
-  // blue: "#0066cc",
-  // blue: "#5183f5",
-  // blue: "#0066cc",
+  blue01: "#009bff",
+  blue02: "#0085db",
+  blue03: "#0066cc",
+  blue04: "#5183f5",
+  blue05: "#0066cc",
   grey01: "rgb(28, 27, 32)",
   grey02: "rgb(34, 33, 38)",
   grey03: "rgb(25, 26, 23)",

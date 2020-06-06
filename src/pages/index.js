@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
+import axios from "axios"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -42,86 +43,282 @@ const PageContainer = styled.div`
   }
 `
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
-
-    const featuredPost1 = posts[0].node
-    const featuredTopicLogo1 = data.allTopicsJson.edges.filter(
-      edge => edge.node.name === featuredPost1.frontmatter.category
-    )[0]
-    const featuredPost2 = posts[1].node
-    const featuredTopicLogo2 = data.allTopicsJson.edges.filter(
-      edge => edge.node.name === featuredPost2.frontmatter.category
-    )[0]
-
-    return (
-      <Layout location={this.props.location} title={siteTitle} pageType="Home">
-        <PageContainer>
-          <div className="pageContent">
-            <SEO
-              title="Code-Boost Tutorials"
-              canonical={`https://www.code-boost.com/`}
-            />
-            <TrendingTags />
-            <TopicLinks />
-            <div className="yellow-box-container">
-              <div className="yellow-box"></div>
-              <h2 className="tutorialsHeader">Tutorials</h2>
-            </div>
-            <div className="featuredCards">
-              <FeaturedCard
-                title={featuredPost1.frontmatter.title}
-                slug={featuredPost1.fields.slug}
-                date={featuredPost1.frontmatter.date}
-                description={featuredPost1.frontmatter.description}
-                frontmatter={featuredPost1.frontmatter}
-                topic={featuredTopicLogo1}
-              />
-              <FeaturedCard
-                title={featuredPost2.frontmatter.title}
-                slug={featuredPost2.fields.slug}
-                date={featuredPost2.frontmatter.date}
-                description={featuredPost2.frontmatter.description}
-                frontmatter={featuredPost2.frontmatter}
-                topic={featuredTopicLogo2}
-              />
-            </div>
-            <CardsLayout>
-              {posts.map(({ node }, index) => {
-                const title = node.frontmatter.title || node.fields.slug
-                const topicLogo = data.allTopicsJson.edges.filter(
-                  edge => edge.node.name === node.frontmatter.category
-                )[0]
-
-                if (index > 1) {
-                  return (
-                    <Card
-                      key={node.fields.slug}
-                      title={title}
-                      slug={node.fields.slug}
-                      date={node.frontmatter.date}
-                      description={node.frontmatter.description}
-                      frontmatter={node.frontmatter}
-                      topic={topicLogo.node}
-                    />
-                  )
-                }
-                return null
-              })}
-            </CardsLayout>
-            <Link to="/archive/2" className="paginationLink archiveLink">
-              📚 Tutorial Archives
-              <FaAngleDoubleRight />
-            </Link>
-          </div>
-          {/* <Sidebar /> */}
-        </PageContainer>
-      </Layout>
-    )
+const RegisterStyles = styled.div`
+  width: 100%;
+  height: 256px;
+  margin-bottom: 40px;
+  background: ${props => props.theme.darkest};
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1040px) {
+    height: auto;
   }
+  @media (max-width: 740px) {
+    padding: 18px;
+    height: 256px;
+  }
+  .normal {
+    font-weight: 400;
+  }
+  & h2 {
+    margin-bottom: 12px;
+    @media (max-width: 740px) {
+      font-size: 24px;
+    }
+  }
+  & p {
+    width: 70%;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    @media (max-width: 740px) {
+      width: 100%;
+      font-size: 13.5px;
+      line-height: 20px;
+    }
+  }
+  & p {
+    margin-bottom: 12px;
+  }
+  & .italic {
+    font-style: italic;
+  }
+  & form {
+    align-self: flex-start;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    @media (max-width: 740px) {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+  & input[type="email"] {
+    padding: 0 16px;
+    border: 1px solid #fff;
+    width: 240px;
+    height: 100%;
+    font-family: ${props => props.theme.fontHeader};
+    font-size: 14px;
+    transform-origin: 0% 50%;
+    @media (max-width: 740px) {
+      width: 100%;
+      margin-bottom: 18px;
+      height: 24px;
+    }
+  }
+  & input[type="submit"] {
+    padding: 0 16px;
+    cursor: pointer;
+    height: 100%;
+    background: #0075ea;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: ${props => props.theme.fontHeader};
+    border: none;
+    @media (max-width: 740px) {
+      line-height: 28px;
+    }
+  }
+  & input[type="submit"]:hover {
+    background: #0066cc;
+  }
+  & #signup-text {
+    margin-left: 36px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+  }
+  .opacity-none {
+    opacity: 0;
+  }
+  .fade-in {
+    animation: fadeIn 0.5s 1 0.205s;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`
+
+function BlogIndex(props) {
+  const [message, setMessage] = useState("")
+
+  const onSubscribe = async e => {
+    e.preventDefault()
+
+    const newUser = {
+      email: e.target.email.value,
+    }
+
+    const res = await axios.post(
+      "https://email.code-boost.com/api/users/register",
+      newUser
+    )
+    if (res.data.message === "email already exists") {
+      setMessage("already-registered")
+    } else if (res.data.message === "confirmation sent") {
+      setMessage("confirmation-success")
+    }
+
+    console.log(res.data)
+
+    const signupText = document.querySelector("#signup-text")
+
+    setTimeout(() => {
+      signupText.classList.add("fade-in")
+    }, 200)
+    setTimeout(() => {
+      signupText.classList.remove("opacity-none")
+    }, 700)
+  }
+
+  const { data } = props
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMarkdownRemark.edges
+
+  const featuredPost1 = posts[0].node
+  const featuredTopicLogo1 = data.allTopicsJson.edges.filter(
+    edge => edge.node.name === featuredPost1.frontmatter.category
+  )[0]
+  const featuredPost2 = posts[1].node
+  const featuredTopicLogo2 = data.allTopicsJson.edges.filter(
+    edge => edge.node.name === featuredPost2.frontmatter.category
+  )[0]
+
+  return (
+    <Layout location={props.location} title={siteTitle} pageType="Home">
+      <PageContainer>
+        <div className="pageContent">
+          <SEO
+            title="Code-Boost Tutorials"
+            canonical={`https://www.code-boost.com/`}
+          />
+          <TrendingTags />
+          <TopicLinks />
+          <div className="yellow-box-container">
+            <div className="yellow-box"></div>
+            <h2 className="tutorialsHeader">Tutorials</h2>
+          </div>
+          <div className="featuredCards">
+            <FeaturedCard
+              title={featuredPost1.frontmatter.title}
+              slug={featuredPost1.fields.slug}
+              date={featuredPost1.frontmatter.date}
+              description={featuredPost1.frontmatter.description}
+              frontmatter={featuredPost1.frontmatter}
+              topic={featuredTopicLogo1}
+            />
+            <FeaturedCard
+              title={featuredPost2.frontmatter.title}
+              slug={featuredPost2.fields.slug}
+              date={featuredPost2.frontmatter.date}
+              description={featuredPost2.frontmatter.description}
+              frontmatter={featuredPost2.frontmatter}
+              topic={featuredTopicLogo2}
+            />
+          </div>
+          <CardsLayout>
+            {posts.map(({ node }, index) => {
+              const title = node.frontmatter.title || node.fields.slug
+              const topicLogo = data.allTopicsJson.edges.filter(
+                edge => edge.node.name === node.frontmatter.category
+              )[0]
+
+              if (index > 1 && index < 8) {
+                return (
+                  <Card
+                    key={node.fields.slug}
+                    title={title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    frontmatter={node.frontmatter}
+                    topic={topicLogo.node}
+                  />
+                )
+              }
+              return null
+            })}
+          </CardsLayout>
+
+          <RegisterStyles>
+            <h2>
+              <span className="normal">Code Boost</span> Newsletter
+            </h2>
+            <p>
+              Are you looking for <span className="italic">modern</span> web
+              development tutorials about{" "}
+              <span className="italic">JavaScript</span>,{" "}
+              <span className="italic">React</span>,{" "}
+              <span className="italic">Node</span>,{" "}
+              <span className="italic">CSS</span>,{" "}
+              <span className="italic">GraphQL</span>, and more? 🔥
+            </p>
+            <p>If so, stay current with our weekly update! 📫</p>
+            <form onSubmit={onSubscribe}>
+              <input type="email" id="email" />
+              <input type="submit" id="submit" value="Subscribe" />
+              {message === "confirmation-success" && (
+                <span id="signup-text" className="opacity-none">
+                  <span>
+                    <strong className="italic">Thank you</strong> for signing
+                    up!
+                  </span>
+                  <span>
+                    Please <span className="italic">check your email</span> for
+                    confirmation 💻
+                  </span>
+                </span>
+              )}
+              {message === "already-registered" && (
+                <span id="signup-text" className="opacity-none error-message">
+                  <span>This email address is already registered.</span>
+                </span>
+              )}
+            </form>
+          </RegisterStyles>
+
+          <CardsLayout>
+            {posts.map(({ node }, index) => {
+              const title = node.frontmatter.title || node.fields.slug
+              const topicLogo = data.allTopicsJson.edges.filter(
+                edge => edge.node.name === node.frontmatter.category
+              )[0]
+
+              if (index > 7) {
+                return (
+                  <Card
+                    key={node.fields.slug}
+                    title={title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    frontmatter={node.frontmatter}
+                    topic={topicLogo.node}
+                  />
+                )
+              }
+              return null
+            })}
+          </CardsLayout>
+          <Link to="/archive/2" className="paginationLink archiveLink">
+            📚 Tutorial Archives
+            <FaAngleDoubleRight />
+          </Link>
+        </div>
+        {/* <Sidebar /> */}
+      </PageContainer>
+    </Layout>
+  )
 }
 
 export default BlogIndex
