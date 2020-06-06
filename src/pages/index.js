@@ -101,7 +101,7 @@ const RegisterStyles = styled.div`
     padding: 0 16px;
     border: 1px solid #fff;
     width: 240px;
-    height: 100%;
+    height: 36px;
     font-family: ${props => props.theme.fontHeader};
     font-size: 14px;
     transform-origin: 0% 50%;
@@ -114,7 +114,7 @@ const RegisterStyles = styled.div`
   & input[type="submit"] {
     padding: 0 16px;
     cursor: pointer;
-    height: 100%;
+    height: 36px;
     background: #0075ea;
     color: #fff;
     font-weight: 700;
