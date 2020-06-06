@@ -69,7 +69,7 @@ const RegisterStyles = styled.div`
     }
   }
   & p {
-    width: 70%;
+    width: 65%;
     font-size: 20px;
     line-height: 28px;
     margin: 0;
@@ -127,25 +127,11 @@ const RegisterStyles = styled.div`
   & input[type="submit"]:hover {
     background: #0066cc;
   }
-  & #signup-text {
+  & .signup-text {
     margin-left: 36px;
     font-size: 17px;
     display: flex;
     flex-direction: column;
-  }
-  .opacity-none {
-    opacity: 0;
-  }
-  .fade-in {
-    animation: fadeIn 0.5s 1 0.205s;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 `
 
@@ -163,22 +149,12 @@ function BlogIndex(props) {
       "https://email.code-boost.com/api/users/register",
       newUser
     )
+    console.log(res.data)
     if (res.data.message === "email already exists") {
       setMessage("already-registered")
-    } else if (res.data.message === "confirmation sent") {
+    } else if (res.data._id) {
       setMessage("confirmation-success")
     }
-
-    console.log(res.data)
-
-    const signupText = document.querySelector("#signup-text")
-
-    setTimeout(() => {
-      signupText.classList.add("fade-in")
-    }, 200)
-    setTimeout(() => {
-      signupText.classList.remove("opacity-none")
-    }, 700)
   }
 
   const { data } = props
@@ -268,7 +244,7 @@ function BlogIndex(props) {
               <input type="email" id="email" />
               <input type="submit" id="submit" value="Subscribe" />
               {message === "confirmation-success" && (
-                <span id="signup-text" className="opacity-none">
+                <span className="signup-text">
                   <span>
                     <strong className="italic">Thank you</strong> for signing
                     up!
@@ -280,7 +256,7 @@ function BlogIndex(props) {
                 </span>
               )}
               {message === "already-registered" && (
-                <span id="signup-text" className="opacity-none error-message">
+                <span className="error-message signup-text">
                   <span>This email address is already registered.</span>
                 </span>
               )}
