@@ -57,7 +57,8 @@ const RegisterStyles = styled.div`
   }
   @media (max-width: 740px) {
     padding: 18px;
-    height: 256px;
+    min-height: 252px;
+    height: auto;
   }
   .normal {
     font-weight: 400;
@@ -87,7 +88,7 @@ const RegisterStyles = styled.div`
   }
   & form {
     align-self: flex-start;
-    height: 36px;
+
     display: flex;
     align-items: center;
     margin-top: 12px;
@@ -132,6 +133,9 @@ const RegisterStyles = styled.div`
     font-size: 17px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 740px) {
+      margin-top: 10px;
+    }
   }
 `
 
@@ -244,7 +248,7 @@ function BlogIndex(props) {
               <input type="email" id="email" />
               <input type="submit" id="submit" value="Subscribe" />
               {message === "confirmation-success" && (
-                <span className="signup-text">
+                <div className="signup-text">
                   <span>
                     <strong className="italic">Thank you</strong> for signing
                     up!
@@ -253,12 +257,12 @@ function BlogIndex(props) {
                     Please <span className="italic">check your email</span> for
                     confirmation 💻
                   </span>
-                </span>
+                </div>
               )}
               {message === "already-registered" && (
-                <span className="error-message signup-text">
+                <div className="error-message signup-text">
                   <span>This email address is already registered.</span>
-                </span>
+                </div>
               )}
             </form>
           </RegisterStyles>
