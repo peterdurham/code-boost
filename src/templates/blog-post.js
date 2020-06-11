@@ -25,6 +25,9 @@ const BlogPost = styled.article`
   width: 100%;
 
   header {
+    & h1 {
+      font-weight: 400;
+    }
     & .blogPostDate {
       font-size: 1.42rem;
       line-height: 2.2rem;

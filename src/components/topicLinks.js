@@ -40,11 +40,11 @@ const TopicLinkStyles = styled.div`
   .topicLinkName {
     text-align: center;
     font-size: 2.1rem;
+    font-weight: 700;
     line-height: 2.57rem;
     letter-spacing: 0.2px;
-    font-family: $font-header;
+    font-family: ${props => props.theme.fontText};
     transition: all 0.3s;
-    /* transform: translateY(-2px); */
   }
   .topicLink:hover .topicLinkImage {
     transform: scale(1.14);

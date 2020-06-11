@@ -69,9 +69,12 @@ const CardStyles = styled.article`
     height: 9.6rem;
     padding: 2.4rem 1.6rem;
     font-family: ${props => props.theme.fontHeader};
-    font-weight: 400 !important;
     line-height: 2.8rem;
     position: relative;
+
+    & h3 {
+      font-weight: 400;
+    }
 
     @media (max-width: 1040px) {
       height: calc(50vw / 3.75);
@@ -82,7 +85,7 @@ const CardStyles = styled.article`
     }
 
     & h3 {
-      font-size: 19px;
+      font-size: 18.5px;
       @media (max-width: 840px) {
         font-size: 15px;
         line-height: 21px;
