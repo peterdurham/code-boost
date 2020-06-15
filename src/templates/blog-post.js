@@ -101,6 +101,7 @@ const BlogPostMarkdown = styled.section`
   }
   & img {
     margin: 36px 0;
+    width: 100%;
   }
   @media (max-width: 740px) {
     & img {
