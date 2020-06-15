@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to Build a Full Stack MERN App (Node and React)
+title: How to Build a Full Stack MERN App (Node/React)
 slug: full-stack-mern-app
 date: 2020-06-15T17:53:13.945Z
 dateModified: 2020-06-15T17:53:14.639Z
