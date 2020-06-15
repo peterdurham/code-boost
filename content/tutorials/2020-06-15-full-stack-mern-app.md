@@ -19,7 +19,7 @@ featuredImage: /img/full_stack_tutorial.jpg
 This tutorial is meant to help you create a basic working *full-stack* application using
 **React** and **Node**. 
 
-![full stack demo](/static/img/full_stack_exmaple_image.jpg)
+![full stack demo](/img/full_stack_exmaple_image.jpg)
 
 Before we get started, make sure you have [Node JS](https://nodejs.org/en/download/) installed on your computer.  
 <br />
