@@ -11,6 +11,7 @@ const TopicLinkStyles = styled.div`
   width: 100%;
   transform: translateY(-7px);
   margin-bottom: 1.2rem;
+  margin-top: 2rem;
   @media (max-width: 1040px) {
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
     grid-column-gap: 2%;
