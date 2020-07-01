@@ -15,7 +15,7 @@ tags:
 featuredImage: /img/node_file_system_basics.jpg
 ---
 Node.js comes with a built-in **File System** (fs) module that has all the features needed
-to perform CRUD operators on local files and folders. To use the file system, make sure to install [NodeJS](https://nodejs.org/en/download/) if you haven't already.  
+to perform CRUD operators on local files and folders. First install [NodeJS](https://nodejs.org/en/download/) if you haven't already.  
 &nbsp;    
 If you want to follow along in the editor, create a `index.js` file to to run each of the
 examples. Import the fs module at the top
