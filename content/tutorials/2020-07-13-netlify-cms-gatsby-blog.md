@@ -8,7 +8,7 @@ description: Setup Netlify CMS and Gatsby for a content management solution that
   is open source and works with git. Save posts and pages in an editor to
   publish.
 featuredPost: false
-category: React
+category: Tools
 tags:
   - Gatsby
   - Netlify CMS
