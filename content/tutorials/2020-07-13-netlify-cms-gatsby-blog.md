@@ -2,13 +2,13 @@
 templateKey: blog-post
 title: Create a blog with Netlify CMS and Gatsby
 slug: netlify-cms-gatsby-blog
-date: 2020-07-13T16:52:04.474Z
-dateModified: 2020-07-13T16:52:05.001Z
+date: 2020-07-13T17:49:14.611Z
+dateModified: 2020-07-13T17:49:15.451Z
 description: Setup Netlify CMS and Gatsby for a content management solution that
   is open source and works with git. Save posts and pages in an editor to
   publish.
 featuredPost: false
-category: React
+category: Tools
 tags:
   - Gatsby
   - Netlify CMS
