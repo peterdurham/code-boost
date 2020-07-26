@@ -133,8 +133,18 @@ const RegisterStyles = styled.div`
     font-size: 17px;
     display: flex;
     flex-direction: column;
+    animation: fadeIn 0.5s;
     @media (max-width: 740px) {
-      margin-top: 10px;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `
@@ -250,12 +260,8 @@ function BlogIndex(props) {
               {message === "confirmation-success" && (
                 <div className="signup-text">
                   <span>
-                    <strong className="italic">Thank you</strong> for signing
-                    up!
-                  </span>
-                  <span>
-                    Please <span className="italic">check your email</span> for
-                    confirmation 💻
+                    <strong className="italic">Thank you</strong> for signing up
+                    for the Code-Boost Newsletter!
                   </span>
                 </div>
               )}
