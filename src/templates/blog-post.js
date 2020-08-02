@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import axios from "axios"
 import _ from "lodash"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiQuillInk } from "react-icons/gi"
@@ -142,9 +144,118 @@ const BlogPostSimilar = styled.div`
   }
 `
 
+const RegisterStyles = styled.div`
+  width: 100%;
+  margin: 60px auto 20px auto;
+  height: 286px;
+
+  background: ${props => props.theme.darkest};
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1040px) {
+    height: auto;
+  }
+  @media (max-width: 740px) {
+    padding: 18px;
+    min-height: 252px;
+    height: auto;
+    width: 100%;
+  }
+  .normal {
+    font-weight: 400;
+  }
+  & h2 {
+    margin-bottom: 12px;
+    @media (max-width: 740px) {
+      font-size: 24px;
+    }
+  }
+  & p {
+    width: 65%;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    @media (max-width: 740px) {
+      width: 100%;
+      font-size: 13.5px;
+      line-height: 20px;
+    }
+  }
+  & p {
+    margin-bottom: 12px;
+  }
+  & .italic {
+    font-style: italic;
+  }
+  & form {
+    align-self: flex-start;
+
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    @media (max-width: 740px) {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+  & input[type="email"] {
+    padding: 0 16px;
+    border: 1px solid #fff;
+    width: 240px;
+    height: 36px;
+    font-family: ${props => props.theme.fontHeader};
+    font-size: 14px;
+    transform-origin: 0% 50%;
+    @media (max-width: 740px) {
+      width: 100%;
+      margin-bottom: 18px;
+      height: 24px;
+    }
+  }
+  & input[type="submit"] {
+    padding: 0 16px;
+    cursor: pointer;
+    height: 36px;
+    background: #0075ea;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: ${props => props.theme.fontHeader};
+    border: none;
+    @media (max-width: 740px) {
+      line-height: 28px;
+    }
+  }
+  & input[type="submit"]:hover {
+    background: #0066cc;
+  }
+  & .signup-text {
+    margin-left: 36px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s;
+    @media (max-width: 740px) {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`
+
 class BlogPostTemplate extends React.Component {
   state = {
     tocItems: [],
+    message: "",
   }
 
   componentDidMount() {
@@ -160,6 +271,29 @@ class BlogPostTemplate extends React.Component {
       headerData.push(tocItem)
     })
     this.setState({ tocItems: headerData })
+  }
+
+  onSubscribe = async e => {
+    e.preventDefault()
+
+    const newUser = {
+      email: e.target.email.value,
+    }
+
+    const res = await axios.post(
+      "https://email.code-boost.com/api/users/register",
+      newUser
+    )
+    console.log(res.data)
+    if (res.data.message === "email already exists") {
+      this.setMessage("already-registered")
+    } else if (res.data._id) {
+      this.setMessage("confirmation-success")
+    }
+  }
+
+  setMessage = msg => {
+    this.setState({ message: msg })
   }
 
   render() {
@@ -232,6 +366,38 @@ class BlogPostTemplate extends React.Component {
               className="blogPostMarkdown"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
+            <RegisterStyles>
+              <h2>
+                <span className="normal">Code Boost</span> Newsletter
+              </h2>
+              <p>
+                Are you looking for <span className="italic">modern</span> web
+                development tutorials about{" "}
+                <span className="italic">JavaScript</span>,{" "}
+                <span className="italic">React</span>,{" "}
+                <span className="italic">Node</span>,{" "}
+                <span className="italic">CSS</span>,{" "}
+                <span className="italic">GraphQL</span>, and more? 🔥
+              </p>
+              <p>If so, stay current with our weekly update! 📫</p>
+              <form onSubmit={this.onSubscribe}>
+                <input type="email" id="email" />
+                <input type="submit" id="submit" value="Subscribe" />
+                {this.state.message === "confirmation-success" && (
+                  <div className="signup-text">
+                    <span>
+                      <strong className="italic">Thank you</strong> for signing
+                      up for the Code-Boost Newsletter!
+                    </span>
+                  </div>
+                )}
+                {this.state.message === "already-registered" && (
+                  <div className="error-message signup-text">
+                    <span>This email address is already registered.</span>
+                  </div>
+                )}
+              </form>
+            </RegisterStyles>
             <BlogPostSimilar>
               <h3>Other {this.props.pageContext.topic} Tutorials</h3>
               <section>
@@ -253,6 +419,7 @@ class BlogPostTemplate extends React.Component {
           </BlogPost>
           {/* <Sidebar /> */}
         </PageContent>
+
         <footer className="blogPostLinks">
           <ul>
             <li>

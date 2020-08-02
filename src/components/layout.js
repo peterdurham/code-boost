@@ -61,6 +61,7 @@ const theme = {
   green: "rgb(35,140,44)",
   gold: "rgb(255,203,0)",
   yellow: "#fad000",
+  lightYellow: "#ffe253",
   black: "#393939",
   grey: "#3a3a3a",
   white: "#ffffff",
@@ -196,7 +197,7 @@ button:focus {
 blockquote {
   color: #111111;
   border: none;
-  background: lighten(yellow, 34%);
+  background: ${theme.lightYellow};
   border-radius: 4px;
   margin: 2.4rem 0;
   padding: 2.4rem;
@@ -481,7 +482,7 @@ body {
     background: ${theme.dark};
     border-radius: 4px;
     font-size: 1.6rem;
-    margin: 1.6rem 0;
+    margin: 2.4rem 0;
     padding: 2.4rem;
 
     &.conclusion {
