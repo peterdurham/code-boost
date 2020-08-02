@@ -13,6 +13,7 @@ const PageContent = styled.main`
   display: flex;
   /* FOR BLOG POST WITH SIDEBAR */
   /* width: 1060px; */
+
   width: ${props => props.theme.widthSmall};
   margin: 0 auto;
   display: flex;

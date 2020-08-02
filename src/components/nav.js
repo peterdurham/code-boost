@@ -4,7 +4,7 @@ import ModeContext from "../context/ModeContext"
 import styled from "styled-components"
 
 import { FiMenu } from "react-icons/fi"
-import { IoMdBonfire } from "react-icons/io"
+import { IoMdBonfire, IoIosSearch, IoIosClose } from "react-icons/io"
 import { MdWbSunny, MdClose } from "react-icons/md"
 import { WiMoonAltWaningCrescent5 } from "react-icons/wi"
 
@@ -115,8 +115,8 @@ const NavButton = styled.button`
   }
 `
 const SubNavStyles = styled.div`
-  background: ${props => props.theme.light};
-  height: 40px;
+  background: ${props => props.theme.offWhite};
+  height: 45px;
   align-items: center;
   font-family: ${props => props.theme.fontHeader};
   color: ${props => props.theme.dark};
@@ -130,6 +130,7 @@ const SubNavStyles = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 4rem;
+    font-weight: 700;
     @media (max-width: 600px) {
       padding: 0 2rem;
     }
@@ -139,9 +140,47 @@ const SubNavStyles = styled.div`
         list-style: none;
       }
       & li {
-        margin-right: 2rem;
+        margin-right: 2.8rem;
         cursor: pointer;
       }
+    }
+  }
+  .subNavContent a:hover {
+    text-decoration: underline;
+  }
+  .subNavSearch {
+    position: relative;
+    width: 30%;
+
+    @media (max-width: 1040px) {
+      width: 50%;
+    }
+    & input {
+      width: 100%;
+      border: 2px solid rgba(37, 37, 37, 0.15);
+      padding: 4px 8px 4px 32px;
+      font-size: 16px;
+      outline: 0;
+    }
+  }
+  .subNavSearchIcon {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    font-size: 2rem;
+  }
+  .subNavSearchCloseIcon {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    font-size: 2.8rem;
+    cursor: pointer;
+  }
+  .subNavSeachCloseIcon:hover {
+  }
+  @media (max-width: 900px) {
+    .subNav-hideMobile {
+      display: none;
     }
   }
 `
@@ -170,6 +209,9 @@ class Nav extends React.Component {
                 if (this.props.menuOpen) {
                   this.props.toggleMenu()
                 }
+                if (this.props.searchTerm) {
+                  this.props.resetSearchTerm()
+                }
               }}
             >
               <Link to="/" className="navLinkHome">
@@ -190,25 +232,53 @@ class Nav extends React.Component {
             </button>
           </div>
         </MainNavStyles>
-        {/* <SubNavStyles>
+        {!this.props.menuOpen && (
+          <SubNavStyles>
             <div className="subNavContent">
               <nav>
                 <ul>
-                  <li>Tutorials</li>
+                  <li>
+                    <Link to="/tags">Topics</Link>
+                  </li>
                 </ul>
                 <ul>
-                  <li>Articles</li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
                 </ul>
-                <ul>
-                  <li>Videos</li>
+                <ul className="subNav-hideMobile">
+                  <li>
+                    <Link to="/tools-parcel-setup/">Parcel Setup</Link>
+                  </li>
+                </ul>
+                <ul className="subNav-hideMobile">
+                  <li>
+                    <Link to="/gatsby-basics/">Gatsby Basics</Link>
+                  </li>
                 </ul>
               </nav>
-              
-              <div>
-                <input type="text" />
+
+              <div className="subNavSearch">
+                <input
+                  type="text"
+                  value={this.props.searchTerm}
+                  onChange={e => this.props.setSearchTerm(e.target.value)}
+                />
+                <div className="subNavSearchIcon">
+                  <IoIosSearch />
+                </div>
+                {this.props.searchTerm && (
+                  <div
+                    className="subNavSearchCloseIcon"
+                    onClick={this.props.resetSearchTerm}
+                  >
+                    <IoIosClose />
+                  </div>
+                )}
               </div>
             </div>
-        </SubNavStyles> */}
+          </SubNavStyles>
+        )}
       </>
     )
   }

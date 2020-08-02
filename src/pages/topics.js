@@ -21,7 +21,9 @@ const TopicsPage = ({
         canonical={`https://www.code-boost.com/about/`}
       />
       <div>
-        <h1 style={{ margin: "2rem 0 4rem 0", fontSize: "2.4rem" }}>Topics</h1>
+        <h1 style={{ margin: "2rem 0 4rem 0", fontSize: "2.4rem" }}>
+          Main Topics
+        </h1>
         <div className="Trending__topics">
           {group.map(topic => (
             <Link

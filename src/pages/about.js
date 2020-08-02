@@ -28,7 +28,7 @@ const AboutPage = () => {
           regular new <strong>tutorials</strong>, <strong>articles</strong>, and{" "}
           <strong>videos</strong>.
         </p>
-        <div style={{ fontSize: "36px", margin: "20px 0 100px 0" }}>
+        <div style={{ fontSize: "36px", margin: "20px 0 60px 0" }}>
           <span role="img" aria-label="Laptop.">
             💻
           </span>
@@ -40,7 +40,17 @@ const AboutPage = () => {
           </span>
         </div>
 
-        <h3>Thanks for visiting!!</h3>
+        <h3 style={{ marginBottom: "40px" }}>Thanks for visiting!!</h3>
+
+        <span style={{ fontSize: "20px" }}>
+          <a
+            href="https://twitter.com/BoostCode"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow on <span style={{ color: "#1da1f2" }}>Twitter</span>
+          </a>
+        </span>
       </div>
     </Layout>
   )

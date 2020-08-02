@@ -18,6 +18,7 @@ const PageContainer = styled.div`
 
   .pageContent {
     max-width: 1040px;
+
     @media (max-width: 1200px) {
       max-width: 100%;
     }

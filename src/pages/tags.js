@@ -37,7 +37,7 @@ const TagsPage = ({
           canonical={`https://www.code-boost.com/tags/`}
         />
         <div>
-          <h1 style={{ marginBottom: "2rem" }}>Tags</h1>
+          <h1 style={{ marginBottom: "2rem" }}>Topics</h1>
           <div className="trendingTags">
             {group.map(tag => (
               <Link

@@ -2,9 +2,11 @@ import React from "react"
 import Helmet from "react-helmet"
 import ModeContext from "../context/ModeContext"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
+import SearchResults from "./searchResults"
 import Nav from "./nav"
 import Footer from "./footer"
 import Menu from "./menu"
+import { CardsLayout } from "./styles/CardsLayout"
 
 const theme = {
   red: "red",
@@ -54,7 +56,7 @@ const theme = {
   gradient08: "linear-gradient(95deg, #E79330, #16D2DF)",
   gradient09: "linear-gradient(95deg, #AC1753, #01A692)",
   gradient10: "linear-gradient(95deg, #244fe7, #DA1C5C)",
-  blue: "#00bcda",
+  // blue: "#00bcda",
   blue: "#3273dc",
   green: "rgb(35,140,44)",
   gold: "rgb(255,203,0)",
@@ -153,10 +155,10 @@ button:focus {
   max-width: 1040px;
   margin: 0 auto;
 
-  padding: 10.4rem 4rem 7rem 4rem;
+  padding: 14.4rem 4rem 7rem 4rem;
 
   @media (max-width: 840px) {
-    padding: 10.4rem 2rem 4rem 2rem;
+    padding: 14.4rem 2rem 4rem 2rem;
   }
 }
 #footer-container {
@@ -179,6 +181,7 @@ button:focus {
   z-index: 42;
   transition: transform 0.3s;
 }
+
 .no-scroll {
   /* box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1); */
 }
@@ -780,9 +783,9 @@ pre > code.line-highlight[data-end]:after {
 `
 
 const MainContent = styled.div`
-  padding: 12rem 0 7rem 0;
+  padding: 16rem 0 7rem 0;
   @media (max-width: 600px) {
-    padding-top: 11rem;
+    padding-top: 15.5rem;
   }
 `
 class Layout extends React.Component {
@@ -790,6 +793,7 @@ class Layout extends React.Component {
   state = {
     scrolled: false,
     menuOpen: false,
+    searchTerm: "",
   }
 
   componentDidMount() {
@@ -813,6 +817,12 @@ class Layout extends React.Component {
   }
   toggleMenu = () => {
     this.setState({ menuOpen: !this.state.menuOpen })
+  }
+  setSearchTerm = term => {
+    this.setState({ searchTerm: term })
+  }
+  resetSearchTerm = () => {
+    this.setState({ searchTerm: "" })
   }
 
   render() {
@@ -845,13 +855,23 @@ class Layout extends React.Component {
             isHome={isPost}
             toggleMenu={this.toggleMenu}
             menuOpen={this.state.menuOpen}
+            searchTerm={this.state.searchTerm}
+            setSearchTerm={this.setSearchTerm}
+            resetSearchTerm={this.resetSearchTerm}
           />
         </div>
-        {this.state.menuOpen ? (
+        {this.state.menuOpen && (
           <Menu
             isPost={isPost}
             menuOpen={this.state.menuOpen}
             toggleMenu={this.toggleMenu}
+          />
+        )}
+
+        {this.state.searchTerm ? (
+          <SearchResults
+            searchTerm={this.state.searchTerm}
+            resetSearchTerm={this.resetSearchTerm}
           />
         ) : (
           <MainContent

@@ -9,6 +9,7 @@ import { CardsLayout } from "./styles/CardsLayout"
 const MenuStyles = styled.div`
   padding-top: 104px;
   min-height: 100vh;
+  position: fixed;
   width: 100%;
   z-index: 1;
 
@@ -20,6 +21,7 @@ const MenuStyles = styled.div`
     width: ${props => props.theme.widthMedium};
     margin: 0 auto;
     text-align: center;
+
     @media (max-width: 1040px) {
       width: 90%;
       margin: 0 5%;
