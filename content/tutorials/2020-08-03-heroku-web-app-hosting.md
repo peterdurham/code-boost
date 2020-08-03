@@ -13,7 +13,7 @@ tags:
   - Tools
   - Hosting
   - Heroku
-featuredImage: /img/heroku_setup.jpg
+featuredImage: /img/heroku_hosting_setup.jpg
 ---
 ## What is Heroku?
 
