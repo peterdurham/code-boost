@@ -2,8 +2,8 @@
 templateKey: blog-post
 title: Hosting Web Apps with Heroku
 slug: heroku-web-app-hosting
-date: 2020-08-03T15:00:00.857Z
-dateModified: 2020-08-03T15:00:02.033Z
+date: 2020-08-03T15:36:53.756Z
+dateModified: 2020-08-03T15:36:54.324Z
 description: Heroku is a web platform that allows users to build, deploy, and
   maintain cloud applications. The platform specializes in hosting minimal
   config Node JS applications with both free and paid tiers.
