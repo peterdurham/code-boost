@@ -139,8 +139,9 @@ The first command `heroku login` will prompt you to login to Heroku in the brows
 the initial commit we can use the `heroku create` command to initialize a new application.
 Heroku will provide a URL for the deploy along with the Heroku dashboard where you can
 edit the app's settings. We can use the command `git push heroku master` again in the
-future to push staged git changes.  
-&nbsp;   
+future to push staged git changes.   
+  
+&nbsp;    
 Wait a few seconds for your application to deploy and open the hosted URL Heroku provides.
 Everything will be working properly if the main `/` route says `Cannot GET /`. Navigate to
 `/api/getmessage` to see if the message is displayed!
