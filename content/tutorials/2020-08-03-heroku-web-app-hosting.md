@@ -21,7 +21,7 @@ featuredImage: /img/heroku_hosting_setup.jpg
 and maintain cloud applications. The platform specializes in hosting minimal config Node
 JS applications with both free and paid tiers.
 
-![Heroku Homepage](/heroku_home_page.jpg)
+![Heroku Homepage](/img/heroku_home_page.jpg)
 
 Heroku is an excellent tool for learning and setting up Node and other backend
 applications. You can also host Ruby, Java, PHP, Python, Go, Scala, and Clojure
@@ -149,7 +149,7 @@ Everything will be working properly if the main `/` route says `Cannot GET /`. N
 
 ## Heroku Settings
 
-![Heroku Settings](/heroku_config_vars.jpg)
+![Heroku Settings](/img/heroku_config_vars.jpg)
 
 In the Heroku dashboard you will see a list of your applications deployed so far. Here you
 are able to change the pricing tiers, add configuration variables, allow other users
