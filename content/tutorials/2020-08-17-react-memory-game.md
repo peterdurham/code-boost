@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: How to build a Memory Game from scratch in React
+title: How to build a Memory Game from scratch using React
 slug: react-memory-game
 date: 2020-08-17T10:55:35.604Z
 dateModified: 2020-08-17T10:55:35.639Z
@@ -17,14 +17,13 @@ tags:
   - Next
 featuredImage: /img/memory_game.jpg
 ---
-React makes building games on the web easier, and in this tutorial we will be creating a basic
-memory game.  
+React makes building games on the web easier, and in this tutorial we will be creating a memory game from scratch.  
 &nbsp;   
 Here is a preview of what the [game](https://memory-game.peterdurham.now.sh/) will look like:
 
 ![Memory Game Preview](/img/memory_game_preview.jpg)
 
-We will be using **NextJS** for an easy React setup and **React Spring**
+We will be using **NextJS** for our React setup and **React Spring**
 for the card rotate animation. The only requirement for this tutorial is that you have
 [Node JS installed](https://nodejs.org/en/download/).
 
