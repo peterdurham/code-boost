@@ -17,12 +17,12 @@ tags:
   - Next
 featuredImage: /img/memory_game.jpg
 ---
-Building games on the web is made easier with React, and in this tutorial we will be creating a basic
+React makes building games on the web easier, and in this tutorial we will be creating a basic
 memory game.  
 &nbsp;   
 Here is a preview of what the [game](https://memory-game.peterdurham.now.sh/) will look like:
 
-![Memory Game Preview](/memory_game_preview.jpg)
+![Memory Game Preview](/img/memory_game_preview.jpg)
 
 We will be using **NextJS** for an easy React setup and **React Spring**
 for the card rotate animation. The only requirement for this tutorial is that you have
