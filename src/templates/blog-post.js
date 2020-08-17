@@ -367,9 +367,9 @@ class BlogPostTemplate extends React.Component {
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
             <RegisterStyles>
-              <h2>
+              <h3>
                 <span className="normal">Code Boost</span> Newsletter
-              </h2>
+              </h3>
               <p>
                 Are you looking for <span className="italic">modern</span> web
                 development tutorials about{" "}
