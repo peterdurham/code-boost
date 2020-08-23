@@ -178,7 +178,7 @@ This command will setup a GraphQL playground at the port we specified above. Ope
 
 ### GraphQL Playground
 
-![graphql playground](./playground.jpg)
+![graphql playground](/img/apollo_graphql_playground.jpg)
 
 The GraphQL playground is used for creating and testing out Mutations and Queries in development mode. To start, on the left side add the keyword `mutation` or `query` followed by the *name* of the task you are performing. Each tab in the playground will have the name of the mutation or query it contains and will persist when the browser is closed for future testing purposes.
 
@@ -227,15 +227,15 @@ Next we will use **mongoose** to connect our server to **MongoDB** so we can sav
 
 ### Setup a Cluster and User
 
-![cluster](./mongodb_1.jpg)
+![cluster](/img/mongodb_1.jpg)
 
 Once you've logged in, setup a cluster with the best location and free properties based on your needs.
 
-![dashboard](./mongodb_2.jpg)
+![dashboard](/img/mongodb_2.jpg)
 
 When the cluster has been initialized, next setup permissions and a login for the database by selecting **CONNECT**.
 
-![user list](./mongodb_3.jpg)
+![user list](/img/mongodb_3.jpg)
 
 Here you will be able to whitelist any IP of the current device you are on, or if you prefer, whitelist all addresses if you will be accessing from multiple locations. The username and login you input here will be the primary layer of security for your application. You will want to protect that information and make sure not to commit it to Github.
 

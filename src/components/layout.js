@@ -471,6 +471,9 @@ body {
   .Menu {
     background-color: ${theme.dark};
   }
+  .menuTopics a {
+    color: #fff;
+  }
   
   & .paginationLink {
     background: rgb(26, 29, 34);
@@ -575,7 +578,7 @@ pre.language-javascript {
 }
 pre.language-terminal {
   background: ${theme.darkest};
-  border-top: 18px solid ${theme.mediumLight};
+  border-top: 20px solid rgb(111,111,111);
   border-radius: 0px;
 }
 

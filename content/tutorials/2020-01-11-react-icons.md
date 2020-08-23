@@ -60,7 +60,7 @@ These icons can be added to your JSX by simply calling a self-enclosed element w
 <TiBeer />
 ```
 
-![icons black](./react_icons1.jpg)
+![icons black](/img/react_icons1.jpg)
 
 ## Icon Styling
 
@@ -73,7 +73,7 @@ svg {
 }
 ```
 
-![icons orange](./react_icons2.jpg)
+![icons orange](/img/react_icons2.jpg)
 
 If you are using other svgs, it makes more sense to add an icon class and/or id to your icons instead. Icons can be further customized like any other element.
 
@@ -98,6 +98,6 @@ and change add the following CSS
 }
 ```
 
-![icons colors](./react_icons3.jpg)
+![icons colors](/img/react_icons3.jpg)
 
 React-icons really simplifies the process of acquiring and maintaining icons in a react project. With so many options available for icons, it's a very useful package to install. 
