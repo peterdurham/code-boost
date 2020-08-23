@@ -115,7 +115,9 @@ const NavButton = styled.button`
   }
 `
 const SubNavStyles = styled.div`
-  background: ${props => props.theme.offWhite};
+  background: ${props => props.theme.white};
+  border-bottom: 1px solid ${props => props.theme.light};
+  box-shadow: ${props => props.theme.bs};
   height: 45px;
   align-items: center;
   font-family: ${props => props.theme.fontHeader};
