@@ -8,6 +8,8 @@ import { IoMdBonfire, IoIosSearch, IoIosClose } from "react-icons/io"
 import { MdWbSunny, MdClose } from "react-icons/md"
 import { WiMoonAltWaningCrescent5 } from "react-icons/wi"
 
+import RocketLogo from "../../static/logo.png"
+
 const MainNavStyles = styled.div`
   height: ${props => props.theme.navHeight};
   display: flex;
@@ -40,14 +42,14 @@ const MainNavStyles = styled.div`
     }
     .navLogoIcon {
       color: ${props => props.theme.yellow};
-      font-size: 4.2rem;
+      width: 56px;
       transform: translateY(2px);
       @media (max-width: 600px) {
         font-size: 3.6rem;
       }
     }
     .navLogoText {
-      margin-left: 9px;
+      margin-left: 4px;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 2.4rem;
@@ -218,7 +220,8 @@ class Nav extends React.Component {
             >
               <Link to="/" className="navLinkHome">
                 <span>
-                  <IoMdBonfire className="navLogoIcon" />
+                  <img src={RocketLogo} className="navLogoIcon" />
+                  {/* <IoMdBonfire className="navLogoIcon" /> */}
                 </span>
                 <span className="navLogoText">Code-Boost</span>
               </Link>
