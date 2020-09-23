@@ -79,19 +79,6 @@ const ConfirmPageStyles = styled.div`
 `
 
 function Confirm(props) {
-  const data = useStaticQuery(graphql`
-    {
-      climber: file(absolutePath: { regex: "/climb.jpg/" }) {
-        childImageSharp {
-          fluid(maxWidth: 740) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-  let climberImage = data.climber
-
   const { location } = props
 
   useEffect(() => {
@@ -110,10 +97,6 @@ function Confirm(props) {
   return (
     <Layout>
       <ConfirmPageStyles>
-        <Image
-          fluid={climberImage.childImageSharp.fluid}
-          className="confirm-image"
-        />
         <div id="confirm-message">
           <h1>Email Confirmed!</h1>
           <p>
