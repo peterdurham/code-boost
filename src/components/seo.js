@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
+function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, canonical }) {
   const { site, file, logo } = useStaticQuery(
     graphql`
       query {
@@ -53,7 +53,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
       },
     ]
 
-    return isBlogPost
+    return isBlogPost || isVideoPost
       ? [
           ...schemaOrgJSONLD,
           {
@@ -118,7 +118,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
 
             image: {
               "@type": "ImageObject",
-              url: postImage,
+              url: isBlogPost ? postImage : `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`,
               height: 314,
               width: 600,
             },
@@ -191,7 +191,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
         },
         {
           name: `twitter:image`,
-          content: postImage,
+          content: isVideoPost ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg` : postImage,
         },
         {
           name: `twitter:site`,
@@ -219,7 +219,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
         },
         {
           property: `og:image`,
-          content: postImage,
+          content:  isVideoPost ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg` : postImage,
         },
         {
           property: `og:description`,
@@ -227,7 +227,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, canonical }) {
         },
         {
           property: `og:type`,
-          content: isBlogPost ? "article" : "website",
+          content: isBlogPost || isVideoPost ? "article" : "website",
         },
         {
           property: `og:url`,
@@ -254,6 +254,7 @@ SEO.defaultProps = {
   lang: `en`,
   description: ``,
   isBlogPost: false,
+  isVideoPost: false,
 }
 
 SEO.propTypes = {
@@ -262,6 +263,7 @@ SEO.propTypes = {
   description: PropTypes.string.isRequired,
   slug: PropTypes.string,
   isBlogPost: PropTypes.bool,
+  isVideoPost: PropTypes.bool,
   canonical: PropTypes.string,
 }
 

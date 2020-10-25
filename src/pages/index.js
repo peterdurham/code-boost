@@ -164,7 +164,7 @@ function BlogIndex(props) {
       "https://email.code-boost.com/api/users/register",
       newUser
     )
-    console.log(res.data)
+
     if (res.data.message === "email already exists") {
       setMessage("already-registered")
     } else if (res.data._id) {
@@ -177,7 +177,6 @@ function BlogIndex(props) {
   const featured = data.featuredRemark.edges
   const posts = data.allMarkdownRemark.edges
   const videos = data.videoRemark.edges
-  console.log(featured)
 
   const featuredPost1 = featured[0].node
   const featuredPost2 = featured[1].node
@@ -367,7 +366,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" }, featuredPost: {eq: false} } }
       limit: 14
     ) {
       edges {

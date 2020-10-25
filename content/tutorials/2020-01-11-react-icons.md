@@ -13,7 +13,7 @@ tags:
   - Icons
   - Tools
   - Libraries
-featuredImage: /img/media-icons.jpg
+featuredImage: /img/react_icons.jpg
 ---
 There are plenty of occasions in web development to reach for icons. Installing an icon package lets you import icons as svg. Of all the icon libraries for React, [react-icons](https://www.npmjs.com/package/react-icons) is the best.
 

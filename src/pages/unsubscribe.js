@@ -102,7 +102,6 @@ function Unsubscribe(props) {
           "https://email.code-boost.com/api/users/unsubscribe",
           user
         )
-        console.log(res, user)
       }
     }
     postData()

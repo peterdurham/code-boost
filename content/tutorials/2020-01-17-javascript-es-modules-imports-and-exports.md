@@ -12,7 +12,7 @@ tags:
   - JavaScript
   - Import/Export
   - Methods
-featuredImage: /img/container.jpg
+featuredImage: /img/javascript_imports_and_exports.jpg
 ---
 JavaScript projects very often have multiple **.js** files, making it necessary to be able to access code from one file in another. Bundlers such as **Webpack** and **Parcel** are able to collect all of this code into a single or several machine readable files.  
 

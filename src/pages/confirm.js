@@ -89,7 +89,6 @@ function Confirm(props) {
           "https://email.code-boost.com/api/users/confirm",
           user
         )
-        console.log(res, user)
       }
     }
     postData()

@@ -14,7 +14,7 @@ tags:
   - Full Stack
   - Setup
   - Code Along
-featuredImage: /img/full_stack_tutorial.jpg
+featuredImage: /img/full_stack_mern_tutorial.jpg
 ---
 This tutorial is meant to help you create a basic working *full-stack* application using
 **React** and **Node**. 

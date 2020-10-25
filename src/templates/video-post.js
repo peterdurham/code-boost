@@ -291,7 +291,7 @@ class VideoPostTemplate extends React.Component {
       "https://email.code-boost.com/api/users/register",
       newUser
     )
-    console.log(res.data)
+
     if (res.data.message === "email already exists") {
       this.setMessage("already-registered")
     } else if (res.data._id) {
@@ -328,6 +328,7 @@ class VideoPostTemplate extends React.Component {
           slug={pageContext.slug}
           frontmatter={post.frontmatter}
           isBlogPost={false}
+          isVideoPost={true}
           canonical={`https://code-boost.com${pageContext.slug}`}
         />
         <PageContent>

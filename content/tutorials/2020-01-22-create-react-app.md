@@ -12,7 +12,7 @@ tags:
   - React
   - create-react-app
   - Tools
-featuredImage: /img/sea-2755858_1280.jpg
+featuredImage: /img/create_react_app_setup.jpg
 ---
 Create React App is a command line tool to build and deploy single-page `React` applications. It uses `webpack` and other packages under the hood for easy development setup. It is a great tool to use when you are first learning **React** as it lets you focus on writing components.
 

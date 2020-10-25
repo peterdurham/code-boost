@@ -15,7 +15,7 @@ tags:
   - Hooks
   - Animations
   - Next
-featuredImage: /img/memory_game.jpg
+featuredImage: /img/memory_game_react.jpg
 ---
 React makes building games on the web easier, and in this tutorial we will be creating a memory game from scratch.  
 &nbsp;   

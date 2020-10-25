@@ -15,7 +15,7 @@ tags:
   - Keyframes
   - Properties
   - No Library
-featuredImage: /img/css_animations_without_library.jpg
+featuredImage: /img/css_animations_no_library.jpg
 ---
 All visibile elements on a webpage can be animated using _CSS Animations_. Each CSS
 `animation` is declared in an associated `@keyframes` block which describes the
