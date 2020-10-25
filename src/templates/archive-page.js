@@ -186,6 +186,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
       limit: $limit
       skip: $skip
     ) {
@@ -198,6 +199,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            templateKey
             description
             tags
             category

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
 import axios from "axios"
 import _ from "lodash"
 
@@ -76,6 +75,14 @@ const BlogPost = styled.article`
       font-size: 1.8rem;
     }
   }
+`
+
+const VideoEmbed = styled.div`
+  margin: 2rem 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25;
+  height: 0;
 `
 
 const BlogPostMarkdown = styled.section`
@@ -252,7 +259,7 @@ const RegisterStyles = styled.div`
   }
 `
 
-class BlogPostTemplate extends React.Component {
+class VideoPostTemplate extends React.Component {
   state = {
     tocItems: [],
     message: "",
@@ -320,7 +327,7 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
           slug={pageContext.slug}
           frontmatter={post.frontmatter}
-          isBlogPost={true}
+          isBlogPost={false}
           canonical={`https://code-boost.com${pageContext.slug}`}
         />
         <PageContent>
@@ -344,10 +351,20 @@ class BlogPostTemplate extends React.Component {
                   </Link>
                 ))}
               </div>
-              <BackgroundImage
-                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-                className="blogPostImage"
-              ></BackgroundImage>
+              <VideoEmbed>
+                <iframe
+                  src={`https://www.youtube.com/embed/${post.frontmatter.videoID}`}
+                  frameBorder="0"
+                  title={`${post.frontmatter.title}`}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                ></iframe>
+              </VideoEmbed>
               {tocItems.length > 0 && (
                 <div className="tableOfContents">
                   <h4>Table of Contents</h4>
@@ -443,10 +460,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default VideoPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query VideoPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -458,6 +475,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        videoID
         date(formatString: "MMMM DD, YYYY")
         dateModified(formatString: "MMMM DD, YYYY")
         description

@@ -118,7 +118,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
       edges {
         node {
           fields {
@@ -127,6 +129,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            templateKey
             description
             tags
             category

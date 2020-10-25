@@ -6,6 +6,7 @@ import {
   TiSocialFacebook,
   TiSocialTwitter,
   TiSocialLinkedin,
+  TiSocialYoutube
 } from "react-icons/ti"
 
 const PageFooter = styled.footer`
@@ -159,10 +160,16 @@ function Footer() {
               <span className="footerSocialIconContainer" id="fb-icon">
                 <TiSocialFacebook className="footerSocialIcon" />
               </span>
+            </a>{" "}
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCx935tkqWFguSF5zu0f6K0Q"
+              rel="noopener noreferrer"
+            >
+              <span className="footerSocialIconContainer" id="yt-icon">
+                <TiSocialYoutube className="footerSocialIcon" />
+              </span>
             </a>
-            {/* <span className="Footer__social--icon-container" id="yt-icon">
-                <TiSocialYoutube className="Footer__social--icon" />
-              </span> */}
           </div>
         </div>
         <div className="footerLinks">

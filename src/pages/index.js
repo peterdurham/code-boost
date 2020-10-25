@@ -174,16 +174,13 @@ function BlogIndex(props) {
 
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
+  const featured = data.featuredRemark.edges
   const posts = data.allMarkdownRemark.edges
+  const videos = data.videoRemark.edges
+  console.log(featured)
 
-  const featuredPost1 = posts[0].node
-  const featuredTopicLogo1 = data.allTopicsJson.edges.filter(
-    edge => edge.node.name === featuredPost1.frontmatter.category
-  )[0]
-  const featuredPost2 = posts[1].node
-  const featuredTopicLogo2 = data.allTopicsJson.edges.filter(
-    edge => edge.node.name === featuredPost2.frontmatter.category
-  )[0]
+  const featuredPost1 = featured[0].node
+  const featuredPost2 = featured[1].node
 
   return (
     <Layout location={props.location} title={siteTitle} pageType="Home">
@@ -197,7 +194,7 @@ function BlogIndex(props) {
           <TopicLinks />
           <div className="yellow-box-container">
             <div className="yellow-box"></div>
-            <h2 className="tutorialsHeader">Tutorials</h2>
+            <h2 className="tutorialsHeader">Featured</h2>
           </div>
           <div className="featuredCards">
             <FeaturedCard
@@ -206,7 +203,6 @@ function BlogIndex(props) {
               date={featuredPost1.frontmatter.date}
               description={featuredPost1.frontmatter.description}
               frontmatter={featuredPost1.frontmatter}
-              topic={featuredTopicLogo1}
             />
             <FeaturedCard
               title={featuredPost2.frontmatter.title}
@@ -214,15 +210,38 @@ function BlogIndex(props) {
               date={featuredPost2.frontmatter.date}
               description={featuredPost2.frontmatter.description}
               frontmatter={featuredPost2.frontmatter}
-              topic={featuredTopicLogo2}
             />
+          </div>
+          <div className="yellow-box-container">
+            <div className="yellow-box"></div>
+            <h2 className="tutorialsHeader">Videos</h2>
+          </div>
+          <CardsLayout>
+            {videos.map(({ node }, index) => {
+              const title = node.frontmatter.title || node.fields.slug
+
+              if (index < 3) {
+                return (
+                  <Card
+                    key={node.fields.slug}
+                    title={title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    frontmatter={node.frontmatter}
+                  />
+                )
+              }
+              return null
+            })}
+          </CardsLayout>
+          <div className="yellow-box-container">
+            <div className="yellow-box"></div>
+            <h2 className="tutorialsHeader">Articles</h2>
           </div>
           <CardsLayout>
             {posts.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
-              const topicLogo = data.allTopicsJson.edges.filter(
-                edge => edge.node.name === node.frontmatter.category
-              )[0]
 
               if (index > 1 && index < 8) {
                 return (
@@ -233,7 +252,6 @@ function BlogIndex(props) {
                     date={node.frontmatter.date}
                     description={node.frontmatter.description}
                     frontmatter={node.frontmatter}
-                    topic={topicLogo.node}
                   />
                 )
               }
@@ -317,8 +335,39 @@ export const pageQuery = graphql`
         title
       }
     }
+    featuredRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { featuredPost: { eq: true } } }
+      limit: 2
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            templateKey
+            title
+            description
+            tags
+            featuredPost
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
       limit: 14
     ) {
       edges {
@@ -329,6 +378,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            templateKey
             title
             description
             tags
@@ -340,6 +390,25 @@ export const pageQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    videoRemark: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { templateKey: { eq: "video-post" } } }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            category
+            videoID
           }
         }
       }
