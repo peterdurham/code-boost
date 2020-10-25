@@ -80,10 +80,12 @@ const TopicLinks = () => {
     }
   `)
   let topics = data.allTopicsJson.edges
+  let mainTopics = topics.filter(({node}) => node.name !== "HTML")
+ 
   const mode = useContext(ModeContext)
   return (
     <TopicLinkStyles>
-      {topics.map(({ node: item }) => (
+      {mainTopics.map(({ node: item }) => (
         <Link to={`/${item.slug}`} key={item.name}>
           <div className="topicLink">
             {item.darkMode ? (

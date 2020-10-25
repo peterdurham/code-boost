@@ -1,4 +1,11 @@
-[
+[ 
+{
+  "name": "HTML",
+  "slug": "html",
+  "image": "../assets/topics/html-logo.png",
+  "lightImage": "../assets/topics/html-logo.png",
+  "darkImage": "../assets/topics/html-logo.png"
+},
   {
     "name": "JavaScript",
     "slug": "javascript",

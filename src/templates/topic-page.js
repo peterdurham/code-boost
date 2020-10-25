@@ -47,6 +47,8 @@ const TopicPageTemplate = ({ pageContext, data }) => {
     return node.slug === topic.toLowerCase()
   })[0].node
 
+  console.log(topicInfo)
+
   return (
     <Layout pageType="Topic">
       <SEO
