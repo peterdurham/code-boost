@@ -329,7 +329,7 @@ class VideoPostTemplate extends React.Component {
           frontmatter={post.frontmatter}
           isBlogPost={false}
           isVideoPost={true}
-          canonical={`https://code-boost.com${pageContext.slug}`}
+          canonical={`https://code-boost.com/video${pageContext.slug}`}
         />
         <PageContent>
           <BlogPost>
