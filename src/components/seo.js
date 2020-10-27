@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, canonical }) {
-  const { site, file, logo } = useStaticQuery(
+  const { site, logo } = useStaticQuery(
     graphql`
       query {
         site {
@@ -14,10 +14,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
             author
           }
         }
-        file(absolutePath: { regex: "/navlogo.png/" }) {
-          absolutePath
-        }
-        logo: file(absolutePath: { regex: "/rocketimage.jpg/" }) {
+        logo: file(absolutePath: { regex: "/rocketlogo.jpg/" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
@@ -162,12 +159,12 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
     title: isBlogPost ? frontmatter.title : null,
     description: isBlogPost ? frontmatter.description : null,
     tags: isBlogPost ? frontmatter.tags.join(", ") : "",
-    logo: file.absolutePath,
     postImage,
     image: `https://code-boost.com${logo.childImageSharp.fluid.src}`,
     datePublished: isBlogPost ? frontmatter.date : "",
     dateModified: isBlogPost ? frontmatter.dateModified : "",
   })
+
   return (
     <Helmet
       htmlAttributes={{

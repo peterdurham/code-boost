@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Code-Boost`,
     author: `Peter Durham`,
-    description: `A web development tutorials blog for JavaScript, CSS, React, GraphQL and more.`,
+    description: `Modern web development tutorials for JavaScript, CSS, React, GraphQL, Tools and more.`,
     siteUrl: `https://www.code-boost.com/`,
     social: {
       twitter: `BoostCode`,
