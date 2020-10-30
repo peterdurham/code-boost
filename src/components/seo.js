@@ -184,7 +184,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:image`,
