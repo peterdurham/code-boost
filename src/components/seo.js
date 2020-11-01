@@ -14,7 +14,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
             author
           }
         }
-        logo: file(absolutePath: { regex: "/rocketlogo.jpg/" }) {
+        logo: file(absolutePath: { regex: "/site-logo.jpg/" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid

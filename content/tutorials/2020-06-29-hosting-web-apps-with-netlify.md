@@ -12,7 +12,7 @@ tags:
   - Netlify
   - Hosting
   - Tools
-featuredImage: /img/hosting-netlify-sunrise.jpg
+featuredImage: /img/hosting_netlify_sunrise.jpg
 ---
 ## What is Netlify?
 
