@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import axios from "axios"
 import styled from "styled-components"
 import Image from "gatsby-image"

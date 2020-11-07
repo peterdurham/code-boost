@@ -21,6 +21,13 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
             }
           }
         }
+        logoText: file(absolutePath: { regex: "/site-logo-text.jpg/" }) {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `
   )
