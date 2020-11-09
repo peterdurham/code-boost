@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, canonical }) {
-  const { site, logo } = useStaticQuery(
+  const { site, logoText, logo } = useStaticQuery(
     graphql`
       query {
         site {
@@ -156,6 +156,7 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
         ]
       : schemaOrgJSONLD
   }
+
   const metaDescription = description || site.siteMetadata.description
   const postImage = isBlogPost
     ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
