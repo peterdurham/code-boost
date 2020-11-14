@@ -361,6 +361,7 @@ class VideoPostTemplate extends React.Component {
                 <iframe
                   src={`https://www.youtube.com/embed/${post.frontmatter.videoID}`}
                   frameBorder="0"
+                  allowFullScreen
                   title={`${post.frontmatter.title}`}
                   style={{
                     position: "absolute",
