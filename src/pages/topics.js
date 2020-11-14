@@ -40,7 +40,7 @@ const TopicsPage = ({
       </div>
       <div>
         <h2 style={{ margin: "4rem 0 2rem 0", fontSize: "2.4rem" }}>
-          Top Posts
+          Recent Posts
         </h2>
         <CardsLayout>
           {edges.map(({ node }, index) => {
@@ -90,7 +90,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 2000
+      ) {
       group(field: frontmatter___category) {
         fieldValue
         totalCount
@@ -107,6 +110,7 @@ export const pageQuery = graphql`
             description
             tags
             category
+            videoID
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {

@@ -305,8 +305,9 @@ class BlogPostTemplate extends React.Component {
     const similarPosts = data.allMarkdownRemark.edges
       .filter(item => {
         return (
-          item.node.frontmatter.category === topic &&
-          item.node.frontmatter.title !== post.frontmatter.title
+          item.node.frontmatter.title !== post.frontmatter.title &&
+          (item.node.frontmatter.tags.includes(topic) ||
+            item.node.frontmatter.category === topic)
         )
       })
       .filter((item, index) => {
@@ -472,7 +473,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           id
@@ -484,6 +487,7 @@ export const pageQuery = graphql`
             templateKey
             tags
             category
+            videoID
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {

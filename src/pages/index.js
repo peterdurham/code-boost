@@ -175,11 +175,8 @@ function BlogIndex(props) {
   const { data } = props
   const siteTitle = data.site.siteMetadata.title
   const featured = data.featuredRemark.edges
-  const posts = data.allMarkdownRemark.edges
+  const articles = data.articlesRemark.edges
   const videos = data.videoRemark.edges
-
-  const featuredPost1 = featured[0].node
-  const featuredPost2 = featured[1].node
 
   return (
     <Layout location={props.location} title={siteTitle} pageType="Home">
@@ -196,20 +193,21 @@ function BlogIndex(props) {
             <h2 className="tutorialsHeader">Featured</h2>
           </div>
           <div className="featuredCards">
-            <FeaturedCard
-              title={featuredPost1.frontmatter.title}
-              slug={featuredPost1.fields.slug}
-              date={featuredPost1.frontmatter.date}
-              description={featuredPost1.frontmatter.description}
-              frontmatter={featuredPost1.frontmatter}
-            />
-            <FeaturedCard
-              title={featuredPost2.frontmatter.title}
-              slug={featuredPost2.fields.slug}
-              date={featuredPost2.frontmatter.date}
-              description={featuredPost2.frontmatter.description}
-              frontmatter={featuredPost2.frontmatter}
-            />
+            {featured.map(({ node }, index) => {
+              if (index < 2) {
+                return (
+                  <FeaturedCard
+                    key={node.fields.slug}
+                    title={node.frontmatter.title}
+                    slug={node.fields.slug}
+                    date={node.frontmatter.date}
+                    description={node.frontmatter.description}
+                    frontmatter={node.frontmatter}
+                  />
+                )
+              }
+              return null
+            })}
           </div>
           <div className="yellow-box-container">
             <div className="yellow-box"></div>
@@ -239,10 +237,10 @@ function BlogIndex(props) {
             <h2 className="tutorialsHeader">Articles</h2>
           </div>
           <CardsLayout>
-            {posts.map(({ node }, index) => {
+            {articles.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
 
-              if (index > 1 && index < 8) {
+              if (index < 6) {
                 return (
                   <Card
                     key={node.fields.slug}
@@ -292,13 +290,10 @@ function BlogIndex(props) {
           </RegisterStyles>
 
           <CardsLayout>
-            {posts.map(({ node }, index) => {
+            {articles.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
-              const topicLogo = data.allTopicsJson.edges.filter(
-                edge => edge.node.name === node.frontmatter.category
-              )[0]
 
-              if (index > 7) {
+              if (index >= 6 && index < 12) {
                 return (
                   <Card
                     key={node.fields.slug}
@@ -307,7 +302,6 @@ function BlogIndex(props) {
                     date={node.frontmatter.date}
                     description={node.frontmatter.description}
                     frontmatter={node.frontmatter}
-                    topic={topicLogo.node}
                   />
                 )
               }
@@ -315,7 +309,7 @@ function BlogIndex(props) {
             })}
           </CardsLayout>
           <Link to="/archive/2" className="paginationLink archiveLink">
-            📚 Tutorial Archives
+            📚 More Articles
             <FaAngleDoubleRight />
           </Link>
         </div>
@@ -364,10 +358,15 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    articlesRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" }, featuredPost: {eq: false} } }
-      limit: 14
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "blog-post" }
+          featuredPost: { eq: false }
+        }
+      }
+      limit: 12
     ) {
       edges {
         node {
@@ -395,8 +394,13 @@ export const pageQuery = graphql`
     }
     videoRemark: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { templateKey: { eq: "video-post" } } }
-      limit: 1000
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "video-post" }
+          featuredPost: { eq: false }
+        }
+      }
+      limit: 6
     ) {
       edges {
         node {

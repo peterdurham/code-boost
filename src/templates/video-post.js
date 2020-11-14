@@ -312,8 +312,9 @@ class VideoPostTemplate extends React.Component {
     const similarPosts = data.allMarkdownRemark.edges
       .filter(item => {
         return (
-          item.node.frontmatter.category === topic &&
-          item.node.frontmatter.title !== post.frontmatter.title
+          item.node.frontmatter.title !== post.frontmatter.title &&
+          (item.node.frontmatter.tags.includes(topic) ||
+            item.node.frontmatter.category === topic)
         )
       })
       .filter((item, index) => {
@@ -442,14 +443,14 @@ class VideoPostTemplate extends React.Component {
           <ul>
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <Link to={`/video${previous.fields.slug}`} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link to={`/video${next.fields.slug}`} rel="next">
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -503,6 +504,7 @@ export const pageQuery = graphql`
             templateKey
             tags
             category
+            videoID
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {

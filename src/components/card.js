@@ -97,9 +97,8 @@ const CardStyles = styled.article`
   }
 `
 
-const Card = ({ frontmatter, title, slug, date, description, topic }) => {
+const Card = ({ frontmatter, title, slug }) => {
   const path = frontmatter.templateKey === "video-post" ? (`/video${slug}`) : (slug)
- 
   return (
     <CardStyles key={slug}>
       <Link style={{ boxShadow: `none` }} to={path}>
@@ -117,11 +116,8 @@ const Card = ({ frontmatter, title, slug, date, description, topic }) => {
         )}
 
         <div className="cardTitle">
-          {/* <div className="cardTopicLogo">
-            <Image fluid={topic.darkImage.childImageSharp.fluid} />
-          </div> */}
           <div className="cardTag">{frontmatter.category}</div>
-          <h3>{title}</h3>
+          <h3>{frontmatter.videoID && (<span>🎥</span>)} {title}</h3>
         </div>
       </Link>
     </CardStyles>

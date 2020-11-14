@@ -10,7 +10,7 @@ featuredPost: false
 category: JavaScript
 tags:
   - Basics
-  - CSS
+  - JavaScript
 featuredImage: /img/tools_parcel_cartons.jpg
 ---
 

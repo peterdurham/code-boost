@@ -81,7 +81,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
 
         <div>
           <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>
-            Top Posts
+            Recent Posts
           </h2>
           <CardsLayout>
             {edges.map(({ node }, index) => {
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
@@ -131,6 +131,7 @@ export const pageQuery = graphql`
             description
             tags
             category
+            videoID
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {

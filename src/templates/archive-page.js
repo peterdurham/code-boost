@@ -105,7 +105,7 @@ class Archive extends React.Component {
 
             <div className="yellow-box-container">
               <div className="yellow-box"></div>
-              <h2 className="tutorialsHeader">Tutorials Page {currentPage}</h2>
+              <h2 className="tutorialsHeader">Articles Page {currentPage}</h2>
             </div>
             <CardsLayout>
               {posts.map(({ node }) => {
