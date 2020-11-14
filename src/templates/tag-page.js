@@ -48,6 +48,7 @@ const TagPageTemplate = ({ pageContext, data }) => {
   return (
     <Layout pageType="Tag">
       <SEO
+        pageType="Collection"
         title={`${tag} tutorials`}
         canonical={`https://code-boost.com/tag/${tag
           .split(" ")

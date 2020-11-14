@@ -83,7 +83,7 @@ const theme = {
   fontText: "'Jost', 'Nanum Gothic', sans-serif;",
   fontCode:
     "Monaco, 'Operator Mono', 'Source Code Pro', 'Fira Code', monospace;",
-  widthSmall: "74rem",
+  widthSmall: "72rem",
   widthMedium: "96rem",
   widthLarge: "120rem",
 }

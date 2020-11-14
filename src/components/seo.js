@@ -3,7 +3,16 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, canonical }) {
+function SEO({
+  pageType,
+  description,
+  title,
+  slug,
+  frontmatter,
+  isBlogPost,
+  isVideoPost,
+  canonical,
+}) {
   const { site, logoText, logo } = useStaticQuery(
     graphql`
       query {
@@ -33,145 +42,284 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
   )
 
   const getSchemaOrgJSONLD = ({
-    isBlogPost,
-    url,
     title,
-    image,
     description,
+    logo,
     datePublished,
     dateModified,
     tags,
     postImage,
+    videoID
   }) => {
     const schemaOrgJSONLD = [
       {
         "@context": "http://schema.org",
-        "@type": "WebSite",
-        "@id": "https://code-boost.com#website",
-        url: "https://code-boost.com",
-        name: "Code-Boost",
-        alternateName: "code-boost",
-        author: {
-          "@id": "https://code-boost.com#organization",
+        "@type": "Organization",
+        "@id": "https://code-boost.com/#organization",
+        "name": "Code-Boost",
+        "url": "https://code-boost.com/",
+        "sameAs": [
+          "https://www.facebook.com/CodeBoost",
+          "https://twitter.com/BoostCode",
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://code-boost.com/#logo",
+          "inLanguage": "en-US",
+          "url": logo,
+          "caption": "Code-Boost",
         },
+        "image": { "@id": "https://code-boost.com/#logo" },
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "@id": "https://code-boost.com/#website",
+        "url": "https://code-boost.com/",
+        "name": "Code-Boost",
+        "description":
+          "Modern web development tutorials for JavaScript, CSS, React, GraphQL, Tools and more.",
+        "publisher": { "@id": "https://code-boost.com/#organization" },
+        "inLanguage": "en-US",
       },
     ]
 
-    return isBlogPost || isVideoPost
-      ? [
-          ...schemaOrgJSONLD,
-          {
-            "@context": "http://schema.org",
-            "@type": "WebPage",
-            "@id": `${url}#blog-post`,
-            url,
-            headline: title,
-            description: description,
-            publisher: {
-              "@id": "https://code-boost.com/#organization",
-            },
-            datePublished,
-            dateModified,
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  item: {
-                    "@id": "https://code-boost.com",
-                    name: "Home",
-                  },
-                },
-
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  item: {
-                    "@id": "https://code-boost.com",
-                    name: "Tutorials",
-                  },
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  item: {
-                    "@id": url,
-                    name: title,
-                  },
-                },
-              ],
-            },
-            sourceOrganization: {
-              "@id": "https://code-boost.com/#organization",
-            },
+    if (pageType === "Article") {
+      return [
+        ...schemaOrgJSONLD,
+        {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "@id": canonical + "#primaryimage",
+          "inLanguage": "en-US",
+          "url": postImage,
+          "width": 720,
+          "height": 377,
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "@id": canonical + "#webpage",
+          "url": canonical,
+          "name": title + " | Code-Boost",
+          "isPartOf": { "@id": "https://code-boost.com/#website" },
+          "primaryImageOfPage": {
+            "@id": canonical + "#primaryimage",
           },
-          {
-            "@context": "http://schema.org",
-            "@type": "TechArticle",
-            "@id": `${url}#blog-post`,
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": url,
+          "datePublished": datePublished,
+          "dateModified": dateModified,
+          "description": description,
+          "breadcrumb": {
+            "@id": canonical + "#breadcrumb",
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [canonical],
             },
-            url: url,
-            headline: title,
-            // wordCount: null,
-            description: description,
-            audience: "JavaScript developers",
-
-            image: {
-              "@type": "ImageObject",
-              url: isBlogPost ? postImage : `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`,
-              height: 314,
-              width: 600,
-            },
-
-            keywords: tags,
-            datePublished,
-            dateModified,
-            articleSection: "Tutorials",
-            author: {
-              "@type": "Person",
-              name: "Peter Durham",
-
-              image: {
-                "@type": "ImageObject",
-                url: image,
-                height: 300,
-                width: 300,
+          ],
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "@id": canonical + "#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://code-boost.com/",
+                "url": "https://code-boost.com/",
+                "name": "Home",
               },
-
-              url: "https://peterdurham.netlify.com/",
             },
-
-            publisher: {
-              name: "Code Boost",
-              url: "https://code-boost.com/",
-              logo:
-                "https://pbs.twimg.com/profile_images/1047970722646245380/buKQBtWY_400x400.jpg",
-              "@id": `${url}#organization`,
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": canonical,
+                "url": canonical,
+                "name": title,
+              },
             },
+          ],
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Article",
+          "@id": canonical + "#article",
+          "isPartOf": {
+            "@id": canonical + "#webpage",
           },
-        ]
-      : schemaOrgJSONLD
+          "author": [{ "@type": "Person", name: "Peter Durham" }],
+          "headline": title,
+          "description": description,
+          "datePublished": datePublished,
+          "dateModified": dateModified,
+          "mainEntityOfPage": {
+            "@id": canonical + "#webpage",
+          },
+          "publisher": { "@id": "https://code-boost.com/#organization" },
+          "image": {
+            "@id": canonical + "#primaryimage",
+          },
+          "keywords": tags,
+          "articleSection": "Article",
+          "inLanguage": "en-US",
+        },
+      ]
+    } else if (pageType === "Video") {
+      return [
+        ...schemaOrgJSONLD,
+        {
+          "@context": "http://schema.org",
+          "@type": "ImageObject",
+          "@id": canonical + "#primaryimage",
+          "inLanguage": "en-US",
+          "url": `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "@id": canonical + "#webpage",
+          "url": canonical,
+          "name": title + " | Code-Boost",
+          "isPartOf": { "@id": "https://code-boost.com/#website" },
+          "primaryImageOfPage": {
+            "@id": canonical + "#primaryimage"
+          },
+          "datePublished": datePublished,
+          "dateModified": dateModified,
+          "description": description,
+          "breadcrumb": {
+            "@id": canonical + "#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                canonical
+              ]
+            }
+          ]
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "@id": canonical + "#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://code-boost.com/",
+                "url": "https://code-boost.com/",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://code-boost.com/videos/",
+                "url": "https://code-boost.com/videos/",
+                "name": "Videos"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "WebPage",
+                "@id": canonical,
+                "url": canonical,
+                "name": title
+              }
+            }
+          ]
+        }
+      ]
+    } else if (pageType === "Collection") {
+      return [
+        ...schemaOrgJSONLD,
+        {
+          "@context": "http://schema.org",
+          "@type": "CollectionPage",
+          "@id": canonical + "#webpage",
+          "url": canonical,
+          "name": title + " | Code-Boost",
+          "isPartOf": { "@id": "https://code-boost.com/#website" },
+          "breadcrumb": {
+            "@id": canonical + "#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [canonical]
+            }
+          ]
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "@id": canonical + "#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "https://code-boost.com/",
+                "url": "https://code-boost.com/",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": canonical,
+                "url": canonical,
+                "name": title
+              }
+            }
+          ]
+        }
+      ]
+    } else {
+      return [...schemaOrgJSONLD]
+    }
+
+   
   }
 
   const metaDescription = description || site.siteMetadata.description
   const postImage = isBlogPost
     ? `https://code-boost.com${frontmatter.featuredImage.childImageSharp.fluid.src}`
-    : `https://code-boost.com${logo.childImageSharp.fluid.src}`
+    : `https://code-boost.com${logoText.childImageSharp.fluid.src}`
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
-    isBlogPost,
-    url: `https://code-boost.com${slug}`,
-    title: isBlogPost ? frontmatter.title : null,
-    description: isBlogPost ? frontmatter.description : null,
-    tags: isBlogPost ? frontmatter.tags.join(", ") : "",
+    pageType,
+    title: pageType === "Article" || pageType === "Video" ? frontmatter.title : title,
+    description: pageType === "Article" || pageType === "Video" ? frontmatter.description : null,
+    tags: pageType === "Article" || pageType === "Video" ? frontmatter.tags.join(", ") : "",
+    logo: `https://code-boost.com${logo.childImageSharp.fluid.src}`,
     postImage,
-    image: `https://code-boost.com${logo.childImageSharp.fluid.src}`,
-    datePublished: isBlogPost ? frontmatter.date : "",
-    dateModified: isBlogPost ? frontmatter.dateModified : "",
+    datePublished: pageType === "Article" || pageType === "Video" ? frontmatter.date : "",
+    dateModified: pageType === "Article" || pageType === "Video" ? frontmatter.dateModified : "",
+    videoID: pageType === "Video" ? frontmatter.videoID : "",
   })
+
+
 
   return (
     <Helmet
@@ -196,7 +344,9 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
         },
         {
           name: `twitter:image`,
-          content: isVideoPost ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg` : postImage,
+          content: isVideoPost
+            ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`
+            : postImage,
         },
         {
           name: `twitter:site`,
@@ -224,7 +374,9 @@ function SEO({ description, title, slug, frontmatter, isBlogPost, isVideoPost, c
         },
         {
           property: `og:image`,
-          content:  isVideoPost ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg` : postImage,
+          content: isVideoPost
+            ? `https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`
+            : postImage,
         },
         {
           property: `og:description`,

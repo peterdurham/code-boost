@@ -135,6 +135,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  // Create Videos Pages
+  const videosPerPage = 12
+  const numVideoPages = Math.ceil((videos.length) / videosPerPage)
+  Array.from({ length: numVideoPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/videos` : `/videos/${i + 1}`,
+      component: path.resolve("./src/templates/videos-page.js"),
+      context: {
+        limit: videosPerPage,
+        skip: i * videosPerPage,
+        numPages: numVideoPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
   // Create Topics Pages
   topics.forEach(topic => {
     createPage({

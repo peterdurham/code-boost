@@ -320,10 +320,14 @@ class VideoPostTemplate extends React.Component {
       .filter((item, index) => {
         return index < 2
       })
+    
+    const date = new Date(post.frontmatter.date)
+    const formattedDate = date.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })
 
     return (
       <Layout location={location} title={siteTitle} pageType="Post">
         <SEO
+          pageType="Video"
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
           slug={pageContext.slug}
@@ -336,7 +340,7 @@ class VideoPostTemplate extends React.Component {
           <BlogPost>
             <header>
               <h1>{post.frontmatter.title}</h1>
-              <p className="blogPostDate">{post.frontmatter.date}</p>
+              <p className="blogPostDate">{formattedDate}</p>
               <div className="blogPostTags">
                 {post.frontmatter.tags.map(tag => (
                   <Link
@@ -478,8 +482,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         videoID
-        date(formatString: "MMMM DD, YYYY")
-        dateModified(formatString: "MMMM DD, YYYY")
+        date
+        dateModified
         description
         tags
         category

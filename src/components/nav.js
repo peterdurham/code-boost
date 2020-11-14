@@ -220,7 +220,7 @@ class Nav extends React.Component {
             >
               <Link to="/" className="navLinkHome">
                 <span>
-                  <img src={RocketLogo} className="navLogoIcon" />
+                  <img src={RocketLogo} className="navLogoIcon" id="logo"/>
                   {/* <IoMdBonfire className="navLogoIcon" /> */}
                 </span>
                 <span className="navLogoText">Code-Boost</span>

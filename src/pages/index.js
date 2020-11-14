@@ -183,6 +183,7 @@ function BlogIndex(props) {
       <PageContainer>
         <div className="pageContent">
           <SEO
+            pageType="Home"
             title="Code-Boost Tutorials"
             canonical={`https://www.code-boost.com/`}
           />

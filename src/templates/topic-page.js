@@ -50,6 +50,7 @@ const TopicPageTemplate = ({ pageContext, data }) => {
   return (
     <Layout pageType="Topic">
       <SEO
+        pageType="Collection"
         title={`${topic} tutorials`}
         canonical={`https://code-boost.com/${topic.toLowerCase()}/`}
       />
