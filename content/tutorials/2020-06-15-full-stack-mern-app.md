@@ -6,7 +6,7 @@ date: 2020-06-15T17:53:13.945Z
 dateModified: 2020-06-15T17:53:14.639Z
 description: Comprenhensive tutorial to setup a full stack React and Node
   application using Git, Github, Netlify, Mongodb, and Heroku.
-featuredPost: true
+featuredPost: false
 category: Tools
 tags:
   - Node

@@ -10,7 +10,6 @@ featuredPost: false
 category: JavaScript
 tags:
   - Animations
-  - CSS
   - JavaScript
   - React
 featuredImage: /img/tools_parcel_cartons.jpg
