@@ -89,7 +89,7 @@ const theme = {
 }
 
 const GlobalStyle = createGlobalStyle`
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Noto+Sans:wght@400;700&display=swap');
 
 *,
 *::after,
@@ -103,11 +103,11 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: ${theme.fontText}
+  font-family: 'Jost', 'Nanum Gothic', sans-serif;
 }
 
 a {
-  font-family: ${theme.fontHeader};
+  font-family: 'Noto Sans', 'Arimo', sans-serif;
   text-decoration: none;
 }
 p {
@@ -120,7 +120,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: ${theme.fontHeader};
+  font-family: 'Noto Sans', 'Arimo', sans-serif;
 }
 h1 {
   font-size: 3.47rem;
@@ -319,7 +319,7 @@ blockquote {
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
-    font-family: ${theme.fontHeader};
+    font-family: 'Noto Sans', 'Arimo', sans-serif;
     left: 16px;
     top: -10px;
     line-height: 16px;
@@ -328,7 +328,7 @@ blockquote {
   &__title {
     height: 9.6rem;
     padding: 2.4rem 1.6rem;
-    font-family: ${theme.fontHeader};
+    font-family: 'Noto Sans', 'Arimo', sans-serif;
     font-weight: 400 !important;
     line-height: 2.8rem;
     position: relative;
@@ -365,7 +365,7 @@ blockquote {
 }
 
 .Tag {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 6px 12px;
   margin-right: 7px;
