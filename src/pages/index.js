@@ -348,6 +348,7 @@ export const pageQuery = graphql`
             tags
             featuredPost
             category
+            videoID
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {

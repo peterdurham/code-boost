@@ -109,19 +109,28 @@ const FeaturedCard = ({
   excerpt,
   topic,
 }) => {
+  const path = frontmatter.templateKey === "video-post" ? (`/video${slug}`) : (slug)
   return (
     <FeaturedCardStyles key={slug}>
-      <Link style={{ boxShadow: `none` }} to={slug}>
-        <BackgroundImage
-          fluid={frontmatter.featuredImage.childImageSharp.fluid}
-          className="cardImage"
-        ></BackgroundImage>
+      <Link style={{ boxShadow: `none` }} to={path}>
+        {frontmatter.templateKey === "blog-post" && (
+          <BackgroundImage
+            fluid={frontmatter.featuredImage.childImageSharp.fluid}
+            className="cardImage"
+          ></BackgroundImage>
+        )}
+        {frontmatter.templateKey === "video-post" && (
+          <img
+            src={`https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`}
+            className="cardImage"
+          />
+        )}
         <div className="cardTitle">
           {/* <div className="cardTopicLogo">
             <Image fluid={topic.darkImage.childImageSharp.fluid} />
           </div> */}
           <div className="cardTag">{frontmatter.category}</div>
-          <h3>{title}</h3>
+          <h3>{frontmatter.videoID && (<span>🎥</span>)} {title}</h3>
         </div>
       </Link>
     </FeaturedCardStyles>
