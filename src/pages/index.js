@@ -13,6 +13,8 @@ import Sidebar from "../components/sidebar"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { CardsLayout } from "../components/styles/CardsLayout"
 
+import MailerLiteForm from '../components/MailerLiteForm'
+
 const PageContainer = styled.div`
   display: flex;
 
@@ -256,7 +258,7 @@ function BlogIndex(props) {
               return null
             })}
           </CardsLayout>
-
+          {/* <MailerLiteForm /> */}
           <RegisterStyles>
             <h2>
               <span className="normal">Code Boost</span> Newsletter
@@ -316,6 +318,7 @@ function BlogIndex(props) {
         </div>
         {/* <Sidebar /> */}
       </PageContainer>
+      
     </Layout>
   )
 }

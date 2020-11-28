@@ -426,6 +426,7 @@ body {
   .blogPostMarkdown .language-text {
     color: ${theme.dark};
     background: rgba(0, 0, 0, 0.06);
+    border: 1px solid #ccc;
   }
   .blogPostLinks a {
     color: ${theme.dark};
@@ -463,6 +464,7 @@ body {
   .blogPostMarkdown .language-text {
     color: ${theme.light};
     background: ${theme.dark};
+    border: 1px solid rgb(109,109,109);
   }
   .tagPageButton:hover {
     background: ${props => props.theme.gradient02};
@@ -645,7 +647,7 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 2px 4px;
+  padding: 4px 8px;
   border-radius: 0.3em;
 }
 
