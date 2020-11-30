@@ -85,7 +85,7 @@ const CardStyles = styled.article`
     }
 
     & h3 {
-      font-size: 18.5px;
+      font-size: 17.5px;
       @media (max-width: 840px) {
         font-size: 15px;
         line-height: 21px;

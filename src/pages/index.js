@@ -235,6 +235,10 @@ function BlogIndex(props) {
               return null
             })}
           </CardsLayout>
+          <Link to="/videos" className="paginationLink archiveLink">
+            🎥 More Videos
+            <FaAngleDoubleRight />
+          </Link>
           <div className="yellow-box-container">
             <div className="yellow-box"></div>
             <h2 className="tutorialsHeader">Articles</h2>
