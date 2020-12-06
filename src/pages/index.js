@@ -220,7 +220,7 @@ function BlogIndex(props) {
             {videos.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
 
-              if (index < 3) {
+              if (index < 6) {
                 return (
                   <Card
                     key={node.fields.slug}

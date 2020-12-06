@@ -37,10 +37,10 @@ const CardStyles = styled.article`
     background-size: cover;
     background-position: 50% 100%;
     @media (max-width: 1040px) {
-      height: calc(50vw / 2);
+      height: calc(50vw / 2.25);
     }
     @media (max-width: 600px) {
-      height: calc(100vw / 2.5);
+      height: calc(100vw / 2);
     }
   }
   & .cardTag {

@@ -6,7 +6,6 @@ const CardsLayout = styled.div`
 
   @media (max-width: 1040px) {
     grid-template-columns: 50% 50%;
-    grid-column-gap: 2px;
   }
   @media (max-width: 600px) {
     grid-template-columns: 100%;

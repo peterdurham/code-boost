@@ -6,7 +6,7 @@ slug: how-to-build-a-react-stopwatch-timer
 date: 2020-11-17T15:00:00.000Z
 dateModified: 2020-11-17T15:00:00.000Z
 description: Code along tutorial on how to make a stopwatch timer with React hooks. Learn how to make a timer similar to one you would use on a smart phone. Great starter project for learning React basics, hooks, and the setInterval method.
-featuredPost: true
+featuredPost: false
 category: React
 tags:
   - Timer

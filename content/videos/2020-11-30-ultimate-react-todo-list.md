@@ -6,7 +6,7 @@ slug: ultimate-react-todo-list
 date: 2020-11-30T15:00:00.000Z
 dateModified: 2020-11-30T15:00:00.000Z
 description: Comprehensive tutorial for making a React todo list using Hooks. Learn how to create, display, delete, complete, edit, save, and load todos. Great beginner web development tutorial when first learning React.
-featuredPost: true
+featuredPost: false
 category: React
 tags:
   - Todo List

@@ -5,7 +5,7 @@ slug: handling-images-in-web-development
 date: 2020-12-01T15:00:00.000Z
 dateModified: 2020-12-01T15:00:00.000Z
 description: Basic tips for selecting, resizing, compressing, and displaying images in web development. Handling images can help your website performance and design.
-featuredPost: true
+featuredPost: false
 category: HTML
 tags:
   - Images
