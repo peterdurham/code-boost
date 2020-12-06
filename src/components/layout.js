@@ -425,7 +425,7 @@ body {
   }
   .blogPostMarkdown .language-text {
     color: ${theme.dark};
-    background: rgba(0, 0, 0, 0.06);
+    background: rgb(240,240,240);
     border: 1px solid #ccc;
   }
   .blogPostLinks a {
