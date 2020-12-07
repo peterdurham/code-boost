@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
@@ -123,6 +122,7 @@ const FeaturedCard = ({
           <img
             src={`https://img.youtube.com/vi/${frontmatter.videoID}/maxresdefault.jpg`}
             className="cardImage"
+            alt="youtube thumbnail"
           />
         )}
         <div className="cardTitle">

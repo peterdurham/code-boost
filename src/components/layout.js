@@ -6,7 +6,6 @@ import SearchResults from "./searchResults"
 import Nav from "./nav"
 import Footer from "./footer"
 import Menu from "./menu"
-import { CardsLayout } from "./styles/CardsLayout"
 
 const theme = {
   red: "red",

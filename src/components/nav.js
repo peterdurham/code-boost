@@ -4,7 +4,7 @@ import ModeContext from "../context/ModeContext"
 import styled from "styled-components"
 
 import { FiMenu } from "react-icons/fi"
-import { IoMdBonfire, IoIosSearch, IoIosClose } from "react-icons/io"
+import { IoIosSearch, IoIosClose } from "react-icons/io"
 import { MdWbSunny, MdClose } from "react-icons/md"
 import { WiMoonAltWaningCrescent5 } from "react-icons/wi"
 
@@ -220,8 +220,7 @@ class Nav extends React.Component {
             >
               <Link to="/" className="navLinkHome">
                 <span>
-                  <img src={RocketLogo} className="navLogoIcon" id="logo"/>
-                  {/* <IoMdBonfire className="navLogoIcon" /> */}
+                  <img src={RocketLogo} className="navLogoIcon" id="logo" alt="code-boost logo"/>
                 </span>
                 <span className="navLogoText">Code-Boost</span>
               </Link>
