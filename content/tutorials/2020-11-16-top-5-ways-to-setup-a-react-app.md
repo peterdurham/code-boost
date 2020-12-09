@@ -5,7 +5,7 @@ slug: top-5-ways-to-setup-a-react-app
 date: 2020-11-16T15:00:00.000Z
 dateModified: 2020-11-16T15:00:00.000Z
 description: Overview of the top 5 ways to build a React application with explainations for each. Includes create-react-app, Gatsby, Next.js, Parcel, CodeSandbox, and other notable mentions.
-featuredPost: true
+featuredPost: false
 category: React
 tags:
   - Tools
