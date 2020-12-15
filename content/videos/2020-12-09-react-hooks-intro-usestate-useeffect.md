@@ -6,7 +6,7 @@ slug: react-hooks-intro-usestate-useeffect
 date: 2020-12-09T15:00:00.000Z
 dateModified: 2020-12-09T15:00:00.000Z
 description: Introduction to how the useState and useEffect hooks work in React. Learn how to setup these two hooks for state management and side effects in your components.
-featuredPost: true
+featuredPost: false
 category: React
 tags:
   - Hooks
