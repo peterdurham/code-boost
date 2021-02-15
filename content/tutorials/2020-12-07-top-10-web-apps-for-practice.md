@@ -5,7 +5,7 @@ slug: top-10-web-apps-for-practice
 date: 2020-12-07T15:00:00.000Z
 dateModified: 2020-12-07T15:00:00.000Z
 description: Go to list for web applications to build for practice. Ten ideas for the best apps to build when practicing your skills in JavaScript and React.
-featuredPost: true
+featuredPost: false
 category: JavaScript
 tags:
   - Top 10
