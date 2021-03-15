@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { CardsLayout } from "../components/styles/CardsLayout"
 import styled from "styled-components"
+import MailerLiteForm from '../components/MailerLiteForm'
 
 const TopicPageStyles = styled.div`
   .topicPageHeader {
@@ -82,8 +83,9 @@ const TopicPageTemplate = ({ pageContext, data }) => {
           })}
         </CardsLayout>
 
-        <div style={{ marginTop: "8rem" }}>
-          <h2 style={{ marginBottom: "2rem", fontSize: "2.4rem" }}>
+        <div style={{ marginTop: "2rem" }}>
+          <MailerLiteForm />
+          <h2 style={{ marginTop: "4rem", marginBottom: "2rem", fontSize: "2.4rem" }}>
             Recent Posts
           </h2>
           <CardsLayout>

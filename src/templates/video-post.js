@@ -2,13 +2,14 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import axios from "axios"
 import _ from "lodash"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiQuillInk } from "react-icons/gi"
 import Card from "../components/card"
-import Sidebar from "../components/sidebar"
-import styled from "styled-components"
+// import Sidebar from "../components/sidebar"
+import MailerLiteForm from '../components/MailerLiteForm'
 
 const PageContent = styled.main`
   display: flex;
@@ -27,6 +28,7 @@ const BlogPost = styled.article`
   width: 100%;
 
   header {
+    
     & h1 {
       font-weight: 400;
     }
@@ -88,6 +90,7 @@ const VideoEmbed = styled.div`
 const BlogPostMarkdown = styled.section`
   width: ${props => props.theme.widthSmall};
   margin: 0 auto;
+  margin-bottom: 60px;
   & a {
     color: ${props => props.theme.blue};
   }
@@ -390,7 +393,8 @@ class VideoPostTemplate extends React.Component {
               className="blogPostMarkdown"
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <RegisterStyles>
+            <MailerLiteForm />
+            {/* <RegisterStyles>
               <h3>
                 <span className="normal">Code Boost</span> Newsletter
               </h3>
@@ -421,7 +425,7 @@ class VideoPostTemplate extends React.Component {
                   </div>
                 )}
               </form>
-            </RegisterStyles>
+            </RegisterStyles> */}
             <BlogPostSimilar>
               <h3>Other {this.props.pageContext.topic} Tutorials</h3>
               <section>

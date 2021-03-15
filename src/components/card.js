@@ -39,7 +39,7 @@ const CardStyles = styled.article`
       height: calc(50vw / 2.25);
     }
     @media (max-width: 600px) {
-      height: calc(100vw / 2);
+      height: calc(100vw / 2.2);
     }
   }
   & .cardTag {

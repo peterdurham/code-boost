@@ -262,8 +262,10 @@ function BlogIndex(props) {
               return null
             })}
           </CardsLayout>
-          {/* <MailerLiteForm /> */}
-          <RegisterStyles>
+          <div style={{height:"20px"}}></div>
+          <MailerLiteForm />
+          <div style={{height:"60px"}}></div>
+          {/* <RegisterStyles>
             <h2>
               <span className="normal">Code Boost</span> Newsletter
             </h2>
@@ -294,8 +296,8 @@ function BlogIndex(props) {
                 </div>
               )}
             </form>
-          </RegisterStyles>
-
+          </RegisterStyles> */}
+          
           <CardsLayout>
             {articles.map(({ node }, index) => {
               const title = node.frontmatter.title || node.fields.slug
