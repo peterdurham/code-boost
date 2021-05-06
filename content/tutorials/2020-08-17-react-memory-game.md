@@ -6,7 +6,7 @@ date: 2020-08-17T10:55:35.604Z
 dateModified: 2020-08-17T10:55:35.639Z
 description: Learn to build a memory game from scratch using React and NextJS.
   Keep score of results and play on various difficulties.
-featuredPost: false
+featuredPost: true
 category: React
 tags:
   - React

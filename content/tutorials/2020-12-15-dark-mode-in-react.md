@@ -5,7 +5,7 @@ slug: dark-mode-in-react
 date: 2020-12-15T15:00:00.000Z
 dateModified: 2020-12-15T15:00:00.000Z
 description: Step by step tutorial on how to setup dark mode using React. Add this feature to your application using useState, useEffect, and localStorage.
-featuredPost: true
+featuredPost: false
 category: React
 tags:
   - Dark Mode
